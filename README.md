@@ -1,36 +1,34 @@
-![UPC-LOGO](https://i.imgur.com/xRB043F.png)
+<div align="center"><img src="https://i.imgur.com/xRB043F.png" alt="UPC-LOGO" width="150"/></div><br>
 
-Universidad Peruana de Ciencias Aplicadas
+<div align="center">
 
-Ingeniería de Software
+Universidad Peruana de Ciencias Aplicadas  
 
-Ciclo: 06
+Ingeniería de Software  
 
-Aplicaciones para Dispositivos Móviles 
+Ciclo: 06  
 
-Sección: 1827
+Aplicaciones para Dispositivos Móviles  
 
-Docente: David Gerardo Quevedo Velasco
+Sección: 1827  
 
-"Informe de TB1"
+Docente: David Gerardo Quevedo Velasco  
 
-ACME
+**"Informe de TB1"**  
 
-LevelUpJourney
+ACME  
+LevelUpJourney  
 
-Jonatan Ariel Acuña Corahua - u20211b995
+Jonatan Ariel Acuña Corahua - u20211b995  
+Dante Mateo Aleman Romano - u202319963  
+Fabrizio Alessandro Contreras Peralta - u202319889  
+Romina Guadalupe Maita Falckenheiner - u202213765  
+Paolo Alessandro Torres Flores - u20221f613  
 
-Dante Mateo Aleman Romano - u202319963
+Septiembre 2024  
+2025 - 02  
 
-Fabrizio Alessandro Contreras Peralta - u202319889
-
-Romina Guadalupe Maita Falckenheiner - u202213765
-
-Paolo Alessandro Torres Flores - u20221f613
-
-Septiembre 2024 
-
-2025 - 02
+</div>
 
 
 
