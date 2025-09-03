@@ -125,7 +125,6 @@ Estos supuestos guiarán el diseño, minimizarán riesgos y permitirán una vali
 
 
 - **User Outcome Assumptions:** Beneficios que los usuarios deberían obtener.
-
   - Los estudiantes incrementarán su motivación académica, reflejado en que al menos el 70 % de los usuarios activos participe semanalmente en retos y actividades.
   - Los alumnos mejorarán su constancia en la entrega de tareas, de modo que al menos el 60 % logre completar todos los retos o actividades asignadas en cada ciclo.
   - Los estudiantes experimentarán un sentido de logro y pertenencia, evidenciado en que al menos el 65 % consulte de manera recurrente su progreso, insignias y niveles.
@@ -136,9 +135,8 @@ Estos supuestos guiarán el diseño, minimizarán riesgos y permitirán una vali
   - Los docentes podrán gestionar sus actividades de forma más eficiente, logrando que al menos un 50 % reduzca el tiempo dedicado a la preparación y seguimiento de retos.
   - Los profesores contarán con herramientas claras para monitorear el progreso, lo que se reflejará en que un 65 % utilice regularmente los reportes de avance en sus cursos.
   - Los docentes podrán fomentar mayor asistencia a talleres y actividades, alcanzando un incremento del 30 % en la participación de sus estudiantes en espacios de comunidad.
-
+  
 - **Business Assumptions:** Modelo de negocio y el entorno de mercado.
-
   - La UPC considera prioritaria la reducción de la deserción estudiantil en los primeros ciclos, reflejado en que al menos un 10 % de mejora en la tasa de retención generaría un impacto positivo en sus indicadores de calidad.
   - Mejorar las tasas de aprobación en Ingeniería de Software, Ingeniería de Sistemas e Ingeniería de Ciberseguridad incrementará la sostenibilidad académica, al lograr que un 20 % adicional de estudiantes avance satisfactoriamente a ciclos superiores.
   - Una plataforma de gamificación que eleve la participación estudiantil aportará un valor diferencial frente a la competencia, estimado en que un 15 % de nuevos postulantes perciba a la UPC como innovadora en metodologías educativas.
@@ -149,7 +147,7 @@ Estos supuestos guiarán el diseño, minimizarán riesgos y permitirán una vali
   - La inversión en una solución propia será más rentable que depender de plataformas externas, con un retorno esperado en menos de tres ciclos académicos al disminuir los costos asociados a la deserción.
   - El proyecto sentará las bases para su futura comercialización hacia otras universidades de la región, con un mercado potencial de miles de estudiantes de primeros ciclos en carreras de alta deserción.
   - El éxito del piloto fortalecerá la relación entre la UPC y su comunidad académica, aumentando en al menos un 20 % la satisfacción estudiantil medida en encuestas internas al cierre de cada ciclo.
-
+  
 - **Business Outcome Assumptions:** Impactos positivos esperados en el negocio.
 
   - La tasa de aprobación en los primeros ciclos de Ingeniería de Software, Ingeniería de Sistemas e Ingeniería de Ciberseguridad aumentará al menos en un 20 % en comparación con ciclos previos.
@@ -189,9 +187,44 @@ Estos supuestos guiarán el diseño, minimizarán riesgos y permitirán una vali
 </div>
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
+
+<div align="justify"
+
+1. **Creemos que** al mejorar la motivación, la constancia y los hábitos de estudio de los estudiantes de primeros ciclos, **y** al brindar a los profesores herramientas centralizadas para motivar, retroalimentar y monitorear el progreso en tiempo real, **se logrará que** ambos grupos incrementen su participación activa en clases, en talleres y en actividades de comunidad, **lo cual permitirá que** se reduzca la deserción temprana **y** aumente la tasa de aprobación en los cursos iniciales, **sabremos que esto es cierto cuando** al menos el 60 % de los estudiantes declare un aumento en su motivación académica, más del 50 % complete todas las tareas y retos semanales, la asistencia a talleres crezca en un 30 %, el 65 % de los docentes perciba mayor atención en clase **y** el 60 % utilice regularmente la plataforma para dar seguimiento a sus alumnos.
+2. **Creemos que** al incrementar la motivación, la constancia y los hábitos de estudio de los estudiantes de primeros ciclos, **y** al ofrecer a los docentes herramientas para retroalimentar, gestionar y monitorear de manera más eficiente, **se logrará que** los alumnos participen activamente en retos, tareas y espacios de comunidad **y** que los profesores puedan motivar y dar seguimiento en tiempo real, **lo cual permitirá que** al menos el 70 % de estudiantes participe semanalmente en actividades, un 60 % complete todas las tareas, un 65 % consulte sus logros, la tasa de aprobación aumente en un 20 %, un 60 % de docentes perciba mayor participación en clase, un 70 % de alumnos reciba feedback inmediato, un 50 % de profesores reduzca el tiempo en la preparación de retos, un 65 % utilice reportes de avance regularmente **y** la asistencia a talleres crezca en un 30 %.
+3. **Creemos que** al priorizar la reducción de la deserción en los primeros ciclos **y** al mejorar las tasas de aprobación en Ingeniería de Software, Ingeniería de Sistemas e Ingeniería de Ciberseguridad, **se logrará que** la UPC incremente su sostenibilidad académica, refuerce su prestigio institucional **y** obtenga un valor diferencial frente a la competencia, **lo cual permitirá que** un 10 % de mejora en retención impacte en los indicadores de calidad, un 20 % adicional de estudiantes avance a ciclos superiores, un 15 % de nuevos postulantes perciba innovación, un 50 % de los alumnos de primeros ciclos use la plataforma en dos años, los ingresos se fortalezcan al reducir la deserción en 15 %–20 %, los rankings externos mejoren en al menos 10 puntos, los recursos en talleres con baja asistencia se optimicen en un 30 %, el retorno financiero se logre en menos de tres ciclos, se abran oportunidades de comercialización hacia otras universidades **y** la satisfacción estudiantil aumente en un 20 %.
+4. **Creemos que** al implementar *LevelUp Journey* en los primeros ciclos de Ingeniería de Software, Ingeniería de Sistemas e Ingeniería de Ciberseguridad, **se logrará que** la tasa de aprobación aumente en al menos un 20 % **y** la retención estudiantil mejore en un 10 %, **lo cual permitirá que** la universidad reduzca en un 15 % la deserción temprana, incremente la satisfacción estudiantil en un 20 %, fortalezca su prestigio institucional en al menos 10 puntos en rankings externos, optimice en un 30 % los recursos destinados a talleres con baja asistencia, recupere un 70 % de la inversión inicial en menos de tres ciclos, expanda la solución a otras facultades con un 50 % de adopción en estudiantes de primeros ciclos, abra oportunidades de comercialización hacia otras universidades **y** logre que un 60 % de docentes y alumnos perciban la plataforma como un apoyo real a la experiencia académica.
+5. **Creemos que** al implementar un sistema de registro sencillo **y** la visualización de retos semanales en la página principal, **junto con** un sistema de logros, editor de prácticas con validación automática **y** feedback inmediato, **se logrará que** los estudiantes se incorporen fácilmente, participen de manera constante **y** reduzcan su frustración académica, **lo cual permitirá que** al menos el 80 % se registre sin asistencia técnica, un 70 % consulte los retos semanalmente, un 60 % complete al menos un reto por semana, un 50 % envíe soluciones recurrentes, un 70 % declare que el feedback les ayudó a mejorar, un 50 % consulte regularmente su posición en el ranking, un 65 % revise sus logros cada semana, un 40 % participe en el foro de comunidad, un 60 % acceda a retos mediante notificaciones internas **y** un 90 % use la plataforma de manera accesible en diferentes dispositivos.
+
+</div>
+
 #### 1.2.2.4. Lean UX Canvas
+
 ## 1.3. Segmentos objetivo
 
-- Segmento Objetivo #1: Estudiantes de primero a tercer ciclo
-
-- Segmento Objetivo #2: Profesores de primero a tercer ciclo
+1. Segmento Objetivo #1: Estudiantes de primero a tercer ciclo
+   1. Aspectos demográficos:
+      - Sexo:
+      - Edad:
+      - Nivel socioeconómico: 
+   2. Aspectos geográficos:
+      - Nacionalidad:
+      - Zona geográfica:
+      - Departamento:
+   3. Aspectos psicográficos:
+      - desc1
+   4. Aspectos conductuales:
+      - desc1
+2. Segmento Objetivo #2: Profesores de primero a tercer ciclo
+   1. Aspectos demográficos:
+      - Sexo:
+      - Edad:
+      - Nivel socioeconómico: 
+   2. Aspectos geográficos:
+      - Nacionalidad:
+      - Zona geográfica:
+      - Departamento:
+   3. Aspectos psicográficos:
+      - desc1
+   4. Aspectos conductuales:
+      - desc1
