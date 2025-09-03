@@ -94,6 +94,17 @@ Como parte del proceso de definición de la problemática, se aplicó la técnic
 </div>
 
 #### 1.2.2.2. Lean UX Assumptions
+
+En el desarrollo de Level Up Journey, se identificaron y formalizaron un conjunto de supuestos (assumptions) fundamentales siguiendo la metodología de Lean UX. Estos assumptions representan nuestras creencias iniciales sobre los usuarios, los resultados esperados, el impacto en el negocio, las funcionalidades críticas y la capacidad de los sistemas de información para soportar la solución propuesta. Declararlos explícitamente permite orientar el diseño del producto hacia un enfoque basado en evidencias, minimizar riesgos y validar tempranamente las decisiones estratégicas. Para estructurarlos, se han considerado cinco categorías principales:
+
+**Categorías de Supuestos:**
+
+- **User Assumptions:** Necesidades y comportamientos esperados de los usuarios.
+- **User Outcome Assumptions:** Beneficios que los usuarios deberían obtener.
+- **Business Assumptions:** Modelo de negocio y el entorno de mercado.
+- **Business Outcome Assumptions:** Impactos positivos esperados en el negocio.
+- **Feature Assumptions:** Funcionalidades específicas y resolución de necesidades.
+
 #### 1.2.2.3. Lean UX Hypothesis Statements
 #### 1.2.2.4. Lean UX Canvas
 ## 1.3. Segmentos objetivo
