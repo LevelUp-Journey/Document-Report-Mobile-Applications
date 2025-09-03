@@ -30,6 +30,7 @@
 | Alumno: Contreras Peralta, Fabrizio Alessandro<br/>Código: U202319889<br/>Carrera: Ingeniería de Software |                                                              |
 | Alumno: Romina Guadalupe Maita Falckenheiner <br/>Código: u202213765 <br/>Carrera: Ingeniería de software |                                                              |
 | Alumno: Paolo Alessandro Torres Flores <br/>Código: u20221f613 <br/>Carrera: Ingeniería de software |                                                              |
+
 </div>
 
 ## 1.2. Solution Profile
