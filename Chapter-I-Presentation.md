@@ -84,6 +84,15 @@ Como parte del proceso de definición de la problemática, se aplicó la técnic
 
 ### 1.2.2. Lean UX Process
 #### 1.2.2.1. Lean UX Problem Statements
+<div align="justify"
+
+- **Contexto**: Nuestro servicio ofrece una plataforma educativa que integra dinámicas de gamificación para los estudiantes de los primeros ciclos en la Universidad Peruana de Ciencias Aplicadas (UPC). El objetivo principal es mejorar la motivación, el compromiso y el rendimiento académico de los alumnos, fortaleciendo su permanencia y reduciendo la deserción en etapas tempranas.
+- **Observación** del problema: Sin embargo, hemos identificado que en carreras como Ingeniería de Software e Ingeniería de Sistemas los niveles de aprobación son críticos: de un 100 % de estudiantes matriculados, apenas entre un 10 % y 20 % logran superar los cursos iniciales. A pesar de que la universidad ofrece talleres y actividades de comunidad, la asistencia es mínima según encuestas aplicadas. Además, muchos estudiantes no revisan los canales de comunicación institucional, muestran desinterés en realizar tareas y presentan falta de hábitos académicos.
+- **Impacto**: Esta situación genera altos niveles de desaprobación y abandono en los primeros ciclos, afectando directamente la continuidad de la trayectoria académica de los estudiantes y reduciendo los indicadores de retención de la universidad.
+- **Necesidad** insatisfecha: Los estudiantes requieren un entorno más atractivo que les brinde motivación, seguimiento de logros y sentido de pertenencia, ya que las estrategias tradicionales de talleres, anuncios y cursos no han sido suficientes para captar su interés ni mejorar los resultados académicos.
+- **Pregunta de mejora**: ¿Cómo podríamos rediseñar la experiencia de los estudiantes de primeros ciclos en la UPC para que se incremente su motivación y participación activa, logrando así una mejora en las tasas de aprobación y retención académica?
+</div>
+
 #### 1.2.2.2. Lean UX Assumptions
 #### 1.2.2.3. Lean UX Hypothesis Statements
 #### 1.2.2.4. Lean UX Canvas
