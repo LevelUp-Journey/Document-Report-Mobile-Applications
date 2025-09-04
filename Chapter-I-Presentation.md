@@ -212,27 +212,27 @@ Estos supuestos guiarán el diseño, minimizarán riesgos y permitirán una vali
 
 1. Segmento Objetivo #1: Estudiantes de primero a tercer ciclo
    1. Aspectos demográficos:
-      - Sexo:
-      - Edad:
-      - Nivel socioeconómico: 
+      - Sexo: hombres y mujeres en proporciones similares.
+      - Edad: entre 17 y 21 años.
+      - Nivel socioeconómico: medio y medio-alto, acorde con la matrícula en la UPC.
    2. Aspectos geográficos:
-      - Nacionalidad:
-      - Zona geográfica:
-      - Departamento:
+      - Nacionalidad: principalmente peruanos.
+      - Zona geográfica: urbana.
+      - Departamento: Lima Metropolitana y alrededores.
    3. Aspectos psicográficos:
-      - desc1
+      - Jóvenes en proceso de transición de la educación escolar a la universitaria, con interés en la tecnología y en la vida universitaria, pero que presentan inseguridad o falta de hábitos de estudio consolidados.
    4. Aspectos conductuales:
-      - desc1
+      - Suelen postergar tareas, participan poco en actividades de comunidad, no revisan con frecuencia el correo institucional, y buscan experiencias dinámicas e interactivas que capten su atención.
 2. Segmento Objetivo #2: Profesores de primero a tercer ciclo
    1. Aspectos demográficos:
-      - Sexo:
-      - Edad:
-      - Nivel socioeconómico: 
+      - Sexo: hombres.
+      - Edad: entre 28 y 55 años.
+      - Nivel socioeconómico: medio y medio-alto.
    2. Aspectos geográficos:
-      - Nacionalidad:
-      - Zona geográfica:
-      - Departamento:
+      - Nacionalidad: principalmente peruanos.
+      - Zona geográfica: urbana.
+      - Departamento: Lima Metropolitana.
    3. Aspectos psicográficos:
-      - desc1
+      - Profesionales con experiencia en docencia universitaria, motivados por mejorar los aprendizajes y la participación de sus alumnos, interesados en herramientas que faciliten la enseñanza y la retroalimentación.
    4. Aspectos conductuales:
-      - desc1
+      - Dedican tiempo extra a preparar clases, buscan recursos que les ayuden a captar la atención de los estudiantes, valoran plataformas que centralicen materiales y reportes, y participan en actividades de acompañamiento académico institucional.
