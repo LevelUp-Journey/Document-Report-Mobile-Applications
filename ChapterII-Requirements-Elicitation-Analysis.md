@@ -102,6 +102,26 @@
 
 ## 2.2. Entrevistas
 ### 2.2.1. Diseño de entrevistas
+<div align="justify"
+En esta sección vamos a identificar la información que necesitamos obtener desde los segmentos objetivos previamente trazados. Para la información básica del entrevistado se usará un formulario básico a través del siguiente enlace: https://forms.gle/czpVxtTDRwnce7bS6
+
+- Formulario para Estudiantes de primero a tercer ciclo
+  1. ¿Cuál consideras que es tu nivel de inglés?
+  2. ¿Has aprendido algún lenguaje de programación previo a ingresar a la carrera?
+  3. ¿Cómo describirías tu velocidad de aprendizaje en programación? 
+  4. ¿Cuántas horas por semana estarías dispuesto(a) a dedicar a resolver retos de programación fuera de clase?
+  5. ¿Qué tipo de retroalimentación te resulta más útil para mejorar tus habilidades de programación?
+  6. Fuera del ámbito académico, ¿Qué tipo de juegos te mantienen enganchado(a)? 
+  7. ¿Qué tan interesado(a) estarías en resolver retos de programación con una historia narrativa (e.g. niveles, misiones)?
+  8. ¿Qué tan interesado(a) estarías en resolver retos de  programación en base a un sistema de competencia con compañeros (e.g.  rango, puntuación, elo)?
+  9. ¿Cuál sería tú metódo preferido para ver tu progreso en una plataforma de aprendizaje de programación?
+  10. ¿Estarías interesado(a) en desafíos de programación? (Tiempo limitado, cooperativo, etc)
+  11. ¿Estarías interesado(a) a participar en competencias grupales?
+  12. ¿Te gustaría participar en concursos de programación durante el horario del Viernes Cultural (de 1:00pm a 3:00pm)?
+- Formulario para Profesores de primero a tercer ciclo
+
+</div>
+
 ### 2.2.2. Registro de entrevistas
 ### 2.2.3. Análisis de entrevistas
 ## 2.3. Needfinding
