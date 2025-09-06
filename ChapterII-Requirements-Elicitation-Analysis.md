@@ -11,6 +11,94 @@
 
 
 ### 2.1.1. Análisis competitivo
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th colspan="6">Competitive analysis landscape</th>
+  </tr>
+
+  <tr>
+    <td>¿Por qué llevar a cabo este análisis?</td>
+    <td colspan="5">Escriba en el recuadro la pregunta que busca responder o el objetivo de este análisis.</td>
+  </tr>
+
+  <tr>
+    <td>(En la cabecera colocar por cada competidor nombre y logo)</td>
+    <td></td>
+    <th>Level Up Journey</th>
+    <th>Kahoot</th>
+    <th>Wayground</th>
+    <th></th>
+  </tr>
+
+  <!-- PERFIL -->
+  <tr>
+    <td rowspan="2">Perfil</td>
+    <td>Overview</td>
+    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+  </tr>
+  <tr>
+    <td>Ventaja competitiva ¿Qué valor ofrece a los clientes?</td>
+    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+  </tr>
+
+  <!-- PERFIL DE MARKETING -->
+  <tr>
+    <td rowspan="3">Perfil de Marketing</td>
+    <td>Estrategias de marketing</td>
+    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+  </tr>
+  <tr>
+    <td>Mercado Objetivo</td>
+    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+  </tr>
+  <tr>
+    <td>Productos &amp; Servicio</td>
+    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+  </tr>
+
+  <!-- PERFIL DE PRODUCTO -->
+  <tr>
+    <td rowspan="3">Perfil de Producto</td>
+    <td>Precios &amp; Costos</td>
+    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+  </tr>
+  <tr>
+    <td>Canales de distribución</td>
+    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+  </tr>
+  <tr>
+    <td>(Web y/o Móvil)</td>
+    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+  </tr>
+
+  <!-- ANÁLISIS SWOT -->
+  <tr>
+    <td rowspan="5">Análisis SWOT</td>
+    <td colspan="5">
+      Realice esto para su startup y sus competidores. Sus fortalezas deberían apoyar sus oportunidades y contribuir a lo que ustedes definen como su posible ventaja competitiva.
+    </td>
+  </tr>
+  <tr>
+    <td>Fortalezas</td>
+    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+  </tr>
+  <tr>
+    <td>Debilidades</td>
+    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+  </tr>
+  <tr>
+    <td>Oportunidades</td>
+    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+  </tr>
+  <tr>
+    <td>Amenazas</td>
+    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+  </tr>
+</table>
+
+
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
 ## 2.2. Entrevistas
 ### 2.2.1. Diseño de entrevistas
