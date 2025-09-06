@@ -37,41 +37,41 @@
   <tr>
     <td rowspan="2">Perfil</td>
     <td>Overview</td>
-    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+    <td>Plataforma universitaria con dinámicas de gamificación (retos, insignias, ranking y comunidad) diseñada para estudiantes de primeros ciclos.</td><td>Aplicación global de cuestionarios interactivos y juegos en tiempo real, utilizada en colegios y universidades para reforzar aprendizajes.</td><td>Plataforma de quizzes gamificados con soporte multimedia, personalización con IA y acceso sin necesidad de registro.</td><td>plicación móvil de Codecademy para reforzar prácticas de programación con lecciones cortas, quizzes y recordatorios en cualquier lugar.</td>
   </tr>
   <tr>
     <td>Ventaja competitiva ¿Qué valor ofrece a los clientes?</td>
-    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+    <td>Integra motivación, seguimiento académico y comunidad en un solo entorno, enfocado en reducir deserción y mejorar tasas de aprobación en la UPC.</td><td>Alta penetración en el mercado, experiencia social inmediata en el aula y facilidad de uso multiplataforma (web y móvil).</td><td>Atractiva para estudiantes por su dinamismo visual, memes y rankings opcionales; popular en educación básica y media.</td><td>Permite a los estudiantes practicar código desde el celular, manteniendo continuidad en el aprendizaje con ejercicios guiados y progresivos.</td>
   </tr>
 
   <!-- PERFIL DE MARKETING -->
   <tr>
     <td rowspan="3">Perfil de Marketing</td>
     <td>Estrategias de marketing</td>
-    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+    <td>Alianzas institucionales con la UPC para integrarse en cursos obligatorios de primeros ciclos.  Comunicación interna universitaria (charlas, ferias académicas, talleres) destacando logros y testimonios de estudiantes.  Campañas de “historias de éxito” que muestren mejoras en motivación, retención y notas.  Gamificación en la difusión: retos promocionales y recompensas digitales para fomentar el uso inicial.</td><td>Posicionamiento como referente global en aprendizaje gamificado.  Freemium: versión gratuita masiva y planes premium para instituciones educativas y corporaciones.  Uso de redes sociales y eventos internacionales de educación para fortalecer marca y comunidad.  Marketing viral gracias a la facilidad de compartir juegos y resultados entre estudiantes.</td><td>Experiencia gratuita y accesible para captar volumen de usuarios y luego convertir a planes premium.  Comunicación dirigida a profesores con la promesa de clases más divertidas y menos esfuerzo en preparación.  Uso de memes, música y elementos de cultura digital juvenil como herramienta de atracción.  Estrategia mobile-first con fuerte presencia en app stores y reseñas positivas para captar a usuarios móviles.</td><td>Marketing digital orientado a personas interesadas en programación y cambio de carrera.  Promoción en plataformas como YouTube, Google Ads y foros tecnológicos.  Planes de suscripción accesibles y descuentos estudiantiles para fidelizar usuarios jóvenes.  Construcción de comunidad online con foros, proyectos compartidos y métricas de progreso visibles.</td>
   </tr>
   <tr>
     <td>Mercado Objetivo</td>
-    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+    <td>Estudiantes de primero a tercer ciclo en la UPC (con énfasis en Ingeniería de Software, Sistemas y Ciberseguridad en la primera etapa), profesores que requieren herramientas para motivar y monitorear el avance de sus alumnos, y la propia universidad que busca reducir la deserción temprana.</td><td>Docentes y estudiantes de todos los niveles educativos (desde primaria hasta educación superior), además de empresas que utilizan dinámicas de juego para capacitación corporativa.  Estrategias de Marketing:</td><td>Docentes de educación básica y media que buscan dinamizar sus clases, así como estudiantes que desean experiencias interactivas más atractivas que los métodos tradicionales.</td><td>Estudiantes autodidactas y universitarios que desean reforzar sus conocimientos de programación en cualquier momento y lugar, especialmente en EE.UU., Latinoamérica y Europa.</td>
   </tr>
   <tr>
     <td>Productos &amp; Servicio</td>
-    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+    <td>Plataforma educativa gamificada para estudiantes de primeros ciclos, con retos semanales, logros, editor de código y comunidad académica.</td><td>Juegos de cuestionarios interactivos en tiempo real para aulas y empresas; disponible en versión básica gratuita y planes premium.</td><td>Plataforma de quizzes gamificados con multimedia, IA personalizada y acceso sin registro.</td><td>App móvil de refuerzo de programación con lecciones cortas, quizzes y recordatorios de estudio.</td>
   </tr>
 
   <!-- PERFIL DE PRODUCTO -->
   <tr>
     <td rowspan="3">Perfil de Producto</td>
     <td>Precios &amp; Costos</td>
-    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+    <td>Piloto inicial gratuito dentro de la UPC; modelo a futuro basado en licencias institucionales y posibles planes de expansión a universidades externas.</td><td>Modelo freemium, con versiones de pago desde USD 10/mes para docentes y planes empresariales más avanzados.</td><td>Modelo freemium con planes premium para escuelas y docentes, aproximadamente desde USD 8/mes.</td><td>Modelo basado en suscripción; la app es gratuita pero el acceso a contenido completo se incluye en el plan Codecademy Pro (USD 19–39/mes).</td>
   </tr>
   <tr>
     <td>Canales de distribución</td>
-    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+    <td>Aplicación web y aplicación móvil en desarrollo, integradas al ecosistema digital universitario.</td><td>Web y aplicaciones móviles (iOS y Android).</td><td>Web y aplicaciones móviles (iOS y Android).</td><td>Aplicación móvil (iOS y Android), complementaria a la plataforma web de Codecademy.</td>
   </tr>
   <tr>
     <td>(Web y/o Móvil)</td>
-    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+    <td>Web y Móvil</td><td>Web y Móvil</td><td>Web y Móvil</td><td>Web y Móvil</td>
   </tr>
 
   <!-- ANÁLISIS SWOT -->
@@ -83,19 +83,19 @@
   </tr>
   <tr>
     <td>Fortalezas</td>
-    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+    <td>Plataforma diseñada específicamente para primeros ciclos universitarios; integra gamificación con editor de código y comunidad; alineada a objetivos de retención institucional.</td><td>Reconocimiento global; alta penetración en aulas; facilidad de uso; fuerte efecto viral.</td><td>Experiencia visual atractiva; memes, música y personalización; acceso sin registro; fuerte presencia móvil.</td><td>Enfoque práctico para reforzar programación; disponibilidad móvil; marca consolidada de Codecademy.</td>
   </tr>
   <tr>
     <td>Debilidades</td>
-    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+    <td>Producto en etapa piloto; alcance inicial limitado a la UPC; dependencia del apoyo institucional para escalar.</td><td>Poca personalización a nivel universitario; se centra en quizzes simples, no en procesos académicos profundos.</td><td>Orientado más a educación básica/media; menos adecuado para contextos universitarios complejos.</td><td>Experiencia fragmentada: app solo refuerza, no enseña desde cero; barrera de pago elevada.</td>
   </tr>
   <tr>
     <td>Oportunidades</td>
-    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+    <td>Escalar a todas las carreras de la UPC y luego a otras universidades; creciente interés en gamificación educativa; posibilidad de expandir con apps móviles.</td><td>Expansión a mercados corporativos y universitarios; integración con herramientas LMS.</td><td>Crecimiento en Latinoamérica con instituciones que buscan innovación pedagógica; potencial de adaptación al nivel superior.</td><td>Alta demanda global de formación en programación; tendencia a microaprendizajes móviles.</td>
   </tr>
   <tr>
     <td>Amenazas</td>
-    <td>texto</td><td>texto</td><td>texto</td><td>texto</td>
+    <td>Competencia de grandes plataformas internacionales; riesgo de baja adopción si estudiantes no perciben valor; dependencia del presupuesto institucional.</td><td>Competidores similares que ofrecen mayor profundidad en funciones; saturación de mercado.</td><td>Aparición de nuevas apps más especializadas para universidades; riesgo de ser percibida como poco seria en educación superior.</td><td>Competencia con plataformas gratuitas como freeCodeCamp; estudiantes pueden preferir alternativas open-source.</td>
   </tr>
 </table>
 
@@ -111,3 +111,4 @@
 ### 2.3.4. Empathy Mapping
 ### 2.3.5. As-is Scenario Mapping
 ## 2.4. Ubiquitous Language
+
