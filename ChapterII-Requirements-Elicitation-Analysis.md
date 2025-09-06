@@ -12,6 +12,8 @@
 
 ### 2.1.1. Análisis competitivo
 
+### 2.1.2. Estrategias y tácticas frente a competidores
+
 <table border="1" cellpadding="6" cellspacing="0">
   <tr>
     <th colspan="6">Competitive analysis landscape</th>
@@ -28,7 +30,7 @@
     <th>Level Up Journey</th>
     <th>Kahoot</th>
     <th>Wayground</th>
-    <th></th>
+    <th>Codecademy Go</th>
   </tr>
 
   <!-- PERFIL -->
@@ -98,8 +100,6 @@
 </table>
 
 
-
-### 2.1.2. Estrategias y tácticas frente a competidores
 ## 2.2. Entrevistas
 ### 2.2.1. Diseño de entrevistas
 ### 2.2.2. Registro de entrevistas
