@@ -119,11 +119,38 @@ En esta sección vamos a identificar la información que necesitamos obtener des
   11. ¿Estarías interesado(a) a participar en competencias grupales?
   12. ¿Te gustaría participar en concursos de programación durante el horario del Viernes Cultural (de 1:00pm a 3:00pm)?
 - Formulario para Profesores de primero a tercer ciclo
+  1. ¿Qué tan motivados percibes a tus estudiantes de primeros ciclos en relación con tus cursos?
+  2. ¿Cuáles son las principales dificultades que observas en tus alumnos al momento de aprender programación o conceptos iniciales?
+  3. ¿Qué herramientas utilizas actualmente para motivar la participación y el aprendizaje en clase?
+  4. ¿Qué tipo de retroalimentación consideras más efectiva para que los estudiantes mejoren su desempeño?
+  5. ¿Con qué frecuencia realizas actividades prácticas o retos fuera de la clase tradicional?
+  6. ¿Qué funcionalidades consideras más valiosas en una plataforma de apoyo académico? (ejemplo: seguimiento de progreso, retos semanales, ranking, comunidad).
+  7. ¿Qué indicadores de rendimiento de los estudiantes te gustaría poder monitorear en tiempo real?
+  8. ¿Qué tan útil consideras que sería un sistema de insignias o logros visibles para reforzar la motivación de los estudiantes?
+  9. ¿Qué barreras identificas para la adopción de plataformas digitales en tu práctica docente?
+  10. ¿Qué tan dispuesto(a) estarías a promover concursos o retos de programación durante actividades institucionales como el *Viernes Cultural*?
 
 </div>
 
 ### 2.2.2. Registro de entrevistas
+
+| **Segmento objetivo #1:**      |               |
+| :----------------------------- | ------------- |
+| **Entrevista 1:** name         |               |
+| **Sexo:** Femenino             | **Edad:**     |
+| **Instante en el que inicia:** | **Duración:** |
+| **URL:** SHORTENED             |               |
+| **Resumen:**                   |               |
+
 ### 2.2.3. Análisis de entrevistas
+
+| Segmento                                                   | Características Objetivas Comunes                            | Características Subjetivas Comunes |
+| ---------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------- |
+| Segmento objetivo #1:Estudiantes de primero a tercer ciclo | Sexo:.<br/>- Edad: <br/>- Dispositivos:<br/>- Programas: <br/>- Canales de información: <br/>- Canales de venta y exposición: <br/>- Marcas preferidas: | Motivación: <br />Frustración:     |
+| Segmento objetivo #2: Profesores de primero a tercer ciclo |                                                              |                                    |
+
+
+
 ## 2.3. Needfinding
 ### 2.3.1. User Personas
 ### 2.3.2. User Task Matrix
