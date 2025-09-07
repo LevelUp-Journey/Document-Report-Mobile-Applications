@@ -26,8 +26,19 @@ La **Candidate Context Discovery** es el proceso mediante el cual identificamos 
 - **Community**: Interacciones sociales, foros y colaboración
 - **Code Runner**: Ejecución y evaluación de código
 - **Class Activities**: Gestión de actividades académicas y seguimiento del progreso
-- **Analytics**
+- **Analytics**: Análisis de datos y métricas para mejorar el rendimiento y la experiencia del usuario
+- **User Profile**: Gestión de información personal del usuario
 
+##### Flows de eventos principales:
+- **Registro de usuario**: Flujo desde la creación de cuenta
+<img src="./images/IAM-flow-1.png" alt="IAM Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+- **Publicacion de un Post**: Creacion de un post y aumento de puntos de actividad al profesor que publica
+<img src="./images/Community-flow-1.png" alt="Community Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+
+- **Crear Analitica cuando un post es visto**: Cada vez que un post es visto, se crea una nueva analitica
+<img src="./images/Community-flow-2.png" alt="Community Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>  
 #### 4.1.1.2. Domain Message Flows Modeling
 
 El **Domain Message Flows Modeling** mapea cómo los mensajes (eventos, comandos) fluyen entre los diferentes bounded contexts identificados. Este modelado es crucial para entender las dependencias y patrones de comunicación del sistema.
