@@ -26,6 +26,7 @@ La **Candidate Context Discovery** es el proceso mediante el cual identificamos 
 - **Community**: Interacciones sociales, foros y colaboración
 - **Code Runner**: Ejecución y evaluación de código
 - **Class Activities**: Gestión de actividades académicas y seguimiento del progreso
+- **Analytics**
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
@@ -75,7 +76,7 @@ Los **diagramas de despliegue** muestran cómo los contenedores se mapean a infr
 
 El **Tactical-Level Domain-Driven Design** representa la materialización concreta del diseño estratégico definido anteriormente. En esta sección, profundizamos en la implementación específica de cada bounded context identificado, detallando sus capas arquitectónicas, componentes internos y relaciones. Este nivel táctico se enfoca en los patrones de implementación, la organización del código y la estructura interna de cada contexto delimitado, asegurando que el diseño estratégico se traduzca efectivamente en una arquitectura de software robusta y mantenible.
 
-Para el sistema LevelUpJourney, hemos identificado cinco bounded contexts principales que cubren las necesidades fundamentales de la plataforma: **IAM** (Identity and Access Management) para la gestión de identidades y autenticación, **API Gateway** como punto de entrada unificado y gestión de APIs, **Community** para las funcionalidades sociales y de comunidad, **Code Runner** para la ejecución y evaluación de código, y **Class Activities** para la gestión de actividades académicas y seguimiento del progreso estudiantil.
+Para el sistema LevelUpJourney, hemos identificado seis bounded contexts principales que cubren las necesidades fundamentales de la plataforma: **IAM** (Identity and Access Management) para la gestión de identidades y autenticación, **API Gateway** como punto de entrada unificado y gestión de APIs, **Community** para las funcionalidades sociales y de comunidad, **Code Runner** para la ejecución y evaluación de código, **Class Activities** para la gestión de actividades académicas y seguimiento del progreso estudiantil, y **Analytics**.
 
 ### 4.2.1. IAM Bounded Context
 #### 4.2.1.1. Domain Layer
@@ -126,3 +127,13 @@ Para el sistema LevelUpJourney, hemos identificado cinco bounded contexts princi
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
+
+### 4.2.6. Analytics Bounded Context
+#### 4.2.6.1. Domain Layer
+#### 4.2.6.2. Interface Layer
+#### 4.2.6.3. Application Layer
+#### 4.2.6.4. Infrastructure Layer
+#### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
+#### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
+##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
+##### 4.2.6.6.2. Bounded Context Database Design Diagram
