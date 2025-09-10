@@ -159,14 +159,16 @@ Por otro lado, se diseñó y distribuyó un formulario en Google Forms, el cual 
 
 La combinación de ambos métodos permitió contrastar las percepciones obtenidas en las entrevistas con la información cuantitativa del formulario, generando una visión más completa y confiable sobre las características y necesidades del segmento estudiantil analizado.
 
+/home/giks/Documentos/LevelUp-Journey/Document-Report-Mobile-Applications/assets/chapter2
+
 <div align="justify">
-  <img src="assets/chaper2/entrevistas/1.png" alt="FORM-DATA1" width="500"/>
-  <img src="assets/chaper2/entrevistas/2.png" alt="FORM-DATA2" width="500"/>
-  <img src="assets/chaper2/entrevistas/3.png" alt="FORM-DATA3" width="500"/>
-  <img src="assets/chaper2/entrevistas/4.png" alt="FORM-DATA4" width="500"/>
-  <img src="assets/chaper2/entrevistas/5.png" alt="FORM-DATA5" width="500"/>
-  <img src="assets/chaper2/entrevistas/6.png" alt="FORM-DATA6" width="500"/>
-  <img src="assets/chaper2/entrevistas/7.png" alt="FORM-DATA7" width="500"/>
+  <img src="../chapter2/assets/entrevistas/1.png" alt="FORM-DATA1" width="500"/>
+  <img src="../chapter2/assets/entrevistas/2.png" alt="FORM-DATA2" width="500"/>
+  <img src="../chapter2/assets/entrevistas/3.png" alt="FORM-DATA3" width="500"/>
+  <img src="../chapter2/assets/entrevistas/4.png" alt="FORM-DATA4" width="500"/>
+  <img src="../chapter2/assets/entrevistas/5.png" alt="FORM-DATA5" width="500"/>
+  <img src="../chapter2/assets/entrevistas/6.png" alt="FORM-DATA6" width="500"/>
+  <img src="../chapter2/assets/entrevistas/7.png" alt="FORM-DATA7" width="500"/>
 </div>
 
 
@@ -203,7 +205,7 @@ En esta sección se construyeron perfiles representativos denominados “User Pe
 
 Segmento objetivo #1:Estudiantes de primero a tercer ciclo
 
-![Jonatan Velasquez](assets/chaper2/user-personas/Jonatan-Velasquez%20.png)
+![Jonatan Velasquez](../chapter2/assets/user-personas/Jonatan-Velasquez%20.png)
 
 Segmento objetivo #2: Profesores de primero a tercer ciclo
 
