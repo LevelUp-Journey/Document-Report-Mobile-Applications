@@ -31,14 +31,14 @@ La **Candidate Context Discovery** es el proceso mediante el cual identificamos 
 
 ##### Flows de eventos principales:
 - **Registro de usuario**: Flujo desde la creación de cuenta
-<img src="./images/IAM-flow-1.png" alt="IAM Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/domain-event-flows/IAM-flow-1.png" alt="IAM Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **Publicacion de un Post**: Creacion de un post y aumento de puntos de actividad al profesor que publica
-<img src="./images/Community-flow-1.png" alt="Community Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/domain-event-flows/Community-flow-1.png" alt="Community Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 - **Crear Analitica cuando un post es visto**: Cada vez que un post es visto, se crea una nueva analitica
-<img src="./images/Community-flow-2.png" alt="Community Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>  
+<img src="../chapter4/assets/domain-event-flows/Community-flow-2.png" alt="Community Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>  
 #### 4.1.1.2. Domain Message Flows Modeling
 
 El **Domain Message Flows Modeling** mapea cómo los mensajes (eventos, comandos) fluyen entre los diferentes bounded contexts identificados. Este modelado es crucial para entender las dependencias y patrones de comunicación del sistema.
