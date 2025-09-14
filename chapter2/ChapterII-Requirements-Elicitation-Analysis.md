@@ -193,7 +193,7 @@ La combinación de ambos métodos permitió contrastar las percepciones obtenida
 
 | Segmento objetivo #1:                                    | Estudiantes de primero a tercer ciclo                        |
 | -------------------------------------------------------- | ------------------------------------------------------------ |
-| Entrevista 3: Entrevista a Cristian Anthony Merino Vilca | <img src="https://i.imgur.com/WQ9hVo1.png" alt="Entrevista2" width="500"/> |
+| Entrevista 3: Entrevista a Cristian Anthony Merino Vilca | <img src="https://i.imgur.com/WQ9hVo1.png" alt="Entrevista3" width="500"/> |
 | Sexo: Masculino                                          | Edad 17 años                                                 |
 | Instante en el que inicia: 0:01                          | Duración: 4:30 minutos                                       |
 | URL:                                                     | [ upc-pre-202501-2520-1827-LevelUpJourney-needfinding-sprint-1](https://youtu.be/456zuDi00H8?si=ZcTgG9o9Q6EZPHUx) |
@@ -203,7 +203,7 @@ La combinación de ambos métodos permitió contrastar las percepciones obtenida
 
 | Segmento objetivo #1:                           | Profesores de primero a tercer ciclo                         |
 | ----------------------------------------------- | ------------------------------------------------------------ |
-| Entrevista 1: Entrevista a Ernesto Ocampo Tello |                                                              |
+| Entrevista 1: Entrevista a Ernesto Ocampo Tello | <img src="https://i.imgur.com/CkjbXY5.png" alt="EntrevistaS1" width="500"/> |
 | Sexo: Masculino                                 | Edad: 51                                                     |
 | Instante en el que inicia: 0:01                 | Duración: 9:37                                               |
 | URL:                                            | [ upc-pre-202501-2520-1827-LevelUpJourney-needfinding-sprint-1](https://youtu.be/M9ktf8nqDr0?si=vOz3wLKACbIpo_dR) |
@@ -211,13 +211,13 @@ La combinación de ambos métodos permitió contrastar las percepciones obtenida
 
 | Segmento objetivo #1:                                  | Profesores de primero a tercer ciclo                         |
 | ------------------------------------------------------ | ------------------------------------------------------------ |
-| Entrevista 2: Entrevista a Juan Carlos Morales Arevalo |                                                              |
+| Entrevista 2: Entrevista a Juan Carlos Morales Arevalo | <img src="https://i.imgur.com/lYBc2Li.png" alt="EntrevistaS2" width="500"/> |
 | Sexo: Masculino                                        | Edad: 47                                                     |
 | Instante en el que inicia: 0:01                        | Duración: 17:18                                              |
 | URL:                                                   | [ upc-pre-202501-2520-1827-LevelUpJourney-needfinding-sprint-1 ](https://youtu.be/ViVUbU_v3YA) |
 | Resumen:                                               | El profesor Juan Carlos Morales indicó que los estudiantes de primeros ciclos suelen ingresar a la universidad con alta motivación, especialmente aquellos que participaron en actividades previas como Innóvate, aunque algunos presentan un choque al adaptarse a la metodología universitaria, diferente a la del colegio. Señaló que este cambio puede generar una leve disminución en la motivación inicial, aunque no implica una pérdida total del interés. También comentó que un pequeño grupo de estudiantes llega con conocimientos previos en Python o C++, lo que refleja un interés temprano en la programación.Respecto a las dificultades técnicas, mencionó que rara vez se presentan problemas graves con los equipos o el acceso a los servicios, y que cuando ocurren son casos aislados que se resuelven rápidamente con soporte técnico. La mayoría de incidencias se relacionan con errores de contraseña o desconocimiento inicial del sistema. Destacó que los materiales del curso siempre están disponibles mediante copias de seguridad externas, lo que garantiza continuidad incluso ante fallos temporales del aula virtual.En cuanto a herramientas de apoyo, indicó que, además de las funcionalidades del aula virtual y Teams, los docentes pueden emplear libremente plataformas como Kahoot o Padlet para dinamizar las clases, dependiendo de su iniciativa personal. Considera que incorporar una plataforma gamificada con retos de programación podría ser útil para reforzar el aprendizaje, siempre que ofrezca beneficios concretos que justifiquen el esfuerzo adicional de los estudiantes. Señaló que, si solo se basa en puntos o rankings, podría perder atractivo frente a otras prioridades académicas, como ocurre con aplicaciones de aprendizaje de idiomas.Asimismo, subrayó que la motivación sostenida requiere no solo recompensas simbólicas, sino también integrar la participación en la plataforma dentro de la evaluación académica, por ejemplo, como parte de la nota de participación. Finalmente, mencionó que estaría dispuesto a participar en los “viernes culturales” para presentar la plataforma o dirigir ejercicios, siempre que coincida con su horario de clases. También sugirió implementar entrevistas vocacionales al ingreso, para alinear expectativas y evitar deserciones motivadas por desconocimiento sobre la naturaleza real de la carrera. |
 
-| Entrevista 2: Paty Janet Uceda Martos |                                                              |
+| Entrevista 2: Paty Janet Uceda Martos | <img src="https://i.imgur.com/5AT67yq.png" alt="EntrevistaS3" width="500"/> |
 | ------------------------------------- | ------------------------------------------------------------ |
 | Sexo: Femenino                        | Edad: 45                                                     |
 | Instante en el que inicia: 0:01       | Duración: 20.08                                              |
