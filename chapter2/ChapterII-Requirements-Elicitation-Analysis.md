@@ -249,8 +249,8 @@ La triangulación de fuentes permitió aumentar la validez de los hallazgos y co
 ### 2.3.1. User Personas
 
 <div align="justify"
-En esta sección se construyeron perfiles representativos denominados “User Personas”, los cuales sintetizan características clave de los usuarios objetivo a partir del análisis cualitativo de entrevistas semi-estructuradas. Cada User Persona refleja patrones comunes de comportamiento, motivaciones, frustraciones, objetivos, dispositivos utilizados, y canales de información. Esta herramienta permitió traducir datos individuales en arquetipos comprensibles que orientan el diseño centrado en el usuario, facilitando decisiones estratégicas en cuanto a funcionalidades, experiencia de usuario y comunicación visual. Se desarrollaron dos perfiles principales: uno correspondiente a Estudiantes de primero a tercer ciclo, y otro a Profesores de primero a tercer ciclo.
 
+En esta sección se construyeron perfiles representativos denominados “User Personas”, los cuales sintetizan características clave de los usuarios objetivo a partir del análisis cualitativo de entrevistas semi-estructuradas. Cada User Persona refleja patrones comunes de comportamiento, motivaciones, frustraciones, objetivos, dispositivos utilizados, y canales de información. Esta herramienta permitió traducir datos individuales en arquetipos comprensibles que orientan el diseño centrado en el usuario, facilitando decisiones estratégicas en cuanto a funcionalidades, experiencia de usuario y comunicación visual. Se desarrollaron dos perfiles principales: uno correspondiente a Estudiantes de primero a tercer ciclo, y otro a Profesores de primero a tercer ciclo.
 
 
 **Segmento objetivo #1:Estudiantes de primero a tercer ciclo**
@@ -267,8 +267,89 @@ En esta sección se construyeron perfiles representativos denominados “User Pe
 
 ### 2.3.2. User Task Matrix
 
+A continuación se presenta el User Task Matrix, construido a partir de las entrevistas realizadas a los dos segmentos definidos: Profesores y Estudiantes
+
+**Segmento objetivo #1: Estudiantes de primero a tercer ciclo**
+
+| **N°** | **Tarea**                                                   | **Frecuencia** | **Importancia** | **Justificación / Observación**                              |
+| ------ | ----------------------------------------------------------- | -------------- | --------------- | ------------------------------------------------------------ |
+| 1      | Explorar la landing page y conocer la plataforma            | Often          | High            | Primer contacto, define la comprensión inicial del sistema.  |
+| 2      | Explorar retos semanales y actividades asignadas            | Often          | High            | Conecta directamente con el plan académico y motiva la práctica regular. |
+| 3      | Resolver retos y enviar soluciones                          | Often          | High            | Núcleo de la experiencia de aprendizaje; permite medir competencias. |
+| 4      | Revisar retroalimentación inmediata de sus envíos           | Often          | High            | Feedback rápido mantiene la motivación y evita frustración.  |
+| 5      | Consultar su progreso (puntos, niveles, insignias)          | Often          | Medium          | Relevante para motivación, pero no crítico para la continuidad. |
+| 6      | Compararse en rankings ( clase, reto)                       | Sometimes      | Medium          | Aporta competitividad sana, motiva a seguir practicando.     |
+| 7      | Participar en el foro/comunidad (comentar, dar “like”)      | Sometimes      | Medium          | Fomenta interacción y aprendizaje social, pero no es esencial. |
+| 8      | Editar perfil (nombre, avatar, institución)                 | Rare           | Medium          | Refuerza la identidad digital, de baja frecuencia pero útil. |
+| 9      | Participar en actividades culturales (ej. viernes cultural) | Sometimes      | Medium          | Genera pertenencia y conexión con la comunidad universitaria. |
+
+Segmento objetivo #2: Profesores de primero a tercer ciclo
+
+| **N°** | **Tarea**                                                    | **Frecuencia** | **Importancia** | **Justificación / Observación**                              |
+| ------ | ------------------------------------------------------------ | -------------- | --------------- | ------------------------------------------------------------ |
+| 1      | Crear actividades y retos académicos                         | Often          | High            | Actividad central del docente en la plataforma.              |
+| 2      | Publicar anuncios o posteos en la comunidad                  | Sometimes      | Medium          | Refuerza la comunicación académica y administrativa.         |
+| 3      | Dar seguimiento al progreso de las actividades               | Sometimes      | High            | Clave para detectar avances y dificultades en clase.         |
+| 4      | Fomentar participación en comunidad/talleres                 | Often          | Medium          | Apoya la motivación y dinamiza el aprendizaje.               |
+| 5      | Detectar estudiantes en riesgo                               | Sometimes      | High            | Fundamental para prevenir la deserción y brindar apoyo temprano. |
+| 6      | Usar la plataforma en vivo durante clase                     | Often          | High            | Incrementa la interacción y refuerza el aprendizaje práctico. |
+| 7      | Calificar entregas con rúbricas o comentarios                | Sometimes      | High            | Permite enriquecer el feedback automático con una mirada pedagógica. |
+| 8      | Configurar parámetros de retos (dificultad, plazos, criterios) | Often          | Medium          | Otorga flexibilidad y adaptación a los objetivos de cada curso. |
+| 9      | Generar y exportar reportes de desempeño                     | Sometimes      | Medium          | Facilita la evaluación académica y la gestión administrativa. |
+
+El análisis del User Task Matrix revela varias tareas que son altamente frecuentes y relevantes para cada segmento:
+
+**Tareas con mayor frecuencia e importancia:**
+
+- **Para estudiantes:**
+
+- Explorar retos semanales y actividades asignadas
+- Resolver retos y enviar soluciones
+- Revisar retroalimentación inmediata de sus envíos
+
+- **Para Profesores:**
+
+- Crear actividades y retos académicos
+- Fomentar participación en comunidad o talleres extracurriculares
+- Usar la plataforma en vivo durante clase 
+
 ### 2.3.3. User Journey Mapping
 ### 2.3.4. Empathy Mapping
+
+**Segmento objetivo #1: Estudiantes de primero a tercer ciclo**
+
+![EmpathyMaps-User1](../chapter2/assets/Empathy-Mapping/EmpathyMaps-User1.png)
+
+**Segmento objetivo #2: Profesores de primero a tercer ciclo**
+
+![EmpathyMaps-User1](../chapter2/assets/Empathy-Mapping/EmpathyMaps-User2.png)
+
 ### 2.3.5. As-is Scenario Mapping
+
+En el caso del estudiante, la experiencia actual depende de entornos externos (IDE locales, tutoriales en YouTube) y se caracteriza por recibir retroalimentación tardía, a menudo días después de la entrega. Esto provoca ansiedad, pérdida de motivación y una percepción de falta de progreso. Los estudiantes entrevistados expresaron que necesitan feedback claro e inmediato, así como sistemas de reconocimiento visibles (puntos, rankings) para sostener su interés.
+
+**Segmento objetivo #1: Estudiantes de primero a tercer ciclo**
+
+<img src="https://i.imgur.com/ILVueKS.png" alt="ASIS-USER1" width="1000"/>
+
+**Segmento objetivo #2: Profesores de primero a tercer ciclo**
+
+<img src="https://i.imgur.com/WFyQ0Qw.png" alt="ASIS-USER2" width="1000"/>
+
+
+
 ## 2.4. Ubiquitous Language
 
+| Term      | Definition                                                   |
+| --------- | ------------------------------------------------------------ |
+| Student   | Usuario principal de la plataforma, perteneciente a los primeros ciclos universitarios (1° a 3°). Interactúa con los retos de programación resolviéndolos en el editor de código, acumulando puntos, logros y posiciones en el ranking. |
+| Teacher   | Usuario que diseña, gestiona y evalúa los retos de programación. Define las instrucciones, casos de prueba y criterios de evaluación automática. |
+| Admin     | Usuario con permisos de supervisión y moderación. Puede gestionar usuarios. |
+| Activity  | Actividad académica creada por un profesor que el estudiante debe resolver en el editor de código. |
+| Points    | Puntaje que el estudiante obtiene al resolver el reto, calculado según corrección, eficiencia. |
+| Score     | Total acumulado de puntos de un estudiante en toda la plataforma. Es la métrica principal para el progreso, nivel y ranking. |
+| Ranking   | Clasificación de los estudiantes basada en puntos acumulados, retos completados y desempeño en la plataforma. Puede mostrarse a nivel global, por curso o por reto específico. |
+| Rank      | Distinción visual o insignia especial otorgada al estudiante cuando alcanza un determinado puesto o hito dentro del ranking. |
+| Level     | Representa el grado de experiencia del estudiante dentro de la plataforma. Aumenta conforme se acumula score y se completan hitos específicos. |
+| Profile   | Espacio individual del estudiante donde se muestran sus retos completados, historial de envíos, puntos, insignias, niveles alcanzados y progreso general dentro de la plataforma. |
+| Community | Sección tipo feed donde solo Teachers pueden publicar y los Students solo pueden comentar. Usada para avisos y actividades. |
