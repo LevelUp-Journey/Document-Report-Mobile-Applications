@@ -269,7 +269,7 @@ En esta sección se construyeron perfiles representativos denominados “User Pe
 
 A continuación se presenta el User Task Matrix, construido a partir de las entrevistas realizadas a los dos segmentos definidos: Profesores y Estudiantes
 
-Segmento objetivo #1: Estudiantes de primero a tercer ciclo
+**Segmento objetivo #1: Estudiantes de primero a tercer ciclo**
 
 | **N°** | **Tarea**                                                   | **Frecuencia** | **Importancia** | **Justificación / Observación**                              |
 | ------ | ----------------------------------------------------------- | -------------- | --------------- | ------------------------------------------------------------ |
@@ -315,6 +315,28 @@ El análisis del User Task Matrix revela varias tareas que son altamente frecuen
 
 ### 2.3.3. User Journey Mapping
 ### 2.3.4. Empathy Mapping
+
+**Segmento objetivo #1: Estudiantes de primero a tercer ciclo**
+
+![EmpathyMaps-User1](../chapter2/assets/Empathy-Mapping/EmpathyMaps-User1.png)
+
+**Segmento objetivo #2: Profesores de primero a tercer ciclo**
+
+![EmpathyMaps-User1](../chapter2/assets/Empathy-Mapping/EmpathyMaps-User2.png)
+
 ### 2.3.5. As-is Scenario Mapping
 ## 2.4. Ubiquitous Language
 
+| Term      | Definition                                                   |
+| --------- | ------------------------------------------------------------ |
+| Student   | Usuario principal de la plataforma, perteneciente a los primeros ciclos universitarios (1° a 3°). Interactúa con los retos de programación resolviéndolos en el editor de código, acumulando puntos, logros y posiciones en el ranking. |
+| Teacher   | Usuario que diseña, gestiona y evalúa los retos de programación. Define las instrucciones, casos de prueba y criterios de evaluación automática. |
+| Admin     | Usuario con permisos de supervisión y moderación. Puede gestionar usuarios. |
+| Activity  | Actividad académica creada por un profesor que el estudiante debe resolver en el editor de código. |
+| Points    | Puntaje que el estudiante obtiene al resolver el reto, calculado según corrección, eficiencia. |
+| Score     | Total acumulado de puntos de un estudiante en toda la plataforma. Es la métrica principal para el progreso, nivel y ranking. |
+| Ranking   | Clasificación de los estudiantes basada en puntos acumulados, retos completados y desempeño en la plataforma. Puede mostrarse a nivel global, por curso o por reto específico. |
+| Rank      | Distinción visual o insignia especial otorgada al estudiante cuando alcanza un determinado puesto o hito dentro del ranking. |
+| Level     | Representa el grado de experiencia del estudiante dentro de la plataforma. Aumenta conforme se acumula score y se completan hitos específicos. |
+| Profile   | Espacio individual del estudiante donde se muestran sus retos completados, historial de envíos, puntos, insignias, niveles alcanzados y progreso general dentro de la plataforma. |
+| Community | Sección tipo feed donde solo Teachers pueden publicar y los Students solo pueden comentar. Usada para avisos y actividades. |
