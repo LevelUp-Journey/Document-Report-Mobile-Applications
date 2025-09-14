@@ -228,14 +228,20 @@ La combinación de ambos métodos permitió contrastar las percepciones obtenida
 
 ### 2.2.3. Análisis de entrevistas
 
-En este apartado se documenta de manera estructurada cada una de las entrevistas realizadas a los diferentes segmentos objetivo. Para cada entrevista, se incluye información relevante como el perfil del entrevistado, el registro de sus respuestas, observaciones contextuales, y un resumen de los principales hallazgos obtenidos.
+En este apartado se documenta de manera estructurada cada una de las entrevistas realizadas a los diferentes segmentos objetivo. Para cada entrevista, se incluye información relevante como el perfil del entrevistado, el registro de sus respuestas, observaciones contextuales, y un resumen de los principales hallazgos obtenidos. 
+
+Las entrevistas realizadas permitió identificar patrones consistentes en los dos segmentos objetivo priorizados para la investigación: estudiantes de primero a tercer ciclo y docentes que imparten cursos en esos mismos niveles. Este proceso consistió en transcribir y sistematizar las respuestas, codificar temáticamente los hallazgos y comparar la información cualitativa obtenida de cada entrevista con los datos cuantitativos provenientes del formulario aplicado a 22 estudiantes.
+
+La triangulación de fuentes permitió aumentar la validez de los hallazgos y comprender tanto los factores motivacionales como las principales barreras que enfrentan los estudiantes en sus primeros ciclos, así como las percepciones y estrategias de los docentes para abordar estos retos.
 
  Esta sistematización permite asegurar la trazabilidad de los datos recolectados, facilitando su posterior análisis y su utilización en la construcción de artefactos de usuario, tales como User Personas, Empathy Maps y User Task Matrices.
 
+
+
 | Segmento                                                    | Características Objetivas Comunes                            | Características Subjetivas Comunes                           |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Segmento objetivo #1: Estudiantes de primero a tercer ciclo | **Sexo:** Masculino y femenino <br/>**Edad:** 17 a 21 años <br/>**Dispositivos:** Laptop con Windows, smartphone (iPhone/Android) <br/>**Programas:** YouTube, VS Code, Figma, plataformas online (Platzi, Udemy) <br/>**Canales de información:** Redes sociales (Instagram, TikTok), buscadores (Google/YouTube), foros estudiantiles <br/>**Canales de venta y exposición:** Ferias universitarias, páginas web de universidades, grupos de Facebook, recomendaciones entre compañeros <br/>**Marcas preferidas:** Nike, Adidas, Lenovo, Apple | **Motivación:** Mejorar su desempeño académico, aprender programación desde cero, participar en competencias, progresar con sistemas de rangos o niveles, y obtener retroalimentación clara y práctica. <br/> **Frustración:** Falta de retroalimentación clara al resolver errores, dificultad por falta de bases en programación, exceso de teoría frente a la práctica, poco tiempo disponible para retos extracurriculares. |
-| Segmento objetivo #2: Profesores de primero a tercer ciclo  |                                                              |                                                              |
+| Segmento objetivo #1: Estudiantes de primero a tercer ciclo | Sexo: Principalmente masculino (algunas mujeres) <br/><br /> Edad: 17 a 21 años <br/><br /> Dispositivos: Laptop con Windows, smartphone Android/iPhone <br/><br /> Conocimientos previos: Escasos o básicos en C++ o Python <br/><br /> Herramientas de estudio: YouTube, VS Code, Google Classroom, apuntes de clase, materiales de Blackboard <br/><br /> **Canales de información**: Redes sociales, buscadores, foros estudiantiles <br/><br /> Contexto académico: Alta carga de cursos introductorios, transición del colegio a universidad | **Motivación:** Aprender programación desde cero, mejorar su rendimiento académico, progresar mediante sistemas de rangos, puntos o niveles, recibir retroalimentación inmediata, participar en competencias, retos semanales y rankings con otros estudiantes. <br/><br /> **Frustración:** Pérdida de motivación al enfrentar los primeros retos lógicos, falta de comprensión lectora, escasos hábitos de estudio autónomo, exceso de teoría frente a la práctica, poca práctica guiada y falta de feedback directo de docentes. |
+| Segmento objetivo #2: Profesores de primero a tercer ciclo  | **Sexo**: Masculino y femenino<br/><br />**Edad**: 45 a 51 años<br/><br />**Experiencia docente:** Dictan cursos de fundamentos, lógica, IHC, BD y móviles<br/><br />**Herramientas usadas**: Blackboard (UPC Class), Microsoft Teams, Kahoot, Quizizz, Padlet, ClassDojo<br/><br />**Prácticas pedagógicas**: Controles rápidos, retos grupales, material estandarizado con respaldo externo, sesiones presenciales<br/><br />**Contexto laboral:** Alta carga administrativa y de corrección, disponibilidad limitada para actividades extracurriculares | **Motivación**: Mantener la motivación inicial de los estudiantes, fomentar la participación activa, el trabajo en equipo, el aprendizaje autónomo y el pensamiento lógico. Consideran útil una plataforma gamificada si integra retos progresivos, rankings, glosarios y bitácoras de estudio, y si su uso impacta en la nota de participación.<br/><br />**Frustración**: Ven cómo muchos estudiantes pierden motivación al enfrentar dificultades iniciales, no revisan materiales, no leen anuncios ni entregan tareas, y carecen de hábitos de organización y planificación. También señalan la falta de tiempo en clase para practicar. |
 
 
 
@@ -243,14 +249,19 @@ En este apartado se documenta de manera estructurada cada una de las entrevistas
 ### 2.3.1. User Personas
 
 <div align="justify"
-
 En esta sección se construyeron perfiles representativos denominados “User Personas”, los cuales sintetizan características clave de los usuarios objetivo a partir del análisis cualitativo de entrevistas semi-estructuradas. Cada User Persona refleja patrones comunes de comportamiento, motivaciones, frustraciones, objetivos, dispositivos utilizados, y canales de información. Esta herramienta permitió traducir datos individuales en arquetipos comprensibles que orientan el diseño centrado en el usuario, facilitando decisiones estratégicas en cuanto a funcionalidades, experiencia de usuario y comunicación visual. Se desarrollaron dos perfiles principales: uno correspondiente a Estudiantes de primero a tercer ciclo, y otro a Profesores de primero a tercer ciclo.
 
-Segmento objetivo #1:Estudiantes de primero a tercer ciclo
+
+
+**Segmento objetivo #1:Estudiantes de primero a tercer ciclo**
 
 ![Jonatan Velasquez](../chapter2/assets/user-personas/Jonatan-Velasquez%20.png)
 
-Segmento objetivo #2: Profesores de primero a tercer ciclo
+
+
+**Segmento objetivo #2: Profesores de primero a tercer ciclo**
+
+![Ariel-Maslucan](../chapter2/assets/user-personas/Ariel-Maslucan.png)
 
 </div>
 
