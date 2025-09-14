@@ -267,6 +267,52 @@ En esta sección se construyeron perfiles representativos denominados “User Pe
 
 ### 2.3.2. User Task Matrix
 
+A continuación se presenta el User Task Matrix, construido a partir de las entrevistas realizadas a los dos segmentos definidos: Profesores y Estudiantes
+
+Segmento objetivo #1: Estudiantes de primero a tercer ciclo
+
+| **N°** | **Tarea**                                                   | **Frecuencia** | **Importancia** | **Justificación / Observación**                              |
+| ------ | ----------------------------------------------------------- | -------------- | --------------- | ------------------------------------------------------------ |
+| 1      | Explorar la landing page y conocer la plataforma            | Often          | High            | Primer contacto, define la comprensión inicial del sistema.  |
+| 2      | Explorar retos semanales y actividades asignadas            | Often          | High            | Conecta directamente con el plan académico y motiva la práctica regular. |
+| 3      | Resolver retos y enviar soluciones                          | Often          | High            | Núcleo de la experiencia de aprendizaje; permite medir competencias. |
+| 4      | Revisar retroalimentación inmediata de sus envíos           | Often          | High            | Feedback rápido mantiene la motivación y evita frustración.  |
+| 5      | Consultar su progreso (puntos, niveles, insignias)          | Often          | Medium          | Relevante para motivación, pero no crítico para la continuidad. |
+| 6      | Compararse en rankings ( clase, reto)                       | Sometimes      | Medium          | Aporta competitividad sana, motiva a seguir practicando.     |
+| 7      | Participar en el foro/comunidad (comentar, dar “like”)      | Sometimes      | Medium          | Fomenta interacción y aprendizaje social, pero no es esencial. |
+| 8      | Editar perfil (nombre, avatar, institución)                 | Rare           | Medium          | Refuerza la identidad digital, de baja frecuencia pero útil. |
+| 9      | Participar en actividades culturales (ej. viernes cultural) | Sometimes      | Medium          | Genera pertenencia y conexión con la comunidad universitaria. |
+
+Segmento objetivo #2: Profesores de primero a tercer ciclo
+
+| **N°** | **Tarea**                                                    | **Frecuencia** | **Importancia** | **Justificación / Observación**                              |
+| ------ | ------------------------------------------------------------ | -------------- | --------------- | ------------------------------------------------------------ |
+| 1      | Crear actividades y retos académicos                         | Often          | High            | Actividad central del docente en la plataforma.              |
+| 2      | Publicar anuncios o posteos en la comunidad                  | Sometimes      | Medium          | Refuerza la comunicación académica y administrativa.         |
+| 3      | Dar seguimiento al progreso de las actividades               | Sometimes      | High            | Clave para detectar avances y dificultades en clase.         |
+| 4      | Fomentar participación en comunidad/talleres                 | Often          | Medium          | Apoya la motivación y dinamiza el aprendizaje.               |
+| 5      | Detectar estudiantes en riesgo                               | Sometimes      | High            | Fundamental para prevenir la deserción y brindar apoyo temprano. |
+| 6      | Usar la plataforma en vivo durante clase                     | Often          | High            | Incrementa la interacción y refuerza el aprendizaje práctico. |
+| 7      | Calificar entregas con rúbricas o comentarios                | Sometimes      | High            | Permite enriquecer el feedback automático con una mirada pedagógica. |
+| 8      | Configurar parámetros de retos (dificultad, plazos, criterios) | Often          | Medium          | Otorga flexibilidad y adaptación a los objetivos de cada curso. |
+| 9      | Generar y exportar reportes de desempeño                     | Sometimes      | Medium          | Facilita la evaluación académica y la gestión administrativa. |
+
+El análisis del User Task Matrix revela varias tareas que son altamente frecuentes y relevantes para cada segmento:
+
+**Tareas con mayor frecuencia e importancia:**
+
+- **Para estudiantes:**
+
+- Explorar retos semanales y actividades asignadas
+- Resolver retos y enviar soluciones
+- Revisar retroalimentación inmediata de sus envíos
+
+- **Para Profesores:**
+
+- Crear actividades y retos académicos
+- Fomentar participación en comunidad o talleres extracurriculares
+- Usar la plataforma en vivo durante clase 
+
 ### 2.3.3. User Journey Mapping
 ### 2.3.4. Empathy Mapping
 ### 2.3.5. As-is Scenario Mapping
