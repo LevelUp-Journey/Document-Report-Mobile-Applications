@@ -249,8 +249,8 @@ La triangulación de fuentes permitió aumentar la validez de los hallazgos y co
 ### 2.3.1. User Personas
 
 <div align="justify"
-En esta sección se construyeron perfiles representativos denominados “User Personas”, los cuales sintetizan características clave de los usuarios objetivo a partir del análisis cualitativo de entrevistas semi-estructuradas. Cada User Persona refleja patrones comunes de comportamiento, motivaciones, frustraciones, objetivos, dispositivos utilizados, y canales de información. Esta herramienta permitió traducir datos individuales en arquetipos comprensibles que orientan el diseño centrado en el usuario, facilitando decisiones estratégicas en cuanto a funcionalidades, experiencia de usuario y comunicación visual. Se desarrollaron dos perfiles principales: uno correspondiente a Estudiantes de primero a tercer ciclo, y otro a Profesores de primero a tercer ciclo.
 
+En esta sección se construyeron perfiles representativos denominados “User Personas”, los cuales sintetizan características clave de los usuarios objetivo a partir del análisis cualitativo de entrevistas semi-estructuradas. Cada User Persona refleja patrones comunes de comportamiento, motivaciones, frustraciones, objetivos, dispositivos utilizados, y canales de información. Esta herramienta permitió traducir datos individuales en arquetipos comprensibles que orientan el diseño centrado en el usuario, facilitando decisiones estratégicas en cuanto a funcionalidades, experiencia de usuario y comunicación visual. Se desarrollaron dos perfiles principales: uno correspondiente a Estudiantes de primero a tercer ciclo, y otro a Profesores de primero a tercer ciclo.
 
 
 **Segmento objetivo #1:Estudiantes de primero a tercer ciclo**
@@ -325,6 +325,19 @@ El análisis del User Task Matrix revela varias tareas que son altamente frecuen
 ![EmpathyMaps-User1](../chapter2/assets/Empathy-Mapping/EmpathyMaps-User2.png)
 
 ### 2.3.5. As-is Scenario Mapping
+
+En el caso del estudiante, la experiencia actual depende de entornos externos (IDE locales, tutoriales en YouTube) y se caracteriza por recibir retroalimentación tardía, a menudo días después de la entrega. Esto provoca ansiedad, pérdida de motivación y una percepción de falta de progreso. Los estudiantes entrevistados expresaron que necesitan feedback claro e inmediato, así como sistemas de reconocimiento visibles (puntos, rankings) para sostener su interés.
+
+**Segmento objetivo #1: Estudiantes de primero a tercer ciclo**
+
+<img src="https://i.imgur.com/ILVueKS.png" alt="ASIS-USER1" width="1000"/>
+
+**Segmento objetivo #2: Profesores de primero a tercer ciclo**
+
+<img src="https://i.imgur.com/WFyQ0Qw.png" alt="ASIS-USER2" width="1000"/>
+
+
+
 ## 2.4. Ubiquitous Language
 
 | Term      | Definition                                                   |
