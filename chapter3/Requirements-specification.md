@@ -82,6 +82,8 @@ Con base en esta información, se establecieron cinco objetivos estratégicos (B
 
 Cada uno de estos objetivos se desglosa en el mapa en impactos esperados (impacts) sobre el comportamiento de los estudiantes y profesores; entregables (deliverables) que la plataforma debe implementar para promover dichos cambios; y user stories que especifican, de forma técnica, los requerimientos de cada funcionalidad. De este modo, el Impact Mapping permitió garantizar la coherencia entre las necesidades detectadas en el proceso de investigación y las decisiones de diseño y desarrollo, asegurando que cada funcionalidad propuesta aporte de forma directa y medible al logro de los objetivos del proyecto.
 
+![Impact-Map-1](../chapter3/assets/Impact-Mapping/Impact-Map-1.png)
+
 </div>
 
 ## 3.4. Product Backlog.
