@@ -26,7 +26,7 @@
 | Alumno, Código y Carrera                                     | Foto de los integrantes del equipo                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Alumno: Acuña Corahua, Jonatan Ariel <br/>Código: u20211b995 <br/>Carrera: Ingeniería de software | <img src="https://i.imgur.com/N93qDlW.png" alt="Jonatan-Acuna" width="150"/> |
-| Alumno: Aleman Romano, Dante Mateo<br/>Código: u202319963 <br/>Carrera: Ingeniería de Software | <img src="https://i.imgur.com/mVzPEpe.jpeg" alt="Mateo-Aleman" width="150"/> |
+| Alumno: Aleman Romano, Dante Mateo<br/>Código: u202319963 <br/>Carrera: Ingeniería de Software<br /><br />Soy estudiante de Ingeniería de Software en UPC, con 19 años y en el quinto ciclo. Apasionado por tecnología y videojuegos, busco proyectos innovadores con impacto positivo. Con habilidades colaborativas, aspiro a contribuir y aprender en equipo, enfrentando objetivos y desafíos tecnológicos con determinación. | <img src="https://i.imgur.com/mVzPEpe.jpeg" alt="Mateo-Aleman" width="150"/> |
 | Alumno: Contreras Peralta, Fabrizio Alessandro<br/>Código: U202319889<br/>Carrera: Ingeniería de Software | <img src="https://i.imgur.com/wqD5wSB.jpeg" alt="Fabrizio-Contreras" width="150"/> |
 | Alumno: Romina Guadalupe Maita Falckenheiner <br/>Código: u202213765 <br/>Carrera: Ingeniería de software | <img src="https://i.imgur.com/iehbE4C.jpeg" alt="Romina-Maita" width="150"/> |
 | Alumno: Paolo Alessandro Torres Flores <br/>Código: u20221f613 <br/>Carrera: Ingeniería de software | <img src="https://i.imgur.com/G7x5l83.png" alt="Romina-Maita" width="150"/> |
