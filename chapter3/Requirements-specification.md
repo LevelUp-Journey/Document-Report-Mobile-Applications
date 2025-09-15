@@ -76,6 +76,25 @@ Para el docente, la plataforma centraliza la gestión de retos y automatiza la r
 |      US53       |              Token Issuance (Login)              | As a DeveloperI want the gateway to authenticate credentials and issue tokensSo that downstream services receive a verified identity. | Scenario: Issue tokens on valid credentialsGiven the user exists and the password hash matchesWhen POST /auth/login with valid bodyThen 200 with accessToken (JWT) and refreshToken Scenario: Reject invalid credentialsWhen POST /auth/login with wrong passwordThen 401 with title "Unauthorized" Scenario: Enforce lockoutGiven 5 failed attempts within 10 minutesWhen POST /auth/loginThen 423 with title "Account Locked" |                         2 |
 
 ## 3.3. Impact Mapping.
+
+<div align="justify"
+
+El presente apartado expone el Impact Mapping, cuyo objetivo es fortalecer el aprendizaje y la permanencia de los estudiantes durante sus primeros ciclos académicos. Esta herramienta permitió vincular de manera sistemática los objetivos estratégicos del proyecto con los comportamientos esperados de sus principales actores, así como con los entregables y funcionalidades necesarios para alcanzarlos.
+
+Para la construcción del mapa, se identificaron dos segmentos clave: los estudiantes de primer ciclo (representados por la persona ficticia Jonatan Velásquez) y los profesores de primeros ciclos (representados por Ariel Maslucan). Ambos segmentos fueron definidos a partir de entrevistas de necesidad (needfinding), donde se exploraron sus motivaciones, dificultades y expectativas frente al uso de la plataforma.
+
+Con base en esta información, se establecieron cinco objetivos estratégicos (Business Goals) medibles y alcanzables:
+
+- Incrementar en un 20 % la tasa de aprobación en cursos introductorios,
+- Lograr que el 70 % de estudiantes activos participen al menos una vez por semana en la plataforma,
+- Aumentar en 15 % la retención de estudiantes de primero a tercer ciclo,
+- Mejorar en 30 % la participación en actividades extracurriculares (Viernes Cultural), y
+- Reducir en 25 % la cantidad de tareas no entregadas en cursos introductorios.
+
+Cada uno de estos objetivos se desglosa en el mapa en impactos esperados (impacts) sobre el comportamiento de los estudiantes y profesores; entregables (deliverables) que la plataforma debe implementar para promover dichos cambios; y user stories que especifican, de forma técnica, los requerimientos de cada funcionalidad. De este modo, el Impact Mapping permitió garantizar la coherencia entre las necesidades detectadas en el proceso de investigación y las decisiones de diseño y desarrollo, asegurando que cada funcionalidad propuesta aporte de forma directa y medible al logro de los objetivos del proyecto.
+
+</div>
+
 ## 3.4. Product Backlog.
 
 
