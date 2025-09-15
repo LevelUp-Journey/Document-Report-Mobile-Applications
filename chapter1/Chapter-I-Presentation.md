@@ -23,7 +23,7 @@
 <div align="center">
 
 
-|                                                              | Alumno, Código y Carrera                                     | Acerca de                                                    |
+| Foto del integrante                                          | Alumno, Código y Carrera                                     | Acerca de                                                    |
 | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | <img src="https://i.imgur.com/N93qDlW.png" alt="Jonatan-Acuna" width="500"/> | Alumno: Acuña Corahua, Jonatan Ariel <br/>Código: u20211b995 <br/>Carrera: Ingeniería de software<br /><br /> | Soy estudiante del 6to ciclo de la carrera de Ingeniería de Software en la UPC. Me gustó la carrera tras aprender desarrollo web y desde entonces, sigo aprendiendo para mejorar mis habilidades cada vez más. Me gusta aprender sobre las nuevas tecnologías de la web, jugar videojuegos y de vez en cuando salir en bicicleta. |
 | <img src="https://i.imgur.com/mVzPEpe.jpeg" alt="Mateo-Aleman" width="500"/> | Alumno: Aleman Romano, Dante Mateo<br/>Código: u202319963 <br/>Carrera: Ingeniería de Software<br /> | Soy estudiante de Ingeniería de Software en UPC, con 19 años y en el quinto ciclo. Apasionado por tecnología y videojuegos, busco proyectos innovadores con impacto positivo. Con habilidades colaborativas, aspiro a contribuir y aprender en equipo, enfrentando objetivos y desafíos tecnológicos con determinación. |
