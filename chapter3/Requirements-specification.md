@@ -88,7 +88,50 @@ Cada uno de estos objetivos se desglosa en el mapa en impactos esperados (impact
 
 ## 3.4. Product Backlog.
 
-
+| # Orden | Epic / Story ID | Título                                          | Descripción                                                  | Relacionado con (Epic ID) |
+| ------- | --------------- | ----------------------------------------------- | ------------------------------------------------------------ | ------------------------- |
+| 1       | US01            | Student Registration                            | As a Student I want to access the Sign-up page So that I can register with my email and password | 1                         |
+| 2       | US02            | Add Student through RESTful API                 | As a Developer I want to add a Student through the API So that it can be available to build features for my applications. | 1                         |
+| 3       | US03            | Student Authentication                          | As a Student I want to access the Sign-in page So that I can authenticate with my email and password | 1                         |
+| 4       | US04            | Add Authenticate Student through RESTful API    | As a Developer I want to authenticate a Student through the API So that the Student can access the protected functionalities of the application | 1                         |
+| 5       | US53            | Token Issuance (Login)                          | As a Developer I want the gateway to authenticate credentials and issue tokens So that downstream services receive a verified identity. | 2                         |
+| 6       | US05            | Posting                                         | As a Teacher I want to create a post with text and images So that I can interact with my students and communicate events | 3                         |
+| 7       | US06            | Posting through RESTful API                     | As a Developer I want to create a community post via the API So that professors can publish validated content safely | 3                         |
+| 8       | US07            | Liking                                          | As a Student I want to like or unlike a community post So that I can express my opinion and support others | 3                         |
+| 9       | US08            | Commenting                                      | As a Student I want to write a comment under a post So that I can participate in the discussion | 3                         |
+| 10      | US09            | Liking trough API                               | As a Developer I want to register likes/unlikes through the API So that user interactions are consistent and secure | 3                         |
+| 11      | US10            | Commenting trough API                           | As a Developer I want to add, validate, and store comments through the API So that students can safely interact under posts | 3                         |
+| 12      | US44            | Live Session Dashboard                          | As a Teacher I want to see studentCount, responseDistribution, and averageResponseTime So that I can monitor the class in real time. | 4                         |
+| 13      | US45            | Response Distribution Chart                     | As a Teacher I want a chart of responses (A/B/C/D or numbers) So that I can identify misconceptions quickly. | 4                         |
+| 14      | US46            | Average Time Panel                              | As a Teacher I want to see the average response time for the current question So that I can pace the session. | 4                         |
+| 15      | US47            | Events Ingestion API                            | As a Developer I want to ingest participation events (join/response) So that the aggregator can compute real-time metrics. | 4                         |
+| 16      | US48            | Real-time Stream API                            | As a Developer I want to stream live snapshots to the teacher UI So that metrics update without polling. | 4                         |
+| 17      | US49            | View Quiz Summary Report                        | As an Admin I want to view average score, participation rate, and average response time for a quiz So that I can gauge overall performance. | 5                         |
+| 18      | US50            | Hardest Questions                               | As an Admin I want a list of the hardest questions (lowest correctness rate) So that I can spot misconceptions. | 5                         |
+| 19      | US51            | Quiz Summary API                                | As a Developer I want an endpoint to retrieve quiz-level metrics So that the UI can render the summary panel. | 5                         |
+| 20      | US52            | Per-Question Stats API                          | I want an endpoint to retrieve per-question statistics So that the UI can show hardest questions and drilldowns. | 5                         |
+| 21      | US11            | Add Profile settings trough Front-end           | As a Student I want to edit my profile (name, username, avatar) So that I can personalize my experience in the platform | 6                         |
+| 22      | US12            | Add Create Profile trough API                   | As a Developer I want to create a user profile via API So that new users can initialize their profile | 6                         |
+| 23      | US13            | Add Update Profile trough API                   | As a Developer I want to update an existing user profile via API So that users can edit their name, username and avatar | 6                         |
+| 24      | US14            | Add pogress for student via Front-end           | As a Student I want to view my level, points, badges, and streak So that I stay motivated and track my growth | 7                         |
+| 25      | US15            | Add Leaderboard trough Front-end                | As a Student I want to view leaderboards by scope (global, class, challenge) So that I can compare my progress and stay engaged | 7                         |
+| 26      | US16            | Add progress trough API                         | As a Developer I want to return current progress (level, points, badges, streak) So that the student dashboard can be rendered | 7                         |
+| 27      | US17            | Add Leaderboard trough APi                      | As a Developer I want a unified leaderboard endpoint So that the client can fetch ranks by scope and period | 7                         |
+| 28      | US18            | Add Unified list of activities trough Front-end | As a Student I want to see all my assigned activities in one place So that I can plan and prioritize my study time | 8                         |
+| 29      | US19            | Add List Student Activities trough API          | As a Developer, I want to fetch a student’s activities via API so that the Front-end can display them in “My Activities.” | 8                         |
+| 30      | US20            | Add Activity Details trough API                 | As a Developer, I want to retrieve activity details so that students can view instructions, links, and submission options. | 8                         |
+| 31      | US21            | Add View Class Progress via Front-end           | As a Teacher I want a class progress overview with key metrics (completion, average score, late submissions) So that I can quickly spot strengths and weaknesses at a glance. | 9                         |
+| 32      | US22            | View Student Progress (Detail)                  | As a Teacher I want to open a student’s progress detail So that I can review their completed/pending activities. | 9                         |
+| 33      | US23            | Create Activity (Task)                          | As a Teacher I want to create a new activity for my class So that students can see instructions and a due date. | 9                         |
+| 34      | US24            | Add Edit / Close Activity via Front-end         | As a Teacher I want to edit an existing activity and optionally close submissions So that I can correct details and stop late work. | 9                         |
+| 35      | US25            | Progress API (class-level)                      | As a Developer I want an endpoint to retrieve class progress (simple metrics + student rows) So that the UI can render the progress view. | 9                         |
+| 36      | US26            | Create Activity API                             | As a Developer I want an endpoint to retrieve a single student’s activity list in a class So that the UI can show their detail. | 9                         |
+| 37      | US27            | Update/Publish/Close Activity API               | As a Developer I want to create a class activity So that teachers can add tasks. | 9                         |
+| 38      | US28            | Submit and See Instant Feedback (auto-gradable) | As a Student I want to see my score and basic feedback right after I submit an auto-gradable activity So that I know what I did right or wrong immediately. | 10                        |
+| 39      | US29            | View Detailed Feedback                          | As a Student I want to open detailed feedback of my submission So that I can learn from explanations and rubric notes. | 10                        |
+| 40      | US30            | View Detailed Feedback                          | As a Student I want to retry an activity and get updated feedback So that I can improve within the allowed attempts. | 10                        |
+| 41      | US31            | Create Submission with Immediate Feedback       | As a Developer I want an endpoint that creates a submission and (if auto-gradable) returns immediate feedback So that the students can read results right away. | 10                        |
+| 42      | US32            | Feedback Visibility Policy (simple)             | As a Developer I want to expose the feedback/solution visibility policy for an activity So that the studens knows what to read after submission. | 10                        |
 
 
 
