@@ -27,9 +27,9 @@
     <td>(En la cabecera colocar por cada competidor nombre y logo)</td>
     <td></td>
     <th>Level Up Journey</th>
-    <th>Kahoot</th>
-    <th>Wayground</th>
-    <th>Codecademy Go</th>
+    <th><div align="center"><br><img src="https://i.imgur.com/p9EK8sf.png" alt="Kahoot" width="150"/></div><br>Kahoot</th>
+    <th><div align="center"><br><img src="https://i.imgur.com/FJwVJpW.png" alt="Wayground" width="150"/></div><br>Wayground</th>
+    <th><div align="center"><br><br><img src="https://i.imgur.com/ibecjIP.png" alt="Codecademy-Go" width="150"/></div><br>Codecademy Go</th>
   </tr>
 
   <!-- PERFIL -->
