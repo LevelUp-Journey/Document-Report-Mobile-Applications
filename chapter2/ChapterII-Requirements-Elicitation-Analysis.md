@@ -77,9 +77,6 @@ Level Up Journey</th>
   <!-- ANÁLISIS SWOT -->
   <tr>
     <td rowspan="5">Análisis SWOT</td>
-    <td colspan="5">
-      Realice esto para su startup y sus competidores. Sus fortalezas deberían apoyar sus oportunidades y contribuir a lo que ustedes definen como su posible ventaja competitiva.
-    </td>
   </tr>
   <tr>
     <td>Fortalezas</td>
