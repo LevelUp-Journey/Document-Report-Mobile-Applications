@@ -20,11 +20,11 @@
   </tr>
   <tr>
     <td>¿Por qué llevar a cabo este análisis?</td>
-    <td colspan="5">Escriba en el recuadro la pregunta que busca responder o el objetivo de este análisis.</td>
+    <td colspan="5">El objetivo de este análisis es comparar y encontrar fortalezas y debilidades frente a competidores directamente relaciones con nuestro producto para así poder, efectivamente, desarrollar estrategias y tácticas frente a ellos y crecer en el mercado objetivo. </td>
   </tr>
 
   <tr>
-    <td>(En la cabecera colocar por cada competidor nombre y logo)</td>
+    <td>Categorías / Competidores</td>
     <td></td>
     <th><div align="center"><br><img src="https://github.com/user-attachments/assets/aecd4e56-c0d4-4857-a379-07cf9e6a4a99" alt="levelUpJourney" width="150"/></div><br>
 Level Up Journey</th>
