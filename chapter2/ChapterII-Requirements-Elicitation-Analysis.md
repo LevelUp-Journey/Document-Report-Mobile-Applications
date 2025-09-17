@@ -26,7 +26,8 @@
   <tr>
     <td>(En la cabecera colocar por cada competidor nombre y logo)</td>
     <td></td>
-    <th>Level Up Journey</th>
+    <th><div align="center"><br><img src="https://github.com/user-attachments/assets/aecd4e56-c0d4-4857-a379-07cf9e6a4a99" alt="levelUpJourney" width="150"/></div><br>
+Level Up Journey</th>
     <th><div align="center"><br><img src="https://i.imgur.com/p9EK8sf.png" alt="Kahoot" width="150"/></div><br>Kahoot</th>
     <th><div align="center"><br><img src="https://i.imgur.com/FJwVJpW.png" alt="Wayground" width="150"/></div><br>Wayground</th>
     <th><div align="center"><br><br><img src="https://i.imgur.com/ibecjIP.png" alt="Codecademy-Go" width="150"/></div><br>Codecademy Go</th>
