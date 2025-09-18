@@ -109,15 +109,22 @@ La **Software Architecture** traduce el diseño estratégico en una arquitectura
 
 Los **diagramas de nivel de contexto** proporcionan una vista de alto nivel del sistema LevelUpJourney, mostrando cómo interactúa con usuarios externos y sistemas externos.
 
-##### Elementos incluidos:
-- **Sistema LevelUpJourney**: Como caja negra central
-- **Actores externos**: Estudiantes, Profesores, Administradores
-- **Sistemas externos**: Servicios de autenticación, APIs de terceros
-- **Flujos de datos principales**: Información que entra y sale del sistema
+<img src="../chapter4/assets/c4/ContextDiagram.png" alt="C4 Context Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+Identificamos que los usuarios quienes van a interactuar con el sistema son 3.
+- Student: Estudiante que participa dentro de la plataforma para mejorar sus habilidades de programación
+- Teacher: Profesor que crea contenido para que los estudiantes puedan aprender de manera interactiva y dinamica.
+- Admin: Administra la plataforma
+
+Como sistemas externos identificamos:
+- Google OAuth Provider: Facilita el inicio de sesión de los usuarios 
+- Github OAuth Provider: Facilita el inicio de sesión de los usuarios 
 
 #### 4.1.3.2. Software Architecture Container Level Diagrams
 
 Los **diagramas de nivel de contenedor** descomponen el sistema LevelUpJourney en contenedores de alto nivel, mostrando las principales tecnologías y responsabilidades.
+
+<img src="../chapter4/assets/c4/ContainerDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.1.3.3. Software Architecture Deployment Diagrams
 
