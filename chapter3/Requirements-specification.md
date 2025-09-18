@@ -19,7 +19,36 @@ Para el docente, la plataforma centraliza la gestión de retos y automatiza la r
 
 ## 3.2. User Stories.
 
-Historias de Usuario
+<div align="justify"
+
+
+La elaboración de las user stories en esta sección partió de la definición previa de las épicas, que permitieron agrupar los requisitos en bloques funcionales coherentes y alineados con los objetivos del proyecto. Las épicas funcionaron como marcos conceptuales amplios que organizaron las funcionalidades por áreas clave de valor, asegurando que cada conjunto de historias respondiera a una necesidad estratégica concreta identificada en el análisis TO-BE y en el impact mapping.
+
+A partir de cada épica se redactaron user stories que describen, desde la perspectiva del usuario final, las funcionalidades esperadas y el propósito que persiguen. Estas historias se detallaron con criterios de aceptación claros para definir el comportamiento esperado del sistema y facilitar su validación. Este enfoque permitió transformar objetivos generales en funcionalidades pequeñas, independientes y priorizables, manteniendo la trazabilidad con su épica de origen y con los objetivos de aprendizaje y retención definidos para el proyecto.
+
+De forma complementaria, se definieron technical stories asociadas a las mismas épicas. Estas especifican los componentes técnicos, integraciones, APIs y servicios necesarios para que las user stories puedan implementarse de forma segura y escalable. Así, las user stories representan el valor funcional que recibe el usuario, mientras que las technical stories aseguran la base técnica que lo hace posible, permitiendo planificar y desarrollar el sistema de forma iterativa y coherente.
+
+</div> <br />
+
+| N°   | Epic Title                                                   |
+| ---- | ------------------------------------------------------------ |
+| 1    | Como estudiante, quiero registrarme en la plataforma con mis credenciales para poder acceder a todas las funcionalidades básicas. |
+| 2    | Como usuario, quiero iniciar sesión de forma segura mediante autenticación en el sistema para proteger mi información personal. |
+| 3    | Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos. |
+| 4    | Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño. |
+| 5    | Como administrador, quiero generar reportes de quizzes (promedio de puntajes, preguntas más difíciles, tiempos de respuesta) para identificar oportunidades de mejora. |
+| 6    | Como usuario, quiero crear y editar mi perfil con nombre, avatar e institución para personalizar mi experiencia en la plataforma. |
+| 7    | Como estudiante, quiero visualizar mi progreso mediante niveles, rangos o puntajes para motivarme a seguir aprendiendo. |
+| 8    | Como estudiante, quiero acceder a todas mis actividades asignadas desde un solo lugar para organizar mejor mi tiempo de estudio. |
+| 9    | Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades. |
+| 10   | Como estudiante, quiero recibir retroalimentación inmediata después de completar cada actividad para mejorar continuamente mi desempeño. |
+| 11   | Como estudiante, quiero recibir retroalimentación instantánea, puntos, insignias y progreso de nivel tras enviar un reto para mantenerme motivado. |
+| 12   | Como profesor, quiero crear desafíos de programación y configurar validaciones de solo compilación y linting para que los estudiantes puedan detectar errores comunes antes de la ejecución. |
+
+<br />
+
+1. **Historias de Usuario**
+
 <table>
 <tr>
 <th>Story ID</th>
@@ -31,7 +60,7 @@ Historias de Usuario
 <td>US01</td>
 <td>Estudiante</td>
 <td>1</td>
-<td>IAM</td>
+<td>Como estudiante, quiero registrarme en la plataforma con mis credenciales para poder acceder a todas las funcionalidades básicas.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -72,7 +101,7 @@ Como un estudiante, quiero acceder a la página de Registro para poder registrar
 <td>US02</td>
 <td>Estudiante</td>
 <td>1</td>
-<td>IAM</td>
+<td>Como estudiante, quiero registrarme en la plataforma con mis credenciales para poder acceder a todas las funcionalidades básicas.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -114,7 +143,7 @@ Como un estudiante, quiero acceder a la página de Inicio de sesión para poder 
 <td>US03</td>
 <td>Profesor</td>
 <td>3</td>
-<td>Community</td>
+<td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -156,7 +185,7 @@ Como un profesor, quiero crear una publicación con texto e imágenes para poder
 <td>US04</td>
 <td>Estudiante</td>
 <td>3</td>
-<td>Community</td>
+<td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -197,7 +226,7 @@ Como un estudiante, quiero dar "Me gusta" o "Ya no me gusta" a una publicación 
 <td>US05</td>
 <td>Estudiante</td>
 <td>3</td>
-<td>Community</td>
+<td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -239,7 +268,7 @@ Como un estudiante, quiero escribir un comentario bajo una publicación para pod
 <td>US06</td>
 <td>Profesor</td>
 <td>4</td>
-<td>Analytics</td>
+<td>Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -279,7 +308,7 @@ Como un profesor, quiero ver el recuento de estudiantes, la distribución de res
 <td>US07</td>
 <td>Profesor</td>
 <td>4</td>
-<td>Analytics</td>
+<td>Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -318,7 +347,7 @@ Como un profesor, quiero un gráfico de respuestas (A/B/C/D o números) para pod
 <td>US08</td>
 <td>Profesor</td>
 <td>4</td>
-<td>Analytics</td>
+<td>Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -357,7 +386,7 @@ Como un profesor, quiero ver el tiempo de respuesta promedio para la pregunta ac
 <td>US09</td>
 <td>Administrador</td>
 <td>5</td>
-<td>Analytics</td>
+<td>Como administrador, quiero generar reportes de quizzes (promedio de puntajes, preguntas más difíciles, tiempos de respuesta) para identificar oportunidades de mejora.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -397,7 +426,7 @@ Como un administrador, quiero ver el puntaje promedio, la tasa de participación
 <td>US10</td>
 <td>Administrador</td>
 <td>5</td>
-<td>Analytics</td>
+<td>Como administrador, quiero generar reportes de quizzes (promedio de puntajes, preguntas más difíciles, tiempos de respuesta) para identificar oportunidades de mejora.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -436,7 +465,7 @@ Como un administrador, quiero una lista de las preguntas más difíciles (tasa d
 <td>US11</td>
 <td>Estudiante</td>
 <td>6</td>
-<td>User Profile</td>
+<td>Como usuario, quiero crear y editar mi perfil con nombre, avatar e institución para personalizar mi experiencia en la plataforma.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -478,7 +507,7 @@ Como un estudiante, quiero editar mi perfil (nombre, nombre de usuario, avatar) 
 <td>US12</td>
 <td>Estudiante</td>
 <td>7</td>
-<td>User Profile</td>
+<td>Como estudiante, quiero visualizar mi progreso mediante niveles, rangos o puntajes para motivarme a seguir aprendiendo.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -519,7 +548,7 @@ Como un estudiante, quiero ver mi nivel, puntos, insignias y racha para mantener
 <td>US13</td>
 <td>Estudiante</td>
 <td>7</td>
-<td>User Profile</td>
+<td>Como estudiante, quiero visualizar mi progreso mediante niveles, rangos o puntajes para motivarme a seguir aprendiendo.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -562,7 +591,7 @@ Como un estudiante, quiero ver las clasificaciones por alcance (global, clase, d
 <td>US14</td>
 <td>Estudiante</td>
 <td>8</td>
-<td>Class Activities</td>
+<td>Como estudiante, quiero acceder a todas mis actividades asignadas desde un solo lugar para organizar mejor mi tiempo de estudio.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -603,7 +632,7 @@ Como un estudiante, quiero ver todas mis actividades asignadas en un solo lugar 
 <td>US15</td>
 <td>Profesor</td>
 <td>9</td>
-<td>Class Activities</td>
+<td>Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -643,7 +672,7 @@ Como un profesor, quiero una visión general del progreso de la clase con métri
 <td>US16</td>
 <td>Profesor</td>
 <td>9</td>
-<td>Class Activities</td>
+<td>Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -683,7 +712,7 @@ Como un profesor, quiero abrir el detalle del progreso de un estudiante para pod
 <td>US17</td>
 <td>Profesor</td>
 <td>9</td>
-<td>Class Activities</td>
+<td>Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -723,7 +752,7 @@ Como un profesor, quiero crear una nueva actividad para mi clase para que los es
 <td>US18</td>
 <td>Profesor</td>
 <td>9</td>
-<td>Class Activities</td>
+<td>Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -763,7 +792,7 @@ Como un profesor, quiero editar una actividad existente y opcionalmente cerrar l
 <td>US19</td>
 <td>Estudiante</td>
 <td>10</td>
-<td>Class Activities</td>
+<td>Como estudiante, quiero recibir retroalimentación inmediata después de completar cada actividad para mejorar continuamente mi desempeño.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -803,7 +832,7 @@ Como estudiante, quiero ver mi puntaje y una retroalimentación básica justo de
 <td>US20</td>
 <td>Estudiante</td>
 <td>10</td>
-<td>Class Activities</td>
+<td>Como estudiante, quiero recibir retroalimentación inmediata después de completar cada actividad para mejorar continuamente mi desempeño.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -843,7 +872,7 @@ Como estudiante, quiero abrir la retroalimentación de mi entrega para poder apr
 <td>US21</td>
 <td>Estudiante</td>
 <td>10</td>
-<td>Class Activities</td>
+<td>Como estudiante, quiero recibir retroalimentación inmediata después de completar cada actividad para mejorar continuamente mi desempeño.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -872,8 +901,12 @@ Como estudiante, quiero volver a intentar una actividad y recibir retroalimentac
 </td>
 </tr>
 </table>
+<br />
 
-Historias Técnicas
+2. **Historias Técnicas**
+ 
+<br />
+
 <table>
 <tr>
 <th>Story ID</th>
@@ -885,7 +918,7 @@ Historias Técnicas
 <td>TS01</td>
 <td>Desarrollador</td>
 <td>1</td>
-<td>IAM</td>
+<td>Como estudiante, quiero registrarme en la plataforma con mis credenciales para poder acceder a todas las funcionalidades básicas.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -927,7 +960,7 @@ Como Desarrollador, quiero añadir un Estudiante a través de la API para que es
 <td>TS02</td>
 <td>Desarrollador</td>
 <td>1</td>
-<td>IAM</td>
+<td>Como estudiante, quiero registrarme en la plataforma con mis credenciales para poder acceder a todas las funcionalidades básicas.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -970,7 +1003,7 @@ Como Desarrollador, quiero autenticar a un Estudiante a través de la API para q
 <td>TS03</td>
 <td>Desarrollador</td>
 <td>2</td>
-<td>API Gateway</td>
+<td>Como usuario, quiero iniciar sesión de forma segura mediante autenticación en el sistema para proteger mi información personal.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1011,7 +1044,7 @@ Como Desarrollador, quiero que la puerta de enlace (gateway) autentique las cred
 <td>TS04</td>
 <td>Desarrollador</td>
 <td>3</td>
-<td>Community</td>
+<td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1054,7 +1087,7 @@ Como Desarrollador, quiero crear una publicación de la comunidad a través de l
 <td>TS05</td>
 <td>Desarrollador</td>
 <td>3</td>
-<td>Community</td>
+<td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1095,7 +1128,7 @@ Como Desarrollador, quiero registrar "Me gusta" y "Ya no me gusta" a través de 
 <td>TS06</td>
 <td>Desarrollador</td>
 <td>3</td>
-<td>Community</td>
+<td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1137,7 +1170,7 @@ Como Desarrollador, quiero agregar, validar y almacenar comentarios a través de
 <td>TS07</td>
 <td>Desarrollador</td>
 <td>4</td>
-<td>Analytics</td>
+<td>Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1182,7 +1215,7 @@ Como Desarrollador, quiero ingerir eventos de participación (unirse/responder) 
 <td>TS08</td>
 <td>Desarrollador</td>
 <td>4</td>
-<td>Analytics</td>
+<td>Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1225,7 +1258,7 @@ Como Desarrollador, quiero transmitir instantáneas en vivo a la interfaz de usu
 <td>TS09</td>
 <td>Desarrollador</td>
 <td>5</td>
-<td>Analytics</td>
+<td>Como administrador, quiero generar reportes de quizzes (promedio de puntajes, preguntas más difíciles, tiempos de respuesta) para identificar oportunidades de mejora.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1269,7 +1302,7 @@ Como Desarrollador, quiero un endpoint para recuperar métricas a nivel de cuest
 <td>TS10</td>
 <td>Desarrollador</td>
 <td>5</td>
-<td>Analytics</td>
+<td>Como administrador, quiero generar reportes de quizzes (promedio de puntajes, preguntas más difíciles, tiempos de respuesta) para identificar oportunidades de mejora.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1310,7 +1343,7 @@ Como Desarrollador, quiero un endpoint para recuperar estadísticas por pregunta
 <td>TS11</td>
 <td>Desarrollador</td>
 <td>6</td>
-<td>User Profile</td>
+<td>Como usuario, quiero crear y editar mi perfil con nombre, avatar e institución para personalizar mi experiencia en la plataforma.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1352,7 +1385,7 @@ Como Desarrollador, quiero crear un perfil de usuario a través de la API para q
 <td>TS12</td>
 <td>Desarrollador</td>
 <td>6</td>
-<td>User Profile</td>
+<td>Como usuario, quiero crear y editar mi perfil con nombre, avatar e institución para personalizar mi experiencia en la plataforma.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1393,7 +1426,7 @@ Como Desarrollador, quiero actualizar un perfil de usuario existente a través d
 <td>TS13</td>
 <td>Desarrollador</td>
 <td>7</td>
-<td>User Profile</td>
+<td>Como estudiante, quiero visualizar mi progreso mediante niveles, rangos o puntajes para motivarme a seguir aprendiendo.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1432,7 +1465,7 @@ Como Desarrollador, quiero devolver el progreso actual (nivel, puntos, insignias
 <td>TS14</td>
 <td>Desarrollador</td>
 <td>7</td>
-<td>User Profile</td>
+<td>Como estudiante, quiero visualizar mi progreso mediante niveles, rangos o puntajes para motivarme a seguir aprendiendo.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1474,7 +1507,7 @@ Como Desarrollador, quiero un endpoint de clasificación unificado para que el c
 <td>TS15</td>
 <td>Desarrollador</td>
 <td>8</td>
-<td>Class Activities</td>
+<td>Como estudiante, quiero acceder a todas mis actividades asignadas desde un solo lugar para organizar mejor mi tiempo de estudio.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1516,7 +1549,7 @@ Como Desarrollador, quiero obtener las actividades de un estudiante a través de
 <td>TS16</td>
 <td>Desarrollador</td>
 <td>8</td>
-<td>Class Activities</td>
+<td>Como estudiante, quiero acceder a todas mis actividades asignadas desde un solo lugar para organizar mejor mi tiempo de estudio.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1558,7 +1591,7 @@ Como Desarrollador, quiero recuperar los detalles de la actividad para que los e
 <td>TS17</td>
 <td>Desarrollador</td>
 <td>9</td>
-<td>Class Activities</td>
+<td>Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1601,7 +1634,7 @@ Como Desarrollador, quiero un endpoint para recuperar el progreso de la clase (m
 <td>TS18</td>
 <td>Desarrollador</td>
 <td>9</td>
-<td>Class Activities</td>
+<td>Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1640,7 +1673,7 @@ Como Desarrollador, quiero un endpoint para recuperar la lista de actividades de
 <td>TS19</td>
 <td>Desarrollador</td>
 <td>10</td>
-<td>Class Activities</td>
+<td>Como estudiante, quiero recibir retroalimentación inmediata después de completar cada actividad para mejorar continuamente mi desempeño.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1681,7 +1714,7 @@ Como desarrollador, quiero un endpoint que cree una entrega y (si es autocalific
 <td>TS20</td>
 <td>Desarrollador</td>
 <td>10</td>
-<td>Class Activities</td>
+<td>Como estudiante, quiero recibir retroalimentación inmediata después de completar cada actividad para mejorar continuamente mi desempeño.</td>
 </tr>
 <tr>
 <th colspan="4">Title</th>
@@ -1708,6 +1741,7 @@ Como desarrollador, quiero exponer la política de visibilidad de retroalimentac
 </td>
 </tr>
 </table>
+
 
 ## 3.3. Impact Mapping.
 
