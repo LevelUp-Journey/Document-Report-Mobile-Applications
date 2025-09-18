@@ -19,50 +19,1695 @@ Para el docente, la plataforma centraliza la gestión de retos y automatiza la r
 
 ## 3.2. User Stories.
 
-| Epic / Story ID | Título                                          | Descripción                                                  | Criterios de Aceptación                                      | Relacionado con (Epic ID) |
-| --------------- | ----------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------- |
-| US01            | Student Registration                            | As a Student I want to access the Sign-up page So that I can register with my email and password | Scenario: User opens Sign-up page   Given the user is not authenticated   When the user navigates to the "Sign-up" page   Then the system displays the registration form   And the user is able to register  Scenario: User registers successfully   Given the Sign-up page is displayed   When the user enters a valid input   And proceeds to registration   Then the system validates the input   And the system redirects the user to the Sign-in page  Scenario: Empty input field   Given the Sign-up page is displayed   When the user leaves the an input field empty   And proceeds to registration   Then the system shows an error message | 1                         |
-| US02            | Add Student through RESTful API                 | As a Developer I want to add a Student through the API So that it can be available to build features for my applications. | Scenario: Add Student with unique email  Given the endpoint /api/v1/authentication/sign-up is available When a POST request is sent with values for email, password, and name And the email does not already exist in the database Then a response is received with Status 201 And a Student Resource is included in the Response Body with:   a new generated ID   registered values for email and name   role: STUDENT And the password is stored hashed with BCrypt  Scenario: Add Student with existing email  Given the endpoint /api/v1/authentication/sign-up is available When a POST request is sent with values for email, password, and name And a Student Resource with the same email is already stored Then a response is received with Status 400 And a message is included in the Response Body: User with email student@example.com already exists   Scenario: Invalid email format  Given the endpoint /api/v1/authentication/sign-up is available When a POST request is sent with an incorrectly formatted email (e.g. invalid-email) Then a response is received with Status 400 And a message is included: Invalid email format  Scenario: Missing required fields  Given the endpoint /api/v1/authentication/sign-up is available When a POST request is sent without email or password Then a response is received with Status 400 And a message is included: Email address and password are required | 1                         |
-| US03            | Student Authentication                          | As a Student I want to access the Sign-in page So that I can authenticate with my email and password | Scenario: Student opens Sign-in page   Given the student is not authenticated   When the student navigates to the "Sign-in" page   Then the system displays the authentication form   And the student is able to sign in  Scenario: Student signs in successfully   Given the Sign-in page is displayed   When the student enters valid credentials   Then the system validates the input   And the student accesses the platform  Scenario: Empty input   Given the Sign-in page is displayed   When the student submits without completing a required field   Then the system shows an error message  Scenario: Incorrect credentials   Given the Sign-in page is displayed   When the student enters invalid credentials   Then the system shows an error message   And the student remains on the Sign-in page | 1                         |
-| US04            | Add Authenticate Student through RESTful API    | As a Developer I want to authenticate a Student through the API So that the Student can access the protected functionalities of the application | Scenario: Successful authentication with valid credentials  Given the endpoint "/api/v1/authentication/sign-in" is available When a POST request is sent with values for email and password:  email: "student@example.com"  password: "correctPassword123" And the credentials are valid in the database Then a response is received with Status 200 (OK) And an AuthenticatedUserResource is included in the Response Body with:  id: "generated-uuid"  email_address: "student@example.com"  token: "jwt-token-here"  roles: ["ROLE_STUDENT"] And the JWT token is valid for 1 hour (according to configuration)  Scenario: Failed authentication with incorrect credentials  Given the endpoint "/api/v1/authentication/sign-in" is available When a POST request is sent with incorrect credentials:  email: "student@example.com"  password: "wrongPassword" Then a response is received with Status 401 (Unauthorized) And a message is included in the Response Body: "Invalid email or password"  Scenario: Authentication with non-existent user  Given the endpoint "/api/v1/authentication/sign-in" is available When a POST request is sent with an email that does not exist:  email: "nonexistent@example.com"  password: "anyPassword123" Then a response is received with Status 401 (Unauthorized) And a message is included in the Response Body: "Invalid email or password"   Scenario: Invalid email format  Given the endpoint "/api/v1/authentication/sign-in" is available When a POST request is sent with a badly formatted email:  email: "invalid-email-format"  password: "validPassword123" Then a response is received with Status 400 (Bad Request) And a message is included:  "Invalid email format"  Scenario: Missing required fields  Given the endpoint "/api/v1/authentication/sign-in" is available When a POST request is sent without email or password Then a response is received with Status 400 (Bad Request) And a message is included: "Email address and password are required" | 1                         |
-| US53            | Token Issuance (Login)                          | As a Developer I want the gateway to authenticate credentials and issue tokens So that downstream services receive a verified identity. | Scenario: Issue tokens on valid credentials   Given the user exists and the password hash matches   When POST /auth/login with valid body   Then 200 with accessToken (JWT) and refreshToken  Scenario: Reject invalid credentials   When POST /auth/login with wrong password   Then 401 with title "Unauthorized"  Scenario: Enforce lockout   Given 5 failed attempts within 10 minutes   When POST /auth/login   Then 423 with title "Account Locked" | 2                         |
-| US05            | Posting                                         | As a Teacher I want to create a post with text and images So that I can interact with my students and communicate events | Scenario: Teacher opens Create Post page   Given the teacher is authenticated   When the teacher navigates to "Community > New Post"   Then the system displays a form with:     - text area     - optional image input     - preview section     - publish option (disabled until valid)  Scenario: Teacher creates a text-only post successfully   Given the "New Post" form is displayed   When the teacher enters valid text   And no image is provided   Then the system publishes the post   And shows a success message   And the new post appears in the community feed  Scenario: Edit a post successfully   Given the teacher is authenticated   And the teacher has an existing post   When the teacher edits the post with valid changes   Then the system updates the post   And the updated version is shown in the community feed   And a confirmation message is displayed  Scenario: Delete a post successfully   Given the teacher is authenticated   And the teacher has an existing post   When the teacher deletes the post   Then the system removes it from the community feed   And a confirmation message is displayed | 3                         |
-| US06            | Posting through RESTful API                     | As a Developer I want to create a community post via the API So that professors can publish validated content safely | Feature: Community Posts API  Scenario: Create post with valid text and one image URL   Given the endpoint "/api/v1/community/posts" is available   And the requester has ROLE_PROFESSOR   When a POST request is sent with:     text: "Nos vemos en el taller del viernes. Material en el enlace."     images: ["https://cdn.example.com/materiales/banner.png"]   Then 201 is returned   And a Post Resource with a generated id is returned   And the image URL is stored as a URL field in the database   And an audit event "community.post.created" is recorded  Scenario: Create text-only post   Given the endpoint is available   And the requester has ROLE_PROFESSOR   When a POST request is sent with:     text: "Recordatorio: entrega del reto 2 el domingo 23:59."     images: []   Then 201 is returned   And the post contains no images   And an audit event "community.post.created" is recorded  Scenario: Reject non-HTTP/HTTPS image URL   Given the endpoint is available   And the requester has ROLE_PROFESSOR   When a POST request is sent with:     text: "Adjunto imagen del diagrama."     images: ["ftp://example.com/diagram.jpg"]   Then 400 is returned   And the message includes "Image URL must use HTTP or HTTPS"  Scenario: Update post with new text and image URL   Given the endpoint "/api/v1/community/posts/{id}" is available   And the requester has ROLE_PROFESSOR   And the requester owns the post   When a PUT request is sent with:     text: "Actualización: el taller se movió al sábado."     images: ["https://cdn.example.com/materiales/updated-banner.png"]   Then 200 is returned   And the Post Resource reflects the new text and image URL   And an audit event "community.post.updated" is recorded  Scenario: Delete post successfully   Given the endpoint "/api/v1/community/posts/{id}" is available   And the requester has ROLE_PROFESSOR   And the requester owns the post   When a DELETE request is sent   Then 204 is returned   And the post is no longer retrievable   And an audit event "community.post.deleted" is recorded | 3                         |
-| US07            | Liking                                          | As a Student I want to like or unlike a community post So that I can express my opinion and support others | Scenario: Like a post successfully   Given the student is authenticated   And the community feed is displayed   When the student likes a post   Then the option changes to "Unlike"   And the like counter increases by 1   And a confirmation message is shown  Scenario: Unlike a post successfully   Given the student has already liked a post   When the student unlikes the post   Then the option changes back to "Like"   And the like counter decreases by 1   And a confirmation message is shown  Scenario: Prevent multiple submissions   Given the student attempts to like a post repeatedly   Then the system processes only one action   And the counter reflects a single like | 3                         |
-| US08            | Commenting                                      | As a Student I want to write a comment under a post So that I can participate in the discussion | Scenario: Add valid comment   Given the student is authenticated   And the post detail view is open   When the student enters text between 3 and 500 characters   Then the comment is displayed under the post   And a confirmation message is shown  Scenario: Empty comment   Given the post detail view is open   When the student submits without entering text   Then the system shows an error "Comment cannot be empty"  Scenario: Too long comment   Given the post detail view is open   When the student enters more than 500 characters   Then the system shows an error "Comment must not exceed 500 characters"  Scenario: Unsupported characters in comment   Given the post detail view is open   When the student enters text with unsupported characters   Then the system shows an error "Unsupported characters detected"   And the comment is not published | 3                         |
-| US09            | Liking trough API                               | As a Developer I want to register likes/unlikes through the API So that user interactions are consistent and secure | Scenario: Like post successfully   Given the endpoint /api/v1/community/posts/{id}/like is available   When a POST request is sent with a valid token   Then Status 200 is returned   And the response body includes the updated likeCount  Scenario: Unlike post successfully   Given the endpoint /api/v1/community/posts/{id}/like is available   When a DELETE request is sent with a valid token   Then Status 200 is returned   And the likeCount decreases by 1  Scenario: Double like attempt   When a POST request is sent twice for the same user and post   Then the second request returns 200   And the likeCount remains the same | 3                         |
-| US10            | Commenting trough API                           | As a Developer I want to add, validate, and store comments through the API So that students can safely interact under posts | Scenario: Add valid comment   Given the endpoint /api/v1/community/posts/{id}/comments is available   When a POST request is sent with:     text: Good job, this material is clear"   Then Status 201 is returned   And the Comment Resource includes id, authorId, text, createdAt  Scenario: Reject empty comment   When a POST request is sent with text: ""   Then Status 400 is returned   And the message "Comment cannot be empty" is included  Scenario: Reject text too long   When a POST request is sent with text longer than 500 characters   Then Status 400 is returned   And the message "Comment must not exceed 500 characters"  Scenario: Reject unsupported characters   When a POST request is sent with text containing 汉字   Then Status 400 is returned   And the message "Unsupported characters detected" | 3                         |
-| US44            | Live Session Dashboard                          | As a Teacher I want to see studentCount, responseDistribution, and averageResponseTime So that I can monitor the class in real time. | Scenario: View live metrics for a session   Given I am assigned to class "cls_CS101_2025_2"   And session "ses_01A" is active   When I open "Live Analytics"   Then I see studentCount, totalResponses, averageResponseTimeMs   And I see responseDistribution for the current question  Scenario: No responses yet   Given session "ses_01A" is active with zero responses   When I open "Live Analytics"   Then I see "Waiting for responses..." and studentCount | 4                         |
-| US45            | Response Distribution Chart                     | As a Teacher I want a chart of responses (A/B/C/D or numbers) So that I can identify misconceptions quickly. | Scenario: Show categorical distribution   Given the current question is multiple choice   When responses arrive   Then the chart displays counts per option (A,B,C,D) | 4                         |
-| US46            | Average Time Panel                              | As a Teacher I want to see the average response time for the current question So that I can pace the session. | Scenario: Show average response time   Given responses include timing   When I view "Timing"   Then I see averageResponseTimeMs for the current question | 4                         |
-| US47            | Events Ingestion API                            | As a Developer I want to ingest participation events (join/response) So that the aggregator can compute real-time metrics. | Scenario: Accept valid batch   When POST with well-formed events for session "ses_01A"   Then Status 202 and accepted equals the number of events  Scenario: Unauthenticated   When POST without Authorization   Then Status 401 problem+json  Scenario: Forbidden (not producer for class/session)   When POST by an unauthorized client   Then Status 403 problem+json  Scenario: Validation error   When an event has missing questionId for RESPONSE_SUBMITTED   Then Status 422 with errors[] pointing to events[i].questionId  Scenario: Payload too large   When events array exceeds max size   Then Status 413 with title "Payload Too Large"  Scenario: Rate limited   When producer exceeds QPS   Then Status 429 with "Retry-After"  Scenario: Aggregator unavailable   When the ingestion pipeline is down   Then Status 503 with title "Service Unavailable" | 4                         |
-| US48            | Real-time Stream API                            | As a Developer I want to stream live snapshots to the teacher UI So that metrics update without polling. | Scenario: Authorized teacher subscribes   Given caller has ROLE_TEACHER and is assigned to the session   When GET /sessions/ses_01A/stream   Then Status 200 and SSE events "snapshot" and "heartbeat" are received  Scenario: Unauthenticated / Forbidden / Session not found   Then return 401 / 403 / 404 with problem+json and no stream  Scenario: Idle timeout   Given no updates for N seconds   When the server sends periodic heartbeat   Then the client stays connected and does not show stale data | 4                         |
-| US49            | View Quiz Summary Report                        | As an Admin I want to view average score, participation rate, and average response time for a quiz So that I can gauge overall performance. | Scenario: View quiz summary   Given I am an administrator   And quiz "quiz_1001" has graded submissions   When I open "Quiz Reports" for quiz_1001   Then I see avgScore, participationRate, averageResponseTimeMs   And the time range and class filters applied are visible  Scenario: No data in range   Given there are no graded submissions in the selected date range   When I view the report   Then I see "No data for selected range" | 5                         |
-| US50            | Hardest Questions                               | As an Admin I want a list of the hardest questions (lowest correctness rate) So that I can spot misconceptions. | Scenario: List hardest questions   Given quiz_1001 has question-level results   When I open "Hardest Questions"   Then I see a table with questionId, correctnessRate, attempts, avgTimeMs   And the table is sorted ascending by correctnessRate | 5                         |
-| US51            | Quiz Summary API                                | As a Developer I want an endpoint to retrieve quiz-level metrics So that the UI can render the summary panel. | Scenario: Authorized admin retrieves summary   Given caller has ROLE_ADMIN   When GET /analytics/quizzes/{quizId}/summary with valid filters   Then Status 200 with metrics.avgScore, participationRate, averageResponseTimeMs  Scenario: Unauthenticated   When GET without Authorization   Then Status 401 problem+json  Scenario: Forbidden   Given caller lacks ROLE_ADMIN   When GET   Then Status 403 problem+json title "Forbidden"  Scenario: Quiz not found   When GET for unknown quizId   Then Status 404 problem+json  Scenario: Invalid date range   When from > to   Then Status 422 with errors[] on from/to  Scenario: Server error   Then Status 500 with problem+json and errorId | 5                         |
-| US52            | Per-Question Stats API                          | I want an endpoint to retrieve per-question statistics So that the UI can show hardest questions and drilldowns. | Scenario: Fetch per-question stats   Given ROLE_ADMIN   When GET /analytics/quizzes/{quizId}/questions?sort=correctnessRate,asc   Then Status 200 with content[] and pagination  Scenario: Unsupported sort field   When sort=hackerField,asc   Then Status 400 with detail "Unsupported sort field: hackerField"  Scenario: Unauthenticated / Forbidden / Not found / Server error   Then return 401 / 403 / 404 / 500 with problem+json | 5                         |
-| US11            | Add Profile settings trough Front-end           | As a Student I want to edit my profile (name, username, avatar) So that I can personalize my experience in the platform | Scenario: Open Profile Settings   Given the student is authenticated   When the student navigates to "Account > Profile"   Then the system displays a form with:     - Full Name (required)     - Username (required)     - Avatar URL (optional, http/https only)     - Institution (required)     - save option (disabled until valid)  Scenario: Update full name successfully   Given the Profile form is displayed   When the student enters a valid name of 3–80 characters (Latin charset)   Then the system updates the profile   And the header reflects the new name   And a confirmation message is shown  Scenario: Update username successfully   Given the Profile form is displayed   When the student enters a valid and available username (3–24, letters/numbers/underscores, starts with letter)   Then the profile updates with the new username   And a confirmation message is shown  Scenario: Username taken   Given the Profile form is displayed   When the student enters a username that already exists   Then the system shows an error "Username is already taken" | 6                         |
-| US12            | Add Create Profile trough API                   | As a Developer I want to create a user profile via API So that new users can initialize their profile | Scenario: Create profile successfully   Given the endpoint "/api/v1/profile" is available   When a POST is sent with valid fullName, username, avatarUrl (https), institution   Then Status 201 is returned   And the ProfileResource includes id and the stored URL (not base64)  Scenario: Username already exists   When a POST is sent with username "juan_perez" that is already taken   Then Status 409 is returned   And the message "Username is already taken" is included  Scenario: Reject non-HTTP/HTTPS avatar   When a POST is sent with avatarUrl "ftp://example.com/a.jpg"   Then Status 400 is returned   And the message "Avatar URL must use HTTP or HTTPS" is included  Scenario: Reject unsupported characters   When a POST is sent with fullName containing unsupported characters (e.g., 汉字 or emojis)   Then Status 400 is returned   And details point to the invalid characters | 6                         |
-| US13            | Add Update Profile trough API                   | As a Developer I want to update an existing user profile via API So that users can edit their name, username and avatar | Scenario: Update username to a new available value   Given the endpoint "/api/v1/profile" is available   And the requester is the profile owner   When a PUT is sent with username "mateo_dev"   Then Status 200 is returned   And the profile shows username "mateo_dev"  Scenario: Update avatar with valid https URL   When a PUT is sent with avatarUrl "https://cdn.example.com/u/avatar.png"   Then Status 200 is returned   And the avatarUrl is persisted as link (not inline/base64)  Scenario: Reject inline/base64 avatar   When a PUT is sent with avatarUrl "data:image/png;base64,...."   Then Status 400 is returned   And the message "Inline/base64 images are not allowed" is included | 6                         |
-| US14            | Add pogress for student via Front-end           | As a Student I want to view my level, points, badges, and streak So that I stay motivated and track my growth | Scenario: Open Progress Dashboard   Given the student is authenticated   When the student navigates to "Progress"   Then the system displays:     - current level with progress bar to next level     - total points and weekly points     - latest 5 badges with tooltip     - current and longest streak     - links to view all badges and history  Scenario: View points history (last 30 days)   Given the Progress page is displayed   When the student selects the last 30 days option   Then a daily line chart shows earned points per day   And hovering shows the date and points  Scenario: Empty state for new students   Given the student has no points and no badges   When the Progress page is displayed   Then the system shows an encouraging empty state with tips to start challenges | 7                         |
-| US15            | Add Leaderboard trough Front-end                | As a Student I want to view leaderboards by scope (global, class, challenge) So that I can compare my progress and stay engaged | Scenario: View Global leaderboard (All-time)   Given the student is authenticated   When the student opens "Leaderboards" and selects scope "Global" and period "All"   Then the system shows a paginated table with:     - Rank #, Username, Level, Points     - My row highlighted (even if not on current page)  Scenario: View Class leaderboard (weekly)   Given the student is enrolled in class "CS-101"   When the student selects scope "Class" and class "CS-101" and period "Weekly"   Then the table shows top students for that class this week   And ties are resolved by:     1) Higher Level     2) Earlier achievement timestamp  Scenario: View Challenge leaderboard (this challenge)   Given the student opens a challenge detail   When the student switches to the "Leaderboard" tab   Then the table shows rank for this challenge only   And only students with a valid submission appear  Scenario: Filters and pagination   Given the leaderboard is displayed   When the student changes period to "Monthly" and page to 2   Then the table refreshes with the correct results  Scenario: Privacy & visibility   Given some students have privacy set to “hide name”   When the leaderboard is rendered   Then those entries display masked names (e.g., "Student-****")   And my own entry is always fully visible to me | 7                         |
-| US16            | Add progress trough API                         | As a Developer I want to return current progress (level, points, badges, streak) So that the student dashboard can be rendered | Scenario: Get my progress successfully   Given the endpoint "/api/v1/progress/me" is available   And the requester has ROLE_STUDENT   When a GET request is sent   Then Status 200 is returned with level, points, badges, streak | 7                         |
-| US17            | Add Leaderboard trough APi                      | As a Developer I want a unified leaderboard endpoint So that the client can fetch ranks by scope and period | Scenario: Get Global leaderboard (All-time)   Given the endpoint "/api/v1/leaderboards" is available   When a GET is sent with scope=global&period=all&page=1&size=25   Then Status 200 is returned with a paginated list   And entries are sorted by points desc, ties resolved by level desc, then firstAchievedAt asc   And myEntry is included even if not on the current page  Scenario: Get Class leaderboard (Weekly) with membership   Given the requester is enrolled in class "cls_CS101_2025_2"   When a GET is sent with scope=class&classId=cls_CS101_2025_2&period=weekly   Then Status 200 is returned   And only members of the class are ranked  Scenario: Reject Class leaderboard without membership   Given the requester is not enrolled in "cls_MATH101"   When a GET is sent with scope=class&classId=cls_MATH101&period=weekly   Then Status 403 is returned   And a message "You are not a member of this class" is included  Scenario: Get Challenge leaderboard   When a GET is sent with scope=challenge&challengeId=ch_ABC123   Then Status 200 is returned   And only students with valid submissions for that challenge appear | 7                         |
-| US18            | Add Unified list of activities trough Front-end | As a Student I want to see all my assigned activities in one place So that I can plan and prioritize my study time | Scenario: Open "My Activities"   Given the student is authenticated   When the student navigates to "Class > My Activities"   Then the system shows a paginated list with columns:     - Title, Type (Challenge/Quiz/Lab/Assignment)     - Class (e.g., CS-101)     - Due date (local time)     - Estimated time (mins)     - Status (Assigned/In progress/Submitted/Graded/Overdue)  Scenario: Filter and sort activities   Given the activities list is displayed   When the student filters by Status=Assigned and Due date=This week   And sorts by Due date ascending   Then the list updates accordingly  Scenario: Search by keyword   Given the activities list is displayed   When the student searches "Arreglos C++"   Then only activities whose title or description contains the term are shown | 8                         |
-| US19            | Add List Student Activities trough API          | As a Developer, I want to fetch a student’s activities via API so that the Front-end can display them in “My Activities.” | Scenario: List my activities with filters   Given the endpoint "/api/v1/class-activities/me" is available   When a GET is sent with status=ASSIGNED,IN_PROGRESS&type=CHALLENGE,QUIZ&sort=dueAt,asc   Then Status 200 is returned with a paginated list   And all items belong to the requester student   Scenario: Rate limited   Given the endpoint "/api/v1/class-activities/me" is available   And the requester exceeds the rate limit   When a GET is sent   Then Status 429 is returned   And the response includes "Retry-After" header  Scenario: Upstream timeout   Given the endpoint depends on ActivityService   And ActivityService times out   When a GET is sent   Then Status 504 is returned   And the response contains title "Gateway Timeout"  Scenario: Unexpected server error   Given the endpoint "/api/v1/class-activities/me" is available   When an unhandled exception occurs   Then Status 500 is returned   And the response contains an error id for diagnostics | 8                         |
-| US20            | Add Activity Details trough API                 | As a Developer, I want to retrieve activity details so that students can view instructions, links, and submission options. | Scenario: Get activity detail   Given the requester belongs to class "cls_CS101_2025_2"   When a GET is sent to "/api/v1/class-activities/act_01H"   Then Status 200 is returned with the activity detail  Scenario: Submission disabled due to due date passed   Given the activity "act_01H" exists   And its dueAt is in the past   When a GET is sent to "/api/v1/class-activities/act_01H"   Then Status 200 is returned with the activity detail   And the payload has submission.locked=true   And submission.lockReason="DUE_DATE_PASSED"  Scenario: Rate limited   Given the requester exceeds the rate limit   When a GET is sent to "/api/v1/class-activities/act_01H"   Then Status 429 is returned   And the response includes "Retry-After" header  Scenario: Unexpected server error   Given the endpoint "/api/v1/class-activities/{activityId}" is available   When an unhandled exception occurs   Then Status 500 is returned   And the response contains an error id for diagnostics | 8                         |
-| US21            | Add View Class Progress via Front-end           | As a Teacher I want a class progress overview with key metrics (completion, average score, late submissions) So that I can quickly spot strengths and weaknesses at a glance. | Scenario: View progress for a class   Given I am assigned to class "cls_CS101_2025_2"   When I open "Class Progress"   Then I see completionRate and avgScore for the class   And a table of students with completion% and lastSubmissionAt  Scenario: No data yet   Given the class has no activities   When I open "Class Progress"   Then I see the message "No activities yet" | 9                         |
-| US22            | View Student Progress (Detail)                  | As a Teacher I want to open a student’s progress detail So that I can review their completed/pending activities. | Scenario: Open student detail   Given I am on "Class Progress"   When I select student "std_01R"   Then I see their list of activities with title, status, dueAt, score  Scenario: Student without submissions   Given student "std_01R" has no submissions   When I open their detail   Then I see "No submissions yet" | 9                         |
-| US23            | Create Activity (Task)                          | As a Teacher I want to create a new activity for my class So that students can see instructions and a due date. | Scenario: Create a basic task   Given I am assigned to "cls_CS101_2025_2"   When I create an activity with title, description and dueAt   Then the activity appears in the class activity list with status "DRAFT"  Scenario: Publish the activity   Given an activity is in "DRAFT"   When I publish it   Then students in the class can see it in their activities | 9                         |
-| US24            | Add Edit / Close Activity via Front-end         | As a Teacher I want to edit an existing activity and optionally close submissions So that I can correct details and stop late work. | Scenario: Edit title and due date   Given the activity is in "DRAFT"   When I update title and dueAt   Then the changes are saved  Scenario: Close submissions   Given the activity is "PUBLISHED"   When I set "acceptSubmissions" to false   Then students can no longer submit | 9                         |
-| US25            | Progress API (class-level)                      | As a Developer I want an endpoint to retrieve class progress (simple metrics + student rows) So that the UI can render the progress view. | Scenario: Authorized teacher gets class progress   Given caller has ROLE_TEACHER and is assigned to {classId}   When GET /teacher/{classId}/progress   Then Status 200 with completionRate, avgScore and students[]  Scenario: Unauthenticated   When GET /teacher/{classId}/progress without Authorization   Then Status 401 with application/problem+json  Scenario: Forbidden (not assigned)   Given caller has ROLE_TEACHER but not assigned to {classId}   When GET /teacher/{classId}/progress   Then Status 403 with problem+json title "Forbidden"  Scenario: Class not found   When GET /teacher/cls_UNKNOWN/progress   Then Status 404 with problem+json title "Class Not Found"  Scenario: Server error   When an unexpected error occurs   Then Status 500 with problem+json and an errorId | 9                         |
-| US26            | Create Activity API                             | As a Developer I want an endpoint to retrieve a single student’s activity list in a class So that the UI can show their detail. | Scenario: Authorized teacher gets student progress   Given caller has ROLE_TEACHER and is assigned to {classId}   When GET /teacher/{classId}/students/{studentId}/progress   Then Status 200 with activities[]  Scenario: Student not in class   Given the student is not enrolled in {classId}   When GET /teacher/{classId}/students/{studentId}/progress   Then Status 404 with problem+json title "Student Not Found"  Scenario: Unauthenticated / Forbidden / Server error   Then return 401 / 403 / 500 respectively with problem+json | 9                         |
-| US27            | Update/Publish/Close Activity API               | As a Developer I want to create a class activity So that teachers can add tasks. | Scenario: Valid creation   Given caller has ROLE_TEACHER and is assigned to classId   When POST /class-activities with valid body   Then Status 201 with activityId and status "DRAFT"  Scenario: Unauthenticated   When POST without Authorization   Then Status 401 problem+json  Scenario: Forbidden   Given caller not assigned to classId   When POST with that classId   Then Status 403 problem+json  Scenario: Validation error   When title is blank or dueAt is in the past   Then Status 422 with problem+json and errors[] per field  Scenario: Duplicate title (same class and dueAt)   Given an activity with same title and dueAt exists   When POST again   Then Status 409 problem+json title "Activity Conflict"  Scenario: Server error   Then Status 500 problem+json with errorId | 9                         |
-| US28            | Submit and See Instant Feedback (auto-gradable) | As a Student I want to see my score and basic feedback right after I submit an auto-gradable activity So that I know what I did right or wrong immediately. | Scenario: Immediate feedback after submission   Given the activity "act_QZ1" is PUBLISHED and auto-gradable   And I am enrolled in class "cls_CS101_2025_2"   When I submit my answers   Then I see my score and per-item correctness   And I see a short explanation for each incorrect item (if allowed)  Scenario: Feedback policy hides solutions   Given showSolutions=false   When I submit   Then I see my score only   And I see the message "Solutions are hidden for this activity" | 10                        |
-| US29            | View Detailed Feedback                          | As a Student I want to open detailed feedback of my submission So that I can learn from explanations and rubric notes. | Scenario: Open feedback detail   Given I have a successful submission for "act_QZ1"   When I open "View feedback"   Then I see question-by-question results, explanations (if allowed), and overall score  Scenario: Non auto-gradable activity   Given the activity type is TASK (manual grading)   When I submit   Then I see "Submission received — feedback pending" | 10                        |
-| US30            | View Detailed Feedback                          | As a Student I want to retry an activity and get updated feedback So that I can improve within the allowed attempts. | As a Student I want to retry an activity and get updated feedback So that I can improve within the allowed attempts. | 10                        |
-| US31            | Create Submission with Immediate Feedback       | As a Developer I want an endpoint that creates a submission and (if auto-gradable) returns immediate feedback So that the students can read results right away. | Scenario: Successful auto-graded submission   Given the activity is PUBLISHED and auto-gradable   And the student is enrolled and has attemptsRemaining > 0   When POST /class-activities/{activityId}/submissions with valid answers   Then Status 201 with score and items[] feedback  Scenario: Forbidden (not enrolled)   Given the caller is not enrolled in the class   When POST   Then Status 403 with problem+json title "Forbidden"  Scenario: Activity not found or not published   When POST for an unknown or non-PUBLISHED activity   Then Status 404 with title "Activity Not Found"  Scenario: Attempts exhausted   Given attemptsRemaining = 0   When POST   Then Status 409 with title "Attempts Exhausted"  Scenario: Submissions closed (past due or acceptSubmissions=false)   When POST after dueAt or when closed   Then Status 409 with title "Submissions Closed"  Scenario: Validation error   When the body is missing required fields or malformed   Then Status 422 with errors[] per field  Scenario: Payload too large (file upload TASK)   When the upload exceeds the limit   Then Status 413 with title "Payload Too Large"  Scenario: Unsupported media type   When the upload mime-type is not allowed   Then Status 415 with title "Unsupported Media Type"  Scenario: Auto-grader timeout / unavailable   When the grader does not respond in time   Then Status 504 (timeout) or 503 (service unavailable) with problem+json  Scenario: Unexpected server error   When an unhandled exception occurs   Then Status 500 with problem+json and an errorId | 10                        |
-| US32            | Feedback Visibility Policy (simple)             | As a Developer I want to expose the feedback/solution visibility policy for an activity So that the studens knows what to read after submission. | Scenario: Retrieve policy   When GET /class-activities/{activityId}/feedback-policy   Then Status 200 with booleans for showScore, showItemCorrectness, showSolutions  Scenario: Not found / Unauthenticated / Forbidden   Then return 404 / 401 / 403 with problem+json respectively | 10                        |
+Historias de Usuario
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US01</td>
+<td>Estudiante</td>
+<td>1</td>
+<td>IAM</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Registro de estudiante</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero acceder a la página de Registro para poder registrarme con mi correo y contraseña.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: El usuario abre la página de Registro</b><br>Dado que el usuario no está autenticado<br>Cuando el usuario navega a la página de "Registro"<br>Entonces el sistema muestra el formulario de registro<br>Y el usuario puede registrarse</li>
+<li><b>Escenario: El usuario se registra exitosamente</b><br>Dado que la página de Registro está visible<br>Cuando el usuario ingresa una entrada válida y procede al registro<br>Entonces el sistema valida la entrada<br>Y el sistema redirige al usuario a la página de Inicio de sesión</li>
+<li><b>Escenario: Campo de entrada vacío</b><br>Dado que la página de Registro está visible<br>Cuando el usuario deja un campo de entrada vacío y procede al registro<br>Entonces el sistema muestra un mensaje de error</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US02</td>
+<td>Estudiante</td>
+<td>1</td>
+<td>IAM</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Inicio de sesión de estudiante</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero acceder a la página de Inicio de sesión para poder autenticarme con mi correo y contraseña.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: El estudiante abre la página de Inicio de sesión</b><br>Dado que el estudiante no está autenticado<br>Cuando el estudiante navega a la página de "Inicio de sesión"<br>Entonces el sistema muestra el formulario de autenticación<br>Y el estudiante puede iniciar sesión</li>
+<li><b>Escenario: El estudiante inicia sesión exitosamente</b><br>Dado que la página de Inicio de sesión está visible<br>Cuando el estudiante ingresa credenciales válidas<br>Entonces el sistema valida la entrada<br>Y el estudiante accede a la plataforma</li>
+<li><b>Escenario: Entrada vacía</b><br>Dado que la página de Inicio de sesión está visible<br>Cuando el estudiante envía sin completar un campo requerido<br>Entonces el sistema muestra un mensaje de error</li>
+<li><b>Escenario: Credenciales incorrectas</b><br>Dado que la página de Inicio de sesión está visible<br>Cuando el estudiante ingresa credenciales inválidas<br>Entonces el sistema muestra un mensaje de error<br>Y el estudiante permanece en la página de Inicio de sesión</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US03</td>
+<td>Profesor</td>
+<td>3</td>
+<td>Community</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Crear, editar y eliminar una publicación</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero crear una publicación con texto e imágenes para poder interactuar con mis estudiantes y comunicar eventos.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: El profesor abre la página de Crear publicación</b><br>Dado que el profesor está autenticado<br>Cuando el profesor navega a "Comunidad > Nueva publicación"<br>Entonces el sistema muestra un formulario con: área de texto, entrada de imagen opcional, sección de vista previa y opción de publicar (deshabilitada hasta que sea válida).</li>
+<li><b>Escenario: El profesor crea una publicación solo de texto exitosamente</b><br>Dado que el formulario "Nueva publicación" está visible<br>Cuando el profesor ingresa texto válido y no se proporciona ninguna imagen<br>Entonces el sistema publica la publicación<br>Y muestra un mensaje de éxito<br>Y la nueva publicación aparece en el feed de la comunidad</li>
+<li><b>Escenario: Editar una publicación exitosamente</b><br>Dado que el profesor está autenticado y el profesor tiene una publicación existente<br>Cuando el profesor edita la publicación con cambios válidos<br>Entonces el sistema actualiza la publicación<br>Y la versión actualizada se muestra en el feed de la comunidad<br>Y se muestra un mensaje de confirmación</li>
+<li><b>Escenario: Eliminar una publicación exitosamente</b><br>Dado que el profesor está autenticado y el profesor tiene una publicación existente<br>Cuando el profesor elimina la publicación<br>Entonces el sistema la elimina del feed de la comunidad<br>Y se muestra un mensaje de confirmación</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US04</td>
+<td>Estudiante</td>
+<td>3</td>
+<td>Community</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Dar "Me gusta" a una publicación</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero dar "Me gusta" o "Ya no me gusta" a una publicación de la comunidad para poder expresar mi opinión y apoyar a los demás.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Dar "Me gusta" a una publicación exitosamente</b><br>Dado que el estudiante está autenticado y el feed de la comunidad está visible<br>Cuando el estudiante da "Me gusta" a una publicación<br>Entonces la opción cambia a "Ya no me gusta"<br>Y el contador de "Me gusta" aumenta en 1<br>Y se muestra un mensaje de confirmación</li>
+<li><b>Escenario: Ya no me gusta una publicación exitosamente</b><br>Dado que el estudiante ya ha dado "Me gusta" a una publicación<br>Cuando el estudiante ya no da "Me gusta" a la publicación<br>Entonces la opción cambia de nuevo a "Me gusta"<br>Y el contador de "Me gusta" disminuye en 1<br>Y se muestra un mensaje de confirmación</li>
+<li><b>Escenario: Prevenir múltiples envíos</b><br>Dado que el estudiante intenta dar "Me gusta" a una publicación repetidamente<br>Entonces el sistema procesa solo una acción<br>Y el contador refleja un solo "Me gusta"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US05</td>
+<td>Estudiante</td>
+<td>3</td>
+<td>Community</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Comentar una publicación</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero escribir un comentario bajo una publicación para poder participar en la discusión.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Añadir comentario válido</b><br>Dado que el estudiante está autenticado y la vista de detalles de la publicación está abierta<br>Cuando el estudiante ingresa texto entre 3 y 500 caracteres<br>Entonces el comentario se muestra bajo la publicación<br>Y se muestra un mensaje de confirmación</li>
+<li><b>Escenario: Comentario vacío</b><br>Dado que la vista de detalles de la publicación está abierta<br>Cuando el estudiante envía sin ingresar texto<br>Entonces el sistema muestra un error "El comentario no puede estar vacío"</li>
+<li><b>Escenario: Comentario demasiado largo</b><br>Dado que la vista de detalles de la publicación está abierta<br>Cuando el estudiante ingresa más de 500 caracteres<br>Entonces el sistema muestra un error "El comentario no debe exceder los 500 caracteres"</li>
+<li><b>Escenario: Caracteres no admitidos en el comentario</b><br>Dado que la vista de detalles de la publicación está abierta<br>Cuando el estudiante ingresa texto con caracteres no admitidos<br>Entonces el sistema muestra un error "Se detectaron caracteres no admitidos"<br>Y el comentario no se publica</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US06</td>
+<td>Profesor</td>
+<td>4</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Panel de Sesión en Vivo</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero ver el recuento de estudiantes, la distribución de respuestas y el tiempo de respuesta promedio para poder monitorear la clase en tiempo real.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Ver métricas en vivo para una sesión</b><br>Dado que estoy asignado a la clase "cls_CS101_2025_2" y la sesión "ses_01A" está activa<br>Cuando abro "Análisis en vivo"<br>Entonces veo el recuento de estudiantes, total de respuestas, tiempo de respuesta promedio en ms<br>Y veo la distribución de respuestas para la pregunta actual</li>
+<li><b>Escenario: Aún no hay respuestas</b><br>Dado que la sesión "ses_01A" está activa con cero respuestas<br>Cuando abro "Análisis en vivo"<br>Entonces veo "Esperando respuestas..." y el recuento de estudiantes</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US07</td>
+<td>Profesor</td>
+<td>4</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Gráfico de Distribución de Respuestas</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero un gráfico de respuestas (A/B/C/D o números) para poder identificar rápidamente los conceptos erróneos.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Mostrar distribución categórica</b><br>Dado que la pregunta actual es de opción múltiple<br>Cuando llegan las respuestas<br>Entonces el gráfico muestra los recuentos por opción (A, B, C, D)</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US08</td>
+<td>Profesor</td>
+<td>4</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Panel de Tiempo Promedio</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero ver el tiempo de respuesta promedio para la pregunta actual para poder marcar el ritmo de la sesión.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Mostrar tiempo de respuesta promedio</b><br>Dado que las respuestas incluyen el tiempo<br>Cuando veo "Tiempo"<br>Entonces veo el tiempo de respuesta promedio en ms para la pregunta actual</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US09</td>
+<td>Administrador</td>
+<td>5</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Ver Informe de Resumen de Cuestionario</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un administrador, quiero ver el puntaje promedio, la tasa de participación y el tiempo de respuesta promedio para un cuestionario para poder evaluar el rendimiento general.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Ver resumen de cuestionario</b><br>Dado que soy un administrador y el cuestionario "quiz_1001" tiene entregas calificadas<br>Cuando abro "Informes de cuestionario" para quiz_1001<br>Entonces veo avgScore, participationRate, averageResponseTimeMs<br>Y los filtros de rango de tiempo y clase aplicados son visibles</li>
+<li><b>Escenario: No hay datos en el rango</b><br>Dado que no hay entregas calificadas en el rango de fechas seleccionado<br>Cuando veo el informe<br>Entonces veo "No hay datos para el rango seleccionado"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US10</td>
+<td>Administrador</td>
+<td>5</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Preguntas Más Difíciles</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un administrador, quiero una lista de las preguntas más difíciles (tasa de corrección más baja) para poder detectar conceptos erróneos.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Listar las preguntas más difíciles</b><br>Dado que quiz_1001 tiene resultados a nivel de pregunta<br>Cuando abro "Preguntas más difíciles"<br>Entonces veo una tabla con questionId, correctnessRate, attempts, avgTimeMs<br>Y la tabla está ordenada de forma ascendente por correctnessRate</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US11</td>
+<td>Estudiante</td>
+<td>6</td>
+<td>User Profile</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir configuración de perfil a través del Front-end</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero editar mi perfil (nombre, nombre de usuario, avatar) para poder personalizar mi experiencia en la plataforma.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Abrir Configuración de perfil</b><br>Dado que el estudiante está autenticado<br>Cuando el estudiante navega a "Cuenta > Perfil"<br>Entonces el sistema muestra un formulario con: Nombre completo (requerido), Nombre de usuario (requerido), URL del avatar (opcional, solo http/https), Institución (requerido) y opción de guardar (deshabilitada hasta que sea válida).</li>
+<li><b>Escenario: Actualizar nombre completo exitosamente</b><br>Dado que el formulario de Perfil está visible<br>Cuando el estudiante ingresa un nombre válido de 3 a 80 caracteres (conjunto de caracteres latinos)<br>Entonces el sistema actualiza el perfil<br>Y el encabezado refleja el nuevo nombre<br>Y se muestra un mensaje de confirmación</li>
+<li><b>Escenario: Actualizar nombre de usuario exitosamente</b><br>Dado que el formulario de Perfil está visible<br>Cuando el estudiante ingresa un nombre de usuario válido y disponible (3-24, letras/números/guiones bajos, comienza con letra)<br>Entonces el perfil se actualiza con el nuevo nombre de usuario<br>Y se muestra un mensaje de confirmación</li>
+<li><b>Escenario: Nombre de usuario ya tomado</b><br>Dado que el formulario de Perfil está visible<br>Cuando el estudiante ingresa un nombre de usuario que ya existe<br>Entonces el sistema muestra un error "El nombre de usuario ya está tomado"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US12</td>
+<td>Estudiante</td>
+<td>7</td>
+<td>User Profile</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Ver progreso del estudiante a través del Front-end</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero ver mi nivel, puntos, insignias y racha para mantenerme motivado y seguir mi crecimiento.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Abrir el Panel de progreso</b><br>Dado que el estudiante está autenticado<br>Cuando el estudiante navega a "Progreso"<br>Entonces el sistema muestra: nivel actual con barra de progreso al siguiente nivel, puntos totales y puntos semanales, las últimas 5 insignias con información sobre herramientas, racha actual y más larga y enlaces para ver todas las insignias y el historial.</li>
+<li><b>Escenario: Ver historial de puntos (últimos 30 días)</b><br>Dado que la página de Progreso está visible<br>Cuando el estudiante selecciona la opción de los últimos 30 días<br>Entonces un gráfico de líneas diario muestra los puntos ganados por día<br>Y al pasar el mouse se muestra la fecha y los puntos</li>
+<li><b>Escenario: Estado vacío para nuevos estudiantes</b><br>Dado que el estudiante no tiene puntos ni insignias<br>Cuando se muestra la página de Progreso<br>Entonces el sistema muestra un estado vacío alentador con consejos para empezar desafíos</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US13</td>
+<td>Estudiante</td>
+<td>7</td>
+<td>User Profile</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Ver clasificación (leaderboard)</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero ver las clasificaciones por alcance (global, clase, desafío) para poder comparar mi progreso y mantenerme comprometido.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Ver clasificación Global (Histórico)</b><br>Dado que el estudiante está autenticado<br>Cuando el estudiante abre "Clasificaciones" y selecciona el alcance "Global" y el período "Todos"<br>Entonces el sistema muestra una tabla paginada con: Puesto #, Nombre de usuario, Nivel, Puntos y mi fila resaltada (incluso si no está en la página actual).</li>
+<li><b>Escenario: Ver clasificación de Clase (semanal) con membresía</b><br>Dado que el estudiante está inscrito en la clase "CS-101"<br>Cuando el estudiante selecciona el alcance "Clase" y la clase "CS-101" y el período "Semanal"<br>Entonces la tabla muestra a los mejores estudiantes de esa clase esta semana<br>Y los empates se resuelven por: 1) Nivel más alto y 2) Marca de tiempo de logro más temprana</li>
+<li><b>Escenario: Ver clasificación de Desafío (este desafío)</b><br>Dado que el estudiante abre los detalles de un desafío<br>Cuando el estudiante cambia a la pestaña "Clasificación"<br>Entonces la tabla muestra el puesto solo para este desafío<br>Y solo aparecen los estudiantes con una entrega válida</li>
+<li><b>Escenario: Filtros y paginación</b><br>Dado que la clasificación está visible<br>Cuando el estudiante cambia el período a "Mensual" y la página a 2<br>Entonces la tabla se actualiza con los resultados correctos</li>
+<li><b>Escenario: Privacidad y visibilidad</b><br>Dado que algunos estudiantes tienen la privacidad configurada para “ocultar nombre”<br>Cuando se renderiza la clasificación<br>Entonces esas entradas muestran nombres enmascarados (ej. "Student-****")<br>Y mi propia entrada siempre es totalmente visible para mí</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US14</td>
+<td>Estudiante</td>
+<td>8</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Lista unificada de actividades</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero ver todas mis actividades asignadas en un solo lugar para poder planificar y priorizar mi tiempo de estudio.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Abrir "Mis Actividades"</b><br>Dado que el estudiante está autenticado<br>Cuando el estudiante navega a "Clase > Mis Actividades"<br>Entonces el sistema muestra una lista paginada con columnas: Título, Tipo (Desafío/Cuestionario/Laboratorio/Asignación), Clase (ej. CS-101), Fecha de vencimiento (hora local), Tiempo estimado (minutos) y Estado (Asignado/En progreso/Entregado/Calificado/Vencido).</li>
+<li><b>Escenario: Filtrar y ordenar actividades</b><br>Dado que la lista de actividades está visible<br>Cuando el estudiante filtra por Estado=Asignado y Fecha de vencimiento=Esta semana<br>Y ordena por Fecha de vencimiento de forma ascendente<br>Entonces la lista se actualiza en consecuencia</li>
+<li><b>Escenario: Buscar por palabra clave</b><br>Dado que la lista de actividades está visible<br>Cuando el estudiante busca "Arreglos C++"<br>Entonces solo se muestran las actividades cuyo título o descripción contiene el término</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US15</td>
+<td>Profesor</td>
+<td>9</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Ver Progreso de la Clase</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero una visión general del progreso de la clase con métricas clave (finalización, puntaje promedio, entregas tardías) para poder detectar rápidamente las fortalezas y debilidades de un vistazo.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Ver progreso de una clase</b><br>Dado que estoy asignado a la clase "cls_CS101_2025_2"<br>Cuando abro "Progreso de la clase"<br>Entonces veo completionRate y avgScore para la clase<br>Y una tabla de estudiantes con % de finalización y lastSubmissionAt</li>
+<li><b>Escenario: Aún no hay datos</b><br>Dado que la clase no tiene actividades<br>Cuando abro "Progreso de la clase"<br>Entonces veo el mensaje "Aún no hay actividades"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US16</td>
+<td>Profesor</td>
+<td>9</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Ver Progreso del Estudiante (Detalle)</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero abrir el detalle del progreso de un estudiante para poder revisar sus actividades completadas/pendientes.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Abrir detalle del estudiante</b><br>Dado que estoy en "Progreso de la clase"<br>Cuando selecciono al estudiante "std_01R"<br>Entonces veo su lista de actividades con título, estado, dueAt, puntaje</li>
+<li><b>Escenario: Estudiante sin entregas</b><br>Dado que el estudiante "std_01R" no tiene entregas<br>Cuando abro su detalle<br>Entonces veo "Aún no hay entregas"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US17</td>
+<td>Profesor</td>
+<td>9</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Crear Actividad (Tarea)</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero crear una nueva actividad para mi clase para que los estudiantes puedan ver las instrucciones y una fecha de vencimiento.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Crear una tarea básica</b><br>Dado que estoy asignado a "cls_CS101_2025_2"<br>Cuando creo una actividad con título, descripción y dueAt<br>Entonces la actividad aparece en la lista de actividades de la clase con el estado "BORRADOR"</li>
+<li><b>Escenario: Publicar la actividad</b><br>Dado que una actividad está en "BORRADOR"<br>Cuando la publico<br>Entonces los estudiantes de la clase pueden verla en sus actividades</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US18</td>
+<td>Profesor</td>
+<td>9</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Editar / Cerrar Actividad</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero editar una actividad existente y opcionalmente cerrar las entregas para poder corregir detalles y detener el trabajo tardío.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Editar título y fecha de vencimiento</b><br>Dado que la actividad está en "BORRADOR"<br>Cuando actualizo el título y la dueAt<br>Entonces los cambios se guardan</li>
+<li><b>Escenario: Cerrar entregas</b><br>Dado que la actividad está "PUBLICADA"<br>Cuando configuro "acceptSubmissions" en falso<br>Entonces los estudiantes ya no pueden entregar</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US19</td>
+<td>Estudiante</td>
+<td>10</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Enviar y ver retroalimentación</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como estudiante, quiero ver mi puntaje y una retroalimentación básica justo después de enviar una actividad autocalificable para saber de inmediato qué hice bien o mal.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Retroalimentación inmediata tras el envío</b><br>Dado que la actividad "act_QZ1" está PUBLICADA y es autocalificable<br>Y estoy matriculado en la clase "cls_CS101_2025_2"<br>Cuando envío mis respuestas<br>Entonces veo mi puntaje y la corrección por ítem<br>Y veo una breve explicación para cada ítem incorrecto (si está permitido)</li>
+<li><b>Escenario: Política de retroalimentación oculta las soluciones</b><br>Dado que showSolutions=false<br>Cuando envío mis respuestas<br>Entonces solo veo mi puntaje<br>Y veo el mensaje "Las soluciones están ocultas para esta actividad"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US20</td>
+<td>Estudiante</td>
+<td>10</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Consultar retroalimentación de una entrega</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como estudiante, quiero abrir la retroalimentación de mi entrega para poder aprender de las explicaciones y de las notas de la rúbrica.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Abrir retroalimentación</b><br>Dado que tengo una entrega exitosa para "act_QZ1"<br>Cuando abro "Ver retroalimentación"<br>Entonces veo los resultados pregunta por pregunta, las explicaciones (si están permitidas) y el puntaje total</li>
+<li><b>Escenario: Actividad no autocalificable</b><br>Dado que el tipo de actividad es TAREA (calificación manual)<br>Cuando envío mi entrega<br>Entonces veo "Entrega recibida retroalimentación pendiente"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US21</td>
+<td>Estudiante</td>
+<td>10</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Reintentar actividad con nueva retroalimentación</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como estudiante, quiero volver a intentar una actividad y recibir retroalimentación para poder mejorar dentro de los intentos permitidos.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Reintentar dentro de los intentos permitidos</b><br>Dado que la actividad "act_QZ1" permite múltiples intentos (maxAttempts = 3)<br>Y ya he enviado una vez<br>Cuando hago clic en "Reintentar actividad"<br>Entonces puedo enviar un nuevo intento<br>Y el intento anterior sigue visible como "Intento 1"</li>
+<li><b>Escenario: Retroalimentación actualizada después de reintentar</b><br>Dado que he enviado un segundo intento para "act_QZ1"<br>Cuando se completa la calificación manual o automática<br>Entonces veo el puntaje actualizado y la retroalimentación por ítem del Intento 2<br>Y puedo compararla con la retroalimentación del Intento 1</li>
+<li><b>Escenario: No hay más intentos disponibles</b><br>Dado que la actividad "act_QZ1" tiene maxAttempts = 3<br>Y ya he enviado 3 intentos<br>Cuando intento hacer clic en "Reintentar actividad"<br>Entonces veo el mensaje "No se permiten más intentos para esta actividad"<br>Y el botón "Reintentar actividad" aparece deshabilitado</li>
+</ul>
+</td>
+</tr>
+</table>
+
+Historias Técnicas
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS01</td>
+<td>Desarrollador</td>
+<td>1</td>
+<td>IAM</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir estudiante a través de API RESTful</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero añadir un Estudiante a través de la API para que esté disponible para construir funcionalidades para mis aplicaciones.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Añadir estudiante con correo único</b><br>Dado que el endpoint /api/v1/authentication/sign-up está disponible<br>Cuando se envía una solicitud POST con valores para correo, contraseña y nombre<br>Y el correo no existe en la base de datos<br>Entonces se recibe una respuesta con Estado 201<br>Y un Recurso de Estudiante se incluye en el Cuerpo de la Respuesta con: un nuevo ID generado, valores registrados para correo y nombre, rol: STUDENT<br>Y la contraseña se almacena con hash de BCrypt</li>
+<li><b>Escenario: Añadir estudiante con correo existente</b><br>Dado que el endpoint /api/v1/authentication/sign-up está disponible<br>Cuando se envía una solicitud POST con valores para correo, contraseña y nombre<br>Y un Recurso de Estudiante con el mismo correo ya está almacenado<br>Entonces se recibe una respuesta con Estado 400<br>Y un mensaje se incluye en el Cuerpo de la Respuesta: Usuario con correo student@example.com ya existe</li>
+<li><b>Escenario: Formato de correo inválido</b><br>Dado que el endpoint /api/v1/authentication/sign-up está disponible<br>Cuando se envía una solicitud POST con un correo formateado incorrectamente (ej. invalid-email)<br>Entonces se recibe una respuesta con Estado 400<br>Y un mensaje se incluye: Formato de correo inválido</li>
+<li><b>Escenario: Faltan campos requeridos</b><br>Dado que el endpoint /api/v1/authentication/sign-up está disponible<br>Cuando se envía una solicitud POST sin correo o contraseña<br>Entonces se recibe una respuesta con Estado 400<br>Y un mensaje se incluye: La dirección de correo y la contraseña son requeridas</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS02</td>
+<td>Desarrollador</td>
+<td>1</td>
+<td>IAM</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir autenticación de estudiante a través de API RESTful</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero autenticar a un Estudiante a través de la API para que el Estudiante pueda acceder a las funcionalidades protegidas de la aplicación.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Autenticación exitosa con credenciales válidas</b><br>Dado que el endpoint /api/v1/authentication/sign-in está disponible<br>Cuando se envía una solicitud POST con valores para correo y contraseña: correo: &quot;student@example.com&quot;, contraseña: &quot;correctPassword123&quot;<br>Y las credenciales son válidas en la base de datos<br>Entonces se recibe una respuesta con Estado 200 (OK)<br>Y un Recurso de Usuario Autenticado se incluye en el Cuerpo de la Respuesta con: id: &quot;uuid-generado&quot;, email_address: &quot;student@example.com&quot;, token: &quot;jwt-token-aqui&quot;, roles: [&quot;ROLE_STUDENT&quot;]<br>Y el token JWT es válido por 1 hora (según la configuración)</li>
+<li><b>Escenario: Autenticación fallida con credenciales incorrectas</b><br>Dado que el endpoint /api/v1/authentication/sign-in está disponible<br>Cuando se envía una solicitud POST con credenciales incorrectas: correo: &quot;student@example.com&quot;, contraseña: &quot;wrongPassword&quot;<br>Entonces se recibe una respuesta con Estado 401 (No autorizado)<br>Y un mensaje se incluye en el Cuerpo de la Respuesta: "Correo o contraseña inválidos"</li>
+<li><b>Escenario: Autenticación con usuario no existente</b><br>Dado que el endpoint /api/v1/authentication/sign-in está disponible<br>Cuando se envía una solicitud POST con un correo que no existe: correo: &quot;nonexistent@example.com&quot;, contraseña: &quot;anyPassword123&quot;<br>Entonces se recibe una respuesta con Estado 401 (No autorizado)<br>Y un mensaje se incluye en el Cuerpo de la Respuesta: "Correo o contraseña inválidos"</li>
+<li><b>Escenario: Formato de correo inválido</b><br>Dado que el endpoint /api/v1/authentication/sign-in está disponible<br>Cuando se envía una solicitud POST con un correo mal formateado: correo: &quot;invalid-email-format&quot;, contraseña: &quot;validPassword123&quot;<br>Entonces se recibe una respuesta con Estado 400 (Solicitud incorrecta)<br>Y un mensaje se incluye: "Formato de correo inválido"</li>
+<li><b>Escenario: Faltan campos requeridos</b><br>Dado que el endpoint /api/v1/authentication/sign-in está disponible<br>Cuando se envía una solicitud POST sin correo o contraseña<br>Entonces se recibe una respuesta con Estado 400 (Solicitud incorrecta)<br>Y un mensaje se incluye: "La dirección de correo y la contraseña son requeridas"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS03</td>
+<td>Desarrollador</td>
+<td>2</td>
+<td>API Gateway</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Emisión de Token (Inicio de sesión)</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero que la puerta de enlace (gateway) autentique las credenciales y emita tokens para que los servicios posteriores reciban una identidad verificada.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Emitir tokens con credenciales válidas</b><br>Dado que el usuario existe y el hash de la contraseña coincide<br>Cuando POST /auth/login con cuerpo válido<br>Entonces 200 con accessToken (JWT) y refreshToken</li>
+<li><b>Escenario: Rechazar credenciales inválidas</b><br>Cuando POST /auth/login con contraseña incorrecta<br>Entonces 401 con título "Unauthorized"</li>
+<li><b>Escenario: Forzar bloqueo</b><br>Dado 5 intentos fallidos en 10 minutos<br>Cuando POST /auth/login<br>Entonces 423 con título "Account Locked"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS04</td>
+<td>Desarrollador</td>
+<td>3</td>
+<td>Community</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Publicar a través de API RESTful</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero crear una publicación de la comunidad a través de la API para que los profesores puedan publicar contenido validado de forma segura.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Crear publicación con texto válido y una URL de imagen</b><br>Dado que el endpoint /api/v1/community/posts está disponible<br>Y el solicitante tiene ROLE_PROFESSOR<br>Cuando se envía una solicitud POST con: texto: "Nos vemos en el taller del viernes. Material en el enlace.", imágenes: [&quot;https://cdn.example.com/materiales/banner.png&quot;]<br>Entonces se devuelve 201<br>Y un Recurso de Publicación con un id generado es devuelto<br>Y la URL de la imagen se almacena como un campo URL en la base de datos<br>Y un evento de auditoría community.post.created es registrado</li>
+<li><b>Escenario: Crear publicación solo de texto</b><br>Dado que el endpoint está disponible<br>Y el solicitante tiene ROLE_PROFESSOR<br>Cuando se envía una solicitud POST con: texto: "Recordatorio: entrega del reto 2 el domingo 23:59.", imágenes: []<br>Entonces se devuelve 201<br>Y la publicación no contiene imágenes<br>Y un evento de auditoría community.post.created es registrado</li>
+<li><b>Escenario: Rechazar URL de imagen no HTTP/HTTPS</b><br>Dado que el endpoint está disponible<br>Y el solicitante tiene ROLE_PROFESSOR<br>Cuando se envía una solicitud POST con: texto: "Adjunto imagen del diagrama.", imágenes: [&quot;ftp://example.com/diagram.jpg&quot;]<br>Entonces se devuelve 400<br>Y el mensaje incluye "La URL de la imagen debe usar HTTP o HTTPS"</li>
+<li><b>Escenario: Actualizar publicación con nuevo texto y URL de imagen</b><br>Dado que el endpoint /api/v1/community/posts/{id} está disponible<br>Y el solicitante tiene ROLE_PROFESSOR<br>Y el solicitante es dueño de la publicación<br>Cuando se envía una solicitud PUT con: texto: "Actualización: el taller se movió al sábado.", imágenes: [&quot;https://cdn.example.com/materiales/updated-banner.png&quot;]<br>Entonces se devuelve 200<br>Y el Recurso de Publicación refleja el nuevo texto y la URL de la imagen<br>Y un evento de auditoría community.post.updated es registrado</li>
+<li><b>Escenario: Eliminar publicación exitosamente</b><br>Dado que el endpoint /api/v1/community/posts/{id} está disponible<br>Y el solicitante tiene ROLE_PROFESSOR<br>Y el solicitante es dueño de la publicación<br>Cuando se envía una solicitud DELETE<br>Entonces se devuelve 204<br>Y la publicación ya no es recuperable<br>Y un evento de auditoría community.post.deleted es registrado</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS05</td>
+<td>Desarrollador</td>
+<td>3</td>
+<td>Community</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Dar "Me gusta" a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero registrar "Me gusta" y "Ya no me gusta" a través de la API para que las interacciones de los usuarios sean consistentes y seguras.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Dar "Me gusta" a la publicación exitosamente</b><br>Dado que el endpoint /api/v1/community/posts/{id}/like está disponible<br>Cuando se envía una solicitud POST con un token válido<br>Entonces se devuelve el Estado 200<br>Y el cuerpo de la respuesta incluye el likeCount actualizado</li>
+<li><b>Escenario: Ya no me gusta la publicación exitosamente</b><br>Dado que el endpoint /api/v1/community/posts/{id}/like está disponible<br>Cuando se envía una solicitud DELETE con un token válido<br>Entonces se devuelve el Estado 200<br>Y el likeCount disminuye en 1</li>
+<li><b>Escenario: Intento de doble "Me gusta"</b><br>Cuando se envía una solicitud POST dos veces para el mismo usuario y publicación<br>Entonces la segunda solicitud devuelve 200<br>Y el likeCount permanece igual</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS06</td>
+<td>Desarrollador</td>
+<td>3</td>
+<td>Community</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Comentar a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero agregar, validar y almacenar comentarios a través de la API para que los estudiantes puedan interactuar de forma segura bajo las publicaciones.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Agregar comentario válido</b><br>Dado que el endpoint /api/v1/community/posts/{id}/comments está disponible<br>Cuando se envía una solicitud POST con: texto: "Buen trabajo, este material es claro"<br>Entonces se devuelve el Estado 201<br>Y el Recurso de Comentario incluye id, authorId, text, createdAt</li>
+<li><b>Escenario: Rechazar comentario vacío</b><br>Cuando se envía una solicitud POST con texto: &quot;&quot;<br>Entonces se devuelve el Estado 400<br>Y el mensaje "El comentario no puede estar vacío" se incluye</li>
+<li><b>Escenario: Rechazar texto demasiado largo</b><br>Cuando se envía una solicitud POST con texto más largo de 500 caracteres<br>Entonces se devuelve el Estado 400<br>Y el mensaje "El comentario no debe exceder los 500 caracteres" se incluye</li>
+<li><b>Escenario: Rechazar caracteres no admitidos</b><br>Cuando se envía una solicitud POST con texto que contiene 汉字<br>Entonces se devuelve el Estado 400<br>Y el mensaje "Caracteres no admitidos detectados" se incluye</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS07</td>
+<td>Desarrollador</td>
+<td>4</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Ingestión de Eventos</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero ingerir eventos de participación (unirse/responder) para que el agregador pueda calcular métricas en tiempo real.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Aceptar lote válido</b><br>Dado que la sesión ses_01A está activa y lista para recibir eventos<br>Cuando se realiza un POST con un lote de eventos bien formados para dicha sesión<br>Entonces el sistema devuelve un Estado 202 y el campo accepted es igual al número total de eventos en el lote</li>
+<li><b>Escenario: Llamada no autenticada</b><br>Dado que el llamante no está autenticado<br>Cuando se realiza un POST al endpoint de ingesta<br>Entonces el sistema devuelve un Estado 401 con un problem+json</li>
+<li><b>Escenario: Acceso prohibido</b><br>Dado que el llamante no tiene los permisos para enviar eventos a esa sesión (por ejemplo, no es el productor/creador)<br>Cuando se realiza un POST a la sesión<br>Entonces el sistema devuelve un Estado 403 con un problem+json y el título "Forbidden"</li>
+<li><b>Escenario: Error de validación</b><br>Dado que el llamante está autorizado<br>Cuando se realiza un POST con un evento de tipo RESPONSE_SUBMITTED que carece del questionId<br>Entonces el sistema devuelve un Estado 422 con un problem+json y un array de errores (errors[]) que apunta a events[i].questionId</li>
+<li><b>Escenario: Carga útil demasiado grande</b><br>Dado que el llamante está autorizado<br>Cuando se realiza un POST donde el array de eventos excede el tamaño máximo permitido<br>Entonces el sistema devuelve un Estado 413 con el título "Payload Too Large"</li>
+<li><b>Escenario: Límite de tasa excedido</b><br>Dado que el llamante está autorizado<br>Cuando el productor excede la tasa de peticiones por segundo (QPS) configurada<br>Entonces el sistema devuelve un Estado 429 con la cabecera Retry-After para indicar cuándo puede reintentar</li>
+<li><b>Escenario: Servicio de agregación no disponible</b><br>Dado que el pipeline de ingesta o el servicio de agregación están caídos<br>Cuando se realiza un POST a la sesión<br>Entonces el sistema devuelve un Estado 503 con el título "Service Unavailable"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS08</td>
+<td>Desarrollador</td>
+<td>4</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Transmisión en Tiempo Real</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero transmitir instantáneas en vivo a la interfaz de usuario del profesor para que las métricas se actualicen sin sondeo.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: El profesor autorizado se suscribe</b><br>Dado que el llamante tiene ROLE_TEACHER y está asignado a la sesión<br>Cuando GET /sessions/ses_01A/stream<br>Entonces Estado 200 y se reciben eventos SSE "snapshot" y "heartbeat"</li>
+<li><b>Escenario: Transmisión no autenticada</b><br>Dado que el llamante no está autenticado<br>Cuando intenta conectarse al endpoint de transmisión<br>Entonces el sistema devuelve un Estado 401 con un problem+json y no se inicia la transmisión</li>
+<li><b>Escenario: Acceso prohibido</b><br>Dado que el llamante no tiene los permisos requeridos (por ejemplo, ROLE_PROFESSOR)<br>Cuando intenta conectarse al endpoint de transmisión<br>Entonces el sistema devuelve un Estado 403 con un problem+json y no se inicia la transmisión</li>
+<li><b>Escenario: Sesión no encontrada</b><br>Dado que la sesión de quiz especificada no existe o ya ha terminado<br>Cuando el llamante intenta conectarse a esa sesión para la transmisión<br>Entonces el sistema devuelve un Estado 404 con un problem+json y no se inicia la transmisión</li>
+<li><b>Escenario: Tiempo de espera por inactividad</b><br>Dado que no hay actualizaciones durante N segundos<br>Cuando el servidor envía un latido periódico<br>Entonces el cliente permanece conectado y no muestra datos obsoletos</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS09</td>
+<td>Desarrollador</td>
+<td>5</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Resumen de Cuestionario</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero un endpoint para recuperar métricas a nivel de cuestionario para que la UI pueda renderizar el panel de resumen.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Administrador autorizado recupera el resumen</b><br>Dado que el llamante tiene ROLE_ADMIN<br>Cuando GET /analytics/quizzes/{quizId}/summary con filtros válidos<br>Entonces Estado 200 con metrics.avgScore, participationRate, averageResponseTimeMs</li>
+<li><b>Escenario: No autenticado</b><br>Cuando GET sin Autorización<br>Entonces Estado 401 problem+json</li>
+<li><b>Escenario: Prohibido</b><br>Dado que el llamante carece de ROLE_ADMIN<br>Cuando GET<br>Entonces Estado 403 problem+json título "Forbidden"</li>
+<li><b>Escenario: Cuestionario no encontrado</b><br>Dado que el llamante carece del ROLE_ADMIN<br>Cuando GET para un quizId desconocido<br>Entonces Estado 404 problem+json</li>
+<li><b>Escenario: Rango de fechas inválido</b><br>Dado que el quizId es válido<br>Cuando se realiza un GET a /analytics/quizzes/{quizId}/summary con un rango de fechas donde from es posterior a to<br>Entonces el sistema devuelve un Estado 422 con un problem+json y un array de errores en los campos from y to</li>
+<li><b>Escenario: Error del servidor</b><br>Dado que el sistema encuentra un error inesperado<br>Cuando se realiza un GET a /analytics/quizzes/{quizId}/summary<br>Entonces el sistema devuelve un Estado 500 con un problem+json y un errorId para su seguimiento</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS10</td>
+<td>Desarrollador</td>
+<td>5</td>
+<td>Analytics</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Estadísticas por Pregunta API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero un endpoint para recuperar estadísticas por pregunta para que la UI pueda mostrar las preguntas más difíciles y los detalles.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Obtener estadísticas por pregunta</b><br>Dado que el usuario tiene el ROLE_ADMIN<br>Cuando GET /analytics/quizzes/{quizId}/questions?sort=correctnessRate,asc<br>Entonces Estado 200 con content[] y paginación</li>
+<li><b>Escenario: Campo de ordenación no admitido</b><br>Dado que el usuario tiene el ROLE_ADMIN<br>Cuando sort=hackerField,asc<br>Entonces Estado 400 con detalle "Unsupported sort field: hackerField"</li>
+<li><b>Escenario: No autenticado / Prohibido / No encontrado / Error del servidor</b><br>Dado que se realiza una petición a un endpoint de estadísticas<br>Entonces devuelve 401 / 403 / 404 / 500 con problem+json</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS11</td>
+<td>Desarrollador</td>
+<td>6</td>
+<td>User Profile</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir crear perfil a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero crear un perfil de usuario a través de la API para que los nuevos usuarios puedan inicializar su perfil.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Crear perfil exitosamente</b><br>Dado que el endpoint /api/v1/profile está disponible<br>Cuando se envía un POST con fullName, username, avatarUrl (https), institution válidos<br>Entonces se devuelve el Estado 201<br>Y el ProfileResource incluye id y la URL almacenada (no base64)</li>
+<li><b>Escenario: El nombre de usuario ya existe</b><br>Cuando se envía un POST con el nombre de usuario &quot;juan_perez&quot; que ya está tomado<br>Entonces se devuelve el Estado 409<br>Y el mensaje "El nombre de usuario ya está tomado" se incluye</li>
+<li><b>Escenario: Rechazar avatar no HTTP/HTTPS</b><br>Cuando se envía un POST con avatarUrl &quot;ftp://example.com/a.jpg&quot;<br>Entonces se devuelve el Estado 400<br>Y el mensaje "La URL del avatar debe usar HTTP o HTTPS" se incluye</li>
+<li><b>Escenario: Rechazar caracteres no admitidos</b><br>Cuando se envía un POST con fullName que contiene caracteres no admitidos (ej. 汉字 o emojis)<br>Entonces se devuelve el Estado 400<br>Y los detalles apuntan a los caracteres inválidos</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS12</td>
+<td>Desarrollador</td>
+<td>6</td>
+<td>User Profile</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir actualizar perfil a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero actualizar un perfil de usuario existente a través de la API para que los usuarios puedan editar su nombre, nombre de usuario y avatar.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Actualizar nombre de usuario a un nuevo valor disponible</b><br>Dado que el endpoint /api/v1/profile está disponible<br>Y el solicitante es el propietario del perfil<br>Cuando se envía un PUT con el nombre de usuario &quot;mateo_dev&quot;<br>Entonces se devuelve el Estado 200<br>Y el perfil muestra el nombre de usuario &quot;mateo_dev&quot;</li>
+<li><b>Escenario: Actualizar avatar con URL https válida</b><br>Cuando se envía un PUT con avatarUrl &quot;https://cdn.example.com/u/avatar.png&quot;<br>Entonces se devuelve el Estado 200<br>Y el avatarUrl se persiste como enlace (no en línea/base64)</li>
+<li><b>Escenario: Rechazar avatar en línea/base64</b><br>Cuando se envía un PUT con avatarUrl &quot;data:image/png;base64,....&quot;<br>Entonces se devuelve el Estado 400<br>Y el mensaje "Las imágenes en línea/base64 no están permitidas" se incluye</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS13</td>
+<td>Desarrollador</td>
+<td>7</td>
+<td>User Profile</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir progreso a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero devolver el progreso actual (nivel, puntos, insignias, racha) para que el panel del estudiante pueda ser renderizado.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Obtener mi progreso exitosamente</b><br>Dado que el endpoint /api/v1/progress/me está disponible<br>Y el solicitante tiene ROLE_STUDENT<br>Cuando se envía una solicitud GET<br>Entonces se devuelve el Estado 200 con nivel, puntos, insignias, racha</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS14</td>
+<td>Desarrollador</td>
+<td>7</td>
+<td>User Profile</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir clasificación (leaderboard) a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero un endpoint de clasificación unificado para que el cliente pueda obtener rangos por alcance y período.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Obtener clasificación global (Histórico)</b><br>Dado que el endpoint /api/v1/leaderboards está disponible<br>Cuando se envía un GET con scope=global&amp;period=all&amp;page=1&amp;size=25<br>Entonces se devuelve el Estado 200 con una lista paginada<br>Y las entradas están ordenadas por puntos desc, los empates se resuelven por nivel desc, luego por firstAchievedAt asc<br>Y myEntry se incluye incluso si no está en la página actual</li>
+<li><b>Escenario: Obtener clasificación de clase (Semanal) con membresía</b><br>Dado que el solicitante está inscrito en la clase &quot;cls_CS101_2025_2&quot;<br>Cuando se envía un GET con scope=class&amp;classId=cls_CS101_2025_2&amp;period=weekly<br>Entonces se devuelve el Estado 200<br>Y solo los miembros de la clase están clasificados</li>
+<li><b>Escenario: Rechazar clasificación de clase sin membresía</b><br>Dado que el solicitante no está inscrito en &quot;cls_MATH101&quot;<br>Cuando se envía un GET con scope=class&amp;classId=cls_MATH101&amp;period=weekly<br>Entonces se devuelve el Estado 403<br>Y un mensaje "No eres miembro de esta clase" se incluye</li>
+<li><b>Escenario: Obtener clasificación de Desafío</b><br>Cuando se envía un GET con scope=challenge&amp;challengeId=ch_ABC123<br>Entonces se devuelve el Estado 200<br>Y solo aparecen los estudiantes con una entrega válida para ese desafío</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS15</td>
+<td>Desarrollador</td>
+<td>8</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir lista de actividades del estudiante a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero obtener las actividades de un estudiante a través de la API para que el Front-end pueda mostrarlas en "Mis Actividades".
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Listar mis actividades con filtros</b><br>Dado que el endpoint /api/v1/class-activities/me está disponible<br>Cuando se envía un GET con status=ASSIGNED,IN_PROGRESS&amp;type=CHALLENGE,QUIZ&amp;sort=dueAt,asc<br>Entonces se devuelve el Estado 200 con una lista paginada<br>Y todos los ítems pertenecen al estudiante solicitante</li>
+<li><b>Escenario: Límite de tasa</b><br>Dado que el endpoint /api/v1/class-activities/me está disponible<br>Y el solicitante excede el límite de tasa<br>Cuando se envía un GET<br>Entonces se devuelve el Estado 429<br>Y la respuesta incluye el encabezado "Retry-After"</li>
+<li><b>Escenario: Tiempo de espera del servicio principal</b><br>Dado que el endpoint depende de ActivityService<br>Y ActivityService se agota el tiempo de espera<br>Cuando se envía un GET<br>Entonces se devuelve el Estado 504<br>Y la respuesta contiene el título "Gateway Timeout"</li>
+<li><b>Escenario: Error inesperado del servidor</b><br>Dado que el endpoint /api/v1/class-activities/me está disponible<br>Cuando ocurre una excepción no manejada<br>Entonces se devuelve el Estado 500<br>Y la respuesta contiene un id de error para diagnósticos</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS16</td>
+<td>Desarrollador</td>
+<td>8</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir detalles de la actividad a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero recuperar los detalles de la actividad para que los estudiantes puedan ver instrucciones, enlaces y opciones de entrega.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Obtener detalles de la actividad</b><br>Dado que el solicitante pertenece a la clase &quot;cls_CS101_2025_2&quot;<br>Cuando se envía un GET a /api/v1/class-activities/act_01H<br>Entonces se devuelve el Estado 200 con los detalles de la actividad</li>
+<li><b>Escenario: Entrega deshabilitada porque la fecha de vencimiento ha pasado</b><br>Dado que la actividad &quot;act_01H&quot; existe<br>Y su dueAt está en el pasado<br>Cuando se envía un GET a /api/v1/class-activities/act_01H<br>Entonces se devuelve el Estado 200 con los detalles de la actividad<br>Y la carga útil tiene submission.locked=true<br>Y submission.lockReason=&quot;DUE_DATE_PASSED&quot;</li>
+<li><b>Escenario: Límite de tasa</b><br>Dado que el solicitante excede el límite de tasa<br>Cuando se envía un GET a /api/v1/class-activities/act_01H<br>Entonces se devuelve el Estado 429<br>Y la respuesta incluye el encabezado "Retry-After"</li>
+<li><b>Escenario: Error inesperado del servidor</b><br>Dado que el endpoint /api/v1/class-activities/{activityId} está disponible<br>Cuando ocurre una excepción no manejada<br>Entonces se devuelve el Estado 500<br>Y la respuesta contiene un id de error para diagnósticos</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS17</td>
+<td>Desarrollador</td>
+<td>9</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Progreso (a nivel de clase)</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero un endpoint para recuperar el progreso de la clase (métricas simples + filas de estudiantes) para que la UI pueda renderizar la vista de progreso.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: El profesor autorizado obtiene el progreso de la clase</b><br>Dado que el llamante tiene ROLE_TEACHER y está asignado a {classId}<br>Cuando GET /teacher/{classId}/progress<br>Entonces Estado 200 con completionRate, avgScore y students[]</li>
+<li><b>Escenario: No autenticado</b><br>Cuando GET /teacher/{classId}/progress sin Autorización<br>Entonces Estado 401 con application/problem+json</li>
+<li><b>Escenario: Prohibido (no asignado)</b><br>Dado que el llamante tiene ROLE_TEACHER pero no está asignado a {classId}<br>Cuando GET /teacher/{classId}/progress<br>Entonces Estado 403 con problem+json título "Forbidden"</li>
+<li><b>Escenario: Clase no encontrada</b><br>Cuando GET /teacher/cls_UNKNOWN/progress<br>Entonces Estado 404 con problem+json título "Class Not Found"</li>
+<li><b>Escenario: Error del servidor</b><br>Cuando ocurre un error inesperado<br>Entonces Estado 500 con problem+json y un errorId</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS18</td>
+<td>Desarrollador</td>
+<td>9</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Creación de Actividad</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero un endpoint para recuperar la lista de actividades de un solo estudiante en una clase para que la UI pueda mostrar sus detalles.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: El profesor autorizado obtiene el progreso del estudiante</b><br>Dado que el llamante tiene ROLE_TEACHER y está asignado a {classId}<br>Cuando GET /teacher/{classId}/students/{studentId}/progress<br>Entonces Estado 200 con activities[]</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS19</td>
+<td>Desarrollador</td>
+<td>10</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Creación de entrega con retroalimentación inmediata</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como desarrollador, quiero un endpoint que cree una entrega y (si es autocalificable) devuelva retroalimentación inmediata para que los estudiantes puedan leer los resultados de inmediato.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Envío autocalificable exitoso</b><br>Dado que la actividad está PUBLISHED y es auto-gradable<br>Y el estudiante está matriculado y tiene attemptsRemaining &gt; 0<br>Cuando hago POST a /class-activities/{activityId}/submissions con respuestas válidas<br>Entonces recibo Status 201 con score y items[] con retroalimentación</li>
+<li><b>Escenario: Actividad no encontrada o no publicada</b><br>Cuando hago POST para una actividad desconocida o no PUBLISHED<br>Entonces recibo Status 404 con title = &quot;Activity Not Found&quot;</li>
+<li><b>Escenario: Intentos agotados</b><br>Dado que attemptsRemaining = 0<br>Cuando hago POST<br>Entonces recibo Status 409 con title = &quot;Attempts Exhausted&quot;</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS20</td>
+<td>Desarrollador</td>
+<td>10</td>
+<td>Class Activities</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Política de visibilidad de retroalimentación (simple)</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como desarrollador, quiero exponer la política de visibilidad de retroalimentación/soluciones de una actividad para que los estudiantes sepan qué podrán leer después de enviar su entrega.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Obtener política</b><br>Cuando hago GET a /class-activities/{activityId}/feedback-policy<br>Entonces recibo Status 200 con valores booleanos para showScore, showItemCorrectness y showSolutions</li>
+</ul>
+</td>
+</tr>
+</table>
 
 ## 3.3. Impact Mapping.
 
