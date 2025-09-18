@@ -281,3 +281,29 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram
 ### IAM Database Design
 <img src="../chapter4/assets/ddd-layers/iam/IAMDomainDatabase.png" alt="IAM Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+### 4.2.5. Bounded Context: User Profile
+#### 4.2.5.1. Domain Layer
+### User Profile Domain
+<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementDomain.png" alt="User Profile Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.5.2. Interface Layer
+### User Profile Interface
+<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementInterfaces.png" alt="User Profile Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.5.3. Application Layer
+### User Profile Application
+<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementApplication.png" alt="User Profile Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.5.4. Infrastructure Layer
+### User Profile Infrastructure
+<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementInfrastructure.png" alt="User Profile Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter4/assets/c4/UserProfileComponents.png" alt="User Profile Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
+##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
+##### 4.2.5.6.2. Bounded Context Database Design Diagram
+### User Profile Database Design
+<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementDomainDatabase.png" alt="User Profile Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
