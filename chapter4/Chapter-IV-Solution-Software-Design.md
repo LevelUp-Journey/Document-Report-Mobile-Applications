@@ -138,11 +138,36 @@ El **Tactical-Level Domain-Driven Design** representa la materialización concre
 
 Para el sistema LevelUpJourney, hemos identificado seis bounded contexts principales que cubren las necesidades fundamentales de la plataforma: **IAM** (Identity and Access Management) para la gestión de identidades y autenticación, **API Gateway** como punto de entrada unificado y gestión de APIs, **Community** para las funcionalidades sociales y de comunidad, **Code Runner** para la ejecución y evaluación de código, **Class Activities** para la gestión de actividades académicas y seguimiento del progreso estudiantil, y **Analytics**.
 
-### 4.2.1. IAM Bounded Context
+### 4.2.1. Bounedd Context: Challenges
 #### 4.2.1.1. Domain Layer
+### Challenges Domain
+<img src="../chapter4/assets/ddd-layers/ChallengesDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+### Solution Domain
+<img src="../chapter4/assets/ddd-layers/SolutionsDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
 #### 4.2.1.2. Interface Layer
+### Challenges Interface
+<img src="../chapter4/assets/ddd-layers/ChallengesInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+### Solution Interface
+<img src="../chapter4/assets/ddd-layers/SolutionsInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+
 #### 4.2.1.3. Application Layer
+### Challenges Application
+<img src="../chapter4/assets/ddd-layers/ChallengesApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+### Solution Application
+<img src="../chapter4/assets/ddd-layers/SolutionsApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
 #### 4.2.1.4. Infrastructure Layer
+### Challenges Infrastructure
+<img src="../chapter4/assets/ddd-layers/ChallengesInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+### Solution Infrastructure
+<img src="../chapter4/assets/ddd-layers/SolutionsInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
