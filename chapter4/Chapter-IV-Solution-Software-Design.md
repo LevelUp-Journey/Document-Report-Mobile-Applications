@@ -216,9 +216,11 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 <img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerInfrastructure.png" alt="Class Activity Session Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter4/assets/c4/ClassActivitiesComponent.png" alt="Class Activity Session Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram
 ### Activities Manager Database Design
 <img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerDomainDatabase.png" alt="Activities Manager Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
@@ -226,3 +228,30 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 ### Class Activity Session Manager Database Design
 <img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomainDatabase.png" alt="Class Activity Session Manager Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
+### 4.2.3. Bounded Context: Community
+#### 4.2.3.1. Domain Layer
+### Community Manager Domain
+<img src="../chapter4/assets/ddd-layers/community/CommunityManagerDomain.png" alt="Community Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.3.2. Interface Layer
+### Community Manager Interface
+<img src="../chapter4/assets/ddd-layers/community/CommunityManagerInterfaces.png" alt="Community Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.3.3. Application Layer
+### Community Manager Application
+<img src="../chapter4/assets/ddd-layers/community/CommunityManagerApplication.png" alt="Community Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.3.4. Infrastructure Layer
+### Community Manager Infrastructure
+<img src="../chapter4/assets/ddd-layers/community/CommunityManagerInfrastructure.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter4/assets/c4/CommunityComponents.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+##### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+### Community Manager 
+
+<img src="../chapter4/assets/ddd-layers/community/CommunityManagerDomainDatabase.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
