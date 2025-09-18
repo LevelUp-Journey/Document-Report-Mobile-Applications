@@ -141,43 +141,43 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 ### 4.2.1. Bounedd Context: Challenges
 #### 4.2.1.1. Domain Layer
 ### Challenges Domain
-<img src="../chapter4/assets/ddd-layers/ChallengesDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Domain
-<img src="../chapter4/assets/ddd-layers/SolutionsDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionsDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Report Domain
-<img src="../chapter4/assets/ddd-layers/SolutionReportsDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.1.2. Interface Layer
 ### Challenges Interface
-<img src="../chapter4/assets/ddd-layers/ChallengesInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/ChallengesInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Interface
-<img src="../chapter4/assets/ddd-layers/SolutionsInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionsInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Report Interface
-<img src="../chapter4/assets/ddd-layers/SolutionReportsInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.1.3. Application Layer
 ### Challenges Application
-<img src="../chapter4/assets/ddd-layers/ChallengesApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/ChallengesApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Application
-<img src="../chapter4/assets/ddd-layers/SolutionsApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionsApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Report Application
-<img src="../chapter4/assets/ddd-layers/SolutionReportsApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.1.4. Infrastructure Layer
 ### Challenges Infrastructure
-<img src="../chapter4/assets/ddd-layers/ChallengesInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/ChallengesInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Infrastructure
-<img src="../chapter4/assets/ddd-layers/SolutionsInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionsInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Report Infrastructure
-<img src="../chapter4/assets/ddd-layers/SolutionReportsInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 <img src="../chapter4/assets/c4/ChallengesComponents.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
