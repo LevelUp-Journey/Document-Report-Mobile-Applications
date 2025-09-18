@@ -146,6 +146,9 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 ### Solution Domain
 <img src="../chapter4/assets/ddd-layers/SolutionsDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
+### Solution Report Domain
+<img src="../chapter4/assets/ddd-layers/SolutionReportsDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
 #### 4.2.1.2. Interface Layer
 ### Challenges Interface
 <img src="../chapter4/assets/ddd-layers/ChallengesInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
@@ -153,6 +156,8 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 ### Solution Interface
 <img src="../chapter4/assets/ddd-layers/SolutionsInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
+### Solution Report Interface
+<img src="../chapter4/assets/ddd-layers/SolutionReportsInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.1.3. Application Layer
 ### Challenges Application
@@ -161,6 +166,9 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 ### Solution Application
 <img src="../chapter4/assets/ddd-layers/SolutionsApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
+### Solution Report Application
+<img src="../chapter4/assets/ddd-layers/SolutionReportsApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
 #### 4.2.1.4. Infrastructure Layer
 ### Challenges Infrastructure
 <img src="../chapter4/assets/ddd-layers/ChallengesInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
@@ -168,7 +176,12 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 ### Solution Infrastructure
 <img src="../chapter4/assets/ddd-layers/SolutionsInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
+### Solution Report Infrastructure
+<img src="../chapter4/assets/ddd-layers/SolutionReportsInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter4/assets/c4/ChallengesComponents.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
