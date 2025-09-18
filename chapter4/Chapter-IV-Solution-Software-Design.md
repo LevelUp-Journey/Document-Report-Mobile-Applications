@@ -75,6 +75,20 @@ El **Domain Message Flows Modeling** mapea cómo los mensajes (eventos, comandos
 
 Los **Bounded Context Canvases** proporcionan una visión detallada de cada contexto delimitado, documentando sus responsabilidades, interfaces, eventos y relaciones con otros contextos.
 
+- **IAM Bounded Context Canvas**
+<img src="../chapter4/assets/canvases/IAM-Canvas.png" alt="IAM Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+- **Challenges Bounded Context Canvas**
+<img src="../chapter4/assets/canvases/Challenges-Canvas.png" alt="Challenges Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+- **Community Bounded Context Canvas**
+<img src="../chapter4/assets/canvases/Community-Canvas.png" alt="Community Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+- **Code Runner Bounded Context Canvas**
+<img src="../chapter4/assets/canvases/CodeRunner-Canvas.png" alt="Code Runner Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+- **Class Activities Bounded Context Canvas**
+<img src="../chapter4/assets/canvases/ClassActivitiesManager-Canvas.png" alt="Class Activities Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+- **Analytics Bounded Context Canvas**
+<img src="../chapter4/assets/canvases/Analytics-Canvas.png" alt="Analytics Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+
 ### 4.1.2. Context Mapping
 
 El **Context Mapping** define explícitamente las relaciones entre los bounded contexts identificados, estableciendo patrones de integración y clarificando las responsabilidades de cada contexto en las interacciones.
@@ -127,52 +141,3 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
-### 4.2.2. API Gateway Bounded Context
-#### 4.2.2.1. Domain Layer
-#### 4.2.2.2. Interface Layer
-#### 4.2.2.3. Application Layer
-#### 4.2.2.4. Infrastructure Layer
-#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
-#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
-##### 4.2.2.6.2. Bounded Context Database Design Diagram
-
-### 4.2.3. Community Bounded Context
-#### 4.2.3.1. Domain Layer
-#### 4.2.3.2. Interface Layer
-#### 4.2.3.3. Application Layer
-#### 4.2.3.4. Infrastructure Layer
-#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
-#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
-##### 4.2.3.6.2. Bounded Context Database Design Diagram
-
-### 4.2.4. Code Runner Bounded Context
-#### 4.2.4.1. Domain Layer
-#### 4.2.4.2. Interface Layer
-#### 4.2.4.3. Application Layer
-#### 4.2.4.4. Infrastructure Layer
-#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
-#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
-##### 4.2.4.6.2. Bounded Context Database Design Diagram
-
-### 4.2.5. Class Activities Bounded Context
-#### 4.2.5.1. Domain Layer
-#### 4.2.5.2. Interface Layer
-#### 4.2.5.3. Application Layer
-#### 4.2.5.4. Infrastructure Layer
-#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
-#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
-##### 4.2.5.6.2. Bounded Context Database Design Diagram
-
-### 4.2.6. Analytics Bounded Context
-#### 4.2.6.1. Domain Layer
-#### 4.2.6.2. Interface Layer
-#### 4.2.6.3. Application Layer
-#### 4.2.6.4. Infrastructure Layer
-#### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
-#### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
-##### 4.2.6.6.2. Bounded Context Database Design Diagram
