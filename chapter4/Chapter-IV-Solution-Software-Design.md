@@ -255,3 +255,29 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 ### Community Manager 
 
 <img src="../chapter4/assets/ddd-layers/community/CommunityManagerDomainDatabase.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+### 4.2.4. Bounded Context: Identity and Access Management (IAM)
+#### 4.2.4.1. Domain Layer
+### IAM Domain
+<img src="../chapter4/assets/ddd-layers/iam/IAMDomain.png" alt="IAM Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.4.2. Interface Layer
+### IAM Interface
+<img src="../chapter4/assets/ddd-layers/iam/IAMInterfaces.png" alt="IAM Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.4.3. Application Layer
+### IAM Application
+<img src="../chapter4/assets/ddd-layers/iam/IAMApplication.png" alt="IAM Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.4.4. Infrastructure Layer
+### IAM Infrastructure
+<img src="../chapter4/assets/ddd-layers/iam/IAMInfrastructure.png" alt="IAM Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter4/assets/c4/IAMComponents.png" alt="IAM Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
+##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+##### 4.2.4.6.2. Bounded Context Database Design Diagram
+### IAM Database Design
+<img src="../chapter4/assets/ddd-layers/iam/IAMDomainDatabase.png" alt="IAM Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
