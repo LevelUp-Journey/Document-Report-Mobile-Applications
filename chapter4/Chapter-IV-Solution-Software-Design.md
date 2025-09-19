@@ -1238,3 +1238,131 @@ En el diagrama presentado:
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
 ### User Profile Database Design
 <img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementDomainDatabase.png" alt="User Profile Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+
+
+### 4.2.6. Bounded Context: Analytics
+
+#### 4.2.6.1. Domain Layer
+
+### Propósito del dominio
+El bounded context de Analytics centraliza la recolección, modelado y consulta de métricas y eventos de uso generados por otros contextos (Community, Class Activities, Challenges, Code Runner, User Profile, IAM). Su objetivo es ofrecer insights accionables para mejorar engagement, efectividad de aprendizaje y operación de la plataforma.
+
+### Eventos de dominio
+- PostViewed, PostCreated, CommentAdded, PostLiked/Unliked (desde Community)
+- QuizActivityCreated, LiveSessionStarted/Ended, QuestionLoaded, AnswerSubmitted (desde Class Activities)
+- ChallengeStarted, SolutionSubmitted, SolutionEvaluated (desde Challenges/Code Runner)
+- UserSignedUp, UserSignedIn (desde IAM)
+- ProfileLeveledUp, ExperienceAdded, BadgeGranted (desde User Profile)
+
+### Aggregates y Entities
+- AnalyticsEvent (Aggregate Root)
+  - Representa un evento inmutable con metadatos estandarizados: eventId, occurredAt, actorId, sourceContext, name, attributes (key/value), correlationId, sessionId.
+- MetricDefinition (Entity)
+  - Define una métrica calculable: id, name, description, calculationType (count, sum, avg, ratio, unique), window (realtime, hourly, daily, weekly), dimensions soportadas.
+- ComputedMetric (Entity)
+  - Resultado materializado de una métrica/ventana: metricId, periodStart/End, value, dimensions.
+- Dashboard (Aggregate Root)
+  - Colección versionada de visualizaciones y queries: dashboardId, title, widgets.
+- Insight (Entity)
+  - Hallazgo generado por reglas o modelos: insightId, type (threshold, anomaly, trend), payload, severity, createdAt.
+
+### Value Objects
+- EventName, ContextName, ActorId, SessionId, CorrelationId, KeyValueAttributes, DimensionSet, TimeWindow.
+
+### Commands
+- IngestAnalyticsEventCommand(actorId, name, sourceContext, attributes, occurredAt, correlationId?, sessionId?)
+- DefineMetricCommand(name, description, calculationType, window, dimensions)
+- MaterializeMetricCommand(metricId, window, dimensions, period)
+- CreateDashboardCommand(title, widgets)
+- GenerateInsightCommand(type, ruleOrModelRef, inputs)
+
+### Queries
+- GetEventsQuery(filters: timeRange, sourceContext, actorId, name, attributes)
+- GetMetricDefinitionByIdQuery(metricId)
+- GetComputedMetricsQuery(metricId, timeRange, dimensions)
+- GetDashboardByIdQuery(dashboardId)
+- GetInsightsQuery(timeRange, type, severity)
+
+### Domain Services
+- EventNormalizationService: normaliza eventos heterogéneos a un esquema común.
+- MetricComputationService: computa métricas (count, sum, avg, distinct, ratios) por ventanas.
+- InsightDetectionService: aplica reglas umbral y detección básica de anomalías/tendencias.
+
+
+#### 4.2.6.2. Interface Layer
+
+## Controllers
+- AnalyticsEventsController
+  - Ingesta de eventos vía HTTP (alternativa al bus de eventos): createEvent.
+  - Consultas básicas de eventos: getEvents.
+- MetricsController
+  - Definir métricas: defineMetric.
+  - Consultar definiciones y valores: getMetricById, getComputedMetrics.
+- DashboardsController
+  - CRUD de dashboards: createDashboard, getDashboardById.
+- InsightsController
+  - Consulta de insights generados: getInsights.
+
+## Resources (DTOs)
+- CreateAnalyticsEventResource, AnalyticsEventResource
+- DefineMetricResource, MetricResource, ComputedMetricResource
+- CreateDashboardResource, DashboardResource
+- InsightResource
+
+## Integraciones y Anti-Corruption Layer (ACL)
+- EventBusSubscriber (Kafka): suscriptor a tópicos de eventos de otros contextos, aplica normalización y reintentos idempotentes.
+- CommunityEventsAdapter, ClassActivitiesEventsAdapter, ChallengesEventsAdapter, CodeRunnerEventsAdapter, IamEventsAdapter, UserProfileEventsAdapter: adaptadores específicos de fuente que traducen payloads a AnalyticsEvent.
+
+#### 4.2.6.3. Application Layer
+
+### Command Handlers
+- AnalyticsEventCommandServiceImpl: procesa IngestAnalyticsEventCommand con normalización y validación de esquema.
+- MetricDefinitionCommandServiceImpl: maneja DefineMetricCommand.
+- MetricMaterializationCommandServiceImpl: ejecuta MaterializeMetricCommand, planificando trabajos por ventana.
+- DashboardCommandServiceImpl: maneja CreateDashboardCommand.
+- InsightCommandServiceImpl: ejecuta GenerateInsightCommand.
+
+### Query Handlers
+- AnalyticsEventQueryServiceImpl: resuelve GetEventsQuery con filtros y paginación.
+- MetricQueryServiceImpl: resuelve GetMetricDefinitionByIdQuery y GetComputedMetricsQuery.
+- DashboardQueryServiceImpl: resuelve GetDashboardByIdQuery.
+- InsightQueryServiceImpl: resuelve GetInsightsQuery.
+
+### Procesamiento asíncrono
+- EventIngestionWorker: consumidor de Kafka para tópicos de eventos, aplica EventNormalizationService, persiste AnalyticsEvent.
+- MetricScheduler: job scheduler que dispara MaterializeMetricCommand por ventanas definidas (e.g., cada 1 min/5 min/1 h/1 d).
+- InsightDetector: proceso batch/stream que ejecuta reglas de umbral y detección simple de anomalías (z-score) sobre métricas materializadas.
+
+#### 4.2.6.4. Infrastructure Layer
+
+En la capa de infraestructura se gestionan persistencia, mensajería y cómputo.
+
+### Persistencia
+- AnalyticsEventRepository (append-only, particionado por fecha): búsqueda por rango de tiempo y filtros.
+- MetricDefinitionRepository: almacenamiento de definiciones y reglas.
+- ComputedMetricRepository: almacenamiento de series materializadas con índices por metricId + periodo + dimensiones.
+- InsightRepository: almacenamiento de hallazgos con severidad y timestamps.
+
+### Mensajería
+- KafkaTopics: community.events, activities.events, challenges.events, codeRunner.events, iam.events, userProfile.events, analytics.dead-letter.
+- DeadLetterHandler: manejo de mensajes no procesables con retentativas y trazabilidad.
+
+### Servicios de Plataforma
+- TimeProvider, IdGenerator con garantías de unicidad y orden parcial.
+- SchemaRegistryClient para validación de payloads (opcional).
+
+### Consideraciones de Diseño
+- Idempotency: claves de deduplicación por correlationId + eventName + actorId + occurredAt.
+- Privacy by Design: anonimización/pseudonimización opcional para reportes agregados.
+- Multi-tenant ready (si aplica a futuro): dimensiones de tenant en métricas y eventos.
+
+#### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter4/assets/c4/AnalyticsComponent.png" alt="Analytics Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+#### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
+Dado el amplio alcance del contexto de Analytics, colocar todos los diagramas de clase aquí no es factible.
+
+
+### 4.2.7. Bounded Context: Code Runner
+
