@@ -1745,3 +1745,23 @@ type ContainerPool struct {
 
 
 ### **Diagramas de clase de cada modulo**
+
+En el siguiente orden de ejecución del pipeline:
+
+1) Language Detection
+<img src="../chapter4/assets/ddd-layers/code-runner/LanguageDetector.png" alt="Code Runner - LanguageDetector" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+2) Code Safety Review
+<img src="../chapter4/assets/ddd-layers/code-runner/CodeSafetyReview.png" alt="Code Runner - CodeSafetyReview" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+3) Execution Planning
+<img src="../chapter4/assets/ddd-layers/code-runner/ExecutionPlanner.png" alt="Code Runner - ExecutionPlanner" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+4) Docker Execution
+<img src="../chapter4/assets/ddd-layers/code-runner/DockerEngineRunner.png" alt="Code Runner - DockerEngineRunner" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+5) Result Analysis
+<img src="../chapter4/assets/ddd-layers/code-runner/ExecutionAnalyzer.png" alt="Code Runner - ExecutionAnalyzer" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+6) Queue and Orchestration
+<img src="../chapter4/assets/ddd-layers/code-runner/ExecutionQueueManager.png" alt="Code Runner - ExecutionQueueManager" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
