@@ -849,157 +849,194 @@ En el diagrama presentado:
 
 <img src="../chapter4/assets/ddd-layers/community/CommunityManagerDomainDatabase.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
+
+
+
+
+
+
+
+
+
+
 ### 4.2.4. Bounded Context: Identity and Access Management (IAM)
 #### 4.2.4.1. Domain Layer
 
-La **Domain Layer** del bounded context **Identity and Access Management (IAM)** constituye el núcleo de seguridad y gestión de identidades de la plataforma LevelUpJourney. Esta capa encapsula las reglas de negocio críticas relacionadas con autenticación, autorización, gestión de usuarios y control de acceso, implementando patrones de seguridad robustos y escalables.
+### Aggregate Roots y Entities
+- **User (Aggregate Root)**:  
+  Representa al usuario dentro del sistema, encapsulando email, contraseña y conjunto de roles. Expone comportamientos para crear usuarios, asignar roles y validar credenciales.  
+  Métodos notables: `addRole`, `getPasswordStrength`, `getEmailAddress`.
 
-**Agregados (Aggregates):**
+- **Role (Entity)**:  
+  Define un rol asociado a un usuario. Contiene un identificador único y un nombre tipado con el enum `Roles`. Expone métodos estáticos para validar, convertir y obtener roles por defecto.
 
-El dominio se estructura alrededor de un agregado principal que gestiona toda la información de identidad y acceso:
+### Value Objects
+- **EmailAddress**:  
+  Garantiza que el correo electrónico del usuario sea tratado como un valor inmutable y validado. Provee métodos de normalización y de extracción de partes (`localPart`, `domainPart`).
 
-**1. User Aggregate (IAM Manager):**
-- **User**: Entidad raíz que representa un usuario autenticado en el sistema. Encapsula credenciales de acceso, información de contacto y roles asignados que determinan los permisos de acceso a diferentes funcionalidades de la plataforma.
-- **Role**: Entidad que define los roles disponibles en el sistema, encapsulando permisos y niveles de acceso específicos para diferentes tipos de usuarios.
+- **Password**:  
+  Encapsula la contraseña en un objeto seguro, con lógica para evaluar fortaleza y validar seguridad.
 
-**Value Objects:**
+- **TokenPair**:  
+  Representa el par de tokens (`accessToken` y `refreshToken`) usados en autenticación y gestión de sesiones.
 
-Los Value Objects proporcionan encapsulación segura de conceptos críticos de seguridad:
+- **OAuth2UserInfo**:  
+  Modela los datos básicos de un usuario autenticado a través de un proveedor externo (OAuth2), como nombre, apellidos, perfil y email.
 
-*Objetos de Credenciales:*
-- **EmailAddress**: Value Object que encapsula direcciones de email con validaciones de formato, normalización y métodos para extraer partes locales y de dominio
-- **Password**: Value Object que gestiona contraseñas con validaciones de fortaleza, scoring de seguridad y verificación de políticas de contraseñas
-- **TokenPair**: Value Object que encapsula pares de tokens (access/refresh) para autenticación basada en JWT
+### Enums
+- **Roles**:  
+  Enum con roles de negocio (`ROLE_STUDENT`, `ROLE_INSTRUCTOR`, `ROLE_ADMIN`). Facilita restricciones y asegura consistencia en asignación de permisos.
 
-*Objetos de Integración:*
-- **OAuth2UserInfo**: Value Object que encapsula información de usuarios provenientes de proveedores OAuth2 externos (Google, GitHub), facilitando la integración federada
+### Commands
+Se encapsulan intenciones de cambio de estado en el dominio:
+- **SignUpCommand**: para registrar un nuevo usuario con email, password y roles.
+- **SignInCommand**: para autenticar un usuario con credenciales.
+- **SeedRolesCommand**: inicializa los roles básicos en el sistema.
 
-*Enumeraciones de Seguridad:*
-- **Roles**: Enumeración que define los roles disponibles en el sistema (ROLE_STUDENT, ROLE_INSTRUCTOR, ROLE_ADMIN)
+### Queries
+Se definen consultas que permiten recuperar información del dominio:
+- **GetAllUsersQuery, GetUserByIdQuery, GetUserByEmail_addressQuery**: consultas de usuarios.  
+- **GetAllRolesQuery, GetRoleByNameQuery**: consultas de roles.
 
-**Commands (Comandos):**
+### Domain Services (Interfaces)
+Interfaces que orquestan lógica de negocio más allá de una sola entidad:
 
-Los comandos representan intenciones de acción en el sistema de identidad:
+- **UserCommandService**: maneja registro (`SignUpCommand`) y autenticación (`SignInCommand`), retornando usuarios o pares de tokens.  
+- **UserQueryService**: expone consultas de recuperación de usuarios por id, email o listados.  
+- **RoleCommandService**: administra la inicialización de roles (`SeedRolesCommand`).  
+- **RoleQueryService**: permite consultas de roles disponibles y búsqueda por nombre.
 
-*Authentication Commands:*
-- **SignUpCommand**: Registro de nuevos usuarios con validación de credenciales y asignación de roles
-- **SignInCommand**: Autenticación de usuarios existentes con verificación de credenciales
 
-*System Administration Commands:*
-- **SeedRolesCommand**: Inicialización del sistema de roles para bootstrap de la aplicación
-
-**Queries (Consultas):**
-
-Las queries encapsulan operaciones de lectura para gestión de identidades:
-
-*User Management Queries:*
-- **GetAllUsersQuery**: Listado completo de usuarios para administración del sistema
-- **GetUserByIdQuery**: Recuperación de usuario específico por identificador único
-- **GetUserByEmail_addressQuery**: Búsqueda de usuario por dirección de email para autenticación
-
-*Role Management Queries:*
-- **GetAllRolesQuery**: Listado de todos los roles disponibles en el sistema
-- **GetRoleByNameQuery**: Recuperación de rol específico por nombre para asignaciones
-
-**Domain Services:**
-
-Los servicios de dominio coordinan operaciones complejas de seguridad y gestión de identidades:
-
-*User Management Services:*
-- **UserCommandService**: Gestión completa del ciclo de vida de usuarios incluyendo registro, autenticación y generación de tokens
-- **UserQueryService**: Consultas optimizadas para recuperación de información de usuarios
-
-*Role Management Services:*
-- **RoleCommandService**: Administración de roles del sistema incluyendo inicialización y mantenimiento
-- **RoleQueryService**: Consultas especializadas para gestión de roles y permisos
-
-**Métodos de Dominio Especializados:**
-
-*User Entity Methods:*
-- **User()**: Constructor por defecto para instanciación básica
-- **User(email, password)**: Constructor para creación con credenciales básicas
-- **User(email, password, roles)**: Constructor completo con roles asignados
-- **addRole(role)**: Adición de rol individual con validaciones de permisos
-- **addRoles(roles)**: Asignación múltiple de roles con verificación de consistencia
-- **getEmail_address()**: Acceso seguro a dirección de email
-- **setEmail_address(email)**: Modificación de email con validaciones
-- **getPassword()**: Acceso controlado a contraseña (hash)
-- **setPassword(password)**: Actualización de contraseña con políticas de seguridad
-- **getPasswordStrength()**: Evaluación de fortaleza de contraseña actual
-
-*Role Entity Methods:*
-- **Role()**: Constructor por defecto
-- **Role(name)**: Constructor con nombre de rol específico
-- **getStringName()**: Representación string del nombre del rol
-- **getDefaultRole()**: Método estático para obtener rol por defecto (STUDENT)
-- **toRoleFromName(name)**: Conversión desde string a objeto Role
-- **validateRoleSet(roles)**: Validación estática de conjuntos de roles
-
-*Value Object Methods:*
-- **EmailAddress.normalized()**: Normalización de formato de email
-- **EmailAddress.getLocalPart()**: Extracción de parte local del email
-- **EmailAddress.getDomainPart()**: Extracción de dominio del email
-- **Password.getStrengthScore()**: Cálculo numérico de fortaleza
-- **Password.isStrong()**: Verificación booleana de política de contraseñas
-
-**Reglas de Negocio Encapsuladas:**
-
-1. **Unicidad de Email**: Las direcciones de email deben ser únicas en todo el sistema
-2. **Políticas de Contraseñas**: Las contraseñas deben cumplir con criterios mínimos de seguridad
-3. **Roles por Defecto**: Nuevos usuarios reciben automáticamente el rol STUDENT
-4. **Validación de Roles**: Los roles asignados deben existir en el sistema
-5. **Normalización de Email**: Los emails se normalizan para evitar duplicados
-6. **Gestión de Tokens**: Los tokens tienen tiempos de vida específicos y renovación automática
-7. **Integridad de Credenciales**: Las credenciales se validan antes del almacenamiento
-8. **Auditoría de Acceso**: Todos los intentos de autenticación se registran
-9. **Prevención de Escalación**: Los usuarios no pueden auto-asignarse roles superiores
-10. **Consistencia de Roles**: Los conjuntos de roles deben ser lógicamente consistentes
-
-**Patrones de Seguridad Implementados:**
-
-- **Password Hashing**: Hashing seguro de contraseñas con salt
-- **JWT Token Management**: Gestión de tokens de acceso y renovación
-- **Role-Based Access Control (RBAC)**: Control de acceso basado en roles
-- **OAuth2 Integration**: Integración con proveedores externos de identidad
-- **Input Validation**: Validación exhaustiva de todas las entradas
-- **Secure Storage**: Almacenamiento seguro de credenciales sensibles
-
-**Estrategias de Autenticación:**
-
-- **Local Authentication**: Autenticación tradicional con email/password
-- **Federated Authentication**: Integración con Google OAuth y GitHub OAuth
-- **Multi-Factor Ready**: Preparado para extensión con autenticación multifactor
-- **Session Management**: Gestión segura de sesiones de usuario
-- **Token Refresh**: Renovación automática de tokens de acceso
-
-**Consideraciones de Seguridad:**
-
-- **Credential Protection**: Protección de credenciales en tránsito y reposo
-- **Brute Force Prevention**: Protección contra ataques de fuerza bruta
-- **Account Lockout**: Bloqueo de cuentas por intentos fallidos
-- **Audit Trail**: Rastro completo de auditoría para compliance
-- **Privacy Compliance**: Cumplimiento con regulaciones de privacidad
-- **Secure Communication**: Comunicación cifrada para todas las operaciones
-
-**Integración con OAuth2:**
-
-- **Provider Support**: Soporte para múltiples proveedores OAuth2
-- **User Mapping**: Mapeo automático de información de proveedores externos
-- **Account Linking**: Vinculación de cuentas locales con identidades externas
-- **Fallback Authentication**: Autenticación local como respaldo
-
-### IAM Domain
-<img src="../chapter4/assets/ddd-layers/iam/IAMDomain.png" alt="IAM Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.4.2. Interface Layer
+
+
+## 1. Controllers
+
+### **AuthenticationController**
+Expone endpoints para:
+- Iniciar sesión con credenciales (signIn).  
+- Registrar un nuevo usuario (signUp).  
+- Validar un token JWT.  
+- Refrescar un token de sesión.  
+
+Se apoya en `UserCommandService`, `UserQueryService`, `BearerTokenService` y `TokenService`.  
+
+### **UsersController**
+Expone operaciones para:
+- Consultar todos los usuarios registrados.  
+- Consultar un usuario específico por ID.  
+
+Depende de `UserQueryService`.  
+
+### **RolesController**
+Expone un endpoint para listar todos los roles disponibles en el sistema.  
+Depende de `RoleQueryService`.  
+
+### **OAuth2Controller**
+Controlador especializado en la autenticación con proveedores externos (ej. Google, GitHub).  
+Permite:
+- Procesar un inicio de sesión exitoso con OAuth2.  
+- Manejar errores de autenticación.  
+- Extraer datos de usuario desde proveedores externos.  
+
+Se apoya en `UserCommandService`, `UserQueryService`, `RoleQueryService` y `BearerTokenService`.  
+
+## 2. Resources (DTOs)
+
+Los **resources** representan contratos de entrada/salida en la API REST:
+
+- **SignInResource, SignUpResource**: datos de entrada para autenticación o registro.  
+- **UserResource**: datos de salida que representan un usuario (id, username).  
+- **AuthenticatedUserResource**: datos de salida para un usuario autenticado (incluye token y refresh token).  
+- **RoleResource**: datos de salida que representan un rol.  
+- **RefreshTokenResource**: datos de entrada para refrescar un token.  
+
+## 3. Transformers
+
+Los **assemblers** traducen entre *Resources* (DTOs) y el dominio:
+
+- **SignInCommandFromResourceAssembler, SignUpCommandFromResourceAssembler**: convierten recursos en comandos de dominio.  
+- **UserResourceFromEntityAssembler, AuthenticatedUserResourceFromEntityAssembler, RoleResourceFromEntityAssembler**: convierten entidades del dominio en recursos de salida (DTOs).  
+
+Esto asegura una separación clara entre el *domain model* y la *interface layer*.  
+
+## 4. ACL (Anti-Corruption Layer)
+
+### **IamContextFacade**
+Define un punto de acceso controlado para interactuar con el dominio y servicios externos, encapsulando la lógica necesaria para:  
+- Crear usuarios (con o sin roles).  
+- Consultar información de usuarios por ID o username.  
+- Extraer información de usuarios autenticados con OAuth2 (Google, GitHub, etc.).  
+
+El ACL protege al microservicio de dependencias directas con APIs externas, transformando la información en un formato consistente con el dominio IAM.  
+
+## 5. Dependencias con Servicios Externos
+
+### **Domain Services**
+- `UserCommandService`: maneja comandos de autenticación y registro de usuarios.  
+- `UserQueryService`: provee consultas sobre usuarios (por id, email, etc.).  
+- `RoleQueryService`: maneja consultas de roles.  
+
+### **Infrastructure Services**
+- `BearerTokenService`: generación y validación de tokens JWT.  
+- `TokenService`: gestión de refresh tokens y validación de los mismos.  
+
+## 6. Relación General
+
+- Los **Controllers** usan **Resources** para definir contratos de entrada/salida.  
+- Los **Transformers** convierten recursos en comandos del dominio y entidades en DTOs.  
+- El **ACL** actúa como intermediario entre la capa de interfaces y el dominio, evitando acoplamiento con proveedores externos.  
+- Los **Services** de dominio e infraestructura aportan las capacidades necesarias para autenticación, registro, validación y consultas de seguridad.  
+
+De esta manera, el *Interface Layer* sirve como frontera clara entre los consumidores externos (clientes o frontends) y el **core del microservicio IAM**.  
+
 ### IAM Interface
 <img src="../chapter4/assets/ddd-layers/iam/IAMInterfaces.png" alt="IAM Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.4.3. Application Layer
+
+
+### Users
+- **Command Handlers**:  
+  - `UserCommandServiceImpl` procesa comandos como `SignInCommand`, `SignUpCommand`, utilizando `UserRepository`, `HashingService`, `TokenService` y `RoleRepository`.  
+
+- **Query Handlers**:  
+  - `UserQueryServiceImpl` resuelve consultas como `GetAllUsersQuery`, `GetUserByIdQuery`, `GetUserByEmail_addressQuery`.  
+
+### Roles
+- **Command Handlers**:  
+  - `RoleCommandServiceImpl` procesa el comando `SeedRolesCommand` utilizando `RoleRepository`.  
+
+- **Query Handlers**:  
+  - `RoleQueryServiceImpl` resuelve consultas como `GetAllRolesQuery`, `GetRoleByNameQuery`.  
+
+### ACL Layer
+- **Facade**:  
+  - `IamContextFacadeImpl` extiende `IamContextFacade` y expone operaciones de creación y consulta de usuarios, además de integración con OAuth2 (`Google`, `GitHub`).  
+
+### Event Handlers
+- **Application Event**:  
+  - `ApplicationReadyEventHandler` maneja el evento `ApplicationReadyEvent`, inicializando roles mediante `RoleCommandService`.  
+
 ### IAM Application
 <img src="../chapter4/assets/ddd-layers/iam/IAMApplication.png" alt="IAM Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.4.4. Infrastructure Layer
+
+
+En el diagrama presentado:  
+
+- En la **Persistence Layer**, el `UserRepository` y el `RoleRepository` administran la persistencia de entidades de usuario y roles, permitiendo operaciones de búsqueda y validación por email o nombre de rol.  
+
+- En la **Hashing Layer**, la interfaz `BCryptHashingService` y su implementación `HashingServiceImpl` proporcionan servicios de encriptación y validación de contraseñas utilizando `BCryptPasswordEncoder`.  
+
+- En la **Token Layer**, la interfaz `BearerTokenService` y su implementación `TokenServiceImpl` gestionan la generación, validación y extracción de información de tokens JWT, incluyendo access tokens y refresh tokens.  
+
+- En la **Authorization Layer**, clases como `UserDetailsImpl`, `UserDetailsServiceImpl` y `UsernamePasswordAuthenticationTokenBuilder` integran la autenticación con los repositorios de usuarios. Además, `BearerAuthorizationRequestFilter` y `UnauthorizedRequestHandlerEntryPoint` manejan el filtrado de solicitudes con token y la gestión de accesos no autorizados. La clase `WebSecurityConfiguration` centraliza la configuración de seguridad, integrando servicios de hashing, token y autenticación.  
+
+- En la **OAuth2 Layer**, clases como `OAuth2AuthenticationSuccessHandler` y `OAuth2AuthenticationFailureHandler` gestionan el flujo de autenticación OAuth2 en casos de éxito o fallo, interactuando con servicios de usuario, rol y token. La clase `HttpCookieOAuth2AuthorizationRequestRepository` administra solicitudes OAuth2 mediante cookies, controlando la serialización, almacenamiento y eliminación de datos de autorización.  
+
 ### IAM Infrastructure
 <img src="../chapter4/assets/ddd-layers/iam/IAMInfrastructure.png" alt="IAM Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
@@ -1008,6 +1045,10 @@ Los servicios de dominio coordinan operaciones complejas de seguridad y gestión
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+### IAM Domain
+<img src="../chapter4/assets/ddd-layers/iam/IAMDomain.png" alt="IAM Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram
 ### IAM Database Design
 <img src="../chapter4/assets/ddd-layers/iam/IAMDomainDatabase.png" alt="IAM Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
