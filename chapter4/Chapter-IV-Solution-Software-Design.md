@@ -724,132 +724,113 @@ En los diagramas presentados:
 ### 4.2.3. Bounded Context: Community
 #### 4.2.3.1. Domain Layer
 
-La **Domain Layer** del bounded context **Community** constituye el núcleo social de la plataforma LevelUpJourney, enfocándose en facilitar la interacción, colaboración y construcción de comunidad entre usuarios. Esta capa encapsula las reglas de negocio relacionadas con la creación de contenido, participación social y sistemas de engagement que fomentan el aprendizaje colaborativo.
+### Value Objects
+En este dominio se definen objetos de valor que encapsulan identidades y propiedades inmutables:
 
-**Agregados (Aggregates):**
+- **PostId, CommentId, UserId**: identificadores que aseguran unicidad para publicaciones, comentarios y usuarios.
+- **Content**: modela el contenido de un post, permitiendo texto y enlaces a medios.
+- **CommentContent**: representa el contenido de un comentario, restringido únicamente a texto (sin medios).
+- **Auditable**: objeto de valor que centraliza metadatos de auditoría, como fechas de creación y actualización.
 
-El dominio se estructura alrededor de un agregado principal que gestiona todas las interacciones sociales:
+### Aggregates y Entities
+El núcleo del dominio se estructura en torno a agregados y entidades que reflejan las reglas de negocio:
 
-**1. Post Aggregate (Community Manager):**
-- **Post**: Entidad raíz que representa una publicación creada por usuarios en la plataforma. Actúa como el centro de la interacción social, conteniendo contenido multimedia, comentarios asociados y métricas de engagement.
-- **Comment**: Entidad que representa respuestas y discusiones vinculadas a publicaciones específicas. Permite crear hilos de conversación y facilita el intercambio de ideas entre usuarios.
-- **Like**: Entidad que registra las reacciones positivas de usuarios hacia publicaciones y comentarios, creando métricas de popularidad y engagement.
+- **Post (Aggregate Root)**: representa una publicación realizada por un usuario. Contiene contenido, auditoría, comentarios y reacciones de tipo "Like". Expone comportamientos como agregar comentarios y gestionar likes.
+- **Comment (Entity)**: comentario asociado a un `Post`, con su propio autor, contenido, auditoría y reacciones de tipo "Like". Incluye operaciones para editar contenido y manejar likes.
+- **Like (Entity)**: expresa la interacción de un usuario con un `Post` o `Comment`, registrando la fecha de creación.
 
-**Value Objects:**
+### Commands y Queries
+Se definen comandos y consultas que encapsulan intenciones del dominio:
 
-Los Value Objects proporcionan encapsulación de conceptos de dominio y type safety:
+- **Commands**: `CreatePost`, `EditPost`, `DeletePost`, `AddComment`, `EditComment`, `DeleteComment`, `LikePost`, `UnlikePost`, `LikeComment`, `UnlikeComment`.
+- **Queries**: `GetPostById`, `GetAllPosts`, `GetCommentsByPostId`, `GetCommentById`, `GetLikesByPostId`, `GetLikesByCommentId`.
 
-*Identificadores:*
-- **PostId**: Identificador único para publicaciones
-- **CommentId**: Identificador único para comentarios
-- **UserId**: Identificador de usuarios del sistema
+### Domain Services
+El dominio expone interfaces que representan contratos de servicio para procesar comandos y consultas:
 
-*Objetos de Contenido:*
-- **Content**: Value Object complejo que encapsula el contenido de publicaciones, incluyendo texto y URLs de medios multimedia (imágenes, videos, documentos)
-- **CommentContent**: Value Object especializado para comentarios que permite solo contenido textual, manteniendo las discusiones enfocadas y accesibles
+- **Command Services**: `PostCommandService` y `CommentCommandService`, responsables de orquestar la creación, edición, eliminación y reacciones sobre publicaciones y comentarios.
+- **Query Services**: `PostQueryService` y `CommentQueryService`, dedicados a la recuperación de publicaciones, comentarios y sus interacciones.
 
-*Objetos de Auditoría:*
-- **Auditable**: Value Object que encapsula metadatos temporales para trazabilidad completa, incluyendo timestamps de creación y última modificación
-
-**Commands (Comandos):**
-
-Los comandos representan intenciones de acción social y operaciones de escritura:
-
-*Post Commands:*
-- **CreatePost**: Creación de nuevas publicaciones con contenido multimedia
-- **EditPost**: Modificación de publicaciones existentes manteniendo historial
-- **DeletePost**: Eliminación de publicaciones y contenido asociado
-
-*Comment Commands:*
-- **AddComment**: Adición de comentarios a publicaciones específicas
-- **EditComment**: Modificación de comentarios existentes
-- **DeleteComment**: Eliminación de comentarios individuales
-
-*Engagement Commands:*
-- **LikePost**: Registro de reacción positiva hacia publicación
-- **UnlikePost**: Retiro de reacción positiva de publicación
-- **LikeComment**: Registro de reacción positiva hacia comentario
-- **UnlikeComment**: Retiro de reacción positiva de comentario
-
-**Queries (Consultas):**
-
-Las queries encapsulan operaciones de lectura optimizadas para la experiencia social:
-
-*Post Queries:*
-- **GetPostById**: Recuperación de publicación específica con metadatos completos
-- **GetAllPosts**: Listado de publicaciones con paginación y filtros
-- **GetLikesByPostId**: Métricas de engagement para publicación específica
-
-*Comment Queries:*
-- **GetCommentsByPostId**: Hilos de comentarios organizados por publicación
-- **GetCommentById**: Recuperación de comentario específico
-- **GetLikesByCommentId**: Métricas de engagement para comentario específico
-
-**Domain Services:**
-
-Los servicios de dominio coordinan operaciones sociales complejas:
-
-*Content Management Services:*
-- **PostCommandService**: Gestión completa del ciclo de vida de publicaciones incluyendo operaciones de engagement
-- **CommentCommandService**: Administración de comentarios y sus interacciones sociales
-
-*Query Services:*
-- **PostQueryService**: Consultas optimizadas para publicaciones con métricas agregadas
-- **CommentQueryService**: Acceso eficiente a comentarios con contexto de conversación
-
-**Reglas de Negocio Encapsuladas:**
-
-1. **Integridad de Contenido**: Las publicaciones deben contener al menos texto o media URLs válidas
-2. **Restricciones de Comentarios**: Los comentarios solo pueden contener texto, sin medios multimedia para mantener simplicidad
-3. **Unicidad de Likes**: Un usuario puede dar like solo una vez por publicación o comentario
-4. **Propiedad de Contenido**: Solo el autor puede editar o eliminar sus propias publicaciones y comentarios
-5. **Cascada de Eliminación**: Al eliminar una publicación, se eliminan automáticamente todos los comentarios y likes asociados
-6. **Auditoría Completa**: Todas las acciones mantienen timestamps para trazabilidad y análisis temporal
-7. **Validación de URLs**: Las URLs de medios deben ser válidas y accesibles antes de la publicación
-8. **Límites de Contenido**: Restricciones de longitud para texto y número de media URLs por publicación
-9. **Prevención de Spam**: Limitaciones temporales para creación de contenido por usuario
-10. **Moderación de Contenido**: Validación automática de contenido apropiado antes de publicación
-
-**Métodos de Dominio Especializados:**
-
-*Post Entity Methods:*
-- **addComment(comment)**: Agregación de comentario con validaciones de integridad
-- **addLike(userId)**: Registro de like con validación de unicidad
-- **removeLike(userId)**: Retiro de like con verificación de existencia
-
-*Comment Entity Methods:*
-- **editContent(content)**: Modificación de contenido con preservación de historial
-- **addLike(userId)**: Gestión de likes en comentarios
-- **removeLike(userId)**: Retiro de likes con consistencia
-
-**Patrones de Engagement Social:**
-
-El dominio implementa patrones específicos para fomentar la participación:
-- **Immediate Feedback**: Likes instantáneos para gratificación inmediata
-- **Threaded Discussions**: Comentarios organizados jerárquicamente
-- **Content Ownership**: Control granular sobre contenido propio
-- **Social Validation**: Métricas de engagement visibles
-- **Temporal Tracking**: Análisis de patrones de actividad social
-
-**Consideraciones de Escalabilidad:**
-
-- **Denormalización Estratégica**: Contadores de likes pre-calculados para rendimiento
-- **Paginación Inteligente**: Queries optimizadas para cargas incrementales
-- **Caché de Contenido**: Estrategias de caché para contenido frecuentemente accedido
-- **Media Optimization**: Gestión eficiente de URLs y recursos multimedia
-
-### Community Manager Domain
-<img src="../chapter4/assets/ddd-layers/community/CommunityManagerDomain.png" alt="Community Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+### Repositories (Abstracciones)
+Aunque no se visualizan en el diagrama, se infiere la necesidad de **interfaces de repositorios** para la persistencia de agregados como `Post` y entidades relacionadas (`Comment`, `Like`), las cuales serán implementadas en la capa de infraestructura.
 
 #### 4.2.3.2. Interface Layer
+
+## Controllers
+
+### **PostsController**
+Encargado de gestionar la interacción con publicaciones. Expone operaciones para:
+- Crear, editar y eliminar un post.  
+- Dar y quitar "like" a una publicación.  
+- Consultar publicaciones individuales o en conjunto, así como obtener los likes asociados.  
+
+### **CommentsController**
+Encargado de gestionar la interacción con comentarios. Expone operaciones para:
+- Agregar, editar y eliminar un comentario.  
+- Dar y quitar "like" a un comentario.  
+- Consultar comentarios asociados a un post, obtener un comentario por su ID y listar los likes de un comentario.  
+
+## Resources
+
+Los *resources* representan los datos de entrada o parámetros necesarios para invocar las operaciones de los controladores. Se agrupan en tres tipos:
+
+### a. Post Resources
+- **CreatePostResource**: contiene autor y contenido para crear un post.  
+- **EditPostResource**: datos para modificar el contenido de un post existente.  
+- **DeletePostResource**: identificador del post a eliminar.  
+- **LikePostResource / UnlikePostResource**: identificador de usuario para dar o quitar "like" a un post.  
+
+### b. Comment Resources
+- **AddCommentResource**: autor y contenido para agregar un comentario.  
+- **EditCommentResource**: datos para modificar un comentario existente.  
+- **DeleteCommentResource**: identificador del comentario a eliminar.  
+- **LikeCommentResource / UnlikeCommentResource**: identificador de usuario para dar o quitar "like" a un comentario.  
+
+### c. Query Resources
+- **GetPostByIdResource, GetCommentsByPostIdResource, GetCommentByIdResource**: parámetros de consulta por identificador.  
+- **GetLikesByPostIdResource, GetLikesByCommentIdResource**: parámetros de consulta para obtener likes asociados a posts o comentarios.  
+
+
+## Relación entre Controllers y Resources
+
+Los **controllers** utilizan los **resources** como contratos de entrada para garantizar consistencia en los datos recibidos y en las consultas realizadas. De esta manera, el *Interface Layer* actúa como frontera clara entre el cliente (frontend o consumidor externo) y el núcleo del microservicio.  
+
+
+
+
 ### Community Manager Interface
 <img src="../chapter4/assets/ddd-layers/community/CommunityManagerInterfaces.png" alt="Community Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.3.3. Application Layer
+
+### Posts
+- **Command Handlers**:  
+  - `PostCommandServiceImpl` procesa comandos como `CreatePost`, `EditPost`, `DeletePost`, `LikePost`, `UnlikePost`.  
+
+- **Query Handlers**:  
+  - `PostQueryServiceImpl` resuelve consultas como `GetPostById`, `GetAllPosts`, `GetLikesByPostId`.  
+
+### Comments
+- **Command Handlers**:  
+  - `CommentCommandServiceImpl` procesa comandos como `AddComment`, `EditComment`, `DeleteComment`, `LikeComment`, `UnlikeComment`.  
+
+- **Query Handlers**:  
+  - `CommentQueryServiceImpl` resuelve consultas como `GetCommentsByPostId`, `GetCommentById`, `GetLikesByCommentId`.  
+
+
 ### Community Manager Application
 <img src="../chapter4/assets/ddd-layers/community/CommunityManagerApplication.png" alt="Community Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.3.4. Infrastructure Layer
+
+En el diagrama presentado:  
+
+- El `PostRepository` gestiona la entidad `Post` y permite consultas por `UserId` (autor), ordenamiento descendente por fecha de creación y búsquedas de texto en el contenido (`findByContentTextContainingIgnoreCase`).  
+
+- El `CommentRepository` administra la entidad `Comment`, habilitando consultas por `PostId`, orden cronológico ascendente, búsquedas por autor (`UserId`) y la eliminación de comentarios asociados a un `PostId`.  
+
+- El `LikeRepository` gestiona la entidad `Like`, ofreciendo operaciones para validar la existencia de un "like" en relación con `PostId` o `CommentId` y un `UserId`, además de contar reacciones y consultar listas de likes asociados. También permite la eliminación de likes por `PostId` o `CommentId`.
+
 ### Community Manager Infrastructure
 <img src="../chapter4/assets/ddd-layers/community/CommunityManagerInfrastructure.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
@@ -858,6 +839,10 @@ El dominio implementa patrones específicos para fomentar la participación:
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+### Community Manager Domain
+<img src="../chapter4/assets/ddd-layers/community/CommunityManagerDomain.png" alt="Community Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
 
 ### Community Manager 
