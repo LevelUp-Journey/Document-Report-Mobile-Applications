@@ -167,7 +167,175 @@ Esta arquitectura asegura que LevelUpJourney pueda escalar eficientemente, mante
 
 #### 4.1.3.3. Software Architecture Deployment Diagrams
 
-Los **diagramas de despliegue** muestran cómo los contenedores se mapean a infraestructura física o virtual, incluyendo consideraciones de escalabilidad, disponibilidad y seguridad.
+Los **diagramas de despliegue** muestran cómo los contenedores se mapean a infraestructura física o virtual, incluyendo consideraciones de escalabilidad, disponibilidad y seguridad. Este diagrama visualiza la distribución física del sistema LevelUpJourney, destacando cómo los componentes del software se despliegan sobre la infraestructura en la nube y otros entornos de ejecución.
+
+<img src="../chapter4/assets/deployment/DeploymentDiagram.png" alt="Deployment Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+##### Análisis del Deployment Diagram
+
+El Deployment Diagram de LevelUpJourney presenta una arquitectura cloud-native desplegada en **Microsoft Azure**, diseñada para proporcionar alta disponibilidad, escalabilidad automática y seguridad robusta. La distribución física del sistema se organiza en múltiples capas especializadas que optimizan el rendimiento y la gestión operacional.
+
+**Infraestructura Cloud - Microsoft Azure:**
+
+La solución está completamente desplegada en Microsoft Azure, aprovechando sus servicios administrados para reducir la complejidad operacional y mejorar la confiabilidad del sistema. Esta decisión estratégica permite al equipo enfocarse en el desarrollo de funcionalidades de negocio mientras Azure maneja la infraestructura subyacente.
+
+**Arquitectura de Contenedores - Azure Container Instances (ACI):**
+
+Todos los servicios de aplicación se ejecutan en contenedores Docker desplegados en Azure Container Instances, proporcionando:
+
+- **Aislamiento**: Cada servicio opera en su propio contenedor independiente
+- **Portabilidad**: Los contenedores pueden moverse entre entornos sin modificaciones
+- **Escalabilidad**: Capacidad de escalar horizontalmente según demanda
+- **Gestión simplificada**: Despliegue y actualización automatizada de servicios
+
+**Capa de Presentación (Frontend Tier):**
+
+- **Web Server (Docker)**: Aloja múltiples aplicaciones frontend:
+  - **Landing Page (Astro)**: Página estática optimizada para SEO y rendimiento
+  - **Web App (Next.js)**: Aplicación web principal con SSR/SPA híbrido
+  - **Student & Teacher Portal**: Interfaces especializadas para cada tipo de usuario
+
+- **Mobile API Server (Docker)**: Servidor proxy especializado que gestiona las comunicaciones entre la aplicación móvil Flutter y el API Gateway, optimizando el tráfico móvil y proporcionando caché específico.
+
+**Capa de Gateway:**
+
+- **API Gateway (Spring Boot)**: Punto de entrada centralizado que implementa:
+  - Enrutamiento inteligente hacia microservicios
+  - Autenticación y autorización centralizadas
+  - Rate limiting y throttling
+  - Logging y monitoreo centralizado
+  - Load balancing hacia servicios backend
+
+**Capa de Microservicios (Microservices Tier):**
+
+La arquitectura despliega múltiples microservicios especializados, cada uno en su propio contenedor:
+
+- **IAM Service**: Gestión de identidad y acceso con integración OAuth
+- **User Profile Service**: Administración de perfiles de usuario
+- **Challenges Service**: Gestión del catálogo de desafíos
+- **Community Service**: Funcionalidades sociales y colaborativas
+- **Class Activities Service**: Coordinación de actividades académicas
+- **Analytics Service**: Procesamiento y análisis de métricas
+- **Code Runner Cluster**: Cluster escalable para ejecución de código con múltiples instancias
+
+**Cluster de Code Runner - Escalabilidad Horizontal:**
+
+El servicio Code Runner está diseñado como un cluster horizontalmente escalable con múltiples instancias (CodeRunner 1, 2, ..., N) implementadas en **Go con framework Gin**. Esta arquitectura permite:
+
+- **Auto-scaling**: Escalado automático basado en carga de trabajo
+- **Distribución de carga**: Procesamiento paralelo de ejecuciones de código
+- **Aislamiento de seguridad**: Cada instancia ejecuta código en entornos aislados
+- **Alta disponibilidad**: Tolerancia a fallos con instancias redundantes
+
+**Capa de Datos - Azure Database Services:**
+
+La capa de datos utiliza servicios administrados de Azure Database para garantizar alta disponibilidad y gestión automática:
+
+- **Azure Database for PostgreSQL**: Para la mayoría de microservicios (IAM, User Profile, Challenges, Class Activities, Code Runner, Analytics)
+- **MongoDB**: Para el servicio Community, aprovechando la flexibilidad de documentos para datos sociales
+
+**Consideración de Azure Cosmos DB como Alternativa:**
+
+Como parte de la estrategia de optimización en la nube, se puede considerar **Azure Cosmos DB con API de MongoDB** como una evolución natural del actual deployment de MongoDB. Esta migración ofrecería ventajas significativas:
+
+- **Escalabilidad Global**: Distribución automática de datos a nivel mundial con latencia mínima
+- **Alta Disponibilidad**: SLA del 99.999% con replicación automática multi-región
+- **Gestión Completamente Administrada**: Eliminación de tareas operacionales como patching, backups y monitoreo
+- **Escalado Automático**: Ajuste dinámico de throughput basado en demanda real
+- **Compatibilidad Total**: API wire-protocol compatible con MongoDB, permitiendo migración sin cambios de código
+- **Seguridad Empresarial**: Cifrado en reposo y en tránsito, integración con Azure Active Directory
+- **Costo-Beneficio**: Modelo de pricing por consumo que optimiza costos operacionales
+
+La transición sería transparente para la aplicación, manteniendo todas las funcionalidades existentes mientras se obtienen los beneficios de una plataforma cloud-native completamente administrada.
+
+**Infraestructura de Mensajería:**
+
+- **Apache Kafka**: Implementado en contenedor Docker para comunicación asíncrona entre microservicios, facilitando arquitectura orientada a eventos y desacoplamiento temporal.
+
+**Integraciones Externas:**
+
+- **OAuth Providers**: Integración con GitHub OAuth y Google OAuth para autenticación federada
+- **Acceso de Usuarios**: Soporte multi-plataforma (Web, Mobile) con conexiones HTTPS seguras
+
+**Decisiones de Tecnología y Justificación:**
+
+1. **Microsoft Azure**: Plataforma cloud robusta con servicios administrados
+2. **Docker + ACI**: Containerización para portabilidad y gestión simplificada
+3. **Spring Boot**: Framework Java maduro para microservicios empresariales
+4. **Next.js**: Framework React con SSR para rendimiento web optimizado
+5. **Flutter**: Framework cross-platform para aplicaciones móviles nativas
+6. **PostgreSQL**: Base de datos relacional robusta y confiable
+7. **MongoDB**: Base de datos NoSQL para flexibilidad en datos sociales
+8. **Apache Kafka**: Sistema de mensajería distribuida para comunicación asíncrona
+9. **Go + Gin**: Lenguaje de alto rendimiento para ejecución intensiva de código
+
+**Consideraciones de Seguridad:**
+
+- **HTTPS/TLS**: Todas las comunicaciones externas cifradas
+- **OAuth 2.0**: Autenticación federada con proveedores confiables
+- **Network Isolation**: Servicios internos aislados del acceso directo externo
+- **Container Security**: Imágenes Docker escaneadas y actualizadas regularmente
+- **Database Security**: Bases de datos administradas con cifrado en reposo y tránsito
+
+**Escalabilidad y Disponibilidad:**
+
+- **Horizontal Scaling**: Microservicios pueden escalar independientemente
+- **Auto-scaling**: Code Runner cluster con escalado automático
+- **Load Balancing**: API Gateway distribuye carga entre instancias
+- **Database Scaling**: Servicios administrados de Azure con escalado automático
+- **Geographic Distribution**: Potencial para despliegue multi-región
+
+##### Posibilidades de Mejora
+
+Para fortalecer y optimizar el deployment actual, se identifican las siguientes oportunidades de mejora:
+
+**1. Mejoras en Alta Disponibilidad:**
+- **Multi-Region Deployment**: Implementar despliegue en múltiples regiones de Azure para reducir latencia global y proporcionar tolerancia a fallos geográficos
+- **Azure Kubernetes Service (AKS)**: Migrar de ACI a AKS para obtener mayor control sobre orquestación, auto-healing y gestión avanzada de contenedores
+- **Database Replicas**: Configurar réplicas de lectura geográficamente distribuidas para mejorar rendimiento y disponibilidad de datos
+
+**2. Optimizaciones de Rendimiento:**
+- **Content Delivery Network (CDN)**: Implementar Azure CDN para distribución global de contenido estático y reducción de latencia
+- **Caching Layer**: Introducir Azure Redis Cache para caché distribuido y mejora de tiempos de respuesta
+- **Database Connection Pooling**: Implementar connection pooling avanzado para optimizar conexiones a bases de datos
+
+**3. Mejoras en Seguridad:**
+- **Azure Key Vault**: Centralizar gestión de secretos, certificados y claves de cifrado
+- **Web Application Firewall (WAF)**: Implementar WAF para protección contra ataques web comunes
+- **Azure Security Center**: Integrar monitoreo de seguridad continuo y detección de amenazas
+- **Network Security Groups**: Configurar reglas de firewall granulares entre servicios
+- **Private Endpoints**: Implementar endpoints privados para comunicación interna segura
+
+**4. Observabilidad y Monitoreo:**
+- **Azure Application Insights**: Implementar APM (Application Performance Monitoring) completo
+- **Centralized Logging**: Configurar Azure Log Analytics para agregación centralizada de logs
+- **Distributed Tracing**: Implementar trazabilidad distribuida para debugging en microservicios
+- **Health Checks**: Configurar health checks avanzados y alertas proactivas
+
+**5. Optimizaciones de Costo:**
+- **Azure Reserved Instances**: Utilizar instancias reservadas para reducir costos de compute
+- **Spot Instances**: Implementar Spot Instances para cargas de trabajo no críticas
+- **Auto-scaling Policies**: Refinar políticas de auto-scaling para optimizar costos vs. rendimiento
+- **Resource Tagging**: Implementar tagging comprehensive para gestión de costos por proyecto/entorno
+
+**6. DevOps y CI/CD:**
+- **Azure DevOps Pipelines**: Implementar pipelines de CI/CD completamente automatizados
+- **GitOps**: Adoptar prácticas GitOps para gestión declarativa de infraestructura
+- **Blue-Green Deployment**: Implementar estrategias de despliegue sin downtime
+- **Infrastructure as Code**: Migrar toda la infraestructura a Terraform o ARM Templates
+
+**7. Escalabilidad Avanzada:**
+- **Event-Driven Autoscaling**: Implementar escalado basado en eventos de Kafka
+- **Microservices Mesh**: Considerar Service Mesh (Istio) para comunicación inter-servicios avanzada
+- **Serverless Components**: Migrar componentes apropiados a Azure Functions para escalado automático
+- **Database Sharding**: Implementar sharding horizontal para bases de datos de alto volumen
+
+**8. Backup y Disaster Recovery:**
+- **Automated Backups**: Configurar backups automatizados cross-region
+- **Disaster Recovery Plan**: Implementar plan de recuperación ante desastres con RTO/RPO definidos
+- **Data Replication**: Configurar replicación asíncrona para continuidad de negocio
+
+Estas mejoras proporcionarían una arquitectura de producción robusta, escalable y enterprise-ready, capaz de soportar el crecimiento futuro de LevelUpJourney mientras mantiene altos estándares de rendimiento, seguridad y disponibilidad.
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
