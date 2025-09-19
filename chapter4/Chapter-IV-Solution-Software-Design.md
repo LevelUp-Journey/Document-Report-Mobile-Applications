@@ -420,15 +420,6 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
   Interfaces que definen la lógica de orquestación entre los comandos y consultas del dominio de soluciones.  
 
 
-### Challenges Domain
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomain.png" alt="Challenges Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
-
-### Solution Domain
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsDomain.png" alt="Solutions Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
-
-### Solution Report Domain
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsDomain.png" alt="Solution Reports Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
-
 #### 4.2.1.2. Interface Layer
 
 ## Challenges
@@ -545,6 +536,16 @@ En los diagramas presentados:
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+### Challenges Domain
+<img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomain.png" alt="Challenges Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+### Solution Domain
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionsDomain.png" alt="Solutions Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+### Solution Report Domain
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsDomain.png" alt="Solution Reports Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
 ### Challenges Database Diagram
@@ -618,8 +619,6 @@ Aunque en los diagramas no se muestran implementaciones específicas de reposito
 - **AddQuestionResource, UpdateQuestionResource**: recursos de entrada para agregar o actualizar preguntas.  
 - **AddOptionResource, UpdateOptionResource**: recursos de entrada para agregar o actualizar opciones de una pregunta.  
 - **GetQuizActivityByIdResource, GetQuestionsByActivityIdResource, GetOptionsByQuestionIdResource**: recursos de entrada para parámetros de consultas.  
-
----
 
 ## 2. Bounded Context: LiveSessions
 
