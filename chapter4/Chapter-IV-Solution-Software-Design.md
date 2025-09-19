@@ -454,34 +454,435 @@ Los servicios de dominio manejan operaciones que no pertenecen naturalmente a un
 <img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsDomain.png" alt="Solution Reports Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.1.2. Interface Layer
+
+La **Interface Layer** del bounded context **Challenges** constituye la capa de presentación que maneja toda la comunicación externa con el sistema de desafíos de programación. Esta capa implementa el patrón MVC y expone APIs REST que permiten a las aplicaciones cliente interactuar con las funcionalidades de creación, gestión y resolución de desafíos académicos.
+
+**Controllers (Controladores REST):**
+
+Los controladores actúan como puntos de entrada HTTP y coordinan las operaciones entre la capa de presentación y la capa de aplicación:
+
+**1. ChallengesController:**
+Controlador principal que gestiona el ciclo de vida completo de los desafíos de programación.
+
+*Operaciones de Escritura:*
+- **createChallenge(CreateChallengeResource)**: Endpoint POST para crear nuevos desafíos con validación de permisos de profesor
+- **updateChallenge(UpdateChallengeResource)**: Endpoint PUT para modificar desafíos existentes con campos opcionales
+- **publishChallenge(PublishChallengeResource)**: Endpoint PATCH para publicar desafíos y hacerlos disponibles a estudiantes
+- **startChallenge(StartChallengeResource)**: Endpoint POST para que estudiantes inicien la resolución de un desafío
+
+*Operaciones de Lectura:*
+- **getChallengeById(GetChallengeByIdResource)**: Endpoint GET para recuperar desafío específico con detalles completos
+- **getPublishedChallenges()**: Endpoint GET para listar todos los desafíos publicados disponibles
+- **getChallengesByTeacherId(GetChallengesByTeacherIdResource)**: Endpoint GET para desafíos creados por profesor específico
+- **getAllChallengeTags()**: Endpoint GET para obtener catálogo de etiquetas disponibles
+
+**2. CodeVersionsController:**
+Controlador especializado que gestiona las diferentes versiones de código por lenguaje de programación.
+
+*Operaciones de Gestión:*
+- **addCodeVersion(AddCodeVersionResource)**: Endpoint POST para agregar soporte de nuevo lenguaje a desafío existente
+- **updateCodeVersion(UpdateCodeVersionResource)**: Endpoint PUT para modificar código base y plantillas
+
+*Operaciones de Consulta:*
+- **getCodeVersionById(GetCodeVersionByIdResource)**: Endpoint GET para recuperar versión específica con código inicial
+- **getCodeVersionsByChallengeId(GetCodeVersionsByChallengeIdResource)**: Endpoint GET para listar todos los lenguajes soportados
+
+**3. CodeVersionTestsController:**
+Controlador que administra las pruebas automatizadas para validación de soluciones.
+
+*Operaciones de Pruebas:*
+- **addCodeVersionTest(AddCodeVersionTestResource)**: Endpoint POST para crear nuevas pruebas con casos de validación
+- **updateCodeVersionTest(UpdateCodeVersionTestResource)**: Endpoint PUT para modificar pruebas existentes con nuevos casos
+
+**Resource Objects (DTOs):**
+
+Los Resource Objects encapsulan datos de transferencia entre cliente y servidor con validaciones específicas:
+
+*Challenge Resources:*
+- **CreateChallengeResource**: Datos para creación (teacherId, name, description, experiencePoints)
+- **UpdateChallengeResource**: Datos para modificación con campos opcionales (name?, description?, experiencePoints?, tags?)
+- **PublishChallengeResource**: Identificador para publicación (challengeId)
+- **StartChallengeResource**: Identificador para inicio de resolución (challengeId)
+
+*CodeVersion Resources:*
+- **AddCodeVersionResource**: Especificación de lenguaje (language: CodeLanguage)
+- **UpdateCodeVersionResource**: Código actualizado (code: String)
+
+*CodeVersionTest Resources:*
+- **AddCodeVersionTestResource**: Caso de prueba completo (input, expectedOutput, customValidationCode, failureMessage)
+- **UpdateCodeVersionTestResource**: Modificación de caso existente con mismos campos
+
+*Query Resources:*
+- **GetChallengeByIdResource**: Parámetro de consulta (challengeId: UUID)
+- **GetChallengesByTeacherIdResource**: Filtro por profesor (teacherId: UUID)
+- **GetCodeVersionByIdResource**: Consulta de versión (codeVersionId: UUID)
+- **GetCodeVersionsByChallengeIdResource**: Listado por desafío (challengeId: UUID)
+
+**Patrones de Interface Implementados:**
+
+*RESTful Design:*
+- Uso consistente de verbos HTTP (GET, POST, PUT, PATCH)
+- URIs semánticas que reflejan recursos y jerarquías
+- Códigos de estado HTTP apropiados para cada operación
+- Versionado de API para compatibilidad futura
+
+*Validation Patterns:*
+- Validación de entrada en Resource Objects
+- Sanitización de datos antes del procesamiento
+- Verificación de permisos por tipo de usuario
+- Validación de integridad referencial
+
+*Error Handling:*
+- Manejo centralizado de excepciones
+- Respuestas de error estructuradas y consistentes
+- Logging detallado para debugging y auditoría
+- Mapeo de excepciones de dominio a códigos HTTP
+
+*Security Considerations:*
+- Autenticación requerida para todas las operaciones
+- Autorización basada en roles (profesores vs. estudiantes)
+- Validación de propiedad de recursos
+- Rate limiting para prevenir abuso
+
+**Mapping y Transformación:**
+
+La capa incluye mappers automáticos que transforman:
+- Resource Objects → Domain Commands/Queries
+- Domain Objects → Response DTOs
+- Excepciones de dominio → HTTP Error Responses
+- Parámetros de URL → Value Objects de dominio
+
+**Consideraciones de Performance:**
+
+- Paginación automática para listados grandes
+- Caché de respuestas para consultas frecuentes
+- Compresión de respuestas para optimizar transferencia
+- Lazy loading de relaciones complejas
+
 ### Challenges Interface
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/ChallengesInterfaces.png" alt="Challenges Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Interface
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionsInterfaces.png" alt="Solutions Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Report Interface
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsInterfaces.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsInterfaces.png" alt="Solution Reports Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.1.3. Application Layer
+
+La **Application Layer** del bounded context **Challenges** orquesta los flujos de procesos de negocio relacionados con la gestión de desafíos de programación. Esta capa actúa como coordinadora entre la Interface Layer y la Domain Layer, implementando los casos de uso específicos y manejando la lógica de aplicación que no pertenece al dominio puro.
+
+**Command Service Implementations:**
+
+Los Command Services implementan las interfaces definidas en la capa de dominio y coordinan operaciones de escritura:
+
+**1. ChallengeCommandServiceImpl:**
+Implementación concreta que maneja todos los comandos relacionados con el ciclo de vida de desafíos.
+
+*Capabilities de Aplicación:*
+- **Challenge Creation Workflow**: Coordina la creación de desafíos incluyendo validaciones de permisos, generación de identificadores únicos y persistencia inicial
+- **Challenge Publishing Process**: Gestiona el flujo de publicación verificando completitud de datos, validando pruebas mínimas y actualizando estado
+- **Challenge Update Orchestration**: Maneja actualizaciones parciales con validación de integridad y notificación de cambios
+- **Student Challenge Initiation**: Coordina el inicio de resolución por estudiantes incluyendo verificación de prerrequisitos y registro de intento
+
+*Métodos de Orquestación:*
+- **handle(CreateChallengeCommand)**: Valida permisos de profesor, crea instancia de dominio, persiste y publica evento
+- **handle(UpdateChallengeCommand)**: Recupera entidad, aplica cambios, valida consistencia y persiste
+- **handle(PublishChallengeCommand)**: Verifica completitud, actualiza estado, invalida caché y notifica
+- **handle(StartChallengeCommand)**: Valida disponibilidad, registra inicio y actualiza métricas
+
+**2. CodeVersionCommandServiceImpl:**
+Servicio especializado que gestiona las versiones de código por lenguaje de programación.
+
+*Capabilities de Aplicación:*
+- **Multi-Language Support Management**: Coordina la adición de soporte para nuevos lenguajes con validación de sintaxis
+- **Code Template Management**: Gestiona plantillas de código inicial y configuraciones por lenguaje
+- **Version Consistency**: Asegura consistencia entre versiones y sincronización de cambios
+
+*Métodos de Coordinación:*
+- **handle(AddCodeVersionCommand)**: Valida lenguaje, crea versión, establece código base y persiste
+- **handle(UpdateCodeVersionCommand)**: Recupera versión, valida cambios, actualiza código y sincroniza
+
+**3. CodeVersionTestCommandServiceImpl:**
+Servicio que administra las pruebas automatizadas para validación de soluciones.
+
+*Capabilities de Aplicación:*
+- **Test Case Management**: Coordina creación y modificación de casos de prueba con validación
+- **Test Validation Pipeline**: Gestiona validación de casos de prueba antes de la persistencia
+- **Test Coverage Analysis**: Analiza cobertura de pruebas y sugiere casos adicionales
+
+*Métodos de Gestión:*
+- **handle(AddCodeVersionTestCommand)**: Valida entrada/salida, crea caso de prueba y persiste
+- **handle(UpdateCodeVersionTestCommand)**: Recupera caso, aplica cambios y valida consistencia
+
+**Query Service Implementations:**
+
+Los Query Services optimizan las operaciones de lectura y proporcionan vistas especializadas:
+
+**1. ChallengeQueryServiceImpl:**
+Implementación que optimiza consultas de desafíos con diferentes filtros y criterios.
+
+*Capabilities de Consulta:*
+- **Challenge Discovery**: Facilita descubrimiento de desafíos con filtros avanzados
+- **Teacher Dashboard Support**: Proporciona vistas especializadas para gestión de profesores
+- **Student Challenge Browser**: Optimiza listados para experiencia de estudiantes
+- **Analytics Data Provision**: Genera métricas y estadísticas de uso
+
+*Métodos de Consulta:*
+- **handle(GetChallengeByIdQuery)**: Recuperación optimizada con lazy loading de relaciones
+- **handle(GetPublishedChallengesQuery)**: Listado con paginación y filtros de disponibilidad
+- **handle(GetChallengesByTeacherIdQuery)**: Vista especializada con métricas de profesor
+- **handle(GetAllChallengeTagsQuery)**: Catálogo optimizado con contadores de uso
+
+**2. CodeVersionQueryServiceImpl:**
+Servicio especializado en consultas de versiones de código con optimizaciones específicas.
+
+*Capabilities de Consulta:*
+- **Language-Specific Retrieval**: Recuperación optimizada por lenguaje de programación
+- **Code Template Provision**: Proporciona plantillas de código para editores
+- **Version Comparison**: Facilita comparación entre versiones de diferentes lenguajes
+
+*Métodos de Consulta:*
+- **handle(GetCodeVersionByIdQuery)**: Recuperación con código formateado y metadatos
+- **handle(GetCodeVersionsByChallengeIdQuery)**: Listado con información de lenguajes disponibles
+
+**Workflow Orchestration Patterns:**
+
+La capa implementa patrones específicos para coordinar flujos complejos:
+
+*Command Pipeline Pattern:*
+- Validación de entrada → Transformación → Ejecución de dominio → Persistencia → Notificación
+
+*Query Optimization Pattern:*
+- Cache Check → Database Query → Data Transformation → Response Caching
+
+*Event Publishing Pattern:*
+- Domain Operation → Event Generation → Async Publishing → External Notification
+
+**Integration Event Handlers:**
+
+Manejadores que procesan eventos de otros bounded contexts:
+
+*User Management Integration:*
+- **UserRegisteredEventHandler**: Procesa registro de nuevos profesores para permisos
+- **UserRoleChangedEventHandler**: Actualiza permisos de creación de desafíos
+
+*Analytics Integration:*
+- **ChallengeCreatedEventHandler**: Publica métricas de creación para análisis
+- **ChallengeCompletedEventHandler**: Registra completitud para estadísticas
+
+**Cross-Cutting Concerns:**
+
+La capa maneja preocupaciones transversales:
+
+*Transaction Management:*
+- Transacciones automáticas para operaciones de escritura
+- Rollback en caso de errores de dominio o infraestructura
+
+*Caching Strategy:*
+- Cache de consultas frecuentes (desafíos publicados, tags)
+- Invalidación automática en operaciones de escritura
+
+*Audit and Logging:*
+- Logging detallado de todas las operaciones
+- Auditoría de cambios para compliance
+
+*Error Handling:*
+- Transformación de excepciones de dominio
+- Retry automático para errores transitorios
+
+**Performance Considerations:**
+
+*Query Optimization:*
+- Uso de índices específicos para consultas frecuentes
+- Paginación automática para resultados grandes
+- Proyecciones optimizadas para reducir transferencia de datos
+
+*Command Optimization:*
+- Batch processing para operaciones múltiples
+- Async processing para operaciones no críticas
+- Event sourcing para trazabilidad completa
+
 ### Challenges Application
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/ChallengesApplication.png" alt="Challenges Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Application
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionsApplication.png" alt="Solutions Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Report Application
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsApplication.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsApplication.png" alt="Solution Reports Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.1.4. Infrastructure Layer
+
+La **Infrastructure Layer** del bounded context **Challenges** proporciona implementaciones concretas de las abstracciones definidas en la Domain Layer y gestiona el acceso a recursos externos como bases de datos, sistemas de mensajería y servicios de terceros. Esta capa asegura la persistencia de datos, comunicación inter-servicios y integración con la infraestructura tecnológica subyacente.
+
+**Repository Implementations:**
+
+Las implementaciones de repositorio extienden JpaRepository y proporcionan acceso optimizado a datos:
+
+**1. ChallengeRepository extends JpaRepository<Challenge, UUID>:**
+Repositorio principal que gestiona la persistencia de desafíos con consultas especializadas.
+
+*Métodos de Consulta Especializados:*
+- **findByTeacherId(teacherId: TeacherId)**: Recupera todos los desafíos creados por un profesor específico con índice optimizado
+- **findByStatus(status: ChallengeStatus)**: Filtra desafíos por estado (DRAFT, PUBLISHED, HIDDEN) para diferentes vistas
+- **findPublishedChallenges()**: Consulta optimizada que retorna solo desafíos disponibles para estudiantes con eager loading de tags
+
+*Optimizaciones de Performance:*
+- Índices compuestos en (teacherId, status) para consultas frecuentes
+- Query hints para control de fetch strategies
+- Native queries para consultas complejas con agregaciones
+
+**2. CodeVersionRepository extends JpaRepository<CodeVersion, UUID>:**
+Repositorio especializado en versiones de código con consultas por lenguaje y desafío.
+
+*Métodos de Acceso Específicos:*
+- **findByChallengeId(challengeId: ChallengeId)**: Retorna todas las versiones disponibles para un desafío con lazy loading de tests
+- **findByChallengeIdAndLanguage(challengeId, language)**: Búsqueda específica por desafío y lenguaje para editores de código
+
+*Consideraciones de Almacenamiento:*
+- CLOB storage para código fuente de gran tamaño
+- Compresión automática para versiones históricas
+- Versionado de esquemas para backward compatibility
+
+**3. CodeVersionTestRepository extends JpaRepository<CodeVersionTest, UUID>:**
+Repositorio que maneja casos de prueba con operaciones batch optimizadas.
+
+*Métodos de Gestión de Pruebas:*
+- **findByCodeVersionId(codeVersionId: CodeVersionId)**: Recupera todos los casos de prueba ordenados por secuencia
+- **deleteByCodeVersionId(codeVersionId: CodeVersionId)**: Eliminación en cascada optimizada con batch operations
+
+*Optimizaciones de Testing:*
+- Bulk operations para creación/actualización de múltiples tests
+- Índices en foreign keys para joins eficientes
+- Particionamiento por challengeId para escalabilidad
+
+**4. ChallengeTagRepository extends JpaRepository<ChallengeTag, UUID>:**
+Repositorio que gestiona etiquetas con validaciones de unicidad.
+
+*Métodos de Validación:*
+- **findByName(name: String)**: Búsqueda exacta con case-insensitive matching
+- **existsByName(name: String)**: Validación rápida de existencia para prevenir duplicados
+
+*Cache Strategy:*
+- Cache L2 habilitado para tags frecuentemente consultados
+- Cache de contadores para estadísticas de uso
+- Invalidación automática en operaciones de escritura
+
+**Database Configuration:**
+
+*Connection Management:*
+- Connection pooling con HikariCP para alta concurrencia
+- Read replicas para consultas de solo lectura
+- Connection validation y leak detection
+
+*Transaction Configuration:*
+- Transacciones declarativas con Spring @Transactional
+- Isolation levels específicos por tipo de operación
+- Timeout configuration para prevenir deadlocks
+
+*Schema Management:*
+- Flyway para versionado de esquemas de base de datos
+- Rollback strategies para deployments seguros
+- Data migration scripts para cambios de estructura
+
+**External Service Integrations:**
+
+*Code Execution Service Integration:*
+- Cliente HTTP para comunicación con Code Runner microservice
+- Circuit breaker pattern para manejo de fallos
+- Retry logic con exponential backoff
+- Request/response serialization optimizada
+
+*Message Broker Implementation:**
+- Apache Kafka producer configuration para eventos de dominio
+- Topic partitioning por challengeId para escalabilidad
+- Schema registry integration para evolución de eventos
+- Dead letter queue para manejo de errores
+
+*File Storage Service:*
+- Integration con Azure Blob Storage para media assets
+- CDN integration para optimización de delivery
+- Multipart upload para archivos grandes
+- Automatic cleanup de archivos temporales
+
+**Event Publishing Infrastructure:**
+
+*Domain Event Handling:*
+- Event bus implementation con Apache Kafka
+- Outbox pattern para garantizar delivery de eventos
+- Event versioning para backward compatibility
+- Monitoring y alertas para event processing failures
+
+*Integration Events:*
+- **ChallengeCreatedEvent**: Publicado cuando se crea un nuevo desafío
+- **ChallengePublishedEvent**: Notifica disponibilidad para estudiantes
+- **SolutionSubmittedEvent**: Enviado al Code Runner para evaluación
+- **ChallengeCompletedEvent**: Notifica completitud para analytics
+
+**Caching Infrastructure:**
+
+*Multi-Level Caching:*
+- L1 Cache: Hibernate second-level cache para entidades
+- L2 Cache: Redis para query results y computed values
+- CDN Cache: CloudFlare para assets estáticos
+
+*Cache Strategies:*
+- Write-through para datos críticos
+- Write-behind para datos no críticos
+- Cache-aside para consultas complejas
+- Time-based expiration con invalidación manual
+
+**Security Infrastructure:**
+
+*Database Security:*
+- Encryption at rest para datos sensibles
+- Row-level security para multi-tenancy
+- Audit logging para compliance
+- Backup encryption y retention policies
+
+*API Security:*
+- OAuth2 token validation middleware
+- Rate limiting con Redis backing store
+- Request sanitization y validation
+- CORS configuration para cross-origin requests
+
+**Monitoring and Observability:**
+
+*Metrics Collection:*
+- Micrometer integration para application metrics
+- Database performance monitoring
+- Custom business metrics (challenge creation rate, completion rate)
+- Real-time alerting para anomalías
+
+*Distributed Tracing:*
+- Spring Cloud Sleuth para request tracing
+- Correlation IDs para seguimiento cross-service
+- Performance profiling para optimización
+- Error tracking y aggregation
+
+**Deployment Infrastructure:**
+
+*Container Configuration:*
+- Docker images optimizadas con multi-stage builds
+- Health checks para container orchestration
+- Resource limits y requests para Kubernetes
+- Rolling deployment strategies
+
+*Configuration Management:*
+- Spring Cloud Config para external configuration
+- Environment-specific property files
+- Secret management con Azure Key Vault
+- Feature flags para gradual rollouts
+
 ### Challenges Infrastructure
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/ChallengesInfrastructure.png" alt="Challenges Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Infrastructure
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionsInfrastructure.png" alt="Solutions Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Report Infrastructure
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsInfrastructure.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsInfrastructure.png" alt="Solution Reports Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 <img src="../chapter4/assets/c4/ChallengesComponents.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
