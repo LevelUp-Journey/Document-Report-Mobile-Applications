@@ -1,0 +1,2076 @@
+# 2.4. Requirements specification
+## 2.4.1. User Stories.
+
+<div align="justify"
+
+
+La elaboración de las user stories en esta sección partió de la definición previa de las épicas, que permitieron agrupar los requisitos en bloques funcionales coherentes y alineados con los objetivos del proyecto. Las épicas funcionaron como marcos conceptuales amplios que organizaron las funcionalidades por áreas clave de valor, asegurando que cada conjunto de historias respondiera a una necesidad estratégica concreta identificada en el análisis TO-BE y en el impact mapping.
+
+A partir de cada épica se redactaron user stories que describen, desde la perspectiva del usuario final, las funcionalidades esperadas y el propósito que persiguen. Estas historias se detallaron con criterios de aceptación claros para definir el comportamiento esperado del sistema y facilitar su validación. Este enfoque permitió transformar objetivos generales en funcionalidades pequeñas, independientes y priorizables, manteniendo la trazabilidad con su épica de origen y con los objetivos de aprendizaje y retención definidos para el proyecto.
+
+De forma complementaria, se definieron technical stories asociadas a las mismas épicas. Estas especifican los componentes técnicos, integraciones, APIs y servicios necesarios para que las user stories puedan implementarse de forma segura y escalable. Así, las user stories representan el valor funcional que recibe el usuario, mientras que las technical stories aseguran la base técnica que lo hace posible, permitiendo planificar y desarrollar el sistema de forma iterativa y coherente.
+
+</div> <br />
+
+| N°   | Epic Title                                                   |
+| ---- | ------------------------------------------------------------ |
+| 1    | Como estudiante, quiero registrarme en la plataforma con mis credenciales para poder acceder a todas las funcionalidades básicas. |
+| 2    | Como usuario, quiero iniciar sesión de forma segura mediante autenticación en el sistema para proteger mi información personal. |
+| 3    | Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos. |
+| 4    | Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño. |
+| 5    | Como administrador, quiero generar reportes de quizzes (promedio de puntajes, preguntas más difíciles, tiempos de respuesta) para identificar oportunidades de mejora. |
+| 6    | Como usuario, quiero crear y editar mi perfil con nombre, avatar e institución para personalizar mi experiencia en la plataforma. |
+| 7    | Como estudiante, quiero visualizar mi progreso mediante niveles, rangos o puntajes para motivarme a seguir aprendiendo. |
+| 8    | Como estudiante, quiero acceder a todas mis actividades asignadas desde un solo lugar para organizar mejor mi tiempo de estudio. |
+| 9    | Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades. |
+| 10   | Como estudiante, quiero recibir retroalimentación inmediata después de completar cada actividad para mejorar continuamente mi desempeño. |
+| 11   | Como estudiante, quiero recibir retroalimentación instantánea, puntos, insignias y progreso de nivel tras enviar un reto para mantenerme motivado. |
+| 12   | Como profesor, quiero crear desafíos de programación y configurar validaciones de solo compilación y linting para que los estudiantes puedan detectar errores comunes antes de la ejecución. |
+
+<br />
+
+1. **Historias de Usuario**
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US01</td>
+<td>Estudiante</td>
+<td>1</td>
+<td>Como estudiante, quiero registrarme en la plataforma con mis credenciales para poder acceder a todas las funcionalidades básicas.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Registro de estudiante</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero acceder a la página de Registro para poder registrarme con mi correo y contraseña.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: El usuario abre la página de Registro</b><br>Dado que el usuario no está autenticado<br>Cuando el usuario navega a la página de "Registro"<br>Entonces el sistema muestra el formulario de registro<br>Y el usuario puede registrarse</li>
+<li><b>Escenario: El usuario se registra exitosamente</b><br>Dado que la página de Registro está visible<br>Cuando el usuario ingresa una entrada válida y procede al registro<br>Entonces el sistema valida la entrada<br>Y el sistema redirige al usuario a la página de Inicio de sesión</li>
+<li><b>Escenario: Campo de entrada vacío</b><br>Dado que la página de Registro está visible<br>Cuando el usuario deja un campo de entrada vacío y procede al registro<br>Entonces el sistema muestra un mensaje de error</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US02</td>
+<td>Estudiante</td>
+<td>1</td>
+<td>Como estudiante, quiero registrarme en la plataforma con mis credenciales para poder acceder a todas las funcionalidades básicas.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Inicio de sesión de estudiante</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero acceder a la página de Inicio de sesión para poder autenticarme con mi correo y contraseña.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: El estudiante abre la página de Inicio de sesión</b><br>Dado que el estudiante no está autenticado<br>Cuando el estudiante navega a la página de "Inicio de sesión"<br>Entonces el sistema muestra el formulario de autenticación<br>Y el estudiante puede iniciar sesión</li>
+<li><b>Escenario: El estudiante inicia sesión exitosamente</b><br>Dado que la página de Inicio de sesión está visible<br>Cuando el estudiante ingresa credenciales válidas<br>Entonces el sistema valida la entrada<br>Y el estudiante accede a la plataforma</li>
+<li><b>Escenario: Entrada vacía</b><br>Dado que la página de Inicio de sesión está visible<br>Cuando el estudiante envía sin completar un campo requerido<br>Entonces el sistema muestra un mensaje de error</li>
+<li><b>Escenario: Credenciales incorrectas</b><br>Dado que la página de Inicio de sesión está visible<br>Cuando el estudiante ingresa credenciales inválidas<br>Entonces el sistema muestra un mensaje de error<br>Y el estudiante permanece en la página de Inicio de sesión</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US03</td>
+<td>Profesor</td>
+<td>3</td>
+<td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Crear, editar y eliminar una publicación</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero crear una publicación con texto e imágenes para poder interactuar con mis estudiantes y comunicar eventos.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: El profesor abre la página de Crear publicación</b><br>Dado que el profesor está autenticado<br>Cuando el profesor navega a "Comunidad > Nueva publicación"<br>Entonces el sistema muestra un formulario con: área de texto, entrada de imagen opcional, sección de vista previa y opción de publicar (deshabilitada hasta que sea válida).</li>
+<li><b>Escenario: El profesor crea una publicación solo de texto exitosamente</b><br>Dado que el formulario "Nueva publicación" está visible<br>Cuando el profesor ingresa texto válido y no se proporciona ninguna imagen<br>Entonces el sistema publica la publicación<br>Y muestra un mensaje de éxito<br>Y la nueva publicación aparece en el feed de la comunidad</li>
+<li><b>Escenario: Editar una publicación exitosamente</b><br>Dado que el profesor está autenticado y el profesor tiene una publicación existente<br>Cuando el profesor edita la publicación con cambios válidos<br>Entonces el sistema actualiza la publicación<br>Y la versión actualizada se muestra en el feed de la comunidad<br>Y se muestra un mensaje de confirmación</li>
+<li><b>Escenario: Eliminar una publicación exitosamente</b><br>Dado que el profesor está autenticado y el profesor tiene una publicación existente<br>Cuando el profesor elimina la publicación<br>Entonces el sistema la elimina del feed de la comunidad<br>Y se muestra un mensaje de confirmación</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US04</td>
+<td>Estudiante</td>
+<td>3</td>
+<td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Dar "Me gusta" a una publicación</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero dar "Me gusta" o "Ya no me gusta" a una publicación de la comunidad para poder expresar mi opinión y apoyar a los demás.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Dar "Me gusta" a una publicación exitosamente</b><br>Dado que el estudiante está autenticado y el feed de la comunidad está visible<br>Cuando el estudiante da "Me gusta" a una publicación<br>Entonces la opción cambia a "Ya no me gusta"<br>Y el contador de "Me gusta" aumenta en 1<br>Y se muestra un mensaje de confirmación</li>
+<li><b>Escenario: Ya no me gusta una publicación exitosamente</b><br>Dado que el estudiante ya ha dado "Me gusta" a una publicación<br>Cuando el estudiante ya no da "Me gusta" a la publicación<br>Entonces la opción cambia de nuevo a "Me gusta"<br>Y el contador de "Me gusta" disminuye en 1<br>Y se muestra un mensaje de confirmación</li>
+<li><b>Escenario: Prevenir múltiples envíos</b><br>Dado que el estudiante intenta dar "Me gusta" a una publicación repetidamente<br>Entonces el sistema procesa solo una acción<br>Y el contador refleja un solo "Me gusta"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US05</td>
+<td>Estudiante</td>
+<td>3</td>
+<td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Comentar una publicación</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero escribir un comentario bajo una publicación para poder participar en la discusión.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Añadir comentario válido</b><br>Dado que el estudiante está autenticado y la vista de detalles de la publicación está abierta<br>Cuando el estudiante ingresa texto entre 3 y 500 caracteres<br>Entonces el comentario se muestra bajo la publicación<br>Y se muestra un mensaje de confirmación</li>
+<li><b>Escenario: Comentario vacío</b><br>Dado que la vista de detalles de la publicación está abierta<br>Cuando el estudiante envía sin ingresar texto<br>Entonces el sistema muestra un error "El comentario no puede estar vacío"</li>
+<li><b>Escenario: Comentario demasiado largo</b><br>Dado que la vista de detalles de la publicación está abierta<br>Cuando el estudiante ingresa más de 500 caracteres<br>Entonces el sistema muestra un error "El comentario no debe exceder los 500 caracteres"</li>
+<li><b>Escenario: Caracteres no admitidos en el comentario</b><br>Dado que la vista de detalles de la publicación está abierta<br>Cuando el estudiante ingresa texto con caracteres no admitidos<br>Entonces el sistema muestra un error "Se detectaron caracteres no admitidos"<br>Y el comentario no se publica</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US06</td>
+<td>Profesor</td>
+<td>4</td>
+<td>Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Panel de Sesión en Vivo</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero ver el recuento de estudiantes, la distribución de respuestas y el tiempo de respuesta promedio para poder monitorear la clase en tiempo real.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Ver métricas en vivo para una sesión</b><br>Dado que estoy asignado a la clase "cls_CS101_2025_2" y la sesión "ses_01A" está activa<br>Cuando abro "Análisis en vivo"<br>Entonces veo el recuento de estudiantes, total de respuestas, tiempo de respuesta promedio en ms<br>Y veo la distribución de respuestas para la pregunta actual</li>
+<li><b>Escenario: Aún no hay respuestas</b><br>Dado que la sesión "ses_01A" está activa con cero respuestas<br>Cuando abro "Análisis en vivo"<br>Entonces veo "Esperando respuestas..." y el recuento de estudiantes</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US07</td>
+<td>Profesor</td>
+<td>4</td>
+<td>Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Gráfico de Distribución de Respuestas</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero un gráfico de respuestas (A/B/C/D o números) para poder identificar rápidamente los conceptos erróneos.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Mostrar distribución categórica</b><br>Dado que la pregunta actual es de opción múltiple<br>Cuando llegan las respuestas<br>Entonces el gráfico muestra los recuentos por opción (A, B, C, D)</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US08</td>
+<td>Profesor</td>
+<td>4</td>
+<td>Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Panel de Tiempo Promedio</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero ver el tiempo de respuesta promedio para la pregunta actual para poder marcar el ritmo de la sesión.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Mostrar tiempo de respuesta promedio</b><br>Dado que las respuestas incluyen el tiempo<br>Cuando veo "Tiempo"<br>Entonces veo el tiempo de respuesta promedio en ms para la pregunta actual</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US09</td>
+<td>Administrador</td>
+<td>5</td>
+<td>Como administrador, quiero generar reportes de quizzes (promedio de puntajes, preguntas más difíciles, tiempos de respuesta) para identificar oportunidades de mejora.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Ver Informe de Resumen de Cuestionario</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un administrador, quiero ver el puntaje promedio, la tasa de participación y el tiempo de respuesta promedio para un cuestionario para poder evaluar el rendimiento general.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Ver resumen de cuestionario</b><br>Dado que soy un administrador y el cuestionario "quiz_1001" tiene entregas calificadas<br>Cuando abro "Informes de cuestionario" para quiz_1001<br>Entonces veo avgScore, participationRate, averageResponseTimeMs<br>Y los filtros de rango de tiempo y clase aplicados son visibles</li>
+<li><b>Escenario: No hay datos en el rango</b><br>Dado que no hay entregas calificadas en el rango de fechas seleccionado<br>Cuando veo el informe<br>Entonces veo "No hay datos para el rango seleccionado"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US10</td>
+<td>Administrador</td>
+<td>5</td>
+<td>Como administrador, quiero generar reportes de quizzes (promedio de puntajes, preguntas más difíciles, tiempos de respuesta) para identificar oportunidades de mejora.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Preguntas Más Difíciles</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un administrador, quiero una lista de las preguntas más difíciles (tasa de corrección más baja) para poder detectar conceptos erróneos.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Listar las preguntas más difíciles</b><br>Dado que quiz_1001 tiene resultados a nivel de pregunta<br>Cuando abro "Preguntas más difíciles"<br>Entonces veo una tabla con questionId, correctnessRate, attempts, avgTimeMs<br>Y la tabla está ordenada de forma ascendente por correctnessRate</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US11</td>
+<td>Estudiante</td>
+<td>6</td>
+<td>Como usuario, quiero crear y editar mi perfil con nombre, avatar e institución para personalizar mi experiencia en la plataforma.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir configuración de perfil a través del Front-end</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero editar mi perfil (nombre, nombre de usuario, avatar) para poder personalizar mi experiencia en la plataforma.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Abrir Configuración de perfil</b><br>Dado que el estudiante está autenticado<br>Cuando el estudiante navega a "Cuenta > Perfil"<br>Entonces el sistema muestra un formulario con: Nombre completo (requerido), Nombre de usuario (requerido), URL del avatar (opcional, solo http/https), Institución (requerido) y opción de guardar (deshabilitada hasta que sea válida).</li>
+<li><b>Escenario: Actualizar nombre completo exitosamente</b><br>Dado que el formulario de Perfil está visible<br>Cuando el estudiante ingresa un nombre válido de 3 a 80 caracteres (conjunto de caracteres latinos)<br>Entonces el sistema actualiza el perfil<br>Y el encabezado refleja el nuevo nombre<br>Y se muestra un mensaje de confirmación</li>
+<li><b>Escenario: Actualizar nombre de usuario exitosamente</b><br>Dado que el formulario de Perfil está visible<br>Cuando el estudiante ingresa un nombre de usuario válido y disponible (3-24, letras/números/guiones bajos, comienza con letra)<br>Entonces el perfil se actualiza con el nuevo nombre de usuario<br>Y se muestra un mensaje de confirmación</li>
+<li><b>Escenario: Nombre de usuario ya tomado</b><br>Dado que el formulario de Perfil está visible<br>Cuando el estudiante ingresa un nombre de usuario que ya existe<br>Entonces el sistema muestra un error "El nombre de usuario ya está tomado"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US12</td>
+<td>Estudiante</td>
+<td>7</td>
+<td>Como estudiante, quiero visualizar mi progreso mediante niveles, rangos o puntajes para motivarme a seguir aprendiendo.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Ver progreso del estudiante a través del Front-end</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero ver mi nivel, puntos, insignias y racha para mantenerme motivado y seguir mi crecimiento.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Abrir el Panel de progreso</b><br>Dado que el estudiante está autenticado<br>Cuando el estudiante navega a "Progreso"<br>Entonces el sistema muestra: nivel actual con barra de progreso al siguiente nivel, puntos totales y puntos semanales, las últimas 5 insignias con información sobre herramientas, racha actual y más larga y enlaces para ver todas las insignias y el historial.</li>
+<li><b>Escenario: Ver historial de puntos (últimos 30 días)</b><br>Dado que la página de Progreso está visible<br>Cuando el estudiante selecciona la opción de los últimos 30 días<br>Entonces un gráfico de líneas diario muestra los puntos ganados por día<br>Y al pasar el mouse se muestra la fecha y los puntos</li>
+<li><b>Escenario: Estado vacío para nuevos estudiantes</b><br>Dado que el estudiante no tiene puntos ni insignias<br>Cuando se muestra la página de Progreso<br>Entonces el sistema muestra un estado vacío alentador con consejos para empezar desafíos</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US13</td>
+<td>Estudiante</td>
+<td>7</td>
+<td>Como estudiante, quiero visualizar mi progreso mediante niveles, rangos o puntajes para motivarme a seguir aprendiendo.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Ver clasificación (leaderboard)</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero ver las clasificaciones por alcance (global, clase, desafío) para poder comparar mi progreso y mantenerme comprometido.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Ver clasificación Global (Histórico)</b><br>Dado que el estudiante está autenticado<br>Cuando el estudiante abre "Clasificaciones" y selecciona el alcance "Global" y el período "Todos"<br>Entonces el sistema muestra una tabla paginada con: Puesto #, Nombre de usuario, Nivel, Puntos y mi fila resaltada (incluso si no está en la página actual).</li>
+<li><b>Escenario: Ver clasificación de Clase (semanal) con membresía</b><br>Dado que el estudiante está inscrito en la clase "CS-101"<br>Cuando el estudiante selecciona el alcance "Clase" y la clase "CS-101" y el período "Semanal"<br>Entonces la tabla muestra a los mejores estudiantes de esa clase esta semana<br>Y los empates se resuelven por: 1) Nivel más alto y 2) Marca de tiempo de logro más temprana</li>
+<li><b>Escenario: Ver clasificación de Desafío (este desafío)</b><br>Dado que el estudiante abre los detalles de un desafío<br>Cuando el estudiante cambia a la pestaña "Clasificación"<br>Entonces la tabla muestra el puesto solo para este desafío<br>Y solo aparecen los estudiantes con una entrega válida</li>
+<li><b>Escenario: Filtros y paginación</b><br>Dado que la clasificación está visible<br>Cuando el estudiante cambia el período a "Mensual" y la página a 2<br>Entonces la tabla se actualiza con los resultados correctos</li>
+<li><b>Escenario: Privacidad y visibilidad</b><br>Dado que algunos estudiantes tienen la privacidad configurada para “ocultar nombre”<br>Cuando se renderiza la clasificación<br>Entonces esas entradas muestran nombres enmascarados (ej. "Student-****")<br>Y mi propia entrada siempre es totalmente visible para mí</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US14</td>
+<td>Estudiante</td>
+<td>8</td>
+<td>Como estudiante, quiero acceder a todas mis actividades asignadas desde un solo lugar para organizar mejor mi tiempo de estudio.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Lista unificada de actividades</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un estudiante, quiero ver todas mis actividades asignadas en un solo lugar para poder planificar y priorizar mi tiempo de estudio.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Abrir "Mis Actividades"</b><br>Dado que el estudiante está autenticado<br>Cuando el estudiante navega a "Clase > Mis Actividades"<br>Entonces el sistema muestra una lista paginada con columnas: Título, Tipo (Desafío/Cuestionario/Laboratorio/Asignación), Clase (ej. CS-101), Fecha de vencimiento (hora local), Tiempo estimado (minutos) y Estado (Asignado/En progreso/Entregado/Calificado/Vencido).</li>
+<li><b>Escenario: Filtrar y ordenar actividades</b><br>Dado que la lista de actividades está visible<br>Cuando el estudiante filtra por Estado=Asignado y Fecha de vencimiento=Esta semana<br>Y ordena por Fecha de vencimiento de forma ascendente<br>Entonces la lista se actualiza en consecuencia</li>
+<li><b>Escenario: Buscar por palabra clave</b><br>Dado que la lista de actividades está visible<br>Cuando el estudiante busca "Arreglos C++"<br>Entonces solo se muestran las actividades cuyo título o descripción contiene el término</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US15</td>
+<td>Profesor</td>
+<td>9</td>
+<td>Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Ver Progreso de la Clase</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero una visión general del progreso de la clase con métricas clave (finalización, puntaje promedio, entregas tardías) para poder detectar rápidamente las fortalezas y debilidades de un vistazo.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Ver progreso de una clase</b><br>Dado que estoy asignado a la clase "cls_CS101_2025_2"<br>Cuando abro "Progreso de la clase"<br>Entonces veo completionRate y avgScore para la clase<br>Y una tabla de estudiantes con % de finalización y lastSubmissionAt</li>
+<li><b>Escenario: Aún no hay datos</b><br>Dado que la clase no tiene actividades<br>Cuando abro "Progreso de la clase"<br>Entonces veo el mensaje "Aún no hay actividades"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US16</td>
+<td>Profesor</td>
+<td>9</td>
+<td>Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Ver Progreso del Estudiante (Detalle)</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero abrir el detalle del progreso de un estudiante para poder revisar sus actividades completadas/pendientes.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Abrir detalle del estudiante</b><br>Dado que estoy en "Progreso de la clase"<br>Cuando selecciono al estudiante "std_01R"<br>Entonces veo su lista de actividades con título, estado, dueAt, puntaje</li>
+<li><b>Escenario: Estudiante sin entregas</b><br>Dado que el estudiante "std_01R" no tiene entregas<br>Cuando abro su detalle<br>Entonces veo "Aún no hay entregas"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US17</td>
+<td>Profesor</td>
+<td>9</td>
+<td>Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Crear Actividad (Tarea)</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero crear una nueva actividad para mi clase para que los estudiantes puedan ver las instrucciones y una fecha de vencimiento.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Crear una tarea básica</b><br>Dado que estoy asignado a "cls_CS101_2025_2"<br>Cuando creo una actividad con título, descripción y dueAt<br>Entonces la actividad aparece en la lista de actividades de la clase con el estado "BORRADOR"</li>
+<li><b>Escenario: Publicar la actividad</b><br>Dado que una actividad está en "BORRADOR"<br>Cuando la publico<br>Entonces los estudiantes de la clase pueden verla en sus actividades</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US18</td>
+<td>Profesor</td>
+<td>9</td>
+<td>Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Editar / Cerrar Actividad</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como un profesor, quiero editar una actividad existente y opcionalmente cerrar las entregas para poder corregir detalles y detener el trabajo tardío.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Editar título y fecha de vencimiento</b><br>Dado que la actividad está en "BORRADOR"<br>Cuando actualizo el título y la dueAt<br>Entonces los cambios se guardan</li>
+<li><b>Escenario: Cerrar entregas</b><br>Dado que la actividad está "PUBLICADA"<br>Cuando configuro "acceptSubmissions" en falso<br>Entonces los estudiantes ya no pueden entregar</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US19</td>
+<td>Estudiante</td>
+<td>10</td>
+<td>Como estudiante, quiero recibir retroalimentación inmediata después de completar cada actividad para mejorar continuamente mi desempeño.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Enviar y ver retroalimentación</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como estudiante, quiero ver mi puntaje y una retroalimentación básica justo después de enviar una actividad autocalificable para saber de inmediato qué hice bien o mal.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Retroalimentación inmediata tras el envío</b><br>Dado que la actividad "act_QZ1" está PUBLICADA y es autocalificable<br>Y estoy matriculado en la clase "cls_CS101_2025_2"<br>Cuando envío mis respuestas<br>Entonces veo mi puntaje y la corrección por ítem<br>Y veo una breve explicación para cada ítem incorrecto (si está permitido)</li>
+<li><b>Escenario: Política de retroalimentación oculta las soluciones</b><br>Dado que showSolutions=false<br>Cuando envío mis respuestas<br>Entonces solo veo mi puntaje<br>Y veo el mensaje "Las soluciones están ocultas para esta actividad"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US20</td>
+<td>Estudiante</td>
+<td>10</td>
+<td>Como estudiante, quiero recibir retroalimentación inmediata después de completar cada actividad para mejorar continuamente mi desempeño.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Consultar retroalimentación de una entrega</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como estudiante, quiero abrir la retroalimentación de mi entrega para poder aprender de las explicaciones y de las notas de la rúbrica.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Abrir retroalimentación</b><br>Dado que tengo una entrega exitosa para "act_QZ1"<br>Cuando abro "Ver retroalimentación"<br>Entonces veo los resultados pregunta por pregunta, las explicaciones (si están permitidas) y el puntaje total</li>
+<li><b>Escenario: Actividad no autocalificable</b><br>Dado que el tipo de actividad es TAREA (calificación manual)<br>Cuando envío mi entrega<br>Entonces veo "Entrega recibida retroalimentación pendiente"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>US21</td>
+<td>Estudiante</td>
+<td>10</td>
+<td>Como estudiante, quiero recibir retroalimentación inmediata después de completar cada actividad para mejorar continuamente mi desempeño.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Reintentar actividad con nueva retroalimentación</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como estudiante, quiero volver a intentar una actividad y recibir retroalimentación para poder mejorar dentro de los intentos permitidos.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Reintentar dentro de los intentos permitidos</b><br>Dado que la actividad "act_QZ1" permite múltiples intentos (maxAttempts = 3)<br>Y ya he enviado una vez<br>Cuando hago clic en "Reintentar actividad"<br>Entonces puedo enviar un nuevo intento<br>Y el intento anterior sigue visible como "Intento 1"</li>
+<li><b>Escenario: Retroalimentación actualizada después de reintentar</b><br>Dado que he enviado un segundo intento para "act_QZ1"<br>Cuando se completa la calificación manual o automática<br>Entonces veo el puntaje actualizado y la retroalimentación por ítem del Intento 2<br>Y puedo compararla con la retroalimentación del Intento 1</li>
+<li><b>Escenario: No hay más intentos disponibles</b><br>Dado que la actividad "act_QZ1" tiene maxAttempts = 3<br>Y ya he enviado 3 intentos<br>Cuando intento hacer clic en "Reintentar actividad"<br>Entonces veo el mensaje "No se permiten más intentos para esta actividad"<br>Y el botón "Reintentar actividad" aparece deshabilitado</li>
+</ul>
+</td>
+</tr>
+</table>
+<br />
+
+2. **Historias Técnicas**
+
+<br />
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS01</td>
+<td>Desarrollador</td>
+<td>1</td>
+<td>Como estudiante, quiero registrarme en la plataforma con mis credenciales para poder acceder a todas las funcionalidades básicas.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir estudiante a través de API RESTful</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero añadir un Estudiante a través de la API para que esté disponible para construir funcionalidades para mis aplicaciones.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Añadir estudiante con correo único</b><br>Dado que el endpoint /api/v1/authentication/sign-up está disponible<br>Cuando se envía una solicitud POST con valores para correo, contraseña y nombre<br>Y el correo no existe en la base de datos<br>Entonces se recibe una respuesta con Estado 201<br>Y un Recurso de Estudiante se incluye en el Cuerpo de la Respuesta con: un nuevo ID generado, valores registrados para correo y nombre, rol: STUDENT<br>Y la contraseña se almacena con hash de BCrypt</li>
+<li><b>Escenario: Añadir estudiante con correo existente</b><br>Dado que el endpoint /api/v1/authentication/sign-up está disponible<br>Cuando se envía una solicitud POST con valores para correo, contraseña y nombre<br>Y un Recurso de Estudiante con el mismo correo ya está almacenado<br>Entonces se recibe una respuesta con Estado 400<br>Y un mensaje se incluye en el Cuerpo de la Respuesta: Usuario con correo student@example.com ya existe</li>
+<li><b>Escenario: Formato de correo inválido</b><br>Dado que el endpoint /api/v1/authentication/sign-up está disponible<br>Cuando se envía una solicitud POST con un correo formateado incorrectamente (ej. invalid-email)<br>Entonces se recibe una respuesta con Estado 400<br>Y un mensaje se incluye: Formato de correo inválido</li>
+<li><b>Escenario: Faltan campos requeridos</b><br>Dado que el endpoint /api/v1/authentication/sign-up está disponible<br>Cuando se envía una solicitud POST sin correo o contraseña<br>Entonces se recibe una respuesta con Estado 400<br>Y un mensaje se incluye: La dirección de correo y la contraseña son requeridas</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS02</td>
+<td>Desarrollador</td>
+<td>1</td>
+<td>Como estudiante, quiero registrarme en la plataforma con mis credenciales para poder acceder a todas las funcionalidades básicas.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir autenticación de estudiante a través de API RESTful</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero autenticar a un Estudiante a través de la API para que el Estudiante pueda acceder a las funcionalidades protegidas de la aplicación.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Autenticación exitosa con credenciales válidas</b><br>Dado que el endpoint /api/v1/authentication/sign-in está disponible<br>Cuando se envía una solicitud POST con valores para correo y contraseña: correo: &quot;student@example.com&quot;, contraseña: &quot;correctPassword123&quot;<br>Y las credenciales son válidas en la base de datos<br>Entonces se recibe una respuesta con Estado 200 (OK)<br>Y un Recurso de Usuario Autenticado se incluye en el Cuerpo de la Respuesta con: id: &quot;uuid-generado&quot;, email_address: &quot;student@example.com&quot;, token: &quot;jwt-token-aqui&quot;, roles: [&quot;ROLE_STUDENT&quot;]<br>Y el token JWT es válido por 1 hora (según la configuración)</li>
+<li><b>Escenario: Autenticación fallida con credenciales incorrectas</b><br>Dado que el endpoint /api/v1/authentication/sign-in está disponible<br>Cuando se envía una solicitud POST con credenciales incorrectas: correo: &quot;student@example.com&quot;, contraseña: &quot;wrongPassword&quot;<br>Entonces se recibe una respuesta con Estado 401 (No autorizado)<br>Y un mensaje se incluye en el Cuerpo de la Respuesta: "Correo o contraseña inválidos"</li>
+<li><b>Escenario: Autenticación con usuario no existente</b><br>Dado que el endpoint /api/v1/authentication/sign-in está disponible<br>Cuando se envía una solicitud POST con un correo que no existe: correo: &quot;nonexistent@example.com&quot;, contraseña: &quot;anyPassword123&quot;<br>Entonces se recibe una respuesta con Estado 401 (No autorizado)<br>Y un mensaje se incluye en el Cuerpo de la Respuesta: "Correo o contraseña inválidos"</li>
+<li><b>Escenario: Formato de correo inválido</b><br>Dado que el endpoint /api/v1/authentication/sign-in está disponible<br>Cuando se envía una solicitud POST con un correo mal formateado: correo: &quot;invalid-email-format&quot;, contraseña: &quot;validPassword123&quot;<br>Entonces se recibe una respuesta con Estado 400 (Solicitud incorrecta)<br>Y un mensaje se incluye: "Formato de correo inválido"</li>
+<li><b>Escenario: Faltan campos requeridos</b><br>Dado que el endpoint /api/v1/authentication/sign-in está disponible<br>Cuando se envía una solicitud POST sin correo o contraseña<br>Entonces se recibe una respuesta con Estado 400 (Solicitud incorrecta)<br>Y un mensaje se incluye: "La dirección de correo y la contraseña son requeridas"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS03</td>
+<td>Desarrollador</td>
+<td>2</td>
+<td>Como usuario, quiero iniciar sesión de forma segura mediante autenticación en el sistema para proteger mi información personal.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Emisión de Token (Inicio de sesión)</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero que la puerta de enlace (gateway) autentique las credenciales y emita tokens para que los servicios posteriores reciban una identidad verificada.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Emitir tokens con credenciales válidas</b><br>Dado que el usuario existe y el hash de la contraseña coincide<br>Cuando POST /auth/login con cuerpo válido<br>Entonces 200 con accessToken (JWT) y refreshToken</li>
+<li><b>Escenario: Rechazar credenciales inválidas</b><br>Cuando POST /auth/login con contraseña incorrecta<br>Entonces 401 con título "Unauthorized"</li>
+<li><b>Escenario: Forzar bloqueo</b><br>Dado 5 intentos fallidos en 10 minutos<br>Cuando POST /auth/login<br>Entonces 423 con título "Account Locked"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS04</td>
+<td>Desarrollador</td>
+<td>3</td>
+<td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Publicar a través de API RESTful</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero crear una publicación de la comunidad a través de la API para que los profesores puedan publicar contenido validado de forma segura.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Crear publicación con texto válido y una URL de imagen</b><br>Dado que el endpoint /api/v1/community/posts está disponible<br>Y el solicitante tiene ROLE_PROFESSOR<br>Cuando se envía una solicitud POST con: texto: "Nos vemos en el taller del viernes. Material en el enlace.", imágenes: [&quot;https://cdn.example.com/materiales/banner.png&quot;]<br>Entonces se devuelve 201<br>Y un Recurso de Publicación con un id generado es devuelto<br>Y la URL de la imagen se almacena como un campo URL en la base de datos<br>Y un evento de auditoría community.post.created es registrado</li>
+<li><b>Escenario: Crear publicación solo de texto</b><br>Dado que el endpoint está disponible<br>Y el solicitante tiene ROLE_PROFESSOR<br>Cuando se envía una solicitud POST con: texto: "Recordatorio: entrega del reto 2 el domingo 23:59.", imágenes: []<br>Entonces se devuelve 201<br>Y la publicación no contiene imágenes<br>Y un evento de auditoría community.post.created es registrado</li>
+<li><b>Escenario: Rechazar URL de imagen no HTTP/HTTPS</b><br>Dado que el endpoint está disponible<br>Y el solicitante tiene ROLE_PROFESSOR<br>Cuando se envía una solicitud POST con: texto: "Adjunto imagen del diagrama.", imágenes: [&quot;ftp://example.com/diagram.jpg&quot;]<br>Entonces se devuelve 400<br>Y el mensaje incluye "La URL de la imagen debe usar HTTP o HTTPS"</li>
+<li><b>Escenario: Actualizar publicación con nuevo texto y URL de imagen</b><br>Dado que el endpoint /api/v1/community/posts/{id} está disponible<br>Y el solicitante tiene ROLE_PROFESSOR<br>Y el solicitante es dueño de la publicación<br>Cuando se envía una solicitud PUT con: texto: "Actualización: el taller se movió al sábado.", imágenes: [&quot;https://cdn.example.com/materiales/updated-banner.png&quot;]<br>Entonces se devuelve 200<br>Y el Recurso de Publicación refleja el nuevo texto y la URL de la imagen<br>Y un evento de auditoría community.post.updated es registrado</li>
+<li><b>Escenario: Eliminar publicación exitosamente</b><br>Dado que el endpoint /api/v1/community/posts/{id} está disponible<br>Y el solicitante tiene ROLE_PROFESSOR<br>Y el solicitante es dueño de la publicación<br>Cuando se envía una solicitud DELETE<br>Entonces se devuelve 204<br>Y la publicación ya no es recuperable<br>Y un evento de auditoría community.post.deleted es registrado</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS05</td>
+<td>Desarrollador</td>
+<td>3</td>
+<td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Dar "Me gusta" a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero registrar "Me gusta" y "Ya no me gusta" a través de la API para que las interacciones de los usuarios sean consistentes y seguras.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Dar "Me gusta" a la publicación exitosamente</b><br>Dado que el endpoint /api/v1/community/posts/{id}/like está disponible<br>Cuando se envía una solicitud POST con un token válido<br>Entonces se devuelve el Estado 200<br>Y el cuerpo de la respuesta incluye el likeCount actualizado</li>
+<li><b>Escenario: Ya no me gusta la publicación exitosamente</b><br>Dado que el endpoint /api/v1/community/posts/{id}/like está disponible<br>Cuando se envía una solicitud DELETE con un token válido<br>Entonces se devuelve el Estado 200<br>Y el likeCount disminuye en 1</li>
+<li><b>Escenario: Intento de doble "Me gusta"</b><br>Cuando se envía una solicitud POST dos veces para el mismo usuario y publicación<br>Entonces la segunda solicitud devuelve 200<br>Y el likeCount permanece igual</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS06</td>
+<td>Desarrollador</td>
+<td>3</td>
+<td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Comentar a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero agregar, validar y almacenar comentarios a través de la API para que los estudiantes puedan interactuar de forma segura bajo las publicaciones.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Agregar comentario válido</b><br>Dado que el endpoint /api/v1/community/posts/{id}/comments está disponible<br>Cuando se envía una solicitud POST con: texto: "Buen trabajo, este material es claro"<br>Entonces se devuelve el Estado 201<br>Y el Recurso de Comentario incluye id, authorId, text, createdAt</li>
+<li><b>Escenario: Rechazar comentario vacío</b><br>Cuando se envía una solicitud POST con texto: &quot;&quot;<br>Entonces se devuelve el Estado 400<br>Y el mensaje "El comentario no puede estar vacío" se incluye</li>
+<li><b>Escenario: Rechazar texto demasiado largo</b><br>Cuando se envía una solicitud POST con texto más largo de 500 caracteres<br>Entonces se devuelve el Estado 400<br>Y el mensaje "El comentario no debe exceder los 500 caracteres" se incluye</li>
+<li><b>Escenario: Rechazar caracteres no admitidos</b><br>Cuando se envía una solicitud POST con texto que contiene 汉字<br>Entonces se devuelve el Estado 400<br>Y el mensaje "Caracteres no admitidos detectados" se incluye</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS07</td>
+<td>Desarrollador</td>
+<td>4</td>
+<td>Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Ingestión de Eventos</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero ingerir eventos de participación (unirse/responder) para que el agregador pueda calcular métricas en tiempo real.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Aceptar lote válido</b><br>Dado que la sesión ses_01A está activa y lista para recibir eventos<br>Cuando se realiza un POST con un lote de eventos bien formados para dicha sesión<br>Entonces el sistema devuelve un Estado 202 y el campo accepted es igual al número total de eventos en el lote</li>
+<li><b>Escenario: Llamada no autenticada</b><br>Dado que el llamante no está autenticado<br>Cuando se realiza un POST al endpoint de ingesta<br>Entonces el sistema devuelve un Estado 401 con un problem+json</li>
+<li><b>Escenario: Acceso prohibido</b><br>Dado que el llamante no tiene los permisos para enviar eventos a esa sesión (por ejemplo, no es el productor/creador)<br>Cuando se realiza un POST a la sesión<br>Entonces el sistema devuelve un Estado 403 con un problem+json y el título "Forbidden"</li>
+<li><b>Escenario: Error de validación</b><br>Dado que el llamante está autorizado<br>Cuando se realiza un POST con un evento de tipo RESPONSE_SUBMITTED que carece del questionId<br>Entonces el sistema devuelve un Estado 422 con un problem+json y un array de errores (errors[]) que apunta a events[i].questionId</li>
+<li><b>Escenario: Carga útil demasiado grande</b><br>Dado que el llamante está autorizado<br>Cuando se realiza un POST donde el array de eventos excede el tamaño máximo permitido<br>Entonces el sistema devuelve un Estado 413 con el título "Payload Too Large"</li>
+<li><b>Escenario: Límite de tasa excedido</b><br>Dado que el llamante está autorizado<br>Cuando el productor excede la tasa de peticiones por segundo (QPS) configurada<br>Entonces el sistema devuelve un Estado 429 con la cabecera Retry-After para indicar cuándo puede reintentar</li>
+<li><b>Escenario: Servicio de agregación no disponible</b><br>Dado que el pipeline de ingesta o el servicio de agregación están caídos<br>Cuando se realiza un POST a la sesión<br>Entonces el sistema devuelve un Estado 503 con el título "Service Unavailable"</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS08</td>
+<td>Desarrollador</td>
+<td>4</td>
+<td>Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Transmisión en Tiempo Real</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero transmitir instantáneas en vivo a la interfaz de usuario del profesor para que las métricas se actualicen sin sondeo.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: El profesor autorizado se suscribe</b><br>Dado que el llamante tiene ROLE_TEACHER y está asignado a la sesión<br>Cuando GET /sessions/ses_01A/stream<br>Entonces Estado 200 y se reciben eventos SSE "snapshot" y "heartbeat"</li>
+<li><b>Escenario: Transmisión no autenticada</b><br>Dado que el llamante no está autenticado<br>Cuando intenta conectarse al endpoint de transmisión<br>Entonces el sistema devuelve un Estado 401 con un problem+json y no se inicia la transmisión</li>
+<li><b>Escenario: Acceso prohibido</b><br>Dado que el llamante no tiene los permisos requeridos (por ejemplo, ROLE_PROFESSOR)<br>Cuando intenta conectarse al endpoint de transmisión<br>Entonces el sistema devuelve un Estado 403 con un problem+json y no se inicia la transmisión</li>
+<li><b>Escenario: Sesión no encontrada</b><br>Dado que la sesión de quiz especificada no existe o ya ha terminado<br>Cuando el llamante intenta conectarse a esa sesión para la transmisión<br>Entonces el sistema devuelve un Estado 404 con un problem+json y no se inicia la transmisión</li>
+<li><b>Escenario: Tiempo de espera por inactividad</b><br>Dado que no hay actualizaciones durante N segundos<br>Cuando el servidor envía un latido periódico<br>Entonces el cliente permanece conectado y no muestra datos obsoletos</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS09</td>
+<td>Desarrollador</td>
+<td>5</td>
+<td>Como administrador, quiero generar reportes de quizzes (promedio de puntajes, preguntas más difíciles, tiempos de respuesta) para identificar oportunidades de mejora.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Resumen de Cuestionario</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero un endpoint para recuperar métricas a nivel de cuestionario para que la UI pueda renderizar el panel de resumen.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Administrador autorizado recupera el resumen</b><br>Dado que el llamante tiene ROLE_ADMIN<br>Cuando GET /analytics/quizzes/{quizId}/summary con filtros válidos<br>Entonces Estado 200 con metrics.avgScore, participationRate, averageResponseTimeMs</li>
+<li><b>Escenario: No autenticado</b><br>Cuando GET sin Autorización<br>Entonces Estado 401 problem+json</li>
+<li><b>Escenario: Prohibido</b><br>Dado que el llamante carece de ROLE_ADMIN<br>Cuando GET<br>Entonces Estado 403 problem+json título "Forbidden"</li>
+<li><b>Escenario: Cuestionario no encontrado</b><br>Dado que el llamante carece del ROLE_ADMIN<br>Cuando GET para un quizId desconocido<br>Entonces Estado 404 problem+json</li>
+<li><b>Escenario: Rango de fechas inválido</b><br>Dado que el quizId es válido<br>Cuando se realiza un GET a /analytics/quizzes/{quizId}/summary con un rango de fechas donde from es posterior a to<br>Entonces el sistema devuelve un Estado 422 con un problem+json y un array de errores en los campos from y to</li>
+<li><b>Escenario: Error del servidor</b><br>Dado que el sistema encuentra un error inesperado<br>Cuando se realiza un GET a /analytics/quizzes/{quizId}/summary<br>Entonces el sistema devuelve un Estado 500 con un problem+json y un errorId para su seguimiento</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS10</td>
+<td>Desarrollador</td>
+<td>5</td>
+<td>Como administrador, quiero generar reportes de quizzes (promedio de puntajes, preguntas más difíciles, tiempos de respuesta) para identificar oportunidades de mejora.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Estadísticas por Pregunta API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero un endpoint para recuperar estadísticas por pregunta para que la UI pueda mostrar las preguntas más difíciles y los detalles.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Obtener estadísticas por pregunta</b><br>Dado que el usuario tiene el ROLE_ADMIN<br>Cuando GET /analytics/quizzes/{quizId}/questions?sort=correctnessRate,asc<br>Entonces Estado 200 con content[] y paginación</li>
+<li><b>Escenario: Campo de ordenación no admitido</b><br>Dado que el usuario tiene el ROLE_ADMIN<br>Cuando sort=hackerField,asc<br>Entonces Estado 400 con detalle "Unsupported sort field: hackerField"</li>
+<li><b>Escenario: No autenticado / Prohibido / No encontrado / Error del servidor</b><br>Dado que se realiza una petición a un endpoint de estadísticas<br>Entonces devuelve 401 / 403 / 404 / 500 con problem+json</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS11</td>
+<td>Desarrollador</td>
+<td>6</td>
+<td>Como usuario, quiero crear y editar mi perfil con nombre, avatar e institución para personalizar mi experiencia en la plataforma.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir crear perfil a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero crear un perfil de usuario a través de la API para que los nuevos usuarios puedan inicializar su perfil.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Crear perfil exitosamente</b><br>Dado que el endpoint /api/v1/profile está disponible<br>Cuando se envía un POST con fullName, username, avatarUrl (https), institution válidos<br>Entonces se devuelve el Estado 201<br>Y el ProfileResource incluye id y la URL almacenada (no base64)</li>
+<li><b>Escenario: El nombre de usuario ya existe</b><br>Cuando se envía un POST con el nombre de usuario &quot;juan_perez&quot; que ya está tomado<br>Entonces se devuelve el Estado 409<br>Y el mensaje "El nombre de usuario ya está tomado" se incluye</li>
+<li><b>Escenario: Rechazar avatar no HTTP/HTTPS</b><br>Cuando se envía un POST con avatarUrl &quot;ftp://example.com/a.jpg&quot;<br>Entonces se devuelve el Estado 400<br>Y el mensaje "La URL del avatar debe usar HTTP o HTTPS" se incluye</li>
+<li><b>Escenario: Rechazar caracteres no admitidos</b><br>Cuando se envía un POST con fullName que contiene caracteres no admitidos (ej. 汉字 o emojis)<br>Entonces se devuelve el Estado 400<br>Y los detalles apuntan a los caracteres inválidos</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS12</td>
+<td>Desarrollador</td>
+<td>6</td>
+<td>Como usuario, quiero crear y editar mi perfil con nombre, avatar e institución para personalizar mi experiencia en la plataforma.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir actualizar perfil a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero actualizar un perfil de usuario existente a través de la API para que los usuarios puedan editar su nombre, nombre de usuario y avatar.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Actualizar nombre de usuario a un nuevo valor disponible</b><br>Dado que el endpoint /api/v1/profile está disponible<br>Y el solicitante es el propietario del perfil<br>Cuando se envía un PUT con el nombre de usuario &quot;mateo_dev&quot;<br>Entonces se devuelve el Estado 200<br>Y el perfil muestra el nombre de usuario &quot;mateo_dev&quot;</li>
+<li><b>Escenario: Actualizar avatar con URL https válida</b><br>Cuando se envía un PUT con avatarUrl &quot;https://cdn.example.com/u/avatar.png&quot;<br>Entonces se devuelve el Estado 200<br>Y el avatarUrl se persiste como enlace (no en línea/base64)</li>
+<li><b>Escenario: Rechazar avatar en línea/base64</b><br>Cuando se envía un PUT con avatarUrl &quot;data:image/png;base64,....&quot;<br>Entonces se devuelve el Estado 400<br>Y el mensaje "Las imágenes en línea/base64 no están permitidas" se incluye</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS13</td>
+<td>Desarrollador</td>
+<td>7</td>
+<td>Como estudiante, quiero visualizar mi progreso mediante niveles, rangos o puntajes para motivarme a seguir aprendiendo.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir progreso a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero devolver el progreso actual (nivel, puntos, insignias, racha) para que el panel del estudiante pueda ser renderizado.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Obtener mi progreso exitosamente</b><br>Dado que el endpoint /api/v1/progress/me está disponible<br>Y el solicitante tiene ROLE_STUDENT<br>Cuando se envía una solicitud GET<br>Entonces se devuelve el Estado 200 con nivel, puntos, insignias, racha</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS14</td>
+<td>Desarrollador</td>
+<td>7</td>
+<td>Como estudiante, quiero visualizar mi progreso mediante niveles, rangos o puntajes para motivarme a seguir aprendiendo.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir clasificación (leaderboard) a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero un endpoint de clasificación unificado para que el cliente pueda obtener rangos por alcance y período.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Obtener clasificación global (Histórico)</b><br>Dado que el endpoint /api/v1/leaderboards está disponible<br>Cuando se envía un GET con scope=global&amp;period=all&amp;page=1&amp;size=25<br>Entonces se devuelve el Estado 200 con una lista paginada<br>Y las entradas están ordenadas por puntos desc, los empates se resuelven por nivel desc, luego por firstAchievedAt asc<br>Y myEntry se incluye incluso si no está en la página actual</li>
+<li><b>Escenario: Obtener clasificación de clase (Semanal) con membresía</b><br>Dado que el solicitante está inscrito en la clase &quot;cls_CS101_2025_2&quot;<br>Cuando se envía un GET con scope=class&amp;classId=cls_CS101_2025_2&amp;period=weekly<br>Entonces se devuelve el Estado 200<br>Y solo los miembros de la clase están clasificados</li>
+<li><b>Escenario: Rechazar clasificación de clase sin membresía</b><br>Dado que el solicitante no está inscrito en &quot;cls_MATH101&quot;<br>Cuando se envía un GET con scope=class&amp;classId=cls_MATH101&amp;period=weekly<br>Entonces se devuelve el Estado 403<br>Y un mensaje "No eres miembro de esta clase" se incluye</li>
+<li><b>Escenario: Obtener clasificación de Desafío</b><br>Cuando se envía un GET con scope=challenge&amp;challengeId=ch_ABC123<br>Entonces se devuelve el Estado 200<br>Y solo aparecen los estudiantes con una entrega válida para ese desafío</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS15</td>
+<td>Desarrollador</td>
+<td>8</td>
+<td>Como estudiante, quiero acceder a todas mis actividades asignadas desde un solo lugar para organizar mejor mi tiempo de estudio.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir lista de actividades del estudiante a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero obtener las actividades de un estudiante a través de la API para que el Front-end pueda mostrarlas en "Mis Actividades".
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Listar mis actividades con filtros</b><br>Dado que el endpoint /api/v1/class-activities/me está disponible<br>Cuando se envía un GET con status=ASSIGNED,IN_PROGRESS&amp;type=CHALLENGE,QUIZ&amp;sort=dueAt,asc<br>Entonces se devuelve el Estado 200 con una lista paginada<br>Y todos los ítems pertenecen al estudiante solicitante</li>
+<li><b>Escenario: Límite de tasa</b><br>Dado que el endpoint /api/v1/class-activities/me está disponible<br>Y el solicitante excede el límite de tasa<br>Cuando se envía un GET<br>Entonces se devuelve el Estado 429<br>Y la respuesta incluye el encabezado "Retry-After"</li>
+<li><b>Escenario: Tiempo de espera del servicio principal</b><br>Dado que el endpoint depende de ActivityService<br>Y ActivityService se agota el tiempo de espera<br>Cuando se envía un GET<br>Entonces se devuelve el Estado 504<br>Y la respuesta contiene el título "Gateway Timeout"</li>
+<li><b>Escenario: Error inesperado del servidor</b><br>Dado que el endpoint /api/v1/class-activities/me está disponible<br>Cuando ocurre una excepción no manejada<br>Entonces se devuelve el Estado 500<br>Y la respuesta contiene un id de error para diagnósticos</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS16</td>
+<td>Desarrollador</td>
+<td>8</td>
+<td>Como estudiante, quiero acceder a todas mis actividades asignadas desde un solo lugar para organizar mejor mi tiempo de estudio.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">Añadir detalles de la actividad a través de API</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero recuperar los detalles de la actividad para que los estudiantes puedan ver instrucciones, enlaces y opciones de entrega.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Obtener detalles de la actividad</b><br>Dado que el solicitante pertenece a la clase &quot;cls_CS101_2025_2&quot;<br>Cuando se envía un GET a /api/v1/class-activities/act_01H<br>Entonces se devuelve el Estado 200 con los detalles de la actividad</li>
+<li><b>Escenario: Entrega deshabilitada porque la fecha de vencimiento ha pasado</b><br>Dado que la actividad &quot;act_01H&quot; existe<br>Y su dueAt está en el pasado<br>Cuando se envía un GET a /api/v1/class-activities/act_01H<br>Entonces se devuelve el Estado 200 con los detalles de la actividad<br>Y la carga útil tiene submission.locked=true<br>Y submission.lockReason=&quot;DUE_DATE_PASSED&quot;</li>
+<li><b>Escenario: Límite de tasa</b><br>Dado que el solicitante excede el límite de tasa<br>Cuando se envía un GET a /api/v1/class-activities/act_01H<br>Entonces se devuelve el Estado 429<br>Y la respuesta incluye el encabezado "Retry-After"</li>
+<li><b>Escenario: Error inesperado del servidor</b><br>Dado que el endpoint /api/v1/class-activities/{activityId} está disponible<br>Cuando ocurre una excepción no manejada<br>Entonces se devuelve el Estado 500<br>Y la respuesta contiene un id de error para diagnósticos</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS17</td>
+<td>Desarrollador</td>
+<td>9</td>
+<td>Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Progreso (a nivel de clase)</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero un endpoint para recuperar el progreso de la clase (métricas simples + filas de estudiantes) para que la UI pueda renderizar la vista de progreso.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: El profesor autorizado obtiene el progreso de la clase</b><br>Dado que el llamante tiene ROLE_TEACHER y está asignado a {classId}<br>Cuando GET /teacher/{classId}/progress<br>Entonces Estado 200 con completionRate, avgScore y students[]</li>
+<li><b>Escenario: No autenticado</b><br>Cuando GET /teacher/{classId}/progress sin Autorización<br>Entonces Estado 401 con application/problem+json</li>
+<li><b>Escenario: Prohibido (no asignado)</b><br>Dado que el llamante tiene ROLE_TEACHER pero no está asignado a {classId}<br>Cuando GET /teacher/{classId}/progress<br>Entonces Estado 403 con problem+json título "Forbidden"</li>
+<li><b>Escenario: Clase no encontrada</b><br>Cuando GET /teacher/cls_UNKNOWN/progress<br>Entonces Estado 404 con problem+json título "Class Not Found"</li>
+<li><b>Escenario: Error del servidor</b><br>Cuando ocurre un error inesperado<br>Entonces Estado 500 con problem+json y un errorId</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS18</td>
+<td>Desarrollador</td>
+<td>9</td>
+<td>Como profesor, quiero dar seguimiento al progreso individual y grupal de mis estudiantes en las actividades para identificar fortalezas y debilidades.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Creación de Actividad</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como Desarrollador, quiero un endpoint para recuperar la lista de actividades de un solo estudiante en una clase para que la UI pueda mostrar sus detalles.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: El profesor autorizado obtiene el progreso del estudiante</b><br>Dado que el llamante tiene ROLE_TEACHER y está asignado a {classId}<br>Cuando GET /teacher/{classId}/students/{studentId}/progress<br>Entonces Estado 200 con activities[]</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS19</td>
+<td>Desarrollador</td>
+<td>10</td>
+<td>Como estudiante, quiero recibir retroalimentación inmediata después de completar cada actividad para mejorar continuamente mi desempeño.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Creación de entrega con retroalimentación inmediata</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como desarrollador, quiero un endpoint que cree una entrega y (si es autocalificable) devuelva retroalimentación inmediata para que los estudiantes puedan leer los resultados de inmediato.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Envío autocalificable exitoso</b><br>Dado que la actividad está PUBLISHED y es auto-gradable<br>Y el estudiante está matriculado y tiene attemptsRemaining &gt; 0<br>Cuando hago POST a /class-activities/{activityId}/submissions con respuestas válidas<br>Entonces recibo Status 201 con score y items[] con retroalimentación</li>
+<li><b>Escenario: Actividad no encontrada o no publicada</b><br>Cuando hago POST para una actividad desconocida o no PUBLISHED<br>Entonces recibo Status 404 con title = &quot;Activity Not Found&quot;</li>
+<li><b>Escenario: Intentos agotados</b><br>Dado que attemptsRemaining = 0<br>Cuando hago POST<br>Entonces recibo Status 409 con title = &quot;Attempts Exhausted&quot;</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Story ID</th>
+<th>User</th>
+<th>Priority</th>
+<th>Epic</th>
+</tr>
+<tr>
+<td>TS20</td>
+<td>Desarrollador</td>
+<td>10</td>
+<td>Como estudiante, quiero recibir retroalimentación inmediata después de completar cada actividad para mejorar continuamente mi desempeño.</td>
+</tr>
+<tr>
+<th colspan="4">Title</th>
+</tr>
+<tr>
+<td colspan="4">API de Política de visibilidad de retroalimentación (simple)</td>
+</tr>
+<tr>
+<th colspan="4">Description</th>
+</tr>
+<tr>
+<td colspan="4">
+Como desarrollador, quiero exponer la política de visibilidad de retroalimentación/soluciones de una actividad para que los estudiantes sepan qué podrán leer después de enviar su entrega.
+</td>
+</tr>
+<tr>
+<th colspan="4">Acceptance Criteria</th>
+</tr>
+<tr>
+<td colspan="4">
+<ul>
+<li><b>Escenario: Obtener política</b><br>Cuando hago GET a /class-activities/{activityId}/feedback-policy<br>Entonces recibo Status 200 con valores booleanos para showScore, showItemCorrectness y showSolutions</li>
+</ul>
+</td>
+</tr>
+</table>
+
+
+<br />
+
+3. **Historia de investigación técnica**
+
+   
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP01</td>
+    <td>Equipo de desarrollo</td>
+    <td>Alta</td>
+    <td>Como estudiante, quiero registrarme en la plataforma con mis credenciales para poder acceder a todas las funcionalidades básicas.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">WebSocket + OAuth2 para Sesiones en Vivo</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos investigar cómo integrar WebSocket con OAuth2 y JWT
+      para documentar un método seguro de establecer sesiones en vivo con autenticación válida.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: Investigación documental y bibliográfica</strong><br>
+        Dado que el equipo no conoce un método claro para autenticar WebSockets con OAuth2 y JWT<br>
+        Cuando se revisa documentación oficial, artículos técnicos y ejemplos en GitHub<br>
+        Entonces se identifican al menos 2 enfoques viables y se resumen sus ventajas, desventajas y requisitos en un documento técnico</li>
+        <li><strong>Escenario 2: Prototipo de autenticación exitosa</strong><br>
+        Dado que se dispone de un entorno de prueba controlado<br>
+        Cuando se implementa un prototipo mínimo con handshake WebSocket que valida un JWT emitido previamente<br>
+        Entonces la conexión es aceptada correctamente y el flujo queda documentado paso a paso en la guía técnica</li>
+        <li><strong>Escenario 3: Validación de errores y casos límite</strong><br>
+        Dado que el prototipo permite pruebas controladas<br>
+        Cuando se intenta conectar con tokens inválidos o expirados<br>
+        Entonces el servidor rechaza o cierra la conexión según el caso<br>
+        Y se documenta cómo manejar estos errores en una futura implementación real</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+  <table>
+        <tr>
+            <th>Story ID</th>
+            <th>User</th>
+            <th>Priority</th>
+            <th>Epic</th>
+        </tr>
+        <tr>
+            <td>SP02</td>
+            <td>Equipo de desarrollo</td>
+            <td>Alta</td>
+            <td>Como usuario, quiero iniciar sesión de forma segura mediante autenticación en el sistema para proteger mi información personal.</td>
+        </tr>
+        <tr>
+            <th colspan="4">Title</th>
+        </tr>
+        <tr>
+            <td colspan="4">API Gateway para Autenticación y Rate Limiting</td>
+        </tr>
+        <tr>
+            <th colspan="4">Description</th>
+        </tr>
+        <tr>
+            <td colspan="4">
+                Como equipo de desarrollo, queremos evaluar el uso de un API Gateway
+                para definir una estrategia centralizada de autenticación, límites de uso y enrutamiento hacia los microservicios.
+            </td>
+        </tr>
+        <tr>
+            <th colspan="4">Acceptance Criteria</th>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <ul>
+                    <li><strong>Escenario 1: Validación de JWT en prototipo</strong><br>
+                    Dado que actualmente no sabemos cómo validar JWT en un API Gateway<br>
+                    Cuando investigamos en documentación y ejemplos en GitHub<br>
+                    Y construimos un prototipo que reenvía solicitudes con JWT válido a un servicio de prueba<br>
+                    Entonces se demuestra que la solicitud es aceptada y enrutada correctamente, y se documenta el flujo</li>
+                    <li><strong>Escenario 2: Prueba de políticas de rate limiting</strong><br>
+                    Dado que necesitamos definir límites de uso centralizados<br>
+                    Cuando configuramos una política de rate limit (50 solicitudes por minuto) en el prototipo<br>
+                    Y realizamos pruebas de carga simulando múltiples peticiones<br>
+                    Entonces se observa el bloqueo con código 429 y se documenta la configuración aplicada</li>
+                    <li><strong>Escenario 3: Configuración de CORS centralizado</strong><br>
+                    Dado que el equipo desconoce cómo manejar CORS desde el gateway<br>
+                    Cuando aplicamos reglas CORS para permitir solo ciertos dominios<br>
+                    Y realizamos una solicitud preflight desde un frontend autorizado<br>
+                    Entonces se reciben las cabeceras CORS correctas y se deja registrada la configuración en la guía técnica</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+
+
+<table>             <tr>                 <th>Story ID</th>                 <th>User</th>                 <th>Priority</th>                 <th>Epic</th>             </tr>             <tr>                 <td class="story-id">SP03 <span class="spike-badge"></span></td>                 <td>Equipo de desarrollo</td>                 <td>Alta</td>                 <td>Como equipo de desarrollo, queremos investigar el uso de Apache Kafka para procesar respuestas en tiempo real para identificar una arquitectura que permita calcular métricas de sesión sin afectar el rendimiento.</td>             </tr>             <tr>                 <th colspan="4" class="section-header">Title</th>             </tr>             <tr>                 <td colspan="4">Apache Kafka para Respuestas en Vivo</td>             </tr>             <tr>                 <th colspan="4" class="section-header">Description</th>             </tr>             <tr>                 <td colspan="4">                     Como equipo de desarrollo, queremos investigar el uso de Apache Kafka para procesar respuestas en tiempo real para identificar una arquitectura que permita calcular métricas de sesión sin afectar el rendimiento del sistema principal.                 </td>             </tr>             <tr>                 <th colspan="4" class="section-header">Acceptance Criteria</th>             </tr>             <tr>                 <td colspan="4">                     <ul>                         <li><strong>Escenario 1: Prototipo y medición de latencia</strong><br>                         Dado que el equipo necesita validar el procesamiento en tiempo real<br>                         Cuando se construye un prototipo con un tópico de entrada (responses.ses_01A) y un job de stream (Kafka Streams o Flink) que agrega métricas (conteo, promedio, p50/p95)<br>                         Entonces se evidencia, con mediciones reproducibles, una latencia p95 ≤ 1 s desde publicación hasta métrica agregada, y se documenta la configuración (particiones, acks, batch.size, linger.ms, etc.)</li>                                                  <li><strong>Escenario 2: Validación de esquema</strong><br>                         Dado que se requiere estabilidad de contrato de datos<br>                         Cuando se integra un Schema Registry (p. ej., Avro/JSON Schema) y se publican eventos válidos e inválidos<br>                         Entonces los eventos válidos son procesados y los inválidos son rechazados con logs trazables; se documentan compatibilidades (BACKWARD/FORWARD) y el procedimiento para evolución de esquema</li>                                                  <li><strong>Escenario 3: Manejo de errores y DLQ</strong><br>                         Dado que el sistema debe ser tolerante a mensajes malformados o no procesables<br>                         Cuando el consumidor encuentra un evento con error irrecuperable<br>                         Entonces el mensaje se enruta a un tópico DLQ con metadatos (offset, key, excepción) y el flujo principal continúa sin quedar bloqueado; se documenta la política de reintentos, dead lettering y observabilidad (métricas/alertas)</li>                     </ul>                 </td>             </tr>         </table>
+
+
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP04</td>
+    <td>Equipo de desarrollo</td>
+    <td>Alta</td>
+    <td>Como equipo de desarrollo, queremos evaluar a Aiven como proveedor de PostgreSQL gestionado para determinar si cumple con los requisitos de alta disponibilidad, seguridad y respaldos automáticos de nuestra base de datos principal.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Proveedor PostgreSQL: Aiven</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos evaluar a Aiven como proveedor de PostgreSQL gestionado para determinar si cumple con los requisitos de alta disponibilidad, seguridad y respaldos automáticos de nuestra base de datos principal.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: Backup y Point-in-Time Restore (PITR) con métricas</strong><br>
+        Dado una base de prueba con dataset conocido (filas y checksums registrados)<br>
+        Cuando se habilitan y verifican los backups automáticos y se ejecuta un restore a un punto en el tiempo T<br>
+        Entonces los datos restaurados coinciden (conteos y checksums) y quedan documentados RPO y RTO observados, junto con los pasos exactos para PITR</li>
+        <li><strong>Escenario 2: Failover automático en plan HA</strong><br>
+        Dado un clúster con alta disponibilidad habilitada<br>
+        Cuando se fuerza una conmutación (mantenimiento/switchover o caída simulada del primario)<br>
+        Entonces el servicio sigue disponible vía endpoint gestionado y el tiempo de failover queda medido y documentado; además se registra el comportamiento de reconexión del cliente (p. ej., pgbouncer/connection string)</li>
+        <li><strong>Escenario 3: Controles de seguridad y aislamiento de red</strong><br>
+        Dado que se requiere seguridad en tránsito y en reposo<br>
+        Cuando se verifica TLS para conexiones, cifrado en reposo, aislamiento de red (p. ej., VPC peering/allow-lists) y políticas de acceso (roles/ACLs)<br>
+        Entonces se valida que los controles funcionan (tests de conexión con/sin TLS, acceso permitido/denegado por red) y se documenta la configuración aplicada, incluidos logs/auditoría habilitados y hallazgos/gaps</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP05</td>
+    <td>Equipo de desarrollo</td>
+    <td>Alta</td>
+    <td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Spring Data Mongo para Social Feed</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos investigar el uso de Spring Data MongoDB para validar si soporta publicaciones, comentarios y reacciones con el rendimiento y escalabilidad que necesitamos en la parte social.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: Feed paginado con índices y evidencia de latencia</strong><br>
+        Dado que necesitamos validar la lectura eficiente del feed<br>
+        Cuando construimos un prototipo con Spring Data MongoDB que pagina publicaciones (ordenadas por createdAt y/o score) usando índices adecuados<br>
+        Y cargamos una colección de prueba (≥100k publicaciones)<br>
+        Entonces obtenemos p95 ≤ 200 ms para páginas típicas (tamaño definido) y dejamos evidencia con explain() de las consultas, los índices usados, y recomendaciones (p. ej., keyset pagination vs skip/limit) documentadas</li>
+        <li><strong>Escenario 2: Contador de "likes" bajo alta concurrencia (sin sobrecontar)</strong><br>
+        Dado que debemos evitar sobreconteo con múltiples usuarios reaccionando al mismo post<br>
+        Cuando implementamos en el prototipo operaciones atómicas ($inc / $addToSet con índice único por postId+userId o estrategia equivalente) y simulamos concurrencia<br>
+        Entonces no se produce sobreconteo (la métrica de likes coincide con los eventos únicos) y se documenta el patrón elegido, pruebas de carrera realizadas y trade-offs (consistencia vs. costo)</li>
+        <li><strong>Escenario 3: Estrategia de escalabilidad (particionado/sharding) para el feed</strong><br>
+        Dado que el volumen y el acceso al feed pueden crecer de forma significativa<br>
+        Cuando evaluamos claves de partición candidatas (p. ej., hashed(postId) o compuesta authorId+createdAt) y medimos distribución/"hot partitions" en un entorno de prueba<br>
+        Entonces documentamos la estrategia recomendada (clave de shard, índices, balanceo esperado), riesgos identificados y lineamientos para migración/operación (TTL/archivado, colecciones inmutables para posts, colecciones separadas para reacciones)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP06</td>
+    <td>Equipo de desarrollo</td>
+    <td>Alta</td>
+    <td>Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Observabilidad en Tiempo Real con OpenTelemetry</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos explorar el uso de OpenTelemetry junto con Prometheus y Grafana para establecer una solución de monitoreo en tiempo real de métricas, trazas y errores que garantice la calidad de servicio.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: Trazas end-to-end instrumentadas y visibles</strong><br>
+        Dado que necesitamos confirmar trazabilidad completa<br>
+        Cuando instrumentamos un flujo mínimo Gateway → Servicio A → Kafka Producer → Kafka Consumer (Servicio B) con OpenTelemetry (propagación W3C traceparent) y enviamos spans vía OTLP al OpenTelemetry Collector<br>
+        Entonces en Grafana (con Tempo/Jaeger como backend de trazas) se visualiza una traza única con los spans de gateway, servicios y consumidores Kafka encadenados (incluyendo atributos clave: http.route, messaging.system=kafka, enduser.id simulado) y dejamos capturas/IDs y pasos de configuración documentados</li>
+        <li><strong>Escenario 2: Métricas + alerta de latencia p95</strong><br>
+        Dado que debemos alertar por degradación<br>
+        Cuando exponemos métricas con OTel (histogramas de latencia http.server.duration) y las recolecta Prometheus (vía OTel Collector → Prometheus exporter)<br>
+        Entonces definimos en Grafana/Prometheus una alerta: p95 > 300 ms durante 5 min (consulta basada en histogram quantile o histogram_quantile), se dispara, y se notifica al canal acordado (Alertmanager/Grafana Alerting); dejamos la regla, el panel y el destino de notificación documentados</li>
+        <li><strong>Escenario 3: Errores y correlación con logs</strong><br>
+        Dado que necesitamos diagnosticar fallos rápidamente<br>
+        Cuando registramos excepciones con OTel (status=ERROR, eventos exception.*) y habilitamos exemplars para correlacionar métricas con trazas, además de propagar trace_id a los logs (estructura JSON)<br>
+        Entonces en Grafana podemos: ver el ratio de errores por endpoint/servicio, saltar desde un punto de la serie temporal (exemplar) a la traza específica, y desde la traza, abrir los logs correlacionados por trace_id; se documenta la configuración del Collector (pipelines, exporters) y los dashboards base</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+## 2.4.2. Impact Mapping.
+
+<div align="justify"
+
+El presente apartado expone el Impact Mapping, cuyo objetivo es fortalecer el aprendizaje y la permanencia de los estudiantes durante sus primeros ciclos académicos. Esta herramienta permitió vincular de manera sistemática los objetivos estratégicos del proyecto con los comportamientos esperados de sus principales actores, así como con los entregables y funcionalidades necesarios para alcanzarlos.
+
+Para la construcción del mapa, se identificaron dos segmentos clave: los estudiantes de primer ciclo (representados por la persona ficticia Jonatan Velásquez) y los profesores de primeros ciclos (representados por Ariel Maslucan). Ambos segmentos fueron definidos a partir de entrevistas de necesidad (needfinding), donde se exploraron sus motivaciones, dificultades y expectativas frente al uso de la plataforma.
+
+Con base en esta información, se establecieron cinco objetivos estratégicos (Business Goals) medibles y alcanzables:
+
+- Incrementar en un 20 % la tasa de aprobación en cursos introductorios,
+- Lograr que el 70 % de estudiantes activos participen al menos una vez por semana en la plataforma,
+- Aumentar en 15 % la retención de estudiantes de primero a tercer ciclo,
+- Mejorar en 30 % la participación en actividades extracurriculares (Viernes Cultural), y
+- Reducir en 25 % la cantidad de tareas no entregadas en cursos introductorios.
+
+Cada uno de estos objetivos se desglosa en el mapa en impactos esperados (impacts) sobre el comportamiento de los estudiantes y profesores; entregables (deliverables) que la plataforma debe implementar para promover dichos cambios; y user stories que especifican, de forma técnica, los requerimientos de cada funcionalidad. De este modo, el Impact Mapping permitió garantizar la coherencia entre las necesidades detectadas en el proceso de investigación y las decisiones de diseño y desarrollo, asegurando que cada funcionalidad propuesta aporte de forma directa y medible al logro de los objetivos del proyecto.
+
+![Impact-Map-1](../chapter3/assets/Impact-Mapping/Impact-Map-1.png)
+
+</div>
+
+## 2.4.3. Product Backlog.
+
+| # Orden | Epic / Story ID | Título                                                       | Descripción                                                  | Story Points |
+| ------- | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ |
+| 1       | 1 / US01        | Registro de estudiante                                       | Como un estudiante Quiero acceder a la página de Registro Para poder registrarme con mi correo y contraseña | 3            |
+| 2       | 1 / US02        | Inicio de sesión de estudiante                               | Como un estudiante Quiero acceder a la página de Inicio de sesión Para poder autenticarme con mi correo y contraseña | 3            |
+| 3       | 3 / US03        | Publicación                                                  | Como un profesor Quiero crear una publicación con texto e imágenes Para poder interactuar con mis estudiantes y comunicar eventos | 2            |
+| 4       | 3 / US04        | Dar "Me gusta"                                               | Como un estudiante Quiero dar "Me gusta" o "Ya no me gusta" a una publicación de la comunidad Para poder expresar mi opinión y apoyar a los demás | 2            |
+| 5       | 3 / US05        | Comentar                                                     | Como un estudiante Quiero escribir un comentario bajo una publicación Para poder participar en la discusión | 1            |
+| 6       | 4 / US06        | Panel de Sesión en Vivo                                      | Como un profesor Quiero ver el recuento de estudiantes, la distribución de respuestas y el tiempo de respuesta promedio Para poder monitorear la clase en tiempo real. | 5            |
+| 7       | 4 / US07        | Gráfico de Distribución de Respuestas                        | Como un profesor Quiero un gráfico de respuestas (A/B/C/D o números) Para poder identificar rápidamente los conceptos erróneos. | 5            |
+| 8       | 4 / US08        | Panel de Tiempo Promedio                                     | Como un profesor Quiero ver el tiempo de respuesta promedio para la pregunta actual Para poder marcar el ritmo de la sesión. | 2            |
+| 9       | 5 / US09        | Ver Informe de Resumen de Cuestionario                       | Como un administrador Quiero ver el puntaje promedio, la tasa de participación y el tiempo de respuesta promedio para un cuestionario Para poder evaluar el rendimiento general. | 3            |
+| 10      | 5 / US10        | Preguntas Más Difíciles                                      | Como un administrador Quiero una lista de las preguntas más difíciles (tasa de corrección más baja) Para poder detectar conceptos erróneos. | 2            |
+| 11      | 6 / US11        | Añadir configuración de perfil a través del Front-end        | Como un estudiante Quiero editar mi perfil (nombre, nombre de usuario, avatar) Para poder personalizar mi experiencia en la plataforma | 1            |
+| 12      | 7 / US12        | Añadir progreso para el estudiante a través del Front-end    | Como un estudiante Quiero ver mi nivel, puntos, insignias y racha Para mantenerme motivado y seguir mi crecimiento | 2            |
+| 13      | 7 / US13        | Añadir clasificación (leaderboard) a través del Front-end    | Como un estudiante Quiero ver las clasificaciones por alcance (global, clase, desafío) Para poder comparar mi progreso y mantenerme comprometido | 3            |
+| 14      | 8 / US14        | Añadir lista unificada de actividades a través del Front-end | Como un estudiante Quiero ver todas mis actividades asignadas en un solo lugar Para poder planificar y priorizar mi tiempo de estudio | 3            |
+| 15      | 9 / US15        | Añadir Ver Progreso de la Clase a través del Front-end       | Como un profesor Quiero una visión general del progreso de la clase con métricas clave (finalización, puntaje promedio, entregas tardías) Para poder detectar rápidamente las fortalezas y debilidades de un vistazo. | 2            |
+| 16      | 9 / US16        | Ver Progreso del Estudiante (Detalle)                        | Como un profesor Quiero abrir el detalle del progreso de un estudiante Para poder revisar sus actividades completadas/pendientes. | 2            |
+| 17      | 9 / US17        | Crear Actividad (Tarea)                                      | Como un profesor Quiero crear una nueva actividad para mi clase Para que los estudiantes puedan ver las instrucciones y una fecha de vencimiento. | 3            |
+| 18      | 9 / US18        | Añadir Editar / Cerrar Actividad a través del Front-end      | Como un profesor Quiero editar una actividad existente y opcionalmente cerrar las entregas Para poder corregir detalles y detener el trabajo tardío. | 2            |
+| 19      | 10 / US19       | Enviar y ver retroalimentación a través del Front-end        | Como estudiante Quiero ver mi puntaje y una retroalimentación básica justo después de enviar una actividad autocalificable Para saber de inmediato qué hice bien o mal | 2            |
+| 20      | 10 / US20       | Consultar retroalimentación de una entrega a través del Front-end | Como estudiante Quiero abrir la retroalimentación de mi entrega Para poder aprender de las explicaciones y de las notas de la rúbrica | 3            |
+| 21      | 10 / US21       | Reintentar actividad con nueva retroalimentación             | Como estudiante Quiero volver a intentar una actividad y recibir retroalimentación Para poder mejorar dentro de los intentos permitidos | 1            |
+| 22      | 1 / TS01        | Añadir estudiante a través de API RESTful                    | Como Desarrollador quiero añadir un Estudiante a través de la API para que esté disponible para construir funcionalidades para mis aplicaciones. | 3            |
+| 23      | 1 / TS02        | Añadir autenticación de estudiante a través de API RESTful   | Como Desarrollador quiero autenticar a un Estudiante a través de la API para que el Estudiante pueda acceder a las funcionalidades protegidas de la aplicación. | 3            |
+| 24      | 2 / TS03        | Emisión de Token (Inicio de sesión)                          | Como Desarrollador quiero que la puerta de enlace (gateway) autentique las credenciales y emita tokens para que los servicios posteriores reciban una identidad verificada. | 2            |
+| 25      | 3 / TS04        | Publicar a través de API RESTful                             | Como Desarrollador quiero crear una publicación de la comunidad a través de la API para que los profesores puedan publicar contenido validado de forma segura. | 3            |
+| 26      | 3 / TS05        | Dar "Me gusta" a través de API                               | Como Desarrollador quiero registrar "Me gusta" y "Ya no me gusta" a través de la API para que las interacciones de los usuarios sean consistentes y seguras. | 1            |
+| 27      | 3 / TS06        | Comentar a través de API                                     | Como Desarrollador quiero agregar, validar y almacenar comentarios a través de la API para que los estudiantes puedan interactuar de forma segura bajo las publicaciones. | 2            |
+| 28      | 4 / TS07        | API de Ingestión de Eventos                                  | Como Desarrollador quiero ingerir eventos de participación (unirse/responder) para que el agregador pueda calcular métricas en tiempo real. | 2            |
+| 29      | 4 / TS08        | API de Transmisión en Tiempo Real                            | Como Desarrollador quiero transmitir instantáneas en vivo a la interfaz de usuario del profesor para que las métricas se actualicen sin sondeo. | 2            |
+| 30      | 5 / TS09        | API de Resumen de Cuestionario                               | Como Desarrollador quiero un endpoint para recuperar métricas a nivel de cuestionario para que la UI pueda renderizar el panel de resumen. | 2            |
+| 31      | 5 / TS10        | Estadísticas por Pregunta API                                | Como Desarrollador quiero un endpoint para recuperar estadísticas por pregunta para que la UI pueda mostrar las preguntas más difíciles y los detalles. | 2            |
+| 32      | 6 / TS11        | Añadir crear perfil a través de API                          | Como Desarrollador quiero crear un perfil de usuario a través de la API para que los nuevos usuarios puedan inicializar su perfil. | 2            |
+| 33      | 6 / TS12        | Añadir actualizar perfil a través de API                     | Como Desarrollador quiero actualizar un perfil de usuario existente a través de la API para que los usuarios puedan editar su nombre, nombre de usuario y avatar. | 1            |
+| 34      | 7 / TS13        | Añadir progreso a través de API                              | Como Desarrollador quiero devolver el progreso actual (nivel, puntos, insignias, racha) para que el panel del estudiante pueda ser renderizado. | 1            |
+| 35      | 7 / TS14        | Añadir clasificación (leaderboard) a través de API           | Como Desarrollador quiero un endpoint de clasificación unificado para que el cliente pueda obtener rangos por alcance y período. | 2            |
+| 36      | 8 / TS15        | Añadir lista de actividades del estudiante a través de API   | Como Desarrollador, quiero obtener las actividades de un estudiante a través de la API para que el Front-end pueda mostrarlas en "Mis Actividades". | 3            |
+| 37      | 8 / TS16        | Añadir detalles de la actividad a través de API              | Como Desarrollador, quiero recuperar los detalles de la actividad para que los estudiantes puedan ver instrucciones, enlaces y opciones de entrega. | 3            |
+| 38      | 9 / TS17        | API de Progreso (a nivel de clase)                           | Como Desarrollador quiero un endpoint para recuperar el progreso de la clase (métricas simples + filas de estudiantes) para que la UI pueda renderizar la vista de progreso. | 3            |
+| 39      | 9 / TS18        | API de Creación de Actividad                                 | Como Desarrollador, quiero un endpoint para recuperar la lista de actividades de un solo estudiante en una clase para que la UI pueda mostrar sus detalles. | 3            |
+| 40      | 10 / TS19       | API  de Creación de entrega con retroalimentación inmediata  | Como desarrollador Quiero un endpoint que cree una entrega y (si es autocalificable) devuelva retroalimentación inmediata Para que los estudiantes puedan leer los resultados de inmediato | 3            |
+| 41      | 10 / TS20       | API de Política de visibilidad de retroalimentación (simple) | Como desarrollador Quiero exponer la política de visibilidad de retroalimentación/soluciones de una actividad Para que los estudiantes sepan qué podrán leer después de enviar su entrega | 2            |
+| 42      | 1 / SP01        | WebSocket + OAuth2 para Sesiones en Vivo                     | Como equipo de desarrollo Queremos investigar cómo integrar WebSocket con OAuth2 y JWT Para documentar un método seguro de establecer sesiones en vivo con autenticación válida. | 3            |
+| 43      | 2 / SP02        | API Gateway para Autenticación y Rate Limiting               | Como equipo de desarrollo Queremos evaluar el uso de un API Gateway Para definir una estrategia centralizada de autenticación, límites de uso y enrutamiento hacia los microservicios. | 3            |
+| 44      | 3 / SP03        | Apache Kafka para Respuestas en Vivo                         | Como equipo de desarrollo Queremos investigar el uso de Apache Kafka para procesar respuestas en tiempo real Para identificar una arquitectura que permita calcular métricas de sesión sin afectar el rendimiento. | 2            |
+| 45      | 3 / SP04        | Proveedor PostgreSQL: Aiven                                  | Como equipo de desarrollo Queremos evaluar a Aiven como proveedor de PostgreSQL gestionado Para determinar si cumple con los requisitos de alta disponibilidad, seguridad y respaldos automáticos de nuestra base de datos principal. | 2            |
+| 46      | 3 / SP05        | Spring Data Mongo para Social Feed                           | Como equipo de desarrollo Queremos investigar el uso de Spring Data MongoDB Para validar si soporta publicaciones, comentarios y reacciones con el rendimiento y escalabilidad que necesitamos en la parte social. | 1            |
+| 47      | 4 / SP06        | Observabilidad en Tiempo Real con OpenTelemetry              | Como equipo de desarrollo Queremos explorar el uso de OpenTelemetry junto con Prometheus y Grafana Para establecer una solución de monitoreo en tiempo real de métricas, trazas y errores que garantice la calidad de servicio. | 5            |
