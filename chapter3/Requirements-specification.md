@@ -1,23 +1,5 @@
-# Capítulo III: Requirements specification
-## 3.1. To-Be Scenario Mapping.
-
-<div align="justify"
-
-- **Segmento Objetivo 1: Estudiantes**
-
-Para el estudiante, el TO-BE introduce un ciclo de práctica con editor embebido, validación automática y retroalimentación instantánea. Además, los sistemas de progreso, rankings e insignias convierten el aprendizaje en un proceso motivador y continuo, en lugar de depender exclusivamente de las notas finales. El resultado es una experiencia más clara, dinámica y atractiva, que fomenta tanto la autonomía como la constancia en el estudio.
-
-<img src="https://i.imgur.com/UPDYumb.png" alt="TOBE1"/>
-
-- **Segmento Objetivo 2: Profesores**
-
-Para el docente, la plataforma centraliza la gestión de retos y automatiza la retroalimentación inicial. Esto le permite dedicar menos tiempo a tareas repetitivas y más a la orientación pedagógica. Los dashboards con métricas de avance facilitan la detección temprana de estudiantes en riesgo y reducen la carga administrativa. La proyección TO-BE ofrece, en consecuencia, una experiencia más sostenible, eficiente y alineada con las necesidades académicas.
-
-<img src="https://i.imgur.com/AiK7wYp.png" alt="TOBE1"/>
-
-</div>
-
-## 3.2. User Stories.
+# 2.4. Requirements specification
+## 2.4.1. User Stories.
 
 <div align="justify"
 
@@ -1743,7 +1725,283 @@ Como desarrollador, quiero exponer la política de visibilidad de retroalimentac
 </table>
 
 
-## 3.3. Impact Mapping.
+<br />
+
+3. **Historia de investigación técnica**
+
+   
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP01</td>
+    <td>Equipo de desarrollo</td>
+    <td>Alta</td>
+    <td>Como estudiante, quiero registrarme en la plataforma con mis credenciales para poder acceder a todas las funcionalidades básicas.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">WebSocket + OAuth2 para Sesiones en Vivo</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos investigar cómo integrar WebSocket con OAuth2 y JWT
+      para documentar un método seguro de establecer sesiones en vivo con autenticación válida.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: Investigación documental y bibliográfica</strong><br>
+        Dado que el equipo no conoce un método claro para autenticar WebSockets con OAuth2 y JWT<br>
+        Cuando se revisa documentación oficial, artículos técnicos y ejemplos en GitHub<br>
+        Entonces se identifican al menos 2 enfoques viables y se resumen sus ventajas, desventajas y requisitos en un documento técnico</li>
+        <li><strong>Escenario 2: Prototipo de autenticación exitosa</strong><br>
+        Dado que se dispone de un entorno de prueba controlado<br>
+        Cuando se implementa un prototipo mínimo con handshake WebSocket que valida un JWT emitido previamente<br>
+        Entonces la conexión es aceptada correctamente y el flujo queda documentado paso a paso en la guía técnica</li>
+        <li><strong>Escenario 3: Validación de errores y casos límite</strong><br>
+        Dado que el prototipo permite pruebas controladas<br>
+        Cuando se intenta conectar con tokens inválidos o expirados<br>
+        Entonces el servidor rechaza o cierra la conexión según el caso<br>
+        Y se documenta cómo manejar estos errores en una futura implementación real</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+  <table>
+        <tr>
+            <th>Story ID</th>
+            <th>User</th>
+            <th>Priority</th>
+            <th>Epic</th>
+        </tr>
+        <tr>
+            <td>SP02</td>
+            <td>Equipo de desarrollo</td>
+            <td>Alta</td>
+            <td>Como usuario, quiero iniciar sesión de forma segura mediante autenticación en el sistema para proteger mi información personal.</td>
+        </tr>
+        <tr>
+            <th colspan="4">Title</th>
+        </tr>
+        <tr>
+            <td colspan="4">API Gateway para Autenticación y Rate Limiting</td>
+        </tr>
+        <tr>
+            <th colspan="4">Description</th>
+        </tr>
+        <tr>
+            <td colspan="4">
+                Como equipo de desarrollo, queremos evaluar el uso de un API Gateway
+                para definir una estrategia centralizada de autenticación, límites de uso y enrutamiento hacia los microservicios.
+            </td>
+        </tr>
+        <tr>
+            <th colspan="4">Acceptance Criteria</th>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <ul>
+                    <li><strong>Escenario 1: Validación de JWT en prototipo</strong><br>
+                    Dado que actualmente no sabemos cómo validar JWT en un API Gateway<br>
+                    Cuando investigamos en documentación y ejemplos en GitHub<br>
+                    Y construimos un prototipo que reenvía solicitudes con JWT válido a un servicio de prueba<br>
+                    Entonces se demuestra que la solicitud es aceptada y enrutada correctamente, y se documenta el flujo</li>
+                    <li><strong>Escenario 2: Prueba de políticas de rate limiting</strong><br>
+                    Dado que necesitamos definir límites de uso centralizados<br>
+                    Cuando configuramos una política de rate limit (50 solicitudes por minuto) en el prototipo<br>
+                    Y realizamos pruebas de carga simulando múltiples peticiones<br>
+                    Entonces se observa el bloqueo con código 429 y se documenta la configuración aplicada</li>
+                    <li><strong>Escenario 3: Configuración de CORS centralizado</strong><br>
+                    Dado que el equipo desconoce cómo manejar CORS desde el gateway<br>
+                    Cuando aplicamos reglas CORS para permitir solo ciertos dominios<br>
+                    Y realizamos una solicitud preflight desde un frontend autorizado<br>
+                    Entonces se reciben las cabeceras CORS correctas y se deja registrada la configuración en la guía técnica</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+
+
+<table>             <tr>                 <th>Story ID</th>                 <th>User</th>                 <th>Priority</th>                 <th>Epic</th>             </tr>             <tr>                 <td class="story-id">SP03 <span class="spike-badge"></span></td>                 <td>Equipo de desarrollo</td>                 <td>Alta</td>                 <td>Como equipo de desarrollo, queremos investigar el uso de Apache Kafka para procesar respuestas en tiempo real para identificar una arquitectura que permita calcular métricas de sesión sin afectar el rendimiento.</td>             </tr>             <tr>                 <th colspan="4" class="section-header">Title</th>             </tr>             <tr>                 <td colspan="4">Apache Kafka para Respuestas en Vivo</td>             </tr>             <tr>                 <th colspan="4" class="section-header">Description</th>             </tr>             <tr>                 <td colspan="4">                     Como equipo de desarrollo, queremos investigar el uso de Apache Kafka para procesar respuestas en tiempo real para identificar una arquitectura que permita calcular métricas de sesión sin afectar el rendimiento del sistema principal.                 </td>             </tr>             <tr>                 <th colspan="4" class="section-header">Acceptance Criteria</th>             </tr>             <tr>                 <td colspan="4">                     <ul>                         <li><strong>Escenario 1: Prototipo y medición de latencia</strong><br>                         Dado que el equipo necesita validar el procesamiento en tiempo real<br>                         Cuando se construye un prototipo con un tópico de entrada (responses.ses_01A) y un job de stream (Kafka Streams o Flink) que agrega métricas (conteo, promedio, p50/p95)<br>                         Entonces se evidencia, con mediciones reproducibles, una latencia p95 ≤ 1 s desde publicación hasta métrica agregada, y se documenta la configuración (particiones, acks, batch.size, linger.ms, etc.)</li>                                                  <li><strong>Escenario 2: Validación de esquema</strong><br>                         Dado que se requiere estabilidad de contrato de datos<br>                         Cuando se integra un Schema Registry (p. ej., Avro/JSON Schema) y se publican eventos válidos e inválidos<br>                         Entonces los eventos válidos son procesados y los inválidos son rechazados con logs trazables; se documentan compatibilidades (BACKWARD/FORWARD) y el procedimiento para evolución de esquema</li>                                                  <li><strong>Escenario 3: Manejo de errores y DLQ</strong><br>                         Dado que el sistema debe ser tolerante a mensajes malformados o no procesables<br>                         Cuando el consumidor encuentra un evento con error irrecuperable<br>                         Entonces el mensaje se enruta a un tópico DLQ con metadatos (offset, key, excepción) y el flujo principal continúa sin quedar bloqueado; se documenta la política de reintentos, dead lettering y observabilidad (métricas/alertas)</li>                     </ul>                 </td>             </tr>         </table>
+
+
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP04</td>
+    <td>Equipo de desarrollo</td>
+    <td>Alta</td>
+    <td>Como equipo de desarrollo, queremos evaluar a Aiven como proveedor de PostgreSQL gestionado para determinar si cumple con los requisitos de alta disponibilidad, seguridad y respaldos automáticos de nuestra base de datos principal.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Proveedor PostgreSQL: Aiven</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos evaluar a Aiven como proveedor de PostgreSQL gestionado para determinar si cumple con los requisitos de alta disponibilidad, seguridad y respaldos automáticos de nuestra base de datos principal.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: Backup y Point-in-Time Restore (PITR) con métricas</strong><br>
+        Dado una base de prueba con dataset conocido (filas y checksums registrados)<br>
+        Cuando se habilitan y verifican los backups automáticos y se ejecuta un restore a un punto en el tiempo T<br>
+        Entonces los datos restaurados coinciden (conteos y checksums) y quedan documentados RPO y RTO observados, junto con los pasos exactos para PITR</li>
+        <li><strong>Escenario 2: Failover automático en plan HA</strong><br>
+        Dado un clúster con alta disponibilidad habilitada<br>
+        Cuando se fuerza una conmutación (mantenimiento/switchover o caída simulada del primario)<br>
+        Entonces el servicio sigue disponible vía endpoint gestionado y el tiempo de failover queda medido y documentado; además se registra el comportamiento de reconexión del cliente (p. ej., pgbouncer/connection string)</li>
+        <li><strong>Escenario 3: Controles de seguridad y aislamiento de red</strong><br>
+        Dado que se requiere seguridad en tránsito y en reposo<br>
+        Cuando se verifica TLS para conexiones, cifrado en reposo, aislamiento de red (p. ej., VPC peering/allow-lists) y políticas de acceso (roles/ACLs)<br>
+        Entonces se valida que los controles funcionan (tests de conexión con/sin TLS, acceso permitido/denegado por red) y se documenta la configuración aplicada, incluidos logs/auditoría habilitados y hallazgos/gaps</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP05</td>
+    <td>Equipo de desarrollo</td>
+    <td>Alta</td>
+    <td>Como profesor, quiero crear publicaciones con texto e imágenes para interactuar con mis estudiantes y compartir recursos.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Spring Data Mongo para Social Feed</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos investigar el uso de Spring Data MongoDB para validar si soporta publicaciones, comentarios y reacciones con el rendimiento y escalabilidad que necesitamos en la parte social.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: Feed paginado con índices y evidencia de latencia</strong><br>
+        Dado que necesitamos validar la lectura eficiente del feed<br>
+        Cuando construimos un prototipo con Spring Data MongoDB que pagina publicaciones (ordenadas por createdAt y/o score) usando índices adecuados<br>
+        Y cargamos una colección de prueba (≥100k publicaciones)<br>
+        Entonces obtenemos p95 ≤ 200 ms para páginas típicas (tamaño definido) y dejamos evidencia con explain() de las consultas, los índices usados, y recomendaciones (p. ej., keyset pagination vs skip/limit) documentadas</li>
+        <li><strong>Escenario 2: Contador de "likes" bajo alta concurrencia (sin sobrecontar)</strong><br>
+        Dado que debemos evitar sobreconteo con múltiples usuarios reaccionando al mismo post<br>
+        Cuando implementamos en el prototipo operaciones atómicas ($inc / $addToSet con índice único por postId+userId o estrategia equivalente) y simulamos concurrencia<br>
+        Entonces no se produce sobreconteo (la métrica de likes coincide con los eventos únicos) y se documenta el patrón elegido, pruebas de carrera realizadas y trade-offs (consistencia vs. costo)</li>
+        <li><strong>Escenario 3: Estrategia de escalabilidad (particionado/sharding) para el feed</strong><br>
+        Dado que el volumen y el acceso al feed pueden crecer de forma significativa<br>
+        Cuando evaluamos claves de partición candidatas (p. ej., hashed(postId) o compuesta authorId+createdAt) y medimos distribución/"hot partitions" en un entorno de prueba<br>
+        Entonces documentamos la estrategia recomendada (clave de shard, índices, balanceo esperado), riesgos identificados y lineamientos para migración/operación (TTL/archivado, colecciones inmutables para posts, colecciones separadas para reacciones)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP06</td>
+    <td>Equipo de desarrollo</td>
+    <td>Alta</td>
+    <td>Como profesor, quiero acceder a métricas de participación en tiempo real durante las sesiones (cantidad de estudiantes, distribución de respuestas, tiempo promedio) para monitorear el desempeño.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Observabilidad en Tiempo Real con OpenTelemetry</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos explorar el uso de OpenTelemetry junto con Prometheus y Grafana para establecer una solución de monitoreo en tiempo real de métricas, trazas y errores que garantice la calidad de servicio.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: Trazas end-to-end instrumentadas y visibles</strong><br>
+        Dado que necesitamos confirmar trazabilidad completa<br>
+        Cuando instrumentamos un flujo mínimo Gateway → Servicio A → Kafka Producer → Kafka Consumer (Servicio B) con OpenTelemetry (propagación W3C traceparent) y enviamos spans vía OTLP al OpenTelemetry Collector<br>
+        Entonces en Grafana (con Tempo/Jaeger como backend de trazas) se visualiza una traza única con los spans de gateway, servicios y consumidores Kafka encadenados (incluyendo atributos clave: http.route, messaging.system=kafka, enduser.id simulado) y dejamos capturas/IDs y pasos de configuración documentados</li>
+        <li><strong>Escenario 2: Métricas + alerta de latencia p95</strong><br>
+        Dado que debemos alertar por degradación<br>
+        Cuando exponemos métricas con OTel (histogramas de latencia http.server.duration) y las recolecta Prometheus (vía OTel Collector → Prometheus exporter)<br>
+        Entonces definimos en Grafana/Prometheus una alerta: p95 > 300 ms durante 5 min (consulta basada en histogram quantile o histogram_quantile), se dispara, y se notifica al canal acordado (Alertmanager/Grafana Alerting); dejamos la regla, el panel y el destino de notificación documentados</li>
+        <li><strong>Escenario 3: Errores y correlación con logs</strong><br>
+        Dado que necesitamos diagnosticar fallos rápidamente<br>
+        Cuando registramos excepciones con OTel (status=ERROR, eventos exception.*) y habilitamos exemplars para correlacionar métricas con trazas, además de propagar trace_id a los logs (estructura JSON)<br>
+        Entonces en Grafana podemos: ver el ratio de errores por endpoint/servicio, saltar desde un punto de la serie temporal (exemplar) a la traza específica, y desde la traza, abrir los logs correlacionados por trace_id; se documenta la configuración del Collector (pipelines, exporters) y los dashboards base</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+## 2.4.2. Impact Mapping.
 
 <div align="justify"
 
@@ -1765,12 +2023,12 @@ Cada uno de estos objetivos se desglosa en el mapa en impactos esperados (impact
 
 </div>
 
-## 3.4. Product Backlog.
+## 2.4.3. Product Backlog.
 
 | # Orden | Epic / Story ID | Título                                                       | Descripción                                                  | Story Points |
 | ------- | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ |
 | 1       | 1 / US01        | Registro de estudiante                                       | Como un estudiante Quiero acceder a la página de Registro Para poder registrarme con mi correo y contraseña | 3            |
-| 2       | 1 / US02        | Autentiacion de Estudiante                                   | Como un estudiante Quiero acceder a la página de Inicio de sesión Para poder autenticarme con mi correo y contraseña | 3            |
+| 2       | 1 / US02        | Inicio de sesión de estudiante                               | Como un estudiante Quiero acceder a la página de Inicio de sesión Para poder autenticarme con mi correo y contraseña | 3            |
 | 3       | 3 / US03        | Publicación                                                  | Como un profesor Quiero crear una publicación con texto e imágenes Para poder interactuar con mis estudiantes y comunicar eventos | 2            |
 | 4       | 3 / US04        | Dar "Me gusta"                                               | Como un estudiante Quiero dar "Me gusta" o "Ya no me gusta" a una publicación de la comunidad Para poder expresar mi opinión y apoyar a los demás | 2            |
 | 5       | 3 / US05        | Comentar                                                     | Como un estudiante Quiero escribir un comentario bajo una publicación Para poder participar en la discusión | 1            |
@@ -1810,3 +2068,9 @@ Cada uno de estos objetivos se desglosa en el mapa en impactos esperados (impact
 | 39      | 9 / TS18        | API de Creación de Actividad                                 | Como Desarrollador, quiero un endpoint para recuperar la lista de actividades de un solo estudiante en una clase para que la UI pueda mostrar sus detalles. | 3            |
 | 40      | 10 / TS19       | API  de Creación de entrega con retroalimentación inmediata  | Como desarrollador Quiero un endpoint que cree una entrega y (si es autocalificable) devuelva retroalimentación inmediata Para que los estudiantes puedan leer los resultados de inmediato | 3            |
 | 41      | 10 / TS20       | API de Política de visibilidad de retroalimentación (simple) | Como desarrollador Quiero exponer la política de visibilidad de retroalimentación/soluciones de una actividad Para que los estudiantes sepan qué podrán leer después de enviar su entrega | 2            |
+| 42      | 1 / SP01        | WebSocket + OAuth2 para Sesiones en Vivo                     | Como equipo de desarrollo Queremos investigar cómo integrar WebSocket con OAuth2 y JWT Para documentar un método seguro de establecer sesiones en vivo con autenticación válida. | 3            |
+| 43      | 2 / SP02        | API Gateway para Autenticación y Rate Limiting               | Como equipo de desarrollo Queremos evaluar el uso de un API Gateway Para definir una estrategia centralizada de autenticación, límites de uso y enrutamiento hacia los microservicios. | 3            |
+| 44      | 3 / SP03        | Apache Kafka para Respuestas en Vivo                         | Como equipo de desarrollo Queremos investigar el uso de Apache Kafka para procesar respuestas en tiempo real Para identificar una arquitectura que permita calcular métricas de sesión sin afectar el rendimiento. | 2            |
+| 45      | 3 / SP04        | Proveedor PostgreSQL: Aiven                                  | Como equipo de desarrollo Queremos evaluar a Aiven como proveedor de PostgreSQL gestionado Para determinar si cumple con los requisitos de alta disponibilidad, seguridad y respaldos automáticos de nuestra base de datos principal. | 2            |
+| 46      | 3 / SP05        | Spring Data Mongo para Social Feed                           | Como equipo de desarrollo Queremos investigar el uso de Spring Data MongoDB Para validar si soporta publicaciones, comentarios y reacciones con el rendimiento y escalabilidad que necesitamos en la parte social. | 1            |
+| 47      | 4 / SP06        | Observabilidad en Tiempo Real con OpenTelemetry              | Como equipo de desarrollo Queremos explorar el uso de OpenTelemetry junto con Prometheus y Grafana Para establecer una solución de monitoreo en tiempo real de métricas, trazas y errores que garantice la calidad de servicio. | 5            |

@@ -1,4 +1,4 @@
-# Capítulo II: Requirements Elicitation & Analysis
+# Capítulo II: Requirements Development and Software Solution Design
 ## 2.1. Competidores
 
 1. Kahoot Nació en 2012, con lanzamiento público en beta en marzo de 2013 y puesta en producción en septiembre de ese año. Fue fundado por exalumnos de la Universidad Noruega de Ciencia y Tecnología (NTNU), con la misión de integrar la gamificación en el aula. Opera bajo un modelo freemium, ofreciendo acceso gratuito a cuestionarios y participación, y monetizando mediante suscripciones premium, publicidad, venta de merchandising, licencias para organizaciones y un marketplace de contenido educativo. Su nivel de competencia es directo: satisface la misma necesidad de motivar el aprendizaje mediante juegos para estudiantes y docentes. <div align="center"><br><img src="https://i.imgur.com/p9EK8sf.png" alt="Kahoot" width="150"/></div><br>
@@ -326,21 +326,9 @@ El análisis del User Task Matrix revela varias tareas que son altamente frecuen
 
 ![EmpathyMaps-User1](../chapter2/assets/Empathy-Mapping/EmpathyMaps-User2.png)
 
-### 2.3.5. As-is Scenario Mapping
-
-En el caso del estudiante, la experiencia actual depende de entornos externos (IDE locales, tutoriales en YouTube) y se caracteriza por recibir retroalimentación tardía, a menudo días después de la entrega. Esto provoca ansiedad, pérdida de motivación y una percepción de falta de progreso. Los estudiantes entrevistados expresaron que necesitan feedback claro e inmediato, así como sistemas de reconocimiento visibles (puntos, rankings) para sostener su interés.
-
-**Segmento objetivo #1: Estudiantes de primero a tercer ciclo**
-
-<img src="https://i.imgur.com/ILVueKS.png" alt="ASIS-USER1" width="1000"/>
-
-**Segmento objetivo #2: Profesores de primero a tercer ciclo**
-
-<img src="https://i.imgur.com/WFyQ0Qw.png" alt="ASIS-USER2" width="1000"/>
 
 
-
-## 2.4. Ubiquitous Language
+### 2.3.5. Ubiquitous Language
 
 | Term      | Definition                                                                                                                                                                                                                              |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -355,3 +343,32 @@ En el caso del estudiante, la experiencia actual depende de entornos externos (I
 | Level     | Representa el grado de experiencia del estudiante dentro de la plataforma. Aumenta conforme se acumula score y se completan hitos específicos.                                                                                          |
 | Profile   | Espacio individual del estudiante donde se muestran sus retos completados, historial de envíos, puntos, insignias, niveles alcanzados y progreso general dentro de la plataforma.                                                       |
 | Community | Sección tipo feed donde solo Teachers pueden publicar y los Students solo pueden comentar. Usada para avisos y actividades.                                                                                                             |
+
+
+
+
+
+2.4. Requirements specification
+2.4.1. User Stories
+2.4.2. Impact Mapping
+2.4.3. Product Backlog
+2.5. Strategic-Level Domain-Driven Design
+2.5.1. EventStorming
+2.5.1.1. Candidate Context Discovery
+2.5.1.2. Domain Message Flows Modeling
+2.5.1.3. Bounded Context Canvases
+2.5.2. Context Mapping
+2.5.3. Software Architecture
+2.5.3.1. Software Architecture Context Level Diagrams
+2.5.3.2. Software Architecture Container Level Diagrams
+2.5.3.3. Software Architecture Deployment Diagrams
+2.6. Tactical-Level Domain-Driven Design
+2.6.x. Bounded Context: <Bounded Context Name>
+2.6.x.1. Domain Layer
+2.6.x.2. Interface Layer
+2.6.x.3. Application Layer
+2.6.x.4 Infrastructure Layer
+2.6.x.5. Bounded Context Software Architecture Component Level Diagrams
+2.6.x.6. Bounded Context Software Architecture Code Level Diagrams
+2.6.x.6.1. Bounded Context Domain Layer Class Diagrams
+2.6.x.6.2. Bounded Context Database Design Diagram

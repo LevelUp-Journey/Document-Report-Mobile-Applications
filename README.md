@@ -32,9 +32,23 @@ Septiembre 2024
 
 
 
+# **Registro de versiones**
+
+| Versión | Fecha | Autor | Descripción de modificación |
+| ------- | ----- | ----- | --------------------------- |
+|         |       |       |                             |
+|         |       |       |                             |
+|         |       |       |                             |
+
+
+
 # Project Report Collaboration Insights
 
+Enlace del repositorio:: https://github.com/LevelUp-Journey/Document-Report-Mobile-Applications
 
+<img src="https://i.imgur.com/haVUkh8.png" alt="Insights1" />
+
+<img src="https://i.imgur.com/WJVPStQ.png" alt="Insights2" />
 
 # Contenido
 
