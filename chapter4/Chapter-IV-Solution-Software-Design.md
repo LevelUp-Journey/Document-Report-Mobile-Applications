@@ -557,6 +557,21 @@ En los diagramas presentados:
 ### Solution Report Database Diagram
 <img src="../chapter4/assets/ddd-layers/challenges/SolutionReportDomainDatabase.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 4.2.2. Bounded Context: Class Activities
 #### 4.2.2.1. Domain Layer
 
@@ -598,7 +613,7 @@ Aunque en los diagramas no se muestran implementaciones específicas de reposito
 #### 4.2.2.2. Interface Layer
 
 
-## 1. Bounded Context: QuizActivities
+## QuizActivities
 
 ### Controllers
 - **QuizActivitiesController**  
@@ -614,7 +629,7 @@ Aunque en los diagramas no se muestran implementaciones específicas de reposito
 - **AddOptionResource, UpdateOptionResource**: recursos de entrada para agregar o actualizar opciones de una pregunta.  
 - **GetQuizActivityByIdResource, GetQuestionsByActivityIdResource, GetOptionsByQuestionIdResource**: recursos de entrada para parámetros de consultas.  
 
-## 2. Bounded Context: LiveSessions
+## LiveSessions
 
 ### Controller
 - **LiveSessionsController**  
@@ -695,6 +710,16 @@ En los diagramas presentados:
 
 ### Class Activity Session Manager Database Design
 <img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomainDatabase.png" alt="Class Activity Session Manager Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+
+
+
+
+
+
+
+
+
 
 ### 4.2.3. Bounded Context: Community
 #### 4.2.3.1. Domain Layer
