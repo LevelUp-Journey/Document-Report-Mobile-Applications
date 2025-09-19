@@ -71,6 +71,23 @@ La **Candidate Context Discovery** es el proceso mediante el cual identificamos 
 
 El **Domain Message Flows Modeling** mapea cómo los mensajes (eventos, comandos) fluyen entre los diferentes bounded contexts identificados. Este modelado es crucial para entender las dependencias y patrones de comunicación del sistema.
 
+##### Message Flows
+
+1. Teacher Publish a Post
+<img src="../chapter4/assets/message-flow/MessageFlow1.png" alt="Message Flow - Teacher Publish a Post" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+2. Scenario: student scan a QR and join a live session
+<img src="../chapter4/assets/message-flow/MessageFlow2.png" alt="Message Flow - Student scan QR and join live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+3. Scenario: Teacher end a live session
+<img src="../chapter4/assets/message-flow/MessageFlow3.png" alt="Message Flow - Teacher end a live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+4. Scenario: Teacher creates a live session
+<img src="../chapter4/assets/message-flow/MessageFlow4.png" alt="Message Flow - Teacher creates a live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+5. Scenario: Student Start Challenge
+<img src="../chapter4/assets/message-flow/MessageFlow5.png" alt="Message Flow - Student Start Challenge" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
 #### 4.1.1.3. Bounded Context Canvases
 
 Los **Bounded Context Canvases** proporcionan una visión detallada de cada contexto delimitado, documentando sus responsabilidades, interfaces, eventos y relaciones con otros contextos.
