@@ -644,6 +644,121 @@ El dominio está diseñado para soportar comunicación en tiempo real mediante:
 
 ### 4.2.3. Bounded Context: Community
 #### 4.2.3.1. Domain Layer
+
+La **Domain Layer** del bounded context **Community** constituye el núcleo social de la plataforma LevelUpJourney, enfocándose en facilitar la interacción, colaboración y construcción de comunidad entre usuarios. Esta capa encapsula las reglas de negocio relacionadas con la creación de contenido, participación social y sistemas de engagement que fomentan el aprendizaje colaborativo.
+
+**Agregados (Aggregates):**
+
+El dominio se estructura alrededor de un agregado principal que gestiona todas las interacciones sociales:
+
+**1. Post Aggregate (Community Manager):**
+- **Post**: Entidad raíz que representa una publicación creada por usuarios en la plataforma. Actúa como el centro de la interacción social, conteniendo contenido multimedia, comentarios asociados y métricas de engagement.
+- **Comment**: Entidad que representa respuestas y discusiones vinculadas a publicaciones específicas. Permite crear hilos de conversación y facilita el intercambio de ideas entre usuarios.
+- **Like**: Entidad que registra las reacciones positivas de usuarios hacia publicaciones y comentarios, creando métricas de popularidad y engagement.
+
+**Value Objects:**
+
+Los Value Objects proporcionan encapsulación de conceptos de dominio y type safety:
+
+*Identificadores:*
+- **PostId**: Identificador único para publicaciones
+- **CommentId**: Identificador único para comentarios
+- **UserId**: Identificador de usuarios del sistema
+
+*Objetos de Contenido:*
+- **Content**: Value Object complejo que encapsula el contenido de publicaciones, incluyendo texto y URLs de medios multimedia (imágenes, videos, documentos)
+- **CommentContent**: Value Object especializado para comentarios que permite solo contenido textual, manteniendo las discusiones enfocadas y accesibles
+
+*Objetos de Auditoría:*
+- **Auditable**: Value Object que encapsula metadatos temporales para trazabilidad completa, incluyendo timestamps de creación y última modificación
+
+**Commands (Comandos):**
+
+Los comandos representan intenciones de acción social y operaciones de escritura:
+
+*Post Commands:*
+- **CreatePost**: Creación de nuevas publicaciones con contenido multimedia
+- **EditPost**: Modificación de publicaciones existentes manteniendo historial
+- **DeletePost**: Eliminación de publicaciones y contenido asociado
+
+*Comment Commands:*
+- **AddComment**: Adición de comentarios a publicaciones específicas
+- **EditComment**: Modificación de comentarios existentes
+- **DeleteComment**: Eliminación de comentarios individuales
+
+*Engagement Commands:*
+- **LikePost**: Registro de reacción positiva hacia publicación
+- **UnlikePost**: Retiro de reacción positiva de publicación
+- **LikeComment**: Registro de reacción positiva hacia comentario
+- **UnlikeComment**: Retiro de reacción positiva de comentario
+
+**Queries (Consultas):**
+
+Las queries encapsulan operaciones de lectura optimizadas para la experiencia social:
+
+*Post Queries:*
+- **GetPostById**: Recuperación de publicación específica con metadatos completos
+- **GetAllPosts**: Listado de publicaciones con paginación y filtros
+- **GetLikesByPostId**: Métricas de engagement para publicación específica
+
+*Comment Queries:*
+- **GetCommentsByPostId**: Hilos de comentarios organizados por publicación
+- **GetCommentById**: Recuperación de comentario específico
+- **GetLikesByCommentId**: Métricas de engagement para comentario específico
+
+**Domain Services:**
+
+Los servicios de dominio coordinan operaciones sociales complejas:
+
+*Content Management Services:*
+- **PostCommandService**: Gestión completa del ciclo de vida de publicaciones incluyendo operaciones de engagement
+- **CommentCommandService**: Administración de comentarios y sus interacciones sociales
+
+*Query Services:*
+- **PostQueryService**: Consultas optimizadas para publicaciones con métricas agregadas
+- **CommentQueryService**: Acceso eficiente a comentarios con contexto de conversación
+
+**Reglas de Negocio Encapsuladas:**
+
+1. **Integridad de Contenido**: Las publicaciones deben contener al menos texto o media URLs válidas
+2. **Restricciones de Comentarios**: Los comentarios solo pueden contener texto, sin medios multimedia para mantener simplicidad
+3. **Unicidad de Likes**: Un usuario puede dar like solo una vez por publicación o comentario
+4. **Propiedad de Contenido**: Solo el autor puede editar o eliminar sus propias publicaciones y comentarios
+5. **Cascada de Eliminación**: Al eliminar una publicación, se eliminan automáticamente todos los comentarios y likes asociados
+6. **Auditoría Completa**: Todas las acciones mantienen timestamps para trazabilidad y análisis temporal
+7. **Validación de URLs**: Las URLs de medios deben ser válidas y accesibles antes de la publicación
+8. **Límites de Contenido**: Restricciones de longitud para texto y número de media URLs por publicación
+9. **Prevención de Spam**: Limitaciones temporales para creación de contenido por usuario
+10. **Moderación de Contenido**: Validación automática de contenido apropiado antes de publicación
+
+**Métodos de Dominio Especializados:**
+
+*Post Entity Methods:*
+- **addComment(comment)**: Agregación de comentario con validaciones de integridad
+- **addLike(userId)**: Registro de like con validación de unicidad
+- **removeLike(userId)**: Retiro de like con verificación de existencia
+
+*Comment Entity Methods:*
+- **editContent(content)**: Modificación de contenido con preservación de historial
+- **addLike(userId)**: Gestión de likes en comentarios
+- **removeLike(userId)**: Retiro de likes con consistencia
+
+**Patrones de Engagement Social:**
+
+El dominio implementa patrones específicos para fomentar la participación:
+- **Immediate Feedback**: Likes instantáneos para gratificación inmediata
+- **Threaded Discussions**: Comentarios organizados jerárquicamente
+- **Content Ownership**: Control granular sobre contenido propio
+- **Social Validation**: Métricas de engagement visibles
+- **Temporal Tracking**: Análisis de patrones de actividad social
+
+**Consideraciones de Escalabilidad:**
+
+- **Denormalización Estratégica**: Contadores de likes pre-calculados para rendimiento
+- **Paginación Inteligente**: Queries optimizadas para cargas incrementales
+- **Caché de Contenido**: Estrategias de caché para contenido frecuentemente accedido
+- **Media Optimization**: Gestión eficiente de URLs y recursos multimedia
+
 ### Community Manager Domain
 <img src="../chapter4/assets/ddd-layers/community/CommunityManagerDomain.png" alt="Community Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
