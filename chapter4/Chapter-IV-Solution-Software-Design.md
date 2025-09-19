@@ -595,12 +595,6 @@ Estas interfaces garantizan separación de responsabilidades y un punto claro de
 ### Repositories (Abstracciones)
 Aunque en los diagramas no se muestran implementaciones específicas de repositorios, se asume la existencia de **interfaces de Repository** en la capa de dominio para la persistencia de agregados como `QuizActivity` o `LiveSession`. Estas actúan como puertos que serán implementados en la capa de infraestructura.
 
-### Activities Manager Domain
-<img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerDomain.png" alt="Activities Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
-
-### Class Activity Session Manager Domain
-<img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomain.png" alt="Class Activity Session Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
-
 #### 4.2.2.2. Interface Layer
 
 
@@ -688,6 +682,12 @@ En los diagramas presentados:
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+### Activities Manager Domain
+<img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerDomain.png" alt="Activities Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+### Class Activity Session Manager Domain
+<img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomain.png" alt="Class Activity Session Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram
 ### Activities Manager Database Design
