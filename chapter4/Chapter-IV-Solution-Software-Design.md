@@ -348,6 +348,78 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 ### 4.2.1. Bounded Context: Challenges
 #### 4.2.1.1. Domain Layer
 
+## Challenges
+
+### Entities y Aggregates
+- **Challenge**  
+  Representa el agregado raíz que contiene la información principal de un reto: su identificador, profesor, nombre, descripción, puntos de experiencia, estado, versiones de código y etiquetas.  
+- **CodeVersion**  
+  Representa una versión de código asociada a un reto. Incluye el lenguaje, código inicial y pruebas.  
+- **CodeVersionTest**  
+  Define los casos de prueba que deben ejecutarse para validar la versión de código.  
+
+### Value Objects
+- **ChallengeId, TeacherId, CodeVersionId, CodeVersionTestId**: identificadores únicos.  
+- **ChallengeTag**: etiqueta asociada al reto (id, nombre, color, icono).  
+- **ChallengeStatus**: estado de un reto (`DRAFT`, `PUBLISHED`, `HIDDEN`).  
+- **CodeLanguage**: lenguaje de programación (`C_PLUS_PLUS`, `JAVASCRIPT`, `PYTHON`).  
+
+### Commands
+- **CreateChallengeCommand, UpdateChallengeCommand, PublishChallengeCommand, StartChallengeCommand, AddCodeVersionCommand, UpdateCodeVersionCommand, AddCodeVersionTestCommand, UpdateCodeVersionTestCommand**  
+  Representan acciones de modificación del dominio.  
+
+### Queries
+- **GetChallengeByIdQuery, GetPublishedChallengesQuery, GetChallengesByTeacherIdQuery, GetAllChallengeTagsQuery, GetCodeVersionByIdQuery, GetCodeVersionsByChallengeIdQuery**  
+  Representan consultas para obtener información del dominio.  
+
+### Domain Services
+- **ChallengeCommandService, CodeVersionCommandService, CodeVersionTestCommandService, ChallengeQueryService, CodeVersionQueryService**  
+  Definen la lógica de aplicación que orquesta la ejecución de los comandos y queries.  
+
+
+## Reports
+
+### Entities y Aggregates
+- **Report**  
+  Representa el reporte de una solución enviada por un estudiante, con métricas como pruebas exitosas, tiempo y memoria utilizada.  
+
+### Value Objects
+- **SolutionReportId, SolutionId, StudentId**: identificadores únicos.  
+
+### Commands
+- **CreateSolutionReportCommand**  
+  Comando para generar un nuevo reporte de solución.  
+
+### Queries
+- **GetReportsBySolutionIdQuery**  
+  Consulta para obtener los reportes de una solución específica.  
+
+
+## Solutions
+
+### Entities y Aggregates
+- **Solution**  
+  Representa la solución enviada por un estudiante a un reto específico. Incluye el reto, versión de código, estudiante y detalles de la solución.  
+- **SolutionDetails**  
+  Objeto que contiene información sobre intentos, código, último intento y estado de la solución.  
+
+### Value Objects
+- **SolutionId, ChallengeId, CodeVersionId, StudentId**: identificadores únicos.  
+- **SolutionStatus**: estado de la solución (`SUCCESS`, `FAILED`, `MAX_ATTEMPTS_REACHED`).  
+
+### Commands
+- **CreateSolutionCommand, UpdateSolutionCommand, SubmitSolutionCommand**  
+  Comandos que permiten crear, actualizar o enviar una solución.  
+
+### Queries
+- **GetSolutionByIdQuery, GetSolutionsByStudentIdQuery, GetSolutionsByChallengeIdQuery**  
+  Consultas para recuperar información de las soluciones.  
+
+### Domain Services
+- **SolutionCommandService, SolutionQueryService**  
+  Interfaces que definen la lógica de orquestación entre los comandos y consultas del dominio de soluciones.  
+
+
 ### Challenges Domain
 <img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomain.png" alt="Challenges Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
@@ -358,6 +430,45 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 <img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsDomain.png" alt="Solution Reports Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.1.2. Interface Layer
+
+## Challenges
+
+### Controllers
+- **ChallengesController**  
+  Expone endpoints para crear, actualizar, publicar, iniciar y consultar retos.  
+- **CodeVersionsController**  
+  Expone endpoints para agregar y actualizar versiones de código, así como para consultarlas.  
+- **CodeVersionTestsController**  
+  Expone endpoints para agregar y actualizar pruebas de las versiones de código.  
+
+### Resources
+- **CreateChallengeResource, UpdateChallengeResource, PublishChallengeResource, StartChallengeResource**: recursos de entrada para acciones sobre retos.  
+- **AddCodeVersionResource, UpdateCodeVersionResource**: recursos de entrada para manejar versiones de código.  
+- **AddCodeVersionTestResource, UpdateCodeVersionTestResource**: recursos de entrada para manejar pruebas de versiones de código.  
+- **GetChallengeByIdResource, GetChallengesByTeacherIdResource, GetCodeVersionByIdResource, GetCodeVersionsByChallengeIdResource**: recursos de entrada para parámetros de consultas.  
+
+
+## Reports
+
+### Controller
+- **SolutionReportsController**  
+  Expone endpoints para crear reportes de soluciones y consultar reportes por id de solución.  
+
+### Resources
+- **CreateSolutionReportResource**: recurso de entrada para crear un reporte de solución.  
+- **GetReportsBySolutionIdResource**: recurso de entrada para consultar reportes asociados a una solución.  
+
+
+## Solutions
+
+### Controller
+- **SolutionsController**  
+  Expone endpoints para crear, actualizar, enviar y consultar soluciones.  
+
+### Resources
+- **CreateSolutionResource, UpdateSolutionResource, SubmitSolutionResource**: recursos de entrada para manipular soluciones.  
+- **GetSolutionByIdResource, GetSolutionsByStudentIdResource, GetSolutionsByChallengeIdResource**: recursos de entrada para consultas de soluciones.  
+
 
 ### Challenges Interface
 <img src="../chapter4/assets/ddd-layers/challenges/ChallengesInterfaces.png" alt="Challenges Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
@@ -370,6 +481,33 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 
 #### 4.2.1.3. Application Layer
 
+En la **Application Layer** se gestionan los flujos de procesos del negocio mediante la definición de **Command Handlers** y **Query Handlers**, los cuales materializan las capacidades del bounded context y orquestan las interacciones con el dominio.  
+
+### Challenges
+- **Command Handlers**:  
+  - `ChallengeCommandServiceImpl` procesa comandos como `CreateChallengeCommand`, `PublishChallengeCommand`, `StartChallengeCommand`, `UpdateChallengeCommand`.  
+  - `CodeVersionCommandServiceImpl` procesa comandos como `AddCodeVersionCommand`, `UpdateCodeVersionCommand`.  
+  - `CodeVersionTestCommandServiceImpl` procesa comandos como `AddCodeVersionTestCommand`, `UpdateCodeVersionTestCommand`.  
+
+- **Query Handlers**:  
+  - `ChallengeQueryServiceImpl` resuelve consultas como `GetChallengeByIdQuery`, `GetPublishedChallengesQuery`, `GetChallengesByTeacherIdQuery`, `GetAllChallengeTagsQuery`.  
+  - `CodeVersionQueryServiceImpl` resuelve consultas como `GetCodeVersionByIdQuery`, `GetCodeVersionsByChallengeIdQuery`.  
+
+### SolutionReports
+- **Command Handlers**:  
+  - `SolutionReportCommandServiceImpl` procesa el comando `CreateSolutionReportCommand`.  
+
+- **Query Handlers**:  
+  - `SolutionReportQueryServiceImpl` resuelve consultas como `GetReportsBySolutionIdQuery`.  
+
+### Solutions
+- **Command Handlers**:  
+  - `SolutionCommandServiceImpl` procesa comandos como `CreateSolutionCommand`, `UpdateSolutionCommand`, `SubmitSolutionCommand`.  
+
+- **Query Handlers**:  
+  - `SolutionQueryServiceImpl` resuelve consultas como `GetSolutionByIdQuery`, `GetSolutionsByStudentIdQuery`, `GetSolutionsByChallengeIdQuery`.  
+
+
 ### Challenges Application
 <img src="../chapter4/assets/ddd-layers/challenges/ChallengesApplication.png" alt="Challenges Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
@@ -381,6 +519,17 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 
 
 #### 4.2.1.4. Infrastructure Layer
+
+En la **Infrastructure Layer** se muestran las clases encargadas de conectar la aplicación con servicios externos, particularmente **bases de datos** y la **implementación de los repositorios** definidos en el **Domain Layer**.  
+
+En los diagramas presentados:  
+
+- Para **Challenges**, se definen repositorios especializados (`ChallengeRepository`, `CodeVersionRepository`, `CodeVersionTestRepository`, `ChallengeTagRepository`) que permiten consultar, guardar o eliminar entidades como `Challenge`, `CodeVersion`, `CodeVersionTest` y `ChallengeTag`. Cada repositorio hereda de `JpaRepository`, lo que asegura las operaciones genéricas (CRUD) y a la vez incorpora consultas específicas del dominio (como `findByTeacherId`, `findPublishedChallenges` o `findByCodeVersionId`).  
+
+- Para **SolutionReports**, el `SolutionReportRepository` implementa operaciones de persistencia y consultas específicas relacionadas con reportes (`Report`), vinculando a entidades del dominio como `SolutionId`, `StudentId` y `SolutionReportId`.  
+
+- Para **Solutions**, el `SolutionRepository` también hereda de `JpaRepository` y administra la persistencia de la entidad `Solution`. Ofrece métodos de búsqueda específicos del dominio, como filtrar por estudiante (`findByStudentId`), desafío (`findByChallengeId`) o estado (`findByStatus`).  
+
 
 ### Challenges Infrastructure
 <img src="../chapter4/assets/ddd-layers/challenges/ChallengesInfrastructure.png" alt="Challenges Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
