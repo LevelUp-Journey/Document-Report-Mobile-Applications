@@ -347,14 +347,111 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 
 ### 4.2.1. Bounedd Context: Challenges
 #### 4.2.1.1. Domain Layer
+
+La **Domain Layer** del bounded context **Challenges** constituye el núcleo conceptual que encapsula las reglas de negocio fundamentales para la gestión de desafíos de programación, soluciones estudiantiles y reportes de evaluación. Esta capa implementa los patrones tácticos de Domain-Driven Design, asegurando que la lógica de dominio permanezca aislada de preocupaciones técnicas e infraestructurales.
+
+**Agregados (Aggregates):**
+
+El dominio se organiza alrededor de tres agregados principales que mantienen la consistencia y encapsulan las reglas de negocio:
+
+**1. Challenge Aggregate:**
+- **Challenge**: Entidad raíz que representa un desafío de programación creado por profesores. Contiene información esencial como nombre, descripción, puntos de experiencia, estado de publicación y metadatos temporales.
+- **CodeVersion**: Entidad que representa las diferentes versiones de código para distintos lenguajes de programación dentro de un desafío. Mantiene el código inicial y las pruebas asociadas.
+- **CodeVersionTest**: Entidad que define las pruebas específicas para cada versión de código, incluyendo entradas, salidas esperadas y validaciones personalizadas.
+
+**2. Solution Aggregate:**
+- **Solution**: Entidad raíz que representa el intento de un estudiante por resolver un desafío específico. Mantiene la relación con el desafío, la versión de código seleccionada y los detalles de la solución.
+- **SolutionDetails**: Value Object que encapsula los detalles específicos de la solución, incluyendo número de intentos, código fuente, timestamp del último intento y estado actual.
+
+**3. Report Aggregate:**
+- **Report**: Entidad que registra los resultados de la evaluación de una solución, incluyendo pruebas exitosas, tiempo de ejecución y memoria utilizada.
+
+**Value Objects:**
+
+Los Value Objects proporcionan tipos seguros y encapsulación de conceptos de dominio:
+
+- **ChallengeId, SolutionId, SolutionReportId**: Identificadores únicos que garantizan type safety
+- **TeacherId, StudentId**: Identificadores de actores del sistema
+- **CodeVersionId, CodeVersionTestId**: Identificadores para versiones y pruebas
+- **ChallengeTag**: Objeto complejo que incluye metadatos de etiquetas (nombre, color, icono)
+- **ChallengeStatus**: Enumeración que define estados del ciclo de vida (DRAFT, PUBLISHED, HIDDEN)
+- **CodeLanguage**: Enumeración de lenguajes soportados (C_PLUS_PLUS, JAVASCRIPT, PYTHON)
+- **SolutionStatus**: Enumeración de estados de solución (SUCCESS, FAILED, MAX_ATTEMPTS_REACHED)
+
+**Commands (Comandos):**
+
+Los comandos representan intenciones de cambio en el sistema y encapsulan las operaciones de escritura:
+
+*Challenge Commands:*
+- **CreateChallengeCommand**: Creación de nuevos desafíos por parte de profesores
+- **UpdateChallengeCommand**: Modificación de desafíos existentes con campos opcionales
+- **PublishChallengeCommand**: Publicación de desafíos para estudiantes
+- **StartChallengeCommand**: Inicio de un desafío por parte de estudiantes
+
+*CodeVersion Commands:*
+- **AddCodeVersionCommand**: Adición de versiones en nuevos lenguajes
+- **UpdateCodeVersionCommand**: Modificación de código base
+- **AddCodeVersionTestCommand**: Creación de nuevas pruebas
+- **UpdateCodeVersionTestCommand**: Modificación de pruebas existentes
+
+*Solution Commands:*
+- **CreateSolutionCommand**: Inicio de resolución de desafío por estudiante
+- **UpdateSolutionCommand**: Actualización de progreso de solución
+- **SubmitSolutionCommand**: Envío final de solución para evaluación
+
+*Report Commands:*
+- **CreateSolutionReportCommand**: Generación de reporte de evaluación
+
+**Queries (Consultas):**
+
+Las queries encapsulan las operaciones de lectura del sistema:
+
+*Challenge Queries:*
+- **GetChallengeByIdQuery**: Recuperación de desafío específico
+- **GetPublishedChallengesQuery**: Listado de desafíos publicados
+- **GetChallengesByTeacherIdQuery**: Desafíos creados por profesor específico
+- **GetAllChallengeTagsQuery**: Catálogo de etiquetas disponibles
+
+*CodeVersion Queries:*
+- **GetCodeVersionByIdQuery**: Versión específica de código
+- **GetCodeVersionsByChallengeIdQuery**: Todas las versiones de un desafío
+
+*Solution Queries:*
+- **GetSolutionByIdQuery**: Solución específica
+- **GetSolutionsByStudentIdQuery**: Soluciones de un estudiante
+- **GetSolutionsByChallengeIdQuery**: Todas las soluciones de un desafío
+
+*Report Queries:*
+- **GetReportsBySolutionIdQuery**: Reportes de una solución específica
+
+**Domain Services:**
+
+Los servicios de dominio manejan operaciones que no pertenecen naturalmente a una entidad específica:
+
+- **ChallengeCommandService**: Coordina operaciones complejas de desafíos
+- **CodeVersionCommandService**: Gestiona versiones de código y pruebas
+- **CodeVersionTestCommandService**: Administra pruebas específicas
+- **SolutionCommandService**: Coordina el ciclo de vida de soluciones
+- **ChallengeQueryService**: Optimiza consultas complejas de desafíos
+- **CodeVersionQueryService**: Proporciona acceso eficiente a versiones
+- **SolutionQueryService**: Facilita consultas de soluciones con filtros
+
+**Reglas de Negocio Encapsuladas:**
+
+1. **Integridad de Desafíos**: Un desafío debe tener al menos una versión de código antes de ser publicado
+2. **Límite de Intentos**: Las soluciones tienen un máximo de intentos configurable
+3. **Versionado**: Cada lenguaje de programación requiere su propia versión con pruebas específicas
+4. **Validación de Estados**: Transiciones de estado controladas para desafíos y soluciones
+5. **Trazabilidad**: Todos los cambios mantienen metadatos temporales para auditoría
+
 ### Challenges Domain
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomain.png" alt="Challenges Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Domain
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionsDomain.png" alt="Solutions Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### Solution Report Domain
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsDomain.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsDomain.png" alt="Solution Reports Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.1.2. Interface Layer
 ### Challenges Interface
