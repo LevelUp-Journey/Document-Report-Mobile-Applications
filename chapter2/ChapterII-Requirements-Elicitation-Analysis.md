@@ -1,4 +1,4 @@
-# Capítulo II: Requirements Elicitation & Analysis
+# Capítulo II: Requirements Development and Software Solution Design
 ## 2.1. Competidores
 
 1. Kahoot Nació en 2012, con lanzamiento público en beta en marzo de 2013 y puesta en producción en septiembre de ese año. Fue fundado por exalumnos de la Universidad Noruega de Ciencia y Tecnología (NTNU), con la misión de integrar la gamificación en el aula. Opera bajo un modelo freemium, ofreciendo acceso gratuito a cuestionarios y participación, y monetizando mediante suscripciones premium, publicidad, venta de merchandising, licencias para organizaciones y un marketplace de contenido educativo. Su nivel de competencia es directo: satisface la misma necesidad de motivar el aprendizaje mediante juegos para estudiantes y docentes. <div align="center"><br><img src="https://i.imgur.com/p9EK8sf.png" alt="Kahoot" width="150"/></div><br>
@@ -326,21 +326,9 @@ El análisis del User Task Matrix revela varias tareas que son altamente frecuen
 
 ![EmpathyMaps-User1](../chapter2/assets/Empathy-Mapping/EmpathyMaps-User2.png)
 
-### 2.3.5. As-is Scenario Mapping
-
-En el caso del estudiante, la experiencia actual depende de entornos externos (IDE locales, tutoriales en YouTube) y se caracteriza por recibir retroalimentación tardía, a menudo días después de la entrega. Esto provoca ansiedad, pérdida de motivación y una percepción de falta de progreso. Los estudiantes entrevistados expresaron que necesitan feedback claro e inmediato, así como sistemas de reconocimiento visibles (puntos, rankings) para sostener su interés.
-
-**Segmento objetivo #1: Estudiantes de primero a tercer ciclo**
-
-<img src="https://i.imgur.com/ILVueKS.png" alt="ASIS-USER1" width="1000"/>
-
-**Segmento objetivo #2: Profesores de primero a tercer ciclo**
-
-<img src="https://i.imgur.com/WFyQ0Qw.png" alt="ASIS-USER2" width="1000"/>
 
 
-
-## 2.4. Ubiquitous Language
+### 2.3.5. Ubiquitous Language
 
 | Term      | Definition                                                                                                                                                                                                                              |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

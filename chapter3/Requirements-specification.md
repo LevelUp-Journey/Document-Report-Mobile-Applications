@@ -1,23 +1,5 @@
-# Capítulo III: Requirements specification
-## 3.1. To-Be Scenario Mapping.
-
-<div align="justify"
-
-- **Segmento Objetivo 1: Estudiantes**
-
-Para el estudiante, el TO-BE introduce un ciclo de práctica con editor embebido, validación automática y retroalimentación instantánea. Además, los sistemas de progreso, rankings e insignias convierten el aprendizaje en un proceso motivador y continuo, en lugar de depender exclusivamente de las notas finales. El resultado es una experiencia más clara, dinámica y atractiva, que fomenta tanto la autonomía como la constancia en el estudio.
-
-<img src="https://i.imgur.com/UPDYumb.png" alt="TOBE1"/>
-
-- **Segmento Objetivo 2: Profesores**
-
-Para el docente, la plataforma centraliza la gestión de retos y automatiza la retroalimentación inicial. Esto le permite dedicar menos tiempo a tareas repetitivas y más a la orientación pedagógica. Los dashboards con métricas de avance facilitan la detección temprana de estudiantes en riesgo y reducen la carga administrativa. La proyección TO-BE ofrece, en consecuencia, una experiencia más sostenible, eficiente y alineada con las necesidades académicas.
-
-<img src="https://i.imgur.com/AiK7wYp.png" alt="TOBE1"/>
-
-</div>
-
-## 3.2. User Stories.
+# 2.4. Requirements specification
+## 2.4.1. User Stories.
 
 <div align="justify"
 
@@ -2019,7 +2001,7 @@ Como desarrollador, quiero exponer la política de visibilidad de retroalimentac
 
 
 
-## 3.3. Impact Mapping.
+## 2.4.2. Impact Mapping.
 
 <div align="justify"
 
@@ -2041,12 +2023,12 @@ Cada uno de estos objetivos se desglosa en el mapa en impactos esperados (impact
 
 </div>
 
-## 3.4. Product Backlog.
+## 2.4.3. Product Backlog.
 
 | # Orden | Epic / Story ID | Título                                                       | Descripción                                                  | Story Points |
 | ------- | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ |
 | 1       | 1 / US01        | Registro de estudiante                                       | Como un estudiante Quiero acceder a la página de Registro Para poder registrarme con mi correo y contraseña | 3            |
-| 2       | 1 / US02        | Autentiacion de Estudiante                                   | Como un estudiante Quiero acceder a la página de Inicio de sesión Para poder autenticarme con mi correo y contraseña | 3            |
+| 2       | 1 / US02        | Inicio de sesión de estudiante                               | Como un estudiante Quiero acceder a la página de Inicio de sesión Para poder autenticarme con mi correo y contraseña | 3            |
 | 3       | 3 / US03        | Publicación                                                  | Como un profesor Quiero crear una publicación con texto e imágenes Para poder interactuar con mis estudiantes y comunicar eventos | 2            |
 | 4       | 3 / US04        | Dar "Me gusta"                                               | Como un estudiante Quiero dar "Me gusta" o "Ya no me gusta" a una publicación de la comunidad Para poder expresar mi opinión y apoyar a los demás | 2            |
 | 5       | 3 / US05        | Comentar                                                     | Como un estudiante Quiero escribir un comentario bajo una publicación Para poder participar en la discusión | 1            |
@@ -2086,3 +2068,9 @@ Cada uno de estos objetivos se desglosa en el mapa en impactos esperados (impact
 | 39      | 9 / TS18        | API de Creación de Actividad                                 | Como Desarrollador, quiero un endpoint para recuperar la lista de actividades de un solo estudiante en una clase para que la UI pueda mostrar sus detalles. | 3            |
 | 40      | 10 / TS19       | API  de Creación de entrega con retroalimentación inmediata  | Como desarrollador Quiero un endpoint que cree una entrega y (si es autocalificable) devuelva retroalimentación inmediata Para que los estudiantes puedan leer los resultados de inmediato | 3            |
 | 41      | 10 / TS20       | API de Política de visibilidad de retroalimentación (simple) | Como desarrollador Quiero exponer la política de visibilidad de retroalimentación/soluciones de una actividad Para que los estudiantes sepan qué podrán leer después de enviar su entrega | 2            |
+| 42      | 1 / SP01        | WebSocket + OAuth2 para Sesiones en Vivo                     | Como equipo de desarrollo Queremos investigar cómo integrar WebSocket con OAuth2 y JWT Para documentar un método seguro de establecer sesiones en vivo con autenticación válida. | 3            |
+| 43      | 2 / SP02        | API Gateway para Autenticación y Rate Limiting               | Como equipo de desarrollo Queremos evaluar el uso de un API Gateway Para definir una estrategia centralizada de autenticación, límites de uso y enrutamiento hacia los microservicios. | 3            |
+| 44      | 3 / SP03        | Apache Kafka para Respuestas en Vivo                         | Como equipo de desarrollo Queremos investigar el uso de Apache Kafka para procesar respuestas en tiempo real Para identificar una arquitectura que permita calcular métricas de sesión sin afectar el rendimiento. | 2            |
+| 45      | 3 / SP04        | Proveedor PostgreSQL: Aiven                                  | Como equipo de desarrollo Queremos evaluar a Aiven como proveedor de PostgreSQL gestionado Para determinar si cumple con los requisitos de alta disponibilidad, seguridad y respaldos automáticos de nuestra base de datos principal. | 2            |
+| 46      | 3 / SP05        | Spring Data Mongo para Social Feed                           | Como equipo de desarrollo Queremos investigar el uso de Spring Data MongoDB Para validar si soporta publicaciones, comentarios y reacciones con el rendimiento y escalabilidad que necesitamos en la parte social. | 1            |
+| 47      | 4 / SP06        | Observabilidad en Tiempo Real con OpenTelemetry              | Como equipo de desarrollo Queremos explorar el uso de OpenTelemetry junto con Prometheus y Grafana Para establecer una solución de monitoreo en tiempo real de métricas, trazas y errores que garantice la calidad de servicio. | 5            |
