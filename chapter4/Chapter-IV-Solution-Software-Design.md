@@ -547,9 +547,14 @@ En los diagramas presentados:
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
+### Challenges Database Diagram
+<img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomainDatabaseDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
+### Solution Database Diagram
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionDomainDatabaseDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-
+### Solution Report Database Diagram
+<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportDomainDatabase.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ### 4.2.2. Bounded Context: Class Activities
 #### 4.2.2.1. Domain Layer
