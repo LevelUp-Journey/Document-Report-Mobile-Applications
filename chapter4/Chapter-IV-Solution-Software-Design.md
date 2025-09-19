@@ -1061,133 +1061,167 @@ En el diagrama presentado:
 ### 4.2.5. Bounded Context: User Profile
 #### 4.2.5.1. Domain Layer
 
-La **Domain Layer** del bounded context **User Profile** constituye el núcleo de gestión de identidad y progreso académico de los usuarios en la plataforma LevelUpJourney. Esta capa encapsula las reglas de negocio relacionadas con la representación de perfiles de usuario, sistemas de gamificación, progresión académica y reconocimientos de logros que motivan el engagement continuo en el aprendizaje.
+### Value Objects
+Los objetos de valor garantizan inmutabilidad y consistencia en atributos clave del perfil:
 
-**Agregados (Aggregates):**
+- **PersonName**: agrupa el nombre y apellido de un usuario, expone la operación `getFullName()` para componer el nombre completo.
+- **Username**: asegura unicidad y consistencia del identificador público de un perfil.
+- **ProfileUrl**: representa la dirección del perfil en formato validado.
+- **Badge**: modela insignias asignables a un perfil, con nombre y color distintivo.
+- **Experience**: encapsula los puntos de experiencia acumulados por un usuario y provee acceso a su valor.
+- **Level**: representa el nivel actual alcanzado en el sistema.
+- **Ranking (enum)**: define el estado jerárquico del usuario en categorías progresivas (`BRONZE`, `SILVER`, `GOLD`, `PLATINUM`, `DIAMOND`, `MASTER`).
 
-El dominio se estructura alrededor de un agregado principal que centraliza toda la información del usuario:
+### Aggregates
+- **Profile (Aggregate Root)**:  
+  Entidad central que agrupa los atributos del perfil y las operaciones de negocio relacionadas.  
+  - Propiedades: `PersonName`, `Username`, `ProfileUrl`, `Experience`, `Level`, `Ranking`, `badges`.  
+  - Comportamientos:  
+    - `addExperience(Integer points)`: incrementa experiencia.  
+    - `setLevel(Integer level)`: actualiza nivel.  
+    - `setRanking(Ranking ranking)`: ajusta el ranking según reglas de progresión.  
+    - `addBadge(Badge badge)`: añade insignias al perfil.  
+  - Constructores especializados permiten crear instancias directamente desde un comando (`CreateProfileCommand`).
 
-**1. Profile Aggregate (Profile Management):**
-- **Profile**: Entidad raíz que representa la identidad completa de un usuario en la plataforma. Encapsula información personal, progreso académico, logros obtenidos y métricas de gamificación que reflejan el journey de aprendizaje del usuario.
+### Commands
+Representan intenciones de modificar el estado del agregado `Profile`:
 
-**Value Objects:**
+- **CreateProfileCommand**: inicializa un nuevo perfil con nombre, apellido y URL.  
+- **AddExperienceCommand**: agrega puntos de experiencia a un perfil.  
+- **UpdateLevelCommand**: actualiza el nivel alcanzado.  
+- **UpdateRankingCommand**: cambia el ranking asignado.  
+- **AddBadgeCommand**: añade una insignia al perfil.
 
-Los Value Objects proporcionan encapsulación robusta de conceptos de dominio y garantizan la integridad de datos:
+### Queries
+Encapsulan la lectura de información del dominio:
 
-*Objetos de Identidad:*
-- **PersonName**: Value Object compuesto que encapsula nombres y apellidos, proporcionando métodos para obtener el nombre completo formateado
-- **Username**: Value Object que representa el identificador único del usuario en la plataforma, con validaciones de formato y unicidad
-- **ProfileUrl**: Value Object que encapsula URLs de imágenes de perfil con validaciones de formato y accesibilidad
+- **GetAllProfilesQuery**: retorna todos los perfiles registrados.  
+- **GetProfileByIdQuery**: busca un perfil por su identificador único.  
+- **GetProfileByUsernameQuery**: consulta perfiles por su `Username`.  
+- **GetProfilesByRankingQuery**: filtra perfiles por ranking.  
+- **GetProfilesByLevelQuery**: filtra perfiles por nivel.  
+- **GetProfileBadgesQuery**: obtiene insignias asignadas a un perfil.
 
-*Objetos de Gamificación:*
-- **Experience**: Value Object que encapsula puntos de experiencia acumulados, proporcionando métodos para consulta y validación de rangos
-- **Level**: Value Object que representa el nivel académico actual del usuario basado en experiencia acumulada
-- **Badge**: Value Object complejo que representa reconocimientos específicos con nombre descriptivo y código de color para visualización
-- **Ranking**: Enumeración que define categorías de clasificación jerárquica (BRONZE, SILVER, GOLD, PLATINUM, DIAMOND, MASTER)
+### Domain Services
+Interfaces que abstraen lógica de negocio transversal y la orquestación de comandos y consultas:
 
-**Commands (Comandos):**
+- **ProfileCommandService**:  
+  Maneja la creación de perfiles a partir de `CreateProfileCommand`, retornando opcionalmente un `Profile`.  
 
-Los comandos representan intenciones de modificación del perfil y progreso del usuario:
+- **ProfileQueryService**:  
+  Permite recuperar perfiles por identificador, nombre de usuario o todos en conjunto.  
 
-*Profile Management Commands:*
-- **CreateProfileCommand**: Creación de nuevos perfiles de usuario con información personal básica
-- **AddExperienceCommand**: Adición de puntos de experiencia por completar actividades académicas
-- **UpdateLevelCommand**: Actualización de nivel basada en experiencia acumulada
-- **UpdateRankingCommand**: Modificación de ranking según progreso y logros obtenidos
-- **AddBadgeCommand**: Otorgamiento de badges por logros específicos o hitos académicos
+- **UsernameGeneratorService**:  
+  Servicio especializado en generar identificadores únicos (`username`) para garantizar unicidad y evitar colisiones en la creación de perfiles.
 
-**Queries (Consultas):**
-
-Las queries encapsulan operaciones de lectura optimizadas para diferentes casos de uso:
-
-*Profile Retrieval Queries:*
-- **GetAllProfilesQuery**: Listado completo de perfiles para administración y leaderboards
-- **GetProfileByIdQuery**: Recuperación de perfil específico por identificador único
-- **GetProfileByUsernameQuery**: Búsqueda de perfil por username para funcionalidades sociales
-
-*Analytics and Filtering Queries:*
-- **GetProfilesByRankingQuery**: Filtrado de perfiles por categoría de ranking para competencias
-- **GetProfilesByLevelQuery**: Agrupación de usuarios por nivel académico para análisis
-- **GetProfileBadgesQuery**: Recuperación de colección de badges para visualización de logros
-
-**Domain Services:**
-
-Los servicios de dominio coordinan operaciones complejas que trascienden entidades individuales:
-
-*Core Management Services:*
-- **ProfileCommandService**: Gestión completa del ciclo de vida de perfiles incluyendo creación y modificaciones
-- **ProfileQueryService**: Consultas optimizadas con múltiples criterios de búsqueda y filtrado
-
-*Specialized Services:*
-- **UsernameGeneratorService**: Generación automática de usernames únicos cuando el usuario no especifica uno personalizado
-
-**Métodos de Dominio Especializados:**
-
-*Profile Entity Methods:*
-- **Profile()**: Constructor por defecto para instanciación básica
-- **Profile(firstName, lastName, username, profileUrl)**: Constructor parametrizado para creación completa
-- **Profile(CreateProfileCommand, username)**: Constructor específico para integración con Command pattern
-- **addExperience(points)**: Adición de puntos con validaciones de rangos y triggers de level-up
-- **setLevel(level)**: Actualización de nivel con validaciones de progresión lógica
-- **setRanking(ranking)**: Modificación de ranking con verificación de prerrequisitos
-- **addBadge(badge)**: Incorporación de badge con validación de duplicados y categorías
-
-*Value Object Methods:*
-- **PersonName.getFullName()**: Formateo consistente de nombres completos
-- **Username.toString()**: Representación string segura de username
-- **ProfileUrl.value()**: Acceso validado a URL de perfil
-- **Experience.getPoints()**: Consulta segura de puntos de experiencia
-
-**Reglas de Negocio Encapsuladas:**
-
-1. **Unicidad de Username**: Los usernames deben ser únicos en toda la plataforma
-2. **Progresión de Niveles**: Los niveles solo pueden incrementarse basado en experiencia acumulada
-3. **Consistencia de Ranking**: El ranking debe ser coherente con el nivel y experiencia del usuario
-4. **Validación de URLs**: Las URLs de perfil deben ser válidas y accesibles
-5. **Límites de Experiencia**: Los puntos de experiencia tienen rangos válidos definidos
-6. **Badges Únicos**: Un usuario no puede recibir el mismo badge múltiples veces
-7. **Formato de Nombres**: Los nombres deben cumplir con formatos y longitudes específicas
-8. **Integridad de Perfil**: Todos los perfiles deben tener información mínima requerida
-9. **Auditoría de Cambios**: Todas las modificaciones de perfil mantienen trazabilidad
-10. **Validación de Niveles**: Los niveles deben seguir una progresión lógica y matemática
-
-**Patrones de Gamificación:**
-
-El dominio implementa patrones específicos para motivar el engagement:
-- **Progressive Disclosure**: Desbloquer características basado en nivel
-- **Achievement Systems**: Badges como reconocimiento de logros específicos
-- **Leaderboards**: Rankings para competencia sana entre usuarios
-- **Experience Points**: Sistema cuantitativo de progreso
-- **Level Progression**: Estructura jerárquica clara de advancement
-- **Visual Recognition**: Badges y rankings visualmente distintivos
-
-**Estrategias de Validación:**
-
-- **Input Validation**: Validación exhaustiva de todos los datos de entrada
-- **Business Rules Enforcement**: Aplicación automática de reglas de negocio
-- **Consistency Checks**: Verificación de consistencia entre experience, level y ranking
-- **Duplicate Prevention**: Prevención de duplicados en usernames y badges
-- **Format Compliance**: Adherencia a formatos específicos para URLs y nombres
-
-**Consideraciones de Performance:**
-
-- **Lazy Loading**: Carga bajo demanda de badges y métricas detalladas
-- **Computed Properties**: Cálculo eficiente de levels basado en experience
-- **Indexing Strategy**: Índices optimizados para búsquedas por username y ranking
-- **Caching Patterns**: Caché de perfiles frecuentemente consultados
-
-### User Profile Domain
-<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementDomain.png" alt="User Profile Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.5.2. Interface Layer
+
+
+En esta capa se definen los **puntos de entrada** de la aplicación.  
+Su propósito es:  
+- Recibir peticiones externas (REST API).  
+- Transformarlas en **comandos o queries** del dominio.  
+- Retornar **Resources (DTOs)** adecuados como respuesta.  
+
+
+## Controllers
+
+### **ProfilesController**
+Controlador REST que expone los endpoints relacionados con la gestión de perfiles.  
+
+**Dependencias:**  
+- `ProfileCommandService`  
+- `ProfileQueryService`  
+
+**Responsabilidades:**  
+- Recibir `Resource` desde el cliente.  
+- Usar *Transformers* para convertirlos en **Comandos** o **Queries**.  
+- Invocar servicios de dominio para ejecutar la lógica.  
+- Retornar `Resource` listos para el cliente.  
+
+**Principales Endpoints:**  
+- `createProfile(CreateProfileResource)` → crear un perfil.  
+- `getProfileById(UUID)` → obtener perfil por ID.  
+- `getAllProfiles()` → listar todos los perfiles.  
+- `addExperience(UUID, AddExperienceResource)` → agregar experiencia.  
+- `updateLevel(UUID, UpdateLevelResource)` → actualizar nivel.  
+- `updateRanking(UUID, UpdateRankingResource)` → actualizar ranking.  
+- `addBadge(UUID, AddBadgeResource)` → añadir insignia.  
+- `getProfilesByRanking(String)` → buscar perfiles por ranking.  
+- `getProfilesByLevel(Integer)` → buscar perfiles por nivel.  
+- `getProfileBadges(UUID)` → listar insignias de un perfil.  
+
+## Resources (DTOs)
+
+Clases que representan datos de entrada y salida en la API.  
+
+- **CreateProfileResource** → datos para crear un perfil.  
+- **ProfileResource** → datos completos de un perfil (incluye experiencia, nivel, ranking e insignias).  
+- **AddExperienceResource** → puntos de experiencia a añadir.  
+- **UpdateLevelResource** → nuevo nivel de perfil.  
+- **UpdateRankingResource** → ranking actualizado.  
+- **AddBadgeResource** → nombre y color de la insignia.  
+- **BadgeResource** → datos de una insignia.  
+
+## Transformers
+
+Clases encargadas de convertir entre **Resources (DTOs)** y **Comandos/Entidades de dominio**.  
+
+- `CreateProfileCommandFromResourceAssembler`  
+- `ProfileResourceFromEntityAssembler`  
+- `AddExperienceCommandFromResourceAssembler`  
+- `UpdateLevelCommandFromResourceAssembler`  
+- `UpdateRankingCommandFromResourceAssembler`  
+- `AddBadgeCommandFromResourceAssembler`  
+- `BadgeResourceFromEntityAssembler`  
+
+**Responsabilidad principal:**  
+- Garantizar la separación entre la capa de presentación y el dominio, evitando acoplamientos directos.  
+
 ### User Profile Interface
 <img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementInterfaces.png" alt="User Profile Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.5.3. Application Layer
+
+### Profiles
+- **Command Handlers**:  
+  - `ProfileCommandServiceImpl` procesa comandos como `CreateProfileCommand`, `AddExperienceCommand`, `UpdateLevelCommand`, `UpdateRankingCommand`, `AddBadgeCommand`, utilizando `ProfileRepository` y `UsernameGeneratorService`.  
+
+- **Query Handlers**:  
+  - `ProfileQueryServiceImpl` resuelve consultas como `GetProfileByIdQuery`, `GetProfileByUsernameQuery`, `GetAllProfilesQuery`, `GetProfilesByRankingQuery`, `GetProfilesByLevelQuery`, `GetProfileBadgesQuery`.  
+
+### Supporting Domain Services
+- **Username Management**:  
+  - `UsernameGeneratorServiceImpl` genera nombres de usuario únicos apoyándose en `ProfileRepository`.  
+
+- **Experience Management**:  
+  - `ExperienceServiceImpl` calcula niveles, determina rankings y gestiona la adición de experiencia en perfiles.  
+
+- **Badge Management**:  
+  - `BadgeServiceImpl` otorga, elimina y valida insignias en perfiles.  
+
+### Outbound Services
+- **ACL**:  
+  - `ExternalIamService` expone la integración con servicios externos de gestión de identidad y acceso.  
+
 ### User Profile Application
 <img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementApplication.png" alt="User Profile Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.5.4. Infrastructure Layer
+
+En el diagrama presentado:
+
+- El `ProfileRepository` define la interfaz principal para la gestión de perfiles, permitiendo operaciones como búsqueda por `Username`, validaciones de existencia, filtrado por `Ranking` o nivel de experiencia, además de guardar entidades de tipo `Profile`.  
+
+- La implementación `ProfileRepositoryImpl` utiliza las interfaces de Spring Data (`ProfileJpaRepository`, `BadgeJpaRepository`) para interactuar con la base de datos. Esta clase traduce las operaciones del dominio (`Profile`) hacia las entidades JPA (`ProfileJpaEntity`, `BadgeJpaEntity`).  
+
+- Las entidades `ProfileJpaEntity` y `BadgeJpaEntity` representan la persistencia en la base de datos, incluyendo sus atributos básicos y métodos de conversión (`toDomainEntity`, `fromDomainEntity`) para mapear entre las entidades de infraestructura y las del dominio (`Profile`, `Badge`).  
+
+- En la capa de **Spring Data JPA**, las interfaces `ProfileJpaRepository` y `BadgeJpaRepository` extienden de `JpaRepository`, lo que habilita operaciones genéricas de persistencia, además de consultas específicas como `findByUsername`, `findByRanking` o `findByProfileId`.  
+
+- En la capa de **Domain**, se encuentran las entidades y value objects (`Profile`, `Username`, `Badge`, `Experience`, `Level`, `Ranking`) que son utilizadas por los repositorios de infraestructura para mantener la coherencia entre el dominio y la base de datos.  
+
 ### User Profile Infrastructure
 <img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementInfrastructure.png" alt="User Profile Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
@@ -1196,6 +1230,11 @@ El dominio implementa patrones específicos para motivar el engagement:
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
+
+### User Profile Domain
+<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementDomain.png" alt="User Profile Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+
+
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
 ### User Profile Database Design
 <img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementDomainDatabase.png" alt="User Profile Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
