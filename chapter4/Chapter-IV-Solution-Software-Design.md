@@ -547,117 +547,47 @@ En los diagramas presentados:
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
+
+
+
+
 ### 4.2.2. Bounded Context: Class Activities
 #### 4.2.2.1. Domain Layer
 
-La **Domain Layer** del bounded context **Class Activities** gestiona las actividades académicas interactivas, específicamente enfocada en quizzes en tiempo real y sesiones de clase en vivo. Esta capa implementa patrones DDD tácticos para encapsular las reglas de negocio complejas relacionadas con la creación de actividades educativas y la gestión de sesiones colaborativas en tiempo real.
+### Value Objects
+En los diagramas se definen múltiples objetos de valor que encapsulan identificadores y propiedades inmutables que representan conceptos centrales del dominio:
 
-**Agregados (Aggregates):**
+- **ActivityId, TeacherId, QuestionId, OptionId, SessionId, ParticipantId, AnswerId, CurrentQuestionId**: encapsulan la identidad de cada entidad del dominio asegurando unicidad.
+- **Content**: modela el contenido de una pregunta u opción, compuesto por un tipo (`ContentType`) y un valor de texto o imagen.
+- **Enums** como `ContentType`, `DifficultyLevel`, `SessionStatus` y `ParticipantStatus` restringen los valores válidos en el dominio para mantener consistencia.
 
-El dominio se estructura alrededor de dos agregados principales que manejan diferentes aspectos del ciclo de vida de las actividades:
+### Aggregates y Entities
+El dominio se organiza alrededor de agregados que representan raíces de consistencia y controlan las reglas de negocio internas:
 
-**1. QuizActivity Aggregate (Activities Manager):**
-- **QuizActivity**: Entidad raíz que representa una actividad de quiz creada por profesores. Encapsula la metadata del quiz incluyendo título, descripción opcional y colección de preguntas asociadas.
-- **Question**: Entidad que define preguntas individuales dentro del quiz. Incluye contenido multimedia, límites de tiempo, puntuación, nivel de dificultad y configuraciones de presentación.
-- **Option**: Entidad que representa las opciones de respuesta para cada pregunta, incluyendo contenido multimedia y marcador de respuesta correcta.
+- **QuizActivity (Aggregate Root)**: representa la actividad de un cuestionario creada por un profesor, con metadatos, preguntas asociadas y control de fechas.
+- **Question (Entity)**: entidad que pertenece a un `QuizActivity`, define enunciado, puntaje, límite de tiempo, dificultad y sus opciones.
+- **Option (Entity)**: define el contenido de cada opción de respuesta y determina si es correcta o no.
+- **LiveSession (Aggregate Root)**: representa una sesión en vivo asociada a una actividad y un profesor, gestiona participantes, estado de la sesión y la pregunta actual.
+- **Participant (Entity)**: participante de la sesión en vivo, con nombre, puntaje, estado y respuestas asociadas.
+- **Answer (Entity)**: respuesta seleccionada por un participante para una pregunta determinada en la sesión.
+- **CurrentQuestion (Entity)**: mantiene la pregunta activa en la sesión en vivo junto con tiempos de inicio y fin.
 
-**2. LiveSession Aggregate (Class Activity Session Manager):**
-- **LiveSession**: Entidad raíz que gestiona sesiones de quiz en tiempo real. Coordina la participación de estudiantes, el progreso de preguntas y el estado general de la sesión.
-- **Participant**: Entidad que representa un estudiante participante en la sesión, manteniendo su estado, puntuación acumulada y respuestas registradas.
-- **Answer**: Entidad que registra las respuestas específicas de participantes a preguntas durante la sesión.
-- **CurrentQuestion**: Entidad que gestiona la pregunta actualmente activa en la sesión, incluyendo tiempos de inicio/fin y estado de activación.
+### Commands y Queries
+Se definen **comandos** y **consultas** como objetos de transporte que encapsulan intenciones de modificación o lectura del dominio:
 
-**Value Objects:**
+- **Commands**: `CreateQuizActivityCommand`, `AddQuestionCommand`, `AddOptionCommand`, `UpdateQuestionCommand`, `CreateLiveSessionCommand`, `JoinSessionCommand`, `LeaveSessionCommand`, `StartSessionCommand`, `LoadQuestionCommand`, `EndCurrentQuestionCommand`, `SendAnswerCommand`, `CloseSessionCommand`.
+- **Queries**: `GetQuizActivityByIdQuery`, `GetQuestionsByActivityIdQuery`, `GetOptionsByQuestionIdQuery`, `GetLiveSessionByIdQuery`, `GetParticipantsBySessionIdQuery`, `GetLeaderboardQuery`, `GetCurrentQuestionQuery`, `GetCurrentQuestionDetailsQuery`.
 
-Los Value Objects aseguran type safety y encapsulan conceptos de dominio importantes:
+### Domain Services
+Se modelan como interfaces que representan contratos para la ejecución de reglas de negocio relacionadas con comandos y consultas:
 
-*Identificadores:*
-- **ActivityId, SessionId**: Identificadores únicos para actividades y sesiones
-- **TeacherId, ParticipantId**: Identificadores de actores del sistema
-- **QuestionId, OptionId, AnswerId**: Identificadores de componentes específicos
-- **CurrentQuestionId**: Identificador para preguntas activas en sesiones
+- **Command Services**: `QuizActivityCommandService`, `QuestionCommandService`, `OptionCommandService`, `LiveSessionCommandService`.
+- **Query Services**: `QuizActivityQueryService`, `QuestionQueryService`, `OptionQueryService`, `LiveSessionQueryService`.
 
-*Objetos de Contenido:*
-- **Content**: Value Object complejo que encapsula contenido multimedia (texto/imagen) con su tipo correspondiente
-- **ContentType**: Enumeración que define tipos de contenido soportados (TEXT, IMAGE)
+Estas interfaces garantizan separación de responsabilidades y un punto claro de interacción con la lógica del dominio.
 
-*Enumeraciones de Estado:*
-- **DifficultyLevel**: Niveles de dificultad (EASY, MEDIUM, HARD, NONE)
-- **SessionStatus**: Estados del ciclo de vida de sesión (NOT_STARTED, LOADING, OPENED, IN_PROGRESS, CLOSED)
-- **ParticipantStatus**: Estados de participación (JOINED, ACTIVE, DISCONNECTED, LEFT)
-
-**Commands (Comandos):**
-
-Los comandos representan intenciones de cambio y operaciones de escritura del sistema:
-
-*QuizActivity Commands:*
-- **CreateQuizActivityCommand**: Creación de nueva actividad de quiz por profesores
-- **AddQuestionCommand**: Adición de preguntas a actividades existentes con configuraciones completas
-- **AddOptionCommand**: Creación de opciones de respuesta para preguntas específicas
-- **UpdateQuestionCommand**: Modificación de preguntas existentes incluyendo contenido y configuraciones
-
-*LiveSession Commands:*
-- **CreateLiveSessionCommand**: Inicio de nueva sesión en vivo basada en una actividad
-- **JoinSessionCommand**: Incorporación de participantes a sesiones activas
-- **LeaveSessionCommand**: Retiro de participantes de sesiones
-- **StartSessionCommand**: Activación oficial de sesión para comenzar quiz
-- **LoadQuestionCommand**: Carga de pregunta específica con tiempos definidos
-- **EndCurrentQuestionCommand**: Finalización de pregunta activa
-- **SendAnswerCommand**: Registro de respuesta de participante
-- **CloseSessionCommand**: Cierre oficial de sesión
-
-**Queries (Consultas):**
-
-Las queries encapsulan operaciones de lectura optimizadas:
-
-*QuizActivity Queries:*
-- **GetQuizActivityByIdQuery**: Recuperación de actividad específica
-- **GetQuestionsByActivityIdQuery**: Listado de preguntas de una actividad
-- **GetOptionsByQuestionIdQuery**: Opciones de respuesta para pregunta específica
-
-*LiveSession Queries:*
-- **GetLiveSessionByIdQuery**: Recuperación de sesión específica
-- **GetParticipantsBySessionIdQuery**: Listado de participantes activos
-- **GetLeaderboardQuery**: Ranking de participantes por puntuación
-- **GetCurrentQuestionQuery**: Pregunta actualmente activa
-- **GetCurrentQuestionDetailsQuery**: Detalles completos de pregunta activa
-
-**Domain Services:**
-
-Los servicios de dominio coordinan operaciones complejas que trascienden entidades individuales:
-
-*QuizActivity Services:*
-- **QuizActivityCommandService**: Gestión del ciclo de vida de actividades
-- **QuestionCommandService**: Administración de preguntas y modificaciones
-- **OptionCommandService**: Gestión de opciones de respuesta
-- **QuizActivityQueryService**: Consultas optimizadas de actividades
-- **QuestionQueryService**: Acceso eficiente a preguntas
-- **OptionQueryService**: Recuperación de opciones de respuesta
-
-*LiveSession Services:*
-- **LiveSessionCommandService**: Coordinación completa de sesiones en tiempo real
-- **LiveSessionQueryService**: Consultas especializadas para sesiones activas
-
-**Reglas de Negocio Encapsuladas:**
-
-1. **Integridad de Actividades**: Una actividad debe contener al menos una pregunta con opciones válidas antes de poder generar sesiones
-2. **Gestión de Contenido**: El contenido multimedia debe validarse según su tipo (TEXT/IMAGE)
-3. **Control de Sesiones**: Solo un profesor puede iniciar y gestionar sesiones de sus propias actividades
-4. **Participación Única**: Un participante no puede unirse múltiples veces a la misma sesión
-5. **Secuencia de Preguntas**: Las preguntas deben cargarse secuencialmente y solo una puede estar activa por vez
-6. **Validación Temporal**: Las respuestas solo son válidas durante el período activo de la pregunta
-7. **Puntuación Consistente**: La puntuación se calcula basada en respuestas correctas y tiempo de respuesta
-8. **Estados Transicionales**: Los cambios de estado siguen flujos predefinidos sin transiciones inválidas
-9. **Persistencia de Respuestas**: Todas las respuestas se registran inmediatamente para garantizar integridad
-10. **Límites de Tiempo**: Preguntas con límite de tiempo se cierran automáticamente al vencer
-
-**Patrones de Comunicación en Tiempo Real:**
-
-El dominio está diseñado para soportar comunicación en tiempo real mediante:
-- **Event Sourcing**: Para mantener historial completo de sesiones
-- **Command Segregation**: Separación clara entre operaciones de lectura y escritura
-- **State Management**: Gestión precisa de estados de sesión y participantes
-- **Temporal Constraints**: Manejo de restricciones temporales para preguntas
+### Repositories (Abstracciones)
+Aunque en los diagramas no se muestran implementaciones específicas de repositorios, se asume la existencia de **interfaces de Repository** en la capa de dominio para la persistencia de agregados como `QuizActivity` o `LiveSession`. Estas actúan como puertos que serán implementados en la capa de infraestructura.
 
 ### Activities Manager Domain
 <img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerDomain.png" alt="Activities Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
@@ -666,6 +596,38 @@ El dominio está diseñado para soportar comunicación en tiempo real mediante:
 <img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomain.png" alt="Class Activity Session Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.2.2. Interface Layer
+
+
+## 1. Bounded Context: QuizActivities
+
+### Controllers
+- **QuizActivitiesController**  
+  Expone endpoints para crear, actualizar y consultar actividades de tipo cuestionario.  
+- **QuestionsController**  
+  Expone endpoints para agregar, actualizar y consultar preguntas asociadas a una actividad.  
+- **OptionsController**  
+  Expone endpoints para agregar, actualizar y consultar opciones asociadas a una pregunta.  
+
+### Resources
+- **CreateQuizActivityResource, UpdateQuizActivityResource**: recursos de entrada para crear o actualizar actividades de cuestionario.  
+- **AddQuestionResource, UpdateQuestionResource**: recursos de entrada para agregar o actualizar preguntas.  
+- **AddOptionResource, UpdateOptionResource**: recursos de entrada para agregar o actualizar opciones de una pregunta.  
+- **GetQuizActivityByIdResource, GetQuestionsByActivityIdResource, GetOptionsByQuestionIdResource**: recursos de entrada para parámetros de consultas.  
+
+---
+
+## 2. Bounded Context: LiveSessions
+
+### Controller
+- **LiveSessionsController**  
+  Expone endpoints para gestionar sesiones en vivo: crear, unirse, salir, iniciar, cargar preguntas, terminar preguntas, enviar respuestas, cerrar sesión y realizar consultas asociadas a la sesión en vivo.  
+
+### Resources
+- **CreateLiveSessionResource, JoinSessionResource, LeaveSessionResource, StartSessionResource, LoadQuestionResource, EndCurrentQuestionResource, SendAnswerResource, CloseSessionResource**: recursos de entrada para las acciones de gestión de sesiones en vivo.  
+- **GetLiveSessionByIdResource, GetParticipantsBySessionIdResource, GetLeaderboardResource, GetCurrentQuestionResource, GetCurrentQuestionDetailsResource**: recursos de entrada para parámetros de consultas relacionadas con sesiones, participantes, ranking y preguntas actuales.  
+- **CurrentQuestionResponse**: recurso de salida que representa la pregunta actual activa en la sesión.  
+
+
 ### Activities Manager Interface
 <img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerInterfaces.png" alt="Activities Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
@@ -673,6 +635,25 @@ El dominio está diseñado para soportar comunicación en tiempo real mediante:
 <img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerInterfaces.png" alt="Class Activity Session Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.2.3. Application Layer
+
+### QuizActivity
+- **Command Handlers**:  
+  - `QuizActivityCommandServiceImpl` procesa el comando `CreateQuizActivityCommand`.  
+  - `QuestionCommandServiceImpl` procesa los comandos `AddQuestionCommand`, `UpdateQuestionCommand`.  
+  - `OptionCommandServiceImpl` procesa el comando `AddOptionCommand`.  
+
+- **Query Handlers**:  
+  - `QuizActivityQueryServiceImpl` resuelve consultas como `GetQuizActivityByIdQuery`.  
+  - `QuestionQueryServiceImpl` resuelve consultas como `GetQuestionsByActivityIdQuery`.  
+  - `OptionQueryServiceImpl` resuelve consultas como `GetOptionsByQuestionIdQuery`.  
+
+### LiveSession
+- **Command Handlers**:  
+  - `LiveSessionCommandServiceImpl` procesa comandos como `CreateLiveSessionCommand`, `JoinSessionCommand`, `LeaveSessionCommand`, `StartSessionCommand`, `LoadQuestionCommand`, `EndCurrentQuestionCommand`, `SendAnswerCommand`, `CloseSessionCommand`.  
+
+- **Query Handlers**:  
+  - `LiveSessionQueryServiceImpl` resuelve consultas como `GetLiveSessionByIdQuery`, `GetParticipantsBySessionIdQuery`, `GetLeaderboardQuery`, `GetCurrentQuestionQuery`, `GetCurrentQuestionDetailsQuery`.  
+
 ### Activities Manager Application
 <img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerApplication.png" alt="Activities Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
@@ -680,6 +661,18 @@ El dominio está diseñado para soportar comunicación en tiempo real mediante:
 <img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerApplication.png" alt="Class Activity Session Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 4.2.2.4. Infrastructure Layer
+
+En los diagramas presentados:  
+
+- Para **QuizActivity**, el `QuizActivityRepository` gestiona la entidad `QuizActivity` y permite consultas específicas por `TeacherId`, búsqueda por título y filtrado por fechas de creación.  
+  El `QuestionRepository` administra las entidades `Question`, ofreciendo búsquedas por `ActivityId`, dificultad (`DifficultyLevel`) y orden cronológico, además de permitir eliminación en cascada por actividad.  
+  El `OptionRepository` gestiona las entidades `Option`, habilitando búsquedas por `QuestionId`, opciones correctas o en orden de creación, así como eliminación de opciones ligadas a una pregunta.  
+
+- Para **LiveSession**, el `LiveSessionRepository` administra sesiones en vivo (`LiveSession`) y permite consultas por `TeacherId`, `ActivityId` y `SessionStatus`.  
+  El `ParticipantRepository` gestiona la entidad `Participant`, ofreciendo consultas por `SessionId`, estado del participante (`ParticipantStatus`), orden por puntaje y búsquedas específicas de un participante dentro de una sesión.  
+  El `AnswerRepository` se encarga de las entidades `Answer`, habilitando consultas por `SessionId`, `ParticipantId` y `QuestionId`, así como combinaciones entre ellos, además de la eliminación de respuestas por sesión.  
+  El `CurrentQuestionRepository` gestiona la entidad `CurrentQuestion`, con búsquedas por `SessionId`, estado activo e incluso consultas globales por preguntas activas, junto con operaciones de eliminación ligadas a una sesión.  
+
 ### Activities Manager Infrastructure
 <img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerInfrastructure.png" alt="Activities Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
