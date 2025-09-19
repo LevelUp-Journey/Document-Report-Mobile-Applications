@@ -1366,3 +1366,382 @@ Dado el amplio alcance del contexto de Analytics, colocar todos los diagramas de
 
 ### 4.2.7. Bounded Context: Code Runner
 
+## Visión General
+
+El **CodeRunner Microservice** es un sistema de ejecución de código distribuido y seguro que permite ejecutar código en múltiples lenguajes de programación de forma aislada y controlada. Utiliza una arquitectura de pipeline para procesar solicitudes de ejecución desde la detección del lenguaje hasta el análisis completo de resultados.
+
+### Características Principales
+
+- **Ejecución Multi-lenguaje**: Python, Java, JavaScript, C#, C++, Go, Rust
+- **Seguridad Avanzada**: Análisis de código malicioso y validación de seguridad
+- **Contenedorización**: Ejecución aislada en contenedores Docker
+- **Pipeline Inteligente**: Procesamiento paso a paso con recuperación de errores
+- **Análisis Profundo**: Evaluación de rendimiento, calidad y recomendaciones
+- **Escalabilidad**: Load balancing y gestión de recursos distribuida
+- **Monitoreo**: Métricas en tiempo real y logging comprehensivo
+
+
+## Arquitectura del Pipeline
+
+El CodeRunner implementa un **patrón de pipeline** que procesa cada solicitud de ejecución a través de múltiples etapas especializadas:
+
+```mermaid
+graph LR
+    A[Kafka Queue] --> B[Language Detection]
+    B --> C[Safety Review]
+    C --> D[Execution Planning]
+    D --> E[Docker Execution]
+    E --> F[Result Analysis]
+    F --> G[Completion]
+```
+
+### Etapas del Pipeline
+
+| Etapa | Componente | Función | Tiempo Estimado |
+|-------|------------|---------|-----------------|
+| 1 | **Language Detection** | Detecta el lenguaje de programación automáticamente | ~100ms |
+| 2 | **Safety Review** | Analiza seguridad y detecta código malicioso | ~500ms |
+| 3 | **Execution Planning** | Planifica recursos y configura entorno Docker | ~200ms |
+| 4 | **Docker Execution** | Ejecuta el código en contenedor aislado | ~2-30s |
+| 5 | **Result Analysis** | Analiza resultados, rendimiento y genera recomendaciones | ~300ms |
+
+
+## Componentes Principales
+
+### 1. **LanguageDetector**
+**Propósito**: Identificación automática del lenguaje de programación
+
+**Funcionamiento**:
+- Utiliza **patrón Strategy** para diferentes lenguajes
+- Analiza sintaxis, palabras clave, imports y estructura del código
+- Proporciona configuración de runtime específica por lenguaje
+- Genera puntuación de confianza para la detección
+
+**Estrategias Soportadas**:
+```go
+// Ejemplo de detección Python
+func (p *PythonDetectionStrategy) CanDetect(code string) bool {
+    return containsKeywords(code, []string{"def", "import", "print"}) &&
+           containsImports(code, []string{"import", "from"})
+}
+```
+
+### 2. **CodeSafetyReview**
+**Propósito**: Validación de seguridad y detección de amenazas
+
+**Capas de Seguridad**:
+- **Análisis Estático**: Detección de vulnerabilidades conocidas (SQL Injection, XSS, Command Injection)
+- **Detección de Secretos**: Identificación de API keys, passwords hardcodeados
+- **Análisis de Dependencias**: Verificación contra base de datos de vulnerabilidades
+- **Patrones Maliciosos**: Detección de virus, trojans, backdoors
+- **Validación de Recursos**: Prevención de ataques DoS
+
+**Ejemplo de Análisis**:
+```go
+type SafetyReviewResult struct {
+    IsApproved      bool
+    RiskScore       float64
+    RiskLevel       RiskLevel
+    SecurityIssues  []SecurityIssue
+    Recommendations []string
+}
+```
+
+### 3. **ExecutionPlanner**
+**Propósito**: Planificación optimizada de recursos y entorno de ejecución
+
+**Funcionalidades**:
+- **Selección de Imagen Docker**: Optimización según lenguaje y dependencias
+- **Cálculo de Recursos**: CPU, memoria, almacenamiento basado en complejidad
+- **Configuración de Seguridad**: Namespaces aislados, restricciones de red
+- **Optimización de Costos**: Balanceo entre rendimiento y recursos
+
+**Proceso de Planificación**:
+```go
+func (ep *ExecutionPlanner) CreateExecutionPlan(request CodeExecutionRequest) ExecutionPlan {
+    complexity := ep.analyzeComplexity(request.Code)
+    resources := ep.estimateResources(complexity)
+    dockerConfig := ep.selectOptimalImage(request.Language)
+    security := ep.configureSecurityConstraints(request.SecurityLevel)
+    
+    return ExecutionPlan{
+        DockerConfiguration: dockerConfig,
+        ResourceAllocation:  resources,
+        SecurityConfig:     security,
+    }
+}
+```
+
+### 4. **DockerEngineRunner**
+**Propósito**: Ejecución aislada y monitoreo de contenedores
+
+**Características**:
+- **Gestión Completa de Contenedores**: Creación, inicio, parada, limpieza
+- **Monitoreo en Tiempo Real**: CPU, memoria, red, I/O
+- **Manejo de Timeouts**: Terminación automática de procesos largos
+- **Colección de Logs**: Captura de stdout, stderr, logs del sistema
+- **Gestión de Recursos**: Allocación y liberación automática
+
+**Flujo de Ejecución**:
+```go
+func (der *DockerEngineRunner) ExecuteCode(plan ExecutionPlan) ExecutionResult {
+    container := der.createContainer(plan.DockerConfiguration)
+    der.startMonitoring(container.ID)
+    
+    result := der.runContainer(container.ID)
+    artifacts := der.collectArtifacts(container.ID)
+    
+    der.cleanup(container.ID)
+    return ExecutionResult{...}
+}
+```
+
+### 5. **ExecutionAnalyzer**
+**Propósito**: Análisis profundo y generación de insights
+
+**Tipos de Análisis**:
+- **Análisis de Pruebas**: Éxito/fallo, cobertura, patrones de testing
+- **Análisis de Rendimiento**: Tiempo de ejecución, uso de memoria, cuellos de botella
+- **Análisis de Calidad**: Complejidad ciclomática, mantenibilidad, estándares
+- **Benchmarking**: Comparación con estándares de la industria
+- **Recomendaciones**: Sugerencias de optimización automáticas
+
+**Generación de Insights**:
+```go
+type ExecutionAnalysis struct {
+    OverallScore      float64
+    Grade            ExecutionGrade
+    PerformanceScore float64
+    QualityScore     float64
+    Recommendations  []Recommendation
+    BenchmarkData    BenchmarkComparison
+}
+```
+
+### 6. **ExecutionQueueManager**
+**Propósito**: Orquestación del pipeline y gestión de colas
+
+**Responsabilidades**:
+- **Consumo de Kafka**: Procesamiento de mensajes de solicitudes
+- **Orquestación**: Coordinación de todos los componentes del pipeline
+- **Gestión de Prioridades**: Colas por prioridad (LOW, NORMAL, HIGH, CRITICAL)
+- **Load Balancing**: Distribución de carga entre nodos
+- **Manejo de Errores**: Reintentos, escalamiento, recuperación
+
+## Flujo de Ejecución
+
+### 1. **Recepción de Solicitud**
+```json
+{
+  "requestId": "uuid-123",
+  "code": "def hello_world():\n    print('Hello, World!')",
+  "language": "PYTHON", // Opcional
+  "testCases": [...],
+  "priority": "NORMAL",
+  "timeoutSeconds": 30
+}
+```
+
+### 2. **Detección de Lenguaje**
+- Si no se especifica lenguaje, se detecta automáticamente
+- Se selecciona la estrategia de detección apropiada
+- Se genera configuración de runtime
+
+### 3. **Revisión de Seguridad**
+- Análisis estático de vulnerabilidades
+- Detección de patrones maliciosos
+- Validación de recursos y complejidad
+- **Resultado**: APPROVED/REJECTED con recomendaciones
+
+### 4. **Planificación de Ejecución**
+- Selección de imagen Docker optimizada
+- Cálculo de recursos necesarios
+- Configuración de seguridad y aislamiento
+- **Resultado**: Plan de ejecución detallado
+
+### 5. **Ejecución en Docker**
+- Creación de contenedor aislado
+- Monitoreo en tiempo real
+- Captura de logs y métricas
+- **Resultado**: Logs, métricas, artifacts
+
+### 6. **Análisis de Resultados**
+- Evaluación de pruebas y rendimiento
+- Análisis de calidad de código
+- Comparación con benchmarks
+- **Resultado**: Análisis completo con recomendaciones
+
+### 7. **Entrega de Resultados**
+```json
+{
+  "requestId": "uuid-123",
+  "status": "COMPLETED",
+  "executionTime": 1250,
+  "grade": "A",
+  "output": "Hello, World!",
+  "analysis": {
+    "performanceScore": 95.5,
+    "qualityScore": 88.0,
+    "recommendations": [...]
+  }
+}
+```
+
+## Base de Datos PostgreSQL
+
+### **Esquema Principal**
+
+#### **Tablas de Configuración**
+- `language_configurations`: Configuraciones por lenguaje
+- `docker_images`: Registro de imágenes Docker
+- `safety_rules`: Reglas de seguridad configurables
+
+#### **Tablas de Ejecución**
+- `execution_requests`: Solicitudes de ejecución
+- `execution_results`: Resultados de ejecución
+- `execution_plans`: Planes de ejecución generados
+
+#### **Tablas de Análisis**
+- `execution_analyses`: Análisis completos
+- `performance_benchmarks`: Datos de benchmarking
+- `recommendations`: Recomendaciones generadas
+
+#### **Tablas de Seguridad**
+- `security_incidents`: Incidentes de seguridad
+- `malicious_patterns`: Patrones maliciosos detectados
+- `audit_logs`: Logs de auditoría
+
+### **Consultas Típicas**
+
+```sql
+-- Obtener estadísticas de rendimiento por lenguaje
+SELECT 
+    language_type,
+    AVG(execution_time_ms) as avg_time,
+    AVG(performance_score) as avg_performance
+FROM execution_analyses ea
+JOIN execution_requests er ON ea.request_id = er.request_id
+GROUP BY language_type;
+
+-- Identificar patrones de seguridad más comunes
+SELECT 
+    threat_type,
+    COUNT(*) as incidents,
+    AVG(severity_score) as avg_severity
+FROM security_incidents
+GROUP BY threat_type
+ORDER BY incidents DESC;
+```
+
+## Seguridad y Validación
+
+### **Capas de Seguridad**
+
+#### 1. **Análisis Pre-ejecución**
+- Escaneo de código estático
+- Detección de vulnerabilidades conocidas
+- Validación de sintaxis y estructura
+
+#### 2. **Aislamiento de Ejecución**
+- Contenedores Docker con recursos limitados
+- Namespaces aislados (PID, Network, Mount)
+- Restricciones de capabilities del kernel
+
+#### 3. **Monitoreo Runtime**
+- Detección de comportamiento anómalo
+- Limits de recursos en tiempo real
+- Terminación automática por violaciones
+
+#### 4. **Análisis Post-ejecución**
+- Análisis de logs para actividad sospechosa
+- Validación de compliance
+- Generación de alertas de seguridad
+
+### **Tipos de Amenazas Detectadas**
+
+| Tipo | Descripción | Acción |
+|------|-------------|--------|
+| **SQL Injection** | Inyección de código SQL | BLOCK + Alert |
+| **Command Injection** | Ejecución de comandos del sistema | BLOCK + Alert |
+| **Secrets Exposure** | API keys, passwords hardcodeados | WARN + Sanitize |
+| **Resource Abuse** | Bucles infinitos, memory bombs | LIMIT + Terminate |
+| **Network Access** | Intentos de conexión externa | BLOCK + Log |
+
+
+## Monitoreo y Análisis
+
+### **Métricas de Rendimiento**
+
+#### **Métricas del Sistema**
+- **Throughput**: Solicitudes procesadas por segundo
+- **Latencia**: Tiempo de respuesta por etapa del pipeline
+- **Disponibilidad**: Uptime del servicio
+- **Tasa de Error**: Porcentaje de ejecuciones fallidas
+
+#### **Métricas de Ejecución**
+- **Tiempo de Ejecución**: Por lenguaje y complejidad
+- **Uso de Recursos**: CPU, memoria, almacenamiento
+- **Calidad de Código**: Scores de mantenibilidad y complejidad
+- **Patrones de Uso**: Lenguajes más populares, tipos de problemas
+
+### **Dashboard de Monitoreo**
+
+```go
+type SystemMetrics struct {
+    ActiveExecutions    int
+    QueueLength        int
+    AverageLatency     time.Duration
+    SuccessRate        float64
+    ResourceUtilization map[string]float64
+}
+```
+
+### **Alertas y Notificaciones**
+- **Alta CPU/Memoria**: Cuando uso > 80%
+- **Cola Larga**: Cuando > 100 solicitudes pendientes
+- **Errores Frecuentes**: Cuando tasa de error > 5%
+- **Amenazas de Seguridad**: Detección de código malicioso
+
+
+## Escalabilidad y Performance
+
+### **Estrategias de Escalabilidad**
+
+#### 1. **Escalado Horizontal**
+- Múltiples instancias del servicio
+- Load balancing inteligente por carga de trabajo
+- Auto-scaling basado en métricas
+
+#### 2. **Gestión de Recursos**
+- Pool de contenedores pre-calentados
+- Cache de imágenes Docker frecuentes
+- Optimización de recursos por lenguaje
+
+#### 3. **Optimizaciones de Performance**
+```go
+// Cache de configuraciones frecuentes
+type ConfigCache struct {
+    languageConfigs map[LanguageType]*RuntimeConfig
+    dockerImages    map[string]*DockerImageInfo
+    ttl            time.Duration
+}
+
+// Pool de contenedores reutilizables
+type ContainerPool struct {
+    availableContainers chan *Container
+    maxSize            int
+    warmupStrategy     WarmupStrategy
+}
+```
+
+### **Benchmarks de Performance**
+
+| Lenguaje | Tiempo Promedio | Memoria Promedio | Throughput |
+|----------|----------------|------------------|------------|
+| Python   | 2.1s          | 64MB            | 150 req/min |
+| Java     | 3.5s          | 128MB           | 120 req/min |
+| JavaScript| 1.8s         | 48MB            | 180 req/min |
+| C#       | 2.8s          | 96MB            | 140 req/min |
+
+
+### **Diagramas de clase de cada modulo**
