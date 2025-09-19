@@ -492,6 +492,116 @@ Los servicios de dominio manejan operaciones que no pertenecen naturalmente a un
 
 ### 4.2.2. Bounded Context: Class Activities
 #### 4.2.2.1. Domain Layer
+
+La **Domain Layer** del bounded context **Class Activities** gestiona las actividades académicas interactivas, específicamente enfocada en quizzes en tiempo real y sesiones de clase en vivo. Esta capa implementa patrones DDD tácticos para encapsular las reglas de negocio complejas relacionadas con la creación de actividades educativas y la gestión de sesiones colaborativas en tiempo real.
+
+**Agregados (Aggregates):**
+
+El dominio se estructura alrededor de dos agregados principales que manejan diferentes aspectos del ciclo de vida de las actividades:
+
+**1. QuizActivity Aggregate (Activities Manager):**
+- **QuizActivity**: Entidad raíz que representa una actividad de quiz creada por profesores. Encapsula la metadata del quiz incluyendo título, descripción opcional y colección de preguntas asociadas.
+- **Question**: Entidad que define preguntas individuales dentro del quiz. Incluye contenido multimedia, límites de tiempo, puntuación, nivel de dificultad y configuraciones de presentación.
+- **Option**: Entidad que representa las opciones de respuesta para cada pregunta, incluyendo contenido multimedia y marcador de respuesta correcta.
+
+**2. LiveSession Aggregate (Class Activity Session Manager):**
+- **LiveSession**: Entidad raíz que gestiona sesiones de quiz en tiempo real. Coordina la participación de estudiantes, el progreso de preguntas y el estado general de la sesión.
+- **Participant**: Entidad que representa un estudiante participante en la sesión, manteniendo su estado, puntuación acumulada y respuestas registradas.
+- **Answer**: Entidad que registra las respuestas específicas de participantes a preguntas durante la sesión.
+- **CurrentQuestion**: Entidad que gestiona la pregunta actualmente activa en la sesión, incluyendo tiempos de inicio/fin y estado de activación.
+
+**Value Objects:**
+
+Los Value Objects aseguran type safety y encapsulan conceptos de dominio importantes:
+
+*Identificadores:*
+- **ActivityId, SessionId**: Identificadores únicos para actividades y sesiones
+- **TeacherId, ParticipantId**: Identificadores de actores del sistema
+- **QuestionId, OptionId, AnswerId**: Identificadores de componentes específicos
+- **CurrentQuestionId**: Identificador para preguntas activas en sesiones
+
+*Objetos de Contenido:*
+- **Content**: Value Object complejo que encapsula contenido multimedia (texto/imagen) con su tipo correspondiente
+- **ContentType**: Enumeración que define tipos de contenido soportados (TEXT, IMAGE)
+
+*Enumeraciones de Estado:*
+- **DifficultyLevel**: Niveles de dificultad (EASY, MEDIUM, HARD, NONE)
+- **SessionStatus**: Estados del ciclo de vida de sesión (NOT_STARTED, LOADING, OPENED, IN_PROGRESS, CLOSED)
+- **ParticipantStatus**: Estados de participación (JOINED, ACTIVE, DISCONNECTED, LEFT)
+
+**Commands (Comandos):**
+
+Los comandos representan intenciones de cambio y operaciones de escritura del sistema:
+
+*QuizActivity Commands:*
+- **CreateQuizActivityCommand**: Creación de nueva actividad de quiz por profesores
+- **AddQuestionCommand**: Adición de preguntas a actividades existentes con configuraciones completas
+- **AddOptionCommand**: Creación de opciones de respuesta para preguntas específicas
+- **UpdateQuestionCommand**: Modificación de preguntas existentes incluyendo contenido y configuraciones
+
+*LiveSession Commands:*
+- **CreateLiveSessionCommand**: Inicio de nueva sesión en vivo basada en una actividad
+- **JoinSessionCommand**: Incorporación de participantes a sesiones activas
+- **LeaveSessionCommand**: Retiro de participantes de sesiones
+- **StartSessionCommand**: Activación oficial de sesión para comenzar quiz
+- **LoadQuestionCommand**: Carga de pregunta específica con tiempos definidos
+- **EndCurrentQuestionCommand**: Finalización de pregunta activa
+- **SendAnswerCommand**: Registro de respuesta de participante
+- **CloseSessionCommand**: Cierre oficial de sesión
+
+**Queries (Consultas):**
+
+Las queries encapsulan operaciones de lectura optimizadas:
+
+*QuizActivity Queries:*
+- **GetQuizActivityByIdQuery**: Recuperación de actividad específica
+- **GetQuestionsByActivityIdQuery**: Listado de preguntas de una actividad
+- **GetOptionsByQuestionIdQuery**: Opciones de respuesta para pregunta específica
+
+*LiveSession Queries:*
+- **GetLiveSessionByIdQuery**: Recuperación de sesión específica
+- **GetParticipantsBySessionIdQuery**: Listado de participantes activos
+- **GetLeaderboardQuery**: Ranking de participantes por puntuación
+- **GetCurrentQuestionQuery**: Pregunta actualmente activa
+- **GetCurrentQuestionDetailsQuery**: Detalles completos de pregunta activa
+
+**Domain Services:**
+
+Los servicios de dominio coordinan operaciones complejas que trascienden entidades individuales:
+
+*QuizActivity Services:*
+- **QuizActivityCommandService**: Gestión del ciclo de vida de actividades
+- **QuestionCommandService**: Administración de preguntas y modificaciones
+- **OptionCommandService**: Gestión de opciones de respuesta
+- **QuizActivityQueryService**: Consultas optimizadas de actividades
+- **QuestionQueryService**: Acceso eficiente a preguntas
+- **OptionQueryService**: Recuperación de opciones de respuesta
+
+*LiveSession Services:*
+- **LiveSessionCommandService**: Coordinación completa de sesiones en tiempo real
+- **LiveSessionQueryService**: Consultas especializadas para sesiones activas
+
+**Reglas de Negocio Encapsuladas:**
+
+1. **Integridad de Actividades**: Una actividad debe contener al menos una pregunta con opciones válidas antes de poder generar sesiones
+2. **Gestión de Contenido**: El contenido multimedia debe validarse según su tipo (TEXT/IMAGE)
+3. **Control de Sesiones**: Solo un profesor puede iniciar y gestionar sesiones de sus propias actividades
+4. **Participación Única**: Un participante no puede unirse múltiples veces a la misma sesión
+5. **Secuencia de Preguntas**: Las preguntas deben cargarse secuencialmente y solo una puede estar activa por vez
+6. **Validación Temporal**: Las respuestas solo son válidas durante el período activo de la pregunta
+7. **Puntuación Consistente**: La puntuación se calcula basada en respuestas correctas y tiempo de respuesta
+8. **Estados Transicionales**: Los cambios de estado siguen flujos predefinidos sin transiciones inválidas
+9. **Persistencia de Respuestas**: Todas las respuestas se registran inmediatamente para garantizar integridad
+10. **Límites de Tiempo**: Preguntas con límite de tiempo se cierran automáticamente al vencer
+
+**Patrones de Comunicación en Tiempo Real:**
+
+El dominio está diseñado para soportar comunicación en tiempo real mediante:
+- **Event Sourcing**: Para mantener historial completo de sesiones
+- **Command Segregation**: Separación clara entre operaciones de lectura y escritura
+- **State Management**: Gestión precisa de estados de sesión y participantes
+- **Temporal Constraints**: Manejo de restricciones temporales para preguntas
+
 ### Activities Manager Domain
 <img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerDomain.png" alt="Activities Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
