@@ -1,4 +1,4 @@
-## Conclusiones:
+# Conclusiones:
 
 - Necesidad clara y actual
   El proyecto aborda un problema crítico en la educación superior: la desmotivación y la deserción de los estudiantes en los primeros ciclos universitarios. Se reconoce que muchos enfrentan dificultades de adaptación académica y personal, por lo que se requieren soluciones innovadoras que fortalezcan su permanencia.
@@ -17,3 +17,11 @@
 
 - Escalabilidad y proyección regional
   Si el piloto tiene éxito, la propuesta tiene potencial para aplicarse en otras facultades y universidades de la región, donde la deserción en etapas tempranas también representa un desafío importante.
+  
+## Conclusiones y recomendaciones.
+
+## Video App Validation
+
+## Video About the product
+
+## Video About the team

@@ -1,6 +1,4 @@
-# Capítulo IV: Solution Software Design
-
-## 4.1. Strategic-Level Domain-Driven Design
+# 2.5. Strategic-Level Domain-Driven Design
 
 El **Strategic-Level Domain-Driven Design** constituye la base fundamental para el desarrollo de la aplicación LevelUpJourney. Este enfoque nos permite identificar y definir los límites de los contextos de dominio, establecer las relaciones entre ellos y crear una arquitectura de software sólida que soporte los objetivos del negocio.
 
@@ -10,16 +8,16 @@ En esta fase estratégica, nos enfocamos en:
 - **Modelado de relaciones**: Definición de cómo interactúan los diferentes contextos
 - **Arquitectura de alto nivel**: Diseño de la estructura general del sistema
 
-### 4.1.1. EventStorming
+### 2.1.1. EventStorming
 
 El **EventStorming** es una técnica de modelado colaborativo que nos permite explorar y comprender el dominio complejo de LevelUpJourney. Esta técnica facilita la identificación de eventos de dominio, comandos, agregados y bounded contexts a través de sesiones colaborativas con expertos del dominio.
 
-#### 4.1.1.1. Candidate Context Discovery
+#### 2.5.1.1. Candidate Context Discovery
 
 La **Candidate Context Discovery** es el proceso mediante el cual identificamos los posibles bounded contexts dentro del dominio de LevelUpJourney. Este proceso se basa en el análisis de los eventos, comandos y agregados identificados durante las sesiones de EventStorming.
 
 
-##### Contextos candidatos identificados:
+Contextos candidatos identificados:
 - **Identity and Access Management (IAM)**: Gestión de usuarios, autenticación y autorización
 - **API Gateway**: Enrutamiento, seguridad y gestión de APIs
 - **Challenges**: Gestión de desafíos y retos académicos
@@ -29,92 +27,92 @@ La **Candidate Context Discovery** es el proceso mediante el cual identificamos 
 - **Analytics**: Análisis de datos y métricas para mejorar el rendimiento y la experiencia del usuario
 - **User Profile**: Gestión de información personal del usuario
 
-##### Flows de eventos principales:
+Flows de eventos principales:
 - **Registro de usuario**: Flujo desde la creación de cuenta
-<img src="../chapter4/assets/domain-event-flows/IAM-flow-1.png" alt="IAM Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/IAM-flow-1.png" alt="IAM Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **Publicacion de un Post**: Creacion de un post y aumento de puntos de actividad al profesor que publica
-<img src="../chapter4/assets/domain-event-flows/Community-flow-1.png" alt="Community Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Community-flow-1.png" alt="Community Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 - **Crear Analitica cuando un post es visto**: Cada vez que un post es visto, se crea una nueva analitica
-<img src="../chapter4/assets/domain-event-flows/Community-flow-2.png" alt="Community Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>  
+<img src="../chapter2/assets/domain-event-flows/Community-flow-2.png" alt="Community Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>  
 
 - **Crear un Quiz Activity**: Flujo desde la creacion de un quiz activity
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-1.png" alt="Class Activities Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-1.png" alt="Class Activities Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **Empezar una sesion de clase en vivo**: Flujo desde el inicio de una sesion en vivo
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-2.png" alt="Class Activities Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-2.png" alt="Class Activities Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **Un participante ingresa mediante QR a una sesion en vivo**: Flujo desde que un participante ingresa a una sesion en vivo mediante QR
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-3.png" alt="Class Activities Flow 3" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-3.png" alt="Class Activities Flow 3" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **El profesor empieza con las preguntas interactivas**: Flujo desde que el profesor inicia las preguntas interactivas
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-4.png" alt="Class Activities Flow 4" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-4.png" alt="Class Activities Flow 4" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **El estudiante responde a una pregunta interactiva**: Flujo desde que el estudiante responde a una pregunta interactiva
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-5.png" alt="Class Activities Flow 5" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-5.png" alt="Class Activities Flow 5" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **El profesor termina una pregunta interactiva**: Flujo desde que el profesor termina una pregunta interactiva
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-6.png" alt="Class Activities Flow 6" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-6.png" alt="Class Activities Flow 6" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **El profesor termina la sesion en vivo**: Flujo desde que el profesor termina la sesion en vivo
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-7.png" alt="Class Activities Flow 7" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-7.png" alt="Class Activities Flow 7" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **El Estudiante empieza a resolver un challenge**: Flujo desde que el estudiante empieza a resolver un challenge
-<img src="../chapter4/assets/domain-event-flows/Challenges-flow-1.png" alt="Challenges Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Challenges-flow-1.png" alt="Challenges Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **El Estudiante envía su solución a un challenge**: Flujo desde que el estudiante envía su solución a un challenge
-<img src="../chapter4/assets/domain-event-flows/Challenges-flow-2.png" alt="Challenges Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Challenges-flow-2.png" alt="Challenges Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.1.1.2. Domain Message Flows Modeling
+#### 2.5.1.2. Domain Message Flows Modeling
 
 El **Domain Message Flows Modeling** mapea cómo los mensajes (eventos, comandos) fluyen entre los diferentes bounded contexts identificados. Este modelado es crucial para entender las dependencias y patrones de comunicación del sistema.
 
-##### Message Flows
+Message Flows
 
 1. Teacher Publish a Post
-<img src="../chapter4/assets/message-flow/MessageFlow1.png" alt="Message Flow - Teacher Publish a Post" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/message-flow/MessageFlow1.png" alt="Message Flow - Teacher Publish a Post" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 2. Scenario: student scan a QR and join a live session
-<img src="../chapter4/assets/message-flow/MessageFlow2.png" alt="Message Flow - Student scan QR and join live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/message-flow/MessageFlow2.png" alt="Message Flow - Student scan QR and join live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 3. Scenario: Teacher end a live session
-<img src="../chapter4/assets/message-flow/MessageFlow3.png" alt="Message Flow - Teacher end a live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/message-flow/MessageFlow3.png" alt="Message Flow - Teacher end a live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 4. Scenario: Teacher creates a live session
-<img src="../chapter4/assets/message-flow/MessageFlow4.png" alt="Message Flow - Teacher creates a live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/message-flow/MessageFlow4.png" alt="Message Flow - Teacher creates a live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 5. Scenario: Student Start Challenge
-<img src="../chapter4/assets/message-flow/MessageFlow5.png" alt="Message Flow - Student Start Challenge" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/message-flow/MessageFlow5.png" alt="Message Flow - Student Start Challenge" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.1.1.3. Bounded Context Canvases
+#### 2.5.1.3. Bounded Context Canvases
 
 Los **Bounded Context Canvases** proporcionan una visión detallada de cada contexto delimitado, documentando sus responsabilidades, interfaces, eventos y relaciones con otros contextos.
 
 - **IAM Bounded Context Canvas**
-<img src="../chapter4/assets/canvases/IAM-Canvas.png" alt="IAM Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/canvases/IAM-Canvas.png" alt="IAM Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 - **Challenges Bounded Context Canvas**
-<img src="../chapter4/assets/canvases/Challenges-Canvas.png" alt="Challenges Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/canvases/Challenges-Canvas.png" alt="Challenges Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 - **Community Bounded Context Canvas**
-<img src="../chapter4/assets/canvases/Community-Canvas.png" alt="Community Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/canvases/Community-Canvas.png" alt="Community Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 - **Code Runner Bounded Context Canvas**
-<img src="../chapter4/assets/canvases/CodeRunner-Canvas.png" alt="Code Runner Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/canvases/CodeRunner-Canvas.png" alt="Code Runner Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 - **Class Activities Bounded Context Canvas**
-<img src="../chapter4/assets/canvases/ClassActivitiesManager-Canvas.png" alt="Class Activities Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/canvases/ClassActivitiesManager-Canvas.png" alt="Class Activities Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 - **Analytics Bounded Context Canvas**
-<img src="../chapter4/assets/canvases/Analytics-Canvas.png" alt="Analytics Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/canvases/Analytics-Canvas.png" alt="Analytics Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
-### 4.1.2. Context Mapping
+### 2.5.2. Context Mapping
 
 El **Context Mapping** define explícitamente las relaciones entre los bounded contexts identificados, estableciendo patrones de integración y clarificando las responsabilidades de cada contexto en las interacciones.
 
-### 4.1.3. Software Architecture
+### 2.5.3. Software Architecture
 
 La **Software Architecture** traduce el diseño estratégico en una arquitectura técnica concreta, proporcionando los diagramas y especificaciones necesarios para guiar la implementación del sistema LevelUpJourney.
 
-#### Principios arquitectónicos adoptados:
+Principios arquitectónicos adoptados:
 
 1. **Separación de responsabilidades**: Cada bounded context tiene responsabilidades claras
 2. **Bajo acoplamiento**: Minimización de dependencias entre contextos
@@ -122,11 +120,11 @@ La **Software Architecture** traduce el diseño estratégico en una arquitectura
 4. **Escalabilidad**: Capacidad de escalar contextos independientemente
 5. **Mantenibilidad**: Facilidad para realizar cambios y evolucionar el sistema
 
-#### 4.1.3.1. Software Architecture Context Level Diagrams
+#### 2.5.3.1. Software Architecture Context Level Diagrams
 
 Los **diagramas de nivel de contexto** proporcionan una vista de alto nivel del sistema LevelUpJourney, mostrando cómo interactúa con usuarios externos y sistemas externos.
 
-<img src="../chapter4/assets/c4/ContextDiagram.png" alt="C4 Context Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/c4/ContextDiagram.png" alt="C4 Context Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Identificamos que los usuarios quienes van a interactuar con el sistema son 3.
 - Student: Estudiante que participa dentro de la plataforma para mejorar sus habilidades de programación
@@ -137,13 +135,13 @@ Como sistemas externos identificamos:
 - Google OAuth Provider: Facilita el inicio de sesión de los usuarios 
 - Github OAuth Provider: Facilita el inicio de sesión de los usuarios 
 
-#### 4.1.3.2. Software Architecture Container Level Diagrams
+#### 2.5.3.2. Software Architecture Container Level Diagrams
 
 Los **diagramas de nivel de contenedor** descomponen el sistema LevelUpJourney en contenedores de alto nivel, mostrando las principales tecnologías y responsabilidades. Este diagrama ilustra la arquitectura distribuida de microservicios adoptada para garantizar escalabilidad, mantenibilidad y separación de responsabilidades.
 
-<img src="../chapter4/assets/c4/ContainerDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/c4/ContainerDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-##### Análisis del Container Diagram
+Análisis del Container Diagram
 
 El Container Diagram de LevelUpJourney presenta una arquitectura basada en microservicios que separa las responsabilidades y permite un desarrollo y despliegue independiente de cada componente. La arquitectura se estructura en las siguientes capas y elementos:
 
@@ -182,13 +180,13 @@ Los contenedores se comunican siguiendo patrones establecidos:
 
 Esta arquitectura asegura que LevelUpJourney pueda escalar eficientemente, mantener alta disponibilidad, y evolucionar de manera independiente en cada uno de sus dominios funcionales.
 
-#### 4.1.3.3. Software Architecture Deployment Diagrams
+#### 2.5.3.3. Software Architecture Deployment Diagrams
 
 Los **diagramas de despliegue** muestran cómo los contenedores se mapean a infraestructura física o virtual, incluyendo consideraciones de escalabilidad, disponibilidad y seguridad. Este diagrama visualiza la distribución física del sistema LevelUpJourney, destacando cómo los componentes del software se despliegan sobre la infraestructura en la nube y otros entornos de ejecución.
 
-<img src="../chapter4/assets/deployment/DeploymentDiagram.png" alt="Deployment Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/deployment/DeploymentDiagram.png" alt="Deployment Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-##### Análisis del Deployment Diagram
+Análisis del Deployment Diagram
 
 El Deployment Diagram de LevelUpJourney presenta una arquitectura cloud-native desplegada en **Microsoft Azure**, diseñada para proporcionar alta disponibilidad, escalabilidad automática y seguridad robusta. La distribución física del sistema se organiza en múltiples capas especializadas que optimizan el rendimiento y la gestión operacional.
 
@@ -302,7 +300,7 @@ La transición sería transparente para la aplicación, manteniendo todas las fu
 - **Database Scaling**: Servicios administrados de Azure con escalado automático
 - **Geographic Distribution**: Potencial para despliegue multi-región
 
-##### Posibilidades de Mejora
+Posibilidades de Mejora
 
 Para fortalecer y optimizar el deployment actual, se identifican las siguientes oportunidades de mejora:
 
@@ -354,20 +352,21 @@ Para fortalecer y optimizar el deployment actual, se identifican las siguientes 
 
 Estas mejoras proporcionarían una arquitectura de producción robusta, escalable y enterprise-ready, capaz de soportar el crecimiento futuro de LevelUpJourney mientras mantiene altos estándares de rendimiento, seguridad y disponibilidad.
 
-## 4.2. Tactical-Level Domain-Driven Design
+## 2.6. Tactical-Level Domain-Driven Design
 
-### Introducción al Diseño Táctico
+Introducción al Diseño Táctico
 
 El **Tactical-Level Domain-Driven Design** representa la materialización concreta del diseño estratégico definido anteriormente. En esta sección, profundizamos en la implementación específica de cada bounded context identificado, detallando sus capas arquitectónicas, componentes internos y relaciones. Este nivel táctico se enfoca en los patrones de implementación, la organización del código y la estructura interna de cada contexto delimitado, asegurando que el diseño estratégico se traduzca efectivamente en una arquitectura de software robusta y mantenible.
 
 Para el sistema LevelUpJourney, hemos identificado seis bounded contexts principales que cubren las necesidades fundamentales de la plataforma: **IAM** (Identity and Access Management) para la gestión de identidades y autenticación, **API Gateway** como punto de entrada unificado y gestión de APIs, **Community** para las funcionalidades sociales y de comunidad, **Code Runner** para la ejecución y evaluación de código, **Class Activities** para la gestión de actividades académicas y seguimiento del progreso estudiantil, y **Analytics**.
 
-### 4.2.1. Bounded Context: Challenges
-#### 4.2.1.1. Domain Layer
+### 2.6.1.1. Bounded Context: Challenges
 
-## Challenges
+#### 2.6.1.1.1. Domain Layer
 
-### Entities y Aggregates
+Challenges
+
+Entities y Aggregates
 - **Challenge**  
   Representa el agregado raíz que contiene la información principal de un reto: su identificador, profesor, nombre, descripción, puntos de experiencia, estado, versiones de código y etiquetas.  
 - **CodeVersion**  
@@ -375,73 +374,73 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 - **CodeVersionTest**  
   Define los casos de prueba que deben ejecutarse para validar la versión de código.  
 
-### Value Objects
+Value Objects
 - **ChallengeId, TeacherId, CodeVersionId, CodeVersionTestId**: identificadores únicos.  
 - **ChallengeTag**: etiqueta asociada al reto (id, nombre, color, icono).  
 - **ChallengeStatus**: estado de un reto (`DRAFT`, `PUBLISHED`, `HIDDEN`).  
 - **CodeLanguage**: lenguaje de programación (`C_PLUS_PLUS`, `JAVASCRIPT`, `PYTHON`).  
 
-### Commands
+Commands
 - **CreateChallengeCommand, UpdateChallengeCommand, PublishChallengeCommand, StartChallengeCommand, AddCodeVersionCommand, UpdateCodeVersionCommand, AddCodeVersionTestCommand, UpdateCodeVersionTestCommand**  
   Representan acciones de modificación del dominio.  
 
-### Queries
+Queries
 - **GetChallengeByIdQuery, GetPublishedChallengesQuery, GetChallengesByTeacherIdQuery, GetAllChallengeTagsQuery, GetCodeVersionByIdQuery, GetCodeVersionsByChallengeIdQuery**  
   Representan consultas para obtener información del dominio.  
 
-### Domain Services
+Domain Services
 - **ChallengeCommandService, CodeVersionCommandService, CodeVersionTestCommandService, ChallengeQueryService, CodeVersionQueryService**  
   Definen la lógica de aplicación que orquesta la ejecución de los comandos y queries.  
 
 
-## Reports
+Reports
 
-### Entities y Aggregates
+Entities y Aggregates
 - **Report**  
   Representa el reporte de una solución enviada por un estudiante, con métricas como pruebas exitosas, tiempo y memoria utilizada.  
 
-### Value Objects
+Value Objects
 - **SolutionReportId, SolutionId, StudentId**: identificadores únicos.  
 
-### Commands
+Commands
 - **CreateSolutionReportCommand**  
   Comando para generar un nuevo reporte de solución.  
 
-### Queries
+Queries
 - **GetReportsBySolutionIdQuery**  
   Consulta para obtener los reportes de una solución específica.  
 
 
-## Solutions
+Solutions
 
-### Entities y Aggregates
+Entities y Aggregates
 - **Solution**  
   Representa la solución enviada por un estudiante a un reto específico. Incluye el reto, versión de código, estudiante y detalles de la solución.  
 - **SolutionDetails**  
   Objeto que contiene información sobre intentos, código, último intento y estado de la solución.  
 
-### Value Objects
+Value Objects
 - **SolutionId, ChallengeId, CodeVersionId, StudentId**: identificadores únicos.  
 - **SolutionStatus**: estado de la solución (`SUCCESS`, `FAILED`, `MAX_ATTEMPTS_REACHED`).  
 
-### Commands
+Commands
 - **CreateSolutionCommand, UpdateSolutionCommand, SubmitSolutionCommand**  
   Comandos que permiten crear, actualizar o enviar una solución.  
 
-### Queries
+Queries
 - **GetSolutionByIdQuery, GetSolutionsByStudentIdQuery, GetSolutionsByChallengeIdQuery**  
   Consultas para recuperar información de las soluciones.  
 
-### Domain Services
+Domain Services
 - **SolutionCommandService, SolutionQueryService**  
   Interfaces que definen la lógica de orquestación entre los comandos y consultas del dominio de soluciones.  
 
 
-#### 4.2.1.2. Interface Layer
+#### 2.6.1.2.1. Interface Layer
 
-## Challenges
+Challenges
 
-### Controllers
+Controllers
 - **ChallengesController**  
   Expone endpoints para crear, actualizar, publicar, iniciar y consultar retos.  
 - **CodeVersionsController**  
@@ -449,49 +448,49 @@ Para el sistema LevelUpJourney, hemos identificado seis bounded contexts princip
 - **CodeVersionTestsController**  
   Expone endpoints para agregar y actualizar pruebas de las versiones de código.  
 
-### Resources
+Resources
 - **CreateChallengeResource, UpdateChallengeResource, PublishChallengeResource, StartChallengeResource**: recursos de entrada para acciones sobre retos.  
 - **AddCodeVersionResource, UpdateCodeVersionResource**: recursos de entrada para manejar versiones de código.  
 - **AddCodeVersionTestResource, UpdateCodeVersionTestResource**: recursos de entrada para manejar pruebas de versiones de código.  
 - **GetChallengeByIdResource, GetChallengesByTeacherIdResource, GetCodeVersionByIdResource, GetCodeVersionsByChallengeIdResource**: recursos de entrada para parámetros de consultas.  
 
 
-## Reports
+Reports
 
-### Controller
+Controller
 - **SolutionReportsController**  
   Expone endpoints para crear reportes de soluciones y consultar reportes por id de solución.  
 
-### Resources
+Resources
 - **CreateSolutionReportResource**: recurso de entrada para crear un reporte de solución.  
 - **GetReportsBySolutionIdResource**: recurso de entrada para consultar reportes asociados a una solución.  
 
 
-## Solutions
+Solutions
 
-### Controller
+Controller
 - **SolutionsController**  
   Expone endpoints para crear, actualizar, enviar y consultar soluciones.  
 
-### Resources
+Resources
 - **CreateSolutionResource, UpdateSolutionResource, SubmitSolutionResource**: recursos de entrada para manipular soluciones.  
 - **GetSolutionByIdResource, GetSolutionsByStudentIdResource, GetSolutionsByChallengeIdResource**: recursos de entrada para consultas de soluciones.  
 
 
-### Challenges Interface
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesInterfaces.png" alt="Challenges Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Challenges Interface
+<img src="../chapter2/assets/ddd-layers/challenges/ChallengesInterfaces.png" alt="Challenges Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Solution Interface
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsInterfaces.png" alt="Solutions Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Solution Interface
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionsInterfaces.png" alt="Solutions Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Solution Report Interface
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsInterfaces.png" alt="Solution Reports Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Solution Report Interface
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionReportsInterfaces.png" alt="Solution Reports Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.1.3. Application Layer
+#### 2.6.1.3.1. Application Layer
 
 En la **Application Layer** se gestionan los flujos de procesos del negocio mediante la definición de **Command Handlers** y **Query Handlers**, los cuales materializan las capacidades del bounded context y orquestan las interacciones con el dominio.  
 
-### Challenges
+Challenges
 - **Command Handlers**:  
   - `ChallengeCommandServiceImpl` procesa comandos como `CreateChallengeCommand`, `PublishChallengeCommand`, `StartChallengeCommand`, `UpdateChallengeCommand`.  
   - `CodeVersionCommandServiceImpl` procesa comandos como `AddCodeVersionCommand`, `UpdateCodeVersionCommand`.  
@@ -501,14 +500,14 @@ En la **Application Layer** se gestionan los flujos de procesos del negocio medi
   - `ChallengeQueryServiceImpl` resuelve consultas como `GetChallengeByIdQuery`, `GetPublishedChallengesQuery`, `GetChallengesByTeacherIdQuery`, `GetAllChallengeTagsQuery`.  
   - `CodeVersionQueryServiceImpl` resuelve consultas como `GetCodeVersionByIdQuery`, `GetCodeVersionsByChallengeIdQuery`.  
 
-### SolutionReports
+SolutionReports
 - **Command Handlers**:  
   - `SolutionReportCommandServiceImpl` procesa el comando `CreateSolutionReportCommand`.  
 
 - **Query Handlers**:  
   - `SolutionReportQueryServiceImpl` resuelve consultas como `GetReportsBySolutionIdQuery`.  
 
-### Solutions
+Solutions
 - **Command Handlers**:  
   - `SolutionCommandServiceImpl` procesa comandos como `CreateSolutionCommand`, `UpdateSolutionCommand`, `SubmitSolutionCommand`.  
 
@@ -516,17 +515,17 @@ En la **Application Layer** se gestionan los flujos de procesos del negocio medi
   - `SolutionQueryServiceImpl` resuelve consultas como `GetSolutionByIdQuery`, `GetSolutionsByStudentIdQuery`, `GetSolutionsByChallengeIdQuery`.  
 
 
-### Challenges Application
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesApplication.png" alt="Challenges Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Challenges Application
+<img src="../chapter2/assets/ddd-layers/challenges/ChallengesApplication.png" alt="Challenges Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Solution Application
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsApplication.png" alt="Solutions Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Solution Application
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionsApplication.png" alt="Solutions Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Solution Report Application
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsApplication.png" alt="Solution Reports Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Solution Report Application
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionReportsApplication.png" alt="Solution Reports Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
-#### 4.2.1.4. Infrastructure Layer
+#### 2.6.1.4.1. Infrastructure Layer
 
 En la **Infrastructure Layer** se muestran las clases encargadas de conectar la aplicación con servicios externos, particularmente **bases de datos** y la **implementación de los repositorios** definidos en el **Domain Layer**.  
 
@@ -539,42 +538,40 @@ En los diagramas presentados:
 - Para **Solutions**, el `SolutionRepository` también hereda de `JpaRepository` y administra la persistencia de la entidad `Solution`. Ofrece métodos de búsqueda específicos del dominio, como filtrar por estudiante (`findByStudentId`), desafío (`findByChallengeId`) o estado (`findByStatus`).  
 
 
-### Challenges Infrastructure
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesInfrastructure.png" alt="Challenges Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Challenges Infrastructure
+<img src="../chapter2/assets/ddd-layers/challenges/ChallengesInfrastructure.png" alt="Challenges Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Solution Infrastructure
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsInfrastructure.png" alt="Solutions Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Solution Infrastructure
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionsInfrastructure.png" alt="Solutions Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Solution Report Infrastructure
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsInfrastructure.png" alt="Solution Reports Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Solution Report Infrastructure
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionReportsInfrastructure.png" alt="Solution Reports Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/ChallengesComponents.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+#### 2.6.1.5.1. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter2/assets/c4/ChallengesComponents.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+#### 2.6.1.6.1. Bounded Context Software Architecture Code Level Diagrams
+##### 2.6.1.6.1.1. Bounded Context Domain Layer Class Diagrams
 
-### Challenges Domain
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomain.png" alt="Challenges Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Challenges Domain
+<img src="../chapter2/assets/ddd-layers/challenges/ChallengesDomain.png" alt="Challenges Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Solution Domain
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsDomain.png" alt="Solutions Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Solution Domain
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionsDomain.png" alt="Solutions Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Solution Report Domain
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsDomain.png" alt="Solution Reports Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Solution Report Domain
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionReportsDomain.png" alt="Solution Reports Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-##### 4.2.1.6.2. Bounded Context Database Design Diagram
+##### 2.6.1.6.2.1.  Bounded Context Database Design Diagram
 
-### Challenges Database Diagram
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomainDatabaseDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Challenges Database Diagram
+<img src="../chapter2/assets/ddd-layers/challenges/ChallengesDomainDatabaseDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Solution Database Diagram
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionDomainDatabaseDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Solution Database Diagram
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionDomainDatabaseDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Solution Report Database Diagram
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportDomainDatabase.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
-
-
+Solution Report Database Diagram
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionReportDomainDatabase.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 
@@ -589,17 +586,19 @@ En los diagramas presentados:
 
 
 
-### 4.2.2. Bounded Context: Class Activities
-#### 4.2.2.1. Domain Layer
 
-### Value Objects
+
+### 2.6.2.1 Bounded Context: Class Activities
+#### 2.6.1.1.1. Domain Layer
+
+Value Objects
 En los diagramas se definen múltiples objetos de valor que encapsulan identificadores y propiedades inmutables que representan conceptos centrales del dominio:
 
 - **ActivityId, TeacherId, QuestionId, OptionId, SessionId, ParticipantId, AnswerId, CurrentQuestionId**: encapsulan la identidad de cada entidad del dominio asegurando unicidad.
 - **Content**: modela el contenido de una pregunta u opción, compuesto por un tipo (`ContentType`) y un valor de texto o imagen.
 - **Enums** como `ContentType`, `DifficultyLevel`, `SessionStatus` y `ParticipantStatus` restringen los valores válidos en el dominio para mantener consistencia.
 
-### Aggregates y Entities
+Aggregates y Entities
 El dominio se organiza alrededor de agregados que representan raíces de consistencia y controlan las reglas de negocio internas:
 
 - **QuizActivity (Aggregate Root)**: representa la actividad de un cuestionario creada por un profesor, con metadatos, preguntas asociadas y control de fechas.
@@ -610,13 +609,13 @@ El dominio se organiza alrededor de agregados que representan raíces de consist
 - **Answer (Entity)**: respuesta seleccionada por un participante para una pregunta determinada en la sesión.
 - **CurrentQuestion (Entity)**: mantiene la pregunta activa en la sesión en vivo junto con tiempos de inicio y fin.
 
-### Commands y Queries
+Commands y Queries
 Se definen **comandos** y **consultas** como objetos de transporte que encapsulan intenciones de modificación o lectura del dominio:
 
 - **Commands**: `CreateQuizActivityCommand`, `AddQuestionCommand`, `AddOptionCommand`, `UpdateQuestionCommand`, `CreateLiveSessionCommand`, `JoinSessionCommand`, `LeaveSessionCommand`, `StartSessionCommand`, `LoadQuestionCommand`, `EndCurrentQuestionCommand`, `SendAnswerCommand`, `CloseSessionCommand`.
 - **Queries**: `GetQuizActivityByIdQuery`, `GetQuestionsByActivityIdQuery`, `GetOptionsByQuestionIdQuery`, `GetLiveSessionByIdQuery`, `GetParticipantsBySessionIdQuery`, `GetLeaderboardQuery`, `GetCurrentQuestionQuery`, `GetCurrentQuestionDetailsQuery`.
 
-### Domain Services
+Domain Services
 Se modelan como interfaces que representan contratos para la ejecución de reglas de negocio relacionadas con comandos y consultas:
 
 - **Command Services**: `QuizActivityCommandService`, `QuestionCommandService`, `OptionCommandService`, `LiveSessionCommandService`.
@@ -624,15 +623,15 @@ Se modelan como interfaces que representan contratos para la ejecución de regla
 
 Estas interfaces garantizan separación de responsabilidades y un punto claro de interacción con la lógica del dominio.
 
-### Repositories (Abstracciones)
+Repositories (Abstracciones)
 Aunque en los diagramas no se muestran implementaciones específicas de repositorios, se asume la existencia de **interfaces de Repository** en la capa de dominio para la persistencia de agregados como `QuizActivity` o `LiveSession`. Estas actúan como puertos que serán implementados en la capa de infraestructura.
 
-#### 4.2.2.2. Interface Layer
+#### 2.6.1.1.2. Interface Layer
 
 
-## QuizActivities
+QuizActivities
 
-### Controllers
+Controllers
 - **QuizActivitiesController**  
   Expone endpoints para crear, actualizar y consultar actividades de tipo cuestionario.  
 - **QuestionsController**  
@@ -640,33 +639,33 @@ Aunque en los diagramas no se muestran implementaciones específicas de reposito
 - **OptionsController**  
   Expone endpoints para agregar, actualizar y consultar opciones asociadas a una pregunta.  
 
-### Resources
+Resources
 - **CreateQuizActivityResource, UpdateQuizActivityResource**: recursos de entrada para crear o actualizar actividades de cuestionario.  
 - **AddQuestionResource, UpdateQuestionResource**: recursos de entrada para agregar o actualizar preguntas.  
 - **AddOptionResource, UpdateOptionResource**: recursos de entrada para agregar o actualizar opciones de una pregunta.  
 - **GetQuizActivityByIdResource, GetQuestionsByActivityIdResource, GetOptionsByQuestionIdResource**: recursos de entrada para parámetros de consultas.  
 
-## LiveSessions
+LiveSessions
 
-### Controller
+Controller
 - **LiveSessionsController**  
   Expone endpoints para gestionar sesiones en vivo: crear, unirse, salir, iniciar, cargar preguntas, terminar preguntas, enviar respuestas, cerrar sesión y realizar consultas asociadas a la sesión en vivo.  
 
-### Resources
+Resources
 - **CreateLiveSessionResource, JoinSessionResource, LeaveSessionResource, StartSessionResource, LoadQuestionResource, EndCurrentQuestionResource, SendAnswerResource, CloseSessionResource**: recursos de entrada para las acciones de gestión de sesiones en vivo.  
 - **GetLiveSessionByIdResource, GetParticipantsBySessionIdResource, GetLeaderboardResource, GetCurrentQuestionResource, GetCurrentQuestionDetailsResource**: recursos de entrada para parámetros de consultas relacionadas con sesiones, participantes, ranking y preguntas actuales.  
 - **CurrentQuestionResponse**: recurso de salida que representa la pregunta actual activa en la sesión.  
 
 
-### Activities Manager Interface
-<img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerInterfaces.png" alt="Activities Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Activities Manager Interface
+<img src="../chapter2/assets/ddd-layers/class-activities/ActivitiesManagerInterfaces.png" alt="Activities Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Class Activity Session Manager Interface
-<img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerInterfaces.png" alt="Class Activity Session Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Class Activity Session Manager Interface
+<img src="../chapter2/assets/ddd-layers/class-activities/ClassActivitySessionManagerInterfaces.png" alt="Class Activity Session Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.2.3. Application Layer
+#### 2.6.3.1.3. Application Layer
 
-### QuizActivity
+QuizActivity
 - **Command Handlers**:  
   - `QuizActivityCommandServiceImpl` procesa el comando `CreateQuizActivityCommand`.  
   - `QuestionCommandServiceImpl` procesa los comandos `AddQuestionCommand`, `UpdateQuestionCommand`.  
@@ -677,20 +676,20 @@ Aunque en los diagramas no se muestran implementaciones específicas de reposito
   - `QuestionQueryServiceImpl` resuelve consultas como `GetQuestionsByActivityIdQuery`.  
   - `OptionQueryServiceImpl` resuelve consultas como `GetOptionsByQuestionIdQuery`.  
 
-### LiveSession
+LiveSession
 - **Command Handlers**:  
   - `LiveSessionCommandServiceImpl` procesa comandos como `CreateLiveSessionCommand`, `JoinSessionCommand`, `LeaveSessionCommand`, `StartSessionCommand`, `LoadQuestionCommand`, `EndCurrentQuestionCommand`, `SendAnswerCommand`, `CloseSessionCommand`.  
 
 - **Query Handlers**:  
   - `LiveSessionQueryServiceImpl` resuelve consultas como `GetLiveSessionByIdQuery`, `GetParticipantsBySessionIdQuery`, `GetLeaderboardQuery`, `GetCurrentQuestionQuery`, `GetCurrentQuestionDetailsQuery`.  
 
-### Activities Manager Application
-<img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerApplication.png" alt="Activities Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Activities Manager Application
+<img src="../chapter2/assets/ddd-layers/class-activities/ActivitiesManagerApplication.png" alt="Activities Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Class Activity Session Manager Application
-<img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerApplication.png" alt="Class Activity Session Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Class Activity Session Manager Application
+<img src="../chapter2/assets/ddd-layers/class-activities/ClassActivitySessionManagerApplication.png" alt="Class Activity Session Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.2.4. Infrastructure Layer
+#### 2.6.4.1.4. Infrastructure Layer
 
 En los diagramas presentados:  
 
@@ -703,32 +702,30 @@ En los diagramas presentados:
   El `AnswerRepository` se encarga de las entidades `Answer`, habilitando consultas por `SessionId`, `ParticipantId` y `QuestionId`, así como combinaciones entre ellos, además de la eliminación de respuestas por sesión.  
   El `CurrentQuestionRepository` gestiona la entidad `CurrentQuestion`, con búsquedas por `SessionId`, estado activo e incluso consultas globales por preguntas activas, junto con operaciones de eliminación ligadas a una sesión.  
 
-### Activities Manager Infrastructure
-<img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerInfrastructure.png" alt="Activities Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Activities Manager Infrastructure
+<img src="../chapter2/assets/ddd-layers/class-activities/ActivitiesManagerInfrastructure.png" alt="Activities Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Class Activity Session Manager Infrastructure
-<img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerInfrastructure.png" alt="Class Activity Session Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Class Activity Session Manager Infrastructure
+<img src="../chapter2/assets/ddd-layers/class-activities/ClassActivitySessionManagerInfrastructure.png" alt="Class Activity Session Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/ClassActivitiesComponent.png" alt="Class Activity Session Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+#### 2.6.5.1.5. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter2/assets/c4/ClassActivitiesComponent.png" alt="Class Activity Session Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+#### 2.6.6.1.6. Bounded Context Software Architecture Code Level Diagrams
+##### 2.6.6.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-### Activities Manager Domain
-<img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerDomain.png" alt="Activities Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Activities Manager Domain
+<img src="../chapter2/assets/ddd-layers/class-activities/ActivitiesManagerDomain.png" alt="Activities Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Class Activity Session Manager Domain
-<img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomain.png" alt="Class Activity Session Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Class Activity Session Manager Domain
+<img src="../chapter2/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomain.png" alt="Class Activity Session Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-##### 4.2.2.6.2. Bounded Context Database Design Diagram
-### Activities Manager Database Design
-<img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerDomainDatabase.png" alt="Activities Manager Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+##### 2.6.6.1.6.2. Bounded Context Database Design Diagram
+Activities Manager Database Design
+<img src="../chapter2/assets/ddd-layers/class-activities/ActivitiesManagerDomainDatabase.png" alt="Activities Manager Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Class Activity Session Manager Database Design
-<img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomainDatabase.png" alt="Class Activity Session Manager Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
-
-
+Class Activity Session Manager Database Design
+<img src="../chapter2/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomainDatabase.png" alt="Class Activity Session Manager Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 
@@ -738,10 +735,12 @@ En los diagramas presentados:
 
 
 
-### 4.2.3. Bounded Context: Community
-#### 4.2.3.1. Domain Layer
 
-### Value Objects
+
+### 2.6.3.1. Bounded Context: Community
+#### 2.6.3.1.1. Domain Layer
+
+Value Objects
 En este dominio se definen objetos de valor que encapsulan identidades y propiedades inmutables:
 
 - **PostId, CommentId, UserId**: identificadores que aseguran unicidad para publicaciones, comentarios y usuarios.
@@ -749,85 +748,85 @@ En este dominio se definen objetos de valor que encapsulan identidades y propied
 - **CommentContent**: representa el contenido de un comentario, restringido únicamente a texto (sin medios).
 - **Auditable**: objeto de valor que centraliza metadatos de auditoría, como fechas de creación y actualización.
 
-### Aggregates y Entities
+Aggregates y Entities
 El núcleo del dominio se estructura en torno a agregados y entidades que reflejan las reglas de negocio:
 
 - **Post (Aggregate Root)**: representa una publicación realizada por un usuario. Contiene contenido, auditoría, comentarios y reacciones de tipo "Like". Expone comportamientos como agregar comentarios y gestionar likes.
 - **Comment (Entity)**: comentario asociado a un `Post`, con su propio autor, contenido, auditoría y reacciones de tipo "Like". Incluye operaciones para editar contenido y manejar likes.
 - **Like (Entity)**: expresa la interacción de un usuario con un `Post` o `Comment`, registrando la fecha de creación.
 
-### Commands y Queries
+Commands y Queries
 Se definen comandos y consultas que encapsulan intenciones del dominio:
 
 - **Commands**: `CreatePost`, `EditPost`, `DeletePost`, `AddComment`, `EditComment`, `DeleteComment`, `LikePost`, `UnlikePost`, `LikeComment`, `UnlikeComment`.
 - **Queries**: `GetPostById`, `GetAllPosts`, `GetCommentsByPostId`, `GetCommentById`, `GetLikesByPostId`, `GetLikesByCommentId`.
 
-### Domain Services
+Domain Services
 El dominio expone interfaces que representan contratos de servicio para procesar comandos y consultas:
 
 - **Command Services**: `PostCommandService` y `CommentCommandService`, responsables de orquestar la creación, edición, eliminación y reacciones sobre publicaciones y comentarios.
 - **Query Services**: `PostQueryService` y `CommentQueryService`, dedicados a la recuperación de publicaciones, comentarios y sus interacciones.
 
-### Repositories (Abstracciones)
+Repositories (Abstracciones)
 Aunque no se visualizan en el diagrama, se infiere la necesidad de **interfaces de repositorios** para la persistencia de agregados como `Post` y entidades relacionadas (`Comment`, `Like`), las cuales serán implementadas en la capa de infraestructura.
 
-#### 4.2.3.2. Interface Layer
+#### 2.6.3.2.1.  Interface Layer
 
-## Controllers
+Controllers
 
-### **PostsController**
+**PostsController**
 Encargado de gestionar la interacción con publicaciones. Expone operaciones para:
 - Crear, editar y eliminar un post.  
 - Dar y quitar "like" a una publicación.  
 - Consultar publicaciones individuales o en conjunto, así como obtener los likes asociados.  
 
-### **CommentsController**
+**CommentsController**
 Encargado de gestionar la interacción con comentarios. Expone operaciones para:
 - Agregar, editar y eliminar un comentario.  
 - Dar y quitar "like" a un comentario.  
 - Consultar comentarios asociados a un post, obtener un comentario por su ID y listar los likes de un comentario.  
 
-## Resources
+Resources
 
 Los *resources* representan los datos de entrada o parámetros necesarios para invocar las operaciones de los controladores. Se agrupan en tres tipos:
 
-### a. Post Resources
+a. Post Resources
 - **CreatePostResource**: contiene autor y contenido para crear un post.  
 - **EditPostResource**: datos para modificar el contenido de un post existente.  
 - **DeletePostResource**: identificador del post a eliminar.  
 - **LikePostResource / UnlikePostResource**: identificador de usuario para dar o quitar "like" a un post.  
 
-### b. Comment Resources
+b. Comment Resources
 - **AddCommentResource**: autor y contenido para agregar un comentario.  
 - **EditCommentResource**: datos para modificar un comentario existente.  
 - **DeleteCommentResource**: identificador del comentario a eliminar.  
 - **LikeCommentResource / UnlikeCommentResource**: identificador de usuario para dar o quitar "like" a un comentario.  
 
-### c. Query Resources
+c. Query Resources
 - **GetPostByIdResource, GetCommentsByPostIdResource, GetCommentByIdResource**: parámetros de consulta por identificador.  
 - **GetLikesByPostIdResource, GetLikesByCommentIdResource**: parámetros de consulta para obtener likes asociados a posts o comentarios.  
 
 
-## Relación entre Controllers y Resources
+Relación entre Controllers y Resources
 
 Los **controllers** utilizan los **resources** como contratos de entrada para garantizar consistencia en los datos recibidos y en las consultas realizadas. De esta manera, el *Interface Layer* actúa como frontera clara entre el cliente (frontend o consumidor externo) y el núcleo del microservicio.  
 
 
 
 
-### Community Manager Interface
-<img src="../chapter4/assets/ddd-layers/community/CommunityManagerInterfaces.png" alt="Community Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Community Manager Interface
+<img src="../chapter2/assets/ddd-layers/community/CommunityManagerInterfaces.png" alt="Community Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.3.3. Application Layer
+#### 2.6.3.3.1. Application Layer
 
-### Posts
+Posts
 - **Command Handlers**:  
   - `PostCommandServiceImpl` procesa comandos como `CreatePost`, `EditPost`, `DeletePost`, `LikePost`, `UnlikePost`.  
 
 - **Query Handlers**:  
   - `PostQueryServiceImpl` resuelve consultas como `GetPostById`, `GetAllPosts`, `GetLikesByPostId`.  
 
-### Comments
+Comments
 - **Command Handlers**:  
   - `CommentCommandServiceImpl` procesa comandos como `AddComment`, `EditComment`, `DeleteComment`, `LikeComment`, `UnlikeComment`.  
 
@@ -835,10 +834,10 @@ Los **controllers** utilizan los **resources** como contratos de entrada para ga
   - `CommentQueryServiceImpl` resuelve consultas como `GetCommentsByPostId`, `GetCommentById`, `GetLikesByCommentId`.  
 
 
-### Community Manager Application
-<img src="../chapter4/assets/ddd-layers/community/CommunityManagerApplication.png" alt="Community Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Community Manager Application
+<img src="../chapter2/assets/ddd-layers/community/CommunityManagerApplication.png" alt="Community Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.3.4. Infrastructure Layer
+#### 2.6.3.4.1. Infrastructure Layer
 
 En el diagrama presentado:  
 
@@ -848,26 +847,24 @@ En el diagrama presentado:
 
 - El `LikeRepository` gestiona la entidad `Like`, ofreciendo operaciones para validar la existencia de un "like" en relación con `PostId` o `CommentId` y un `UserId`, además de contar reacciones y consultar listas de likes asociados. También permite la eliminación de likes por `PostId` o `CommentId`.
 
-### Community Manager Infrastructure
-<img src="../chapter4/assets/ddd-layers/community/CommunityManagerInfrastructure.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Community Manager Infrastructure
 
-#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/CommunityComponents.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/community/CommunityManagerInfrastructure.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+#### 2.6.3.5.1. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter2/assets/c4/CommunityComponents.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Community Manager Domain
-<img src="../chapter4/assets/ddd-layers/community/CommunityManagerDomain.png" alt="Community Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+#### 2.6.3.6.1. Bounded Context Software Architecture Code Level Diagrams
+##### 2.6.3.6.1.1. Bounded Context Domain Layer Class Diagrams
 
-##### 4.2.3.6.2. Bounded Context Database Design Diagram
+Community Manager Domain
+<img src="../chapter2/assets/ddd-layers/community/CommunityManagerDomain.png" alt="Community Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### Community Manager 
+##### 2.6.3.6.1.2. Bounded Context Database Design Diagram
 
-<img src="../chapter4/assets/ddd-layers/community/CommunityManagerDomainDatabase.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+Community Manager 
 
-
-
+<img src="../chapter2/assets/ddd-layers/community/CommunityManagerDomainDatabase.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 
@@ -876,10 +873,13 @@ En el diagrama presentado:
 
 
 
-### 4.2.4. Bounded Context: Identity and Access Management (IAM)
-#### 4.2.4.1. Domain Layer
 
-### Aggregate Roots y Entities
+
+
+### 2.6.4.1. Bounded Context: Identity and Access Management (IAM)
+#### 2.6.4.1.1. Domain Layer
+
+Aggregate Roots y Entities
 - **User (Aggregate Root)**:  
   Representa al usuario dentro del sistema, encapsulando email, contraseña y conjunto de roles. Expone comportamientos para crear usuarios, asignar roles y validar credenciales.  
   Métodos notables: `addRole`, `getPasswordStrength`, `getEmailAddress`.
@@ -887,7 +887,7 @@ En el diagrama presentado:
 - **Role (Entity)**:  
   Define un rol asociado a un usuario. Contiene un identificador único y un nombre tipado con el enum `Roles`. Expone métodos estáticos para validar, convertir y obtener roles por defecto.
 
-### Value Objects
+Value Objects
 - **EmailAddress**:  
   Garantiza que el correo electrónico del usuario sea tratado como un valor inmutable y validado. Provee métodos de normalización y de extracción de partes (`localPart`, `domainPart`).
 
@@ -900,22 +900,22 @@ En el diagrama presentado:
 - **OAuth2UserInfo**:  
   Modela los datos básicos de un usuario autenticado a través de un proveedor externo (OAuth2), como nombre, apellidos, perfil y email.
 
-### Enums
+Enums
 - **Roles**:  
   Enum con roles de negocio (`ROLE_STUDENT`, `ROLE_INSTRUCTOR`, `ROLE_ADMIN`). Facilita restricciones y asegura consistencia en asignación de permisos.
 
-### Commands
+Commands
 Se encapsulan intenciones de cambio de estado en el dominio:
 - **SignUpCommand**: para registrar un nuevo usuario con email, password y roles.
 - **SignInCommand**: para autenticar un usuario con credenciales.
 - **SeedRolesCommand**: inicializa los roles básicos en el sistema.
 
-### Queries
+Queries
 Se definen consultas que permiten recuperar información del dominio:
 - **GetAllUsersQuery, GetUserByIdQuery, GetUserByEmail_addressQuery**: consultas de usuarios.  
 - **GetAllRolesQuery, GetRoleByNameQuery**: consultas de roles.
 
-### Domain Services (Interfaces)
+Domain Services (Interfaces)
 Interfaces que orquestan lógica de negocio más allá de una sola entidad:
 
 - **UserCommandService**: maneja registro (`SignUpCommand`) y autenticación (`SignInCommand`), retornando usuarios o pares de tokens.  
@@ -925,12 +925,12 @@ Interfaces que orquestan lógica de negocio más allá de una sola entidad:
 
 
 
-#### 4.2.4.2. Interface Layer
+#### 2.6.4.1.2 Interface Layer
 
 
-## 1. Controllers
+1. Controllers
 
-### **AuthenticationController**
+**AuthenticationController**
 Expone endpoints para:
 - Iniciar sesión con credenciales (signIn).  
 - Registrar un nuevo usuario (signUp).  
@@ -939,18 +939,18 @@ Expone endpoints para:
 
 Se apoya en `UserCommandService`, `UserQueryService`, `BearerTokenService` y `TokenService`.  
 
-### **UsersController**
+**UsersController**
 Expone operaciones para:
 - Consultar todos los usuarios registrados.  
 - Consultar un usuario específico por ID.  
 
 Depende de `UserQueryService`.  
 
-### **RolesController**
+**RolesController**
 Expone un endpoint para listar todos los roles disponibles en el sistema.  
 Depende de `RoleQueryService`.  
 
-### **OAuth2Controller**
+**OAuth2Controller**
 Controlador especializado en la autenticación con proveedores externos (ej. Google, GitHub).  
 Permite:
 - Procesar un inicio de sesión exitoso con OAuth2.  
@@ -959,7 +959,7 @@ Permite:
 
 Se apoya en `UserCommandService`, `UserQueryService`, `RoleQueryService` y `BearerTokenService`.  
 
-## 2. Resources (DTOs)
+2. Resources (DTOs)
 
 Los **resources** representan contratos de entrada/salida en la API REST:
 
@@ -969,7 +969,7 @@ Los **resources** representan contratos de entrada/salida en la API REST:
 - **RoleResource**: datos de salida que representan un rol.  
 - **RefreshTokenResource**: datos de entrada para refrescar un token.  
 
-## 3. Transformers
+3. Transformers
 
 Los **assemblers** traducen entre *Resources* (DTOs) y el dominio:
 
@@ -978,9 +978,9 @@ Los **assemblers** traducen entre *Resources* (DTOs) y el dominio:
 
 Esto asegura una separación clara entre el *domain model* y la *interface layer*.  
 
-## 4. ACL (Anti-Corruption Layer)
+4. ACL (Anti-Corruption Layer)
 
-### **IamContextFacade**
+**IamContextFacade**
 Define un punto de acceso controlado para interactuar con el dominio y servicios externos, encapsulando la lógica necesaria para:  
 - Crear usuarios (con o sin roles).  
 - Consultar información de usuarios por ID o username.  
@@ -988,18 +988,18 @@ Define un punto de acceso controlado para interactuar con el dominio y servicios
 
 El ACL protege al microservicio de dependencias directas con APIs externas, transformando la información en un formato consistente con el dominio IAM.  
 
-## 5. Dependencias con Servicios Externos
+5. Dependencias con Servicios Externos
 
-### **Domain Services**
+**Domain Services**
 - `UserCommandService`: maneja comandos de autenticación y registro de usuarios.  
 - `UserQueryService`: provee consultas sobre usuarios (por id, email, etc.).  
 - `RoleQueryService`: maneja consultas de roles.  
 
-### **Infrastructure Services**
+**Infrastructure Services**
 - `BearerTokenService`: generación y validación de tokens JWT.  
 - `TokenService`: gestión de refresh tokens y validación de los mismos.  
 
-## 6. Relación General
+6. Relación General
 
 - Los **Controllers** usan **Resources** para definir contratos de entrada/salida.  
 - Los **Transformers** convierten recursos en comandos del dominio y entidades en DTOs.  
@@ -1008,38 +1008,38 @@ El ACL protege al microservicio de dependencias directas con APIs externas, tran
 
 De esta manera, el *Interface Layer* sirve como frontera clara entre los consumidores externos (clientes o frontends) y el **core del microservicio IAM**.  
 
-### IAM Interface
-<img src="../chapter4/assets/ddd-layers/iam/IAMInterfaces.png" alt="IAM Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+IAM Interface
+<img src="../chapter2/assets/ddd-layers/iam/IamInterfaces.png" alt="IAM Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.4.3. Application Layer
+#### 2.6.4.1.3. Application Layer
 
 
-### Users
+Users
 - **Command Handlers**:  
   - `UserCommandServiceImpl` procesa comandos como `SignInCommand`, `SignUpCommand`, utilizando `UserRepository`, `HashingService`, `TokenService` y `RoleRepository`.  
 
 - **Query Handlers**:  
   - `UserQueryServiceImpl` resuelve consultas como `GetAllUsersQuery`, `GetUserByIdQuery`, `GetUserByEmail_addressQuery`.  
 
-### Roles
+Roles
 - **Command Handlers**:  
   - `RoleCommandServiceImpl` procesa el comando `SeedRolesCommand` utilizando `RoleRepository`.  
 
 - **Query Handlers**:  
   - `RoleQueryServiceImpl` resuelve consultas como `GetAllRolesQuery`, `GetRoleByNameQuery`.  
 
-### ACL Layer
+ACL Layer
 - **Facade**:  
   - `IamContextFacadeImpl` extiende `IamContextFacade` y expone operaciones de creación y consulta de usuarios, además de integración con OAuth2 (`Google`, `GitHub`).  
 
-### Event Handlers
+Event Handlers
 - **Application Event**:  
   - `ApplicationReadyEventHandler` maneja el evento `ApplicationReadyEvent`, inicializando roles mediante `RoleCommandService`.  
 
-### IAM Application
-<img src="../chapter4/assets/ddd-layers/iam/IAMApplication.png" alt="IAM Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+IAM Application
+<img src="../chapter2/assets/ddd-layers/iam/IamApplication.png" alt="IAM Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.4.4. Infrastructure Layer
+#### 2.6.4.1.4. Infrastructure Layer
 
 
 En el diagrama presentado:  
@@ -1054,31 +1054,31 @@ En el diagrama presentado:
 
 - En la **OAuth2 Layer**, clases como `OAuth2AuthenticationSuccessHandler` y `OAuth2AuthenticationFailureHandler` gestionan el flujo de autenticación OAuth2 en casos de éxito o fallo, interactuando con servicios de usuario, rol y token. La clase `HttpCookieOAuth2AuthorizationRequestRepository` administra solicitudes OAuth2 mediante cookies, controlando la serialización, almacenamiento y eliminación de datos de autorización.  
 
-### IAM Infrastructure
-<img src="../chapter4/assets/ddd-layers/iam/IAMInfrastructure.png" alt="IAM Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+IAM Infrastructure
+<img src="../chapter2/assets/ddd-layers/iam/IamInfrastructure.png" alt="IAM Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/IAMComponents.png" alt="IAM Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+#### 2.6.4.1.5. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter2/assets/c4/IamComponents.png" alt="IAM Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+#### 2.6.4.1.6. Bounded Context Software Architecture Code Level Diagrams
+##### 2.6.4.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-### IAM Domain
-<img src="../chapter4/assets/ddd-layers/iam/IAMDomain.png" alt="IAM Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+IAM Domain
+<img src="../chapter2/assets/ddd-layers/iam/IamDomain.png" alt="IAM Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-##### 4.2.4.6.2. Bounded Context Database Design Diagram
-### IAM Database Design
-<img src="../chapter4/assets/ddd-layers/iam/IAMDomainDatabase.png" alt="IAM Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
-
-
+##### 2.6.4.1.6.2. Bounded Context Database Design Diagram
+IAM Database Design
+<img src="../chapter2/assets/ddd-layers/iam/IamDomainDatabase.png" alt="IAM Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 
 
-### 4.2.5. Bounded Context: User Profile
-#### 4.2.5.1. Domain Layer
 
-### Value Objects
+
+### 2.6.5.1. Bounded Context: User Profile
+#### 2.6.5.1.1. Domain Layer
+
+Value Objects
 Los objetos de valor garantizan inmutabilidad y consistencia en atributos clave del perfil:
 
 - **PersonName**: agrupa el nombre y apellido de un usuario, expone la operación `getFullName()` para componer el nombre completo.
@@ -1089,7 +1089,7 @@ Los objetos de valor garantizan inmutabilidad y consistencia en atributos clave 
 - **Level**: representa el nivel actual alcanzado en el sistema.
 - **Ranking (enum)**: define el estado jerárquico del usuario en categorías progresivas (`BRONZE`, `SILVER`, `GOLD`, `PLATINUM`, `DIAMOND`, `MASTER`).
 
-### Aggregates
+Aggregates
 - **Profile (Aggregate Root)**:  
   Entidad central que agrupa los atributos del perfil y las operaciones de negocio relacionadas.  
   - Propiedades: `PersonName`, `Username`, `ProfileUrl`, `Experience`, `Level`, `Ranking`, `badges`.  
@@ -1100,7 +1100,7 @@ Los objetos de valor garantizan inmutabilidad y consistencia en atributos clave 
     - `addBadge(Badge badge)`: añade insignias al perfil.  
   - Constructores especializados permiten crear instancias directamente desde un comando (`CreateProfileCommand`).
 
-### Commands
+Commands
 Representan intenciones de modificar el estado del agregado `Profile`:
 
 - **CreateProfileCommand**: inicializa un nuevo perfil con nombre, apellido y URL.  
@@ -1109,7 +1109,7 @@ Representan intenciones de modificar el estado del agregado `Profile`:
 - **UpdateRankingCommand**: cambia el ranking asignado.  
 - **AddBadgeCommand**: añade una insignia al perfil.
 
-### Queries
+Queries
 Encapsulan la lectura de información del dominio:
 
 - **GetAllProfilesQuery**: retorna todos los perfiles registrados.  
@@ -1119,7 +1119,7 @@ Encapsulan la lectura de información del dominio:
 - **GetProfilesByLevelQuery**: filtra perfiles por nivel.  
 - **GetProfileBadgesQuery**: obtiene insignias asignadas a un perfil.
 
-### Domain Services
+Domain Services
 Interfaces que abstraen lógica de negocio transversal y la orquestación de comandos y consultas:
 
 - **ProfileCommandService**:  
@@ -1132,7 +1132,7 @@ Interfaces que abstraen lógica de negocio transversal y la orquestación de com
   Servicio especializado en generar identificadores únicos (`username`) para garantizar unicidad y evitar colisiones en la creación de perfiles.
 
 
-#### 4.2.5.2. Interface Layer
+#### 2.6.5.1.2. Interface Layer
 
 
 En esta capa se definen los **puntos de entrada** de la aplicación.  
@@ -1142,9 +1142,9 @@ Su propósito es:
 - Retornar **Resources (DTOs)** adecuados como respuesta.  
 
 
-## Controllers
+Controllers
 
-### **ProfilesController**
+**ProfilesController**
 Controlador REST que expone los endpoints relacionados con la gestión de perfiles.  
 
 **Dependencias:**  
@@ -1169,7 +1169,7 @@ Controlador REST que expone los endpoints relacionados con la gestión de perfil
 - `getProfilesByLevel(Integer)` → buscar perfiles por nivel.  
 - `getProfileBadges(UUID)` → listar insignias de un perfil.  
 
-## Resources (DTOs)
+Resources (DTOs)
 
 Clases que representan datos de entrada y salida en la API.  
 
@@ -1181,7 +1181,7 @@ Clases que representan datos de entrada y salida en la API.
 - **AddBadgeResource** → nombre y color de la insignia.  
 - **BadgeResource** → datos de una insignia.  
 
-## Transformers
+Transformers
 
 Clases encargadas de convertir entre **Resources (DTOs)** y **Comandos/Entidades de dominio**.  
 
@@ -1196,19 +1196,19 @@ Clases encargadas de convertir entre **Resources (DTOs)** y **Comandos/Entidades
 **Responsabilidad principal:**  
 - Garantizar la separación entre la capa de presentación y el dominio, evitando acoplamientos directos.  
 
-### User Profile Interface
-<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementInterfaces.png" alt="User Profile Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+User Profile Interface
+<img src="../chapter2/assets/ddd-layers/user-profile/ProfileManagementInterfaces.png" alt="User Profile Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.5.3. Application Layer
+#### 2.6.5.1.3. Application Layer
 
-### Profiles
+Profiles
 - **Command Handlers**:  
   - `ProfileCommandServiceImpl` procesa comandos como `CreateProfileCommand`, `AddExperienceCommand`, `UpdateLevelCommand`, `UpdateRankingCommand`, `AddBadgeCommand`, utilizando `ProfileRepository` y `UsernameGeneratorService`.  
 
 - **Query Handlers**:  
   - `ProfileQueryServiceImpl` resuelve consultas como `GetProfileByIdQuery`, `GetProfileByUsernameQuery`, `GetAllProfilesQuery`, `GetProfilesByRankingQuery`, `GetProfilesByLevelQuery`, `GetProfileBadgesQuery`.  
 
-### Supporting Domain Services
+Supporting Domain Services
 - **Username Management**:  
   - `UsernameGeneratorServiceImpl` genera nombres de usuario únicos apoyándose en `ProfileRepository`.  
 
@@ -1218,14 +1218,14 @@ Clases encargadas de convertir entre **Resources (DTOs)** y **Comandos/Entidades
 - **Badge Management**:  
   - `BadgeServiceImpl` otorga, elimina y valida insignias en perfiles.  
 
-### Outbound Services
+Outbound Services
 - **ACL**:  
   - `ExternalIamService` expone la integración con servicios externos de gestión de identidad y acceso.  
 
-### User Profile Application
-<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementApplication.png" alt="User Profile Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+User Profile Application
+<img src="../chapter2/assets/ddd-layers/user-profile/ProfileManagementApplication.png" alt="User Profile Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.5.4. Infrastructure Layer
+#### 2.6.5.1.4. Infrastructure Layer
 
 En el diagrama presentado:
 
@@ -1239,40 +1239,40 @@ En el diagrama presentado:
 
 - En la capa de **Domain**, se encuentran las entidades y value objects (`Profile`, `Username`, `Badge`, `Experience`, `Level`, `Ranking`) que son utilizadas por los repositorios de infraestructura para mantener la coherencia entre el dominio y la base de datos.  
 
-### User Profile Infrastructure
-<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementInfrastructure.png" alt="User Profile Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+User Profile Infrastructure
+<img src="../chapter2/assets/ddd-layers/user-profile/ProfileManagementInfrastructure.png" alt="User Profile Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/UserProfileComponents.png" alt="User Profile Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+#### 2.6.5.1.5. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter2/assets/c4/UserProfileComponents.png" alt="User Profile Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
+#### 2.6.5.1.6. Bounded Context Software Architecture Code Level Diagrams
+##### 2.6.5.1.1.1. Bounded Context Domain Layer Class Diagrams
 
-### User Profile Domain
-<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementDomain.png" alt="User Profile Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
-
-
-##### 4.2.5.6.2. Bounded Context Database Design Diagram
-### User Profile Database Design
-<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementDomainDatabase.png" alt="User Profile Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+User Profile Domain
+<img src="../chapter2/assets/ddd-layers/user-profile/ProfileManagementDomain.png" alt="User Profile Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
+##### 2.6.5.1.1.2. Bounded Context Database Design Diagram
+User Profile Database Design
+<img src="../chapter2/assets/ddd-layers/user-profile/ProfileManagementDomainDatabase.png" alt="User Profile Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-### 4.2.6. Bounded Context: Analytics
 
-#### 4.2.6.1. Domain Layer
 
-### Propósito del dominio
+### 2.6.6.1 Bounded Context: Analytics
+
+#### 2.6.6.1.1 Domain Layer
+
+Propósito del dominio
 El bounded context de Analytics centraliza la recolección, modelado y consulta de métricas y eventos de uso generados por otros contextos (Community, Class Activities, Challenges, Code Runner, User Profile, IAM). Su objetivo es ofrecer insights accionables para mejorar engagement, efectividad de aprendizaje y operación de la plataforma.
 
-### Eventos de dominio
+Eventos de dominio
 - PostViewed, PostCreated, CommentAdded, PostLiked/Unliked (desde Community)
 - QuizActivityCreated, LiveSessionStarted/Ended, QuestionLoaded, AnswerSubmitted (desde Class Activities)
 - ChallengeStarted, SolutionSubmitted, SolutionEvaluated (desde Challenges/Code Runner)
 - UserSignedUp, UserSignedIn (desde IAM)
 - ProfileLeveledUp, ExperienceAdded, BadgeGranted (desde User Profile)
 
-### Aggregates y Entities
+Aggregates y Entities
 - AnalyticsEvent (Aggregate Root)
   - Representa un evento inmutable con metadatos estandarizados: eventId, occurredAt, actorId, sourceContext, name, attributes (key/value), correlationId, sessionId.
 - MetricDefinition (Entity)
@@ -1284,32 +1284,32 @@ El bounded context de Analytics centraliza la recolección, modelado y consulta 
 - Insight (Entity)
   - Hallazgo generado por reglas o modelos: insightId, type (threshold, anomaly, trend), payload, severity, createdAt.
 
-### Value Objects
+Value Objects
 - EventName, ContextName, ActorId, SessionId, CorrelationId, KeyValueAttributes, DimensionSet, TimeWindow.
 
-### Commands
+Commands
 - IngestAnalyticsEventCommand(actorId, name, sourceContext, attributes, occurredAt, correlationId?, sessionId?)
 - DefineMetricCommand(name, description, calculationType, window, dimensions)
 - MaterializeMetricCommand(metricId, window, dimensions, period)
 - CreateDashboardCommand(title, widgets)
 - GenerateInsightCommand(type, ruleOrModelRef, inputs)
 
-### Queries
+Queries
 - GetEventsQuery(filters: timeRange, sourceContext, actorId, name, attributes)
 - GetMetricDefinitionByIdQuery(metricId)
 - GetComputedMetricsQuery(metricId, timeRange, dimensions)
 - GetDashboardByIdQuery(dashboardId)
 - GetInsightsQuery(timeRange, type, severity)
 
-### Domain Services
+Domain Services
 - EventNormalizationService: normaliza eventos heterogéneos a un esquema común.
 - MetricComputationService: computa métricas (count, sum, avg, distinct, ratios) por ventanas.
 - InsightDetectionService: aplica reglas umbral y detección básica de anomalías/tendencias.
 
 
-#### 4.2.6.2. Interface Layer
+#### 2.6.6.1.2. Interface Layer
 
-## Controllers
+Controllers
 - AnalyticsEventsController
   - Ingesta de eventos vía HTTP (alternativa al bus de eventos): createEvent.
   - Consultas básicas de eventos: getEvents.
@@ -1321,73 +1321,73 @@ El bounded context de Analytics centraliza la recolección, modelado y consulta 
 - InsightsController
   - Consulta de insights generados: getInsights.
 
-## Resources (DTOs)
+Resources (DTOs)
 - CreateAnalyticsEventResource, AnalyticsEventResource
 - DefineMetricResource, MetricResource, ComputedMetricResource
 - CreateDashboardResource, DashboardResource
 - InsightResource
 
-## Integraciones y Anti-Corruption Layer (ACL)
+Integraciones y Anti-Corruption Layer (ACL)
 - EventBusSubscriber (Kafka): suscriptor a tópicos de eventos de otros contextos, aplica normalización y reintentos idempotentes.
 - CommunityEventsAdapter, ClassActivitiesEventsAdapter, ChallengesEventsAdapter, CodeRunnerEventsAdapter, IamEventsAdapter, UserProfileEventsAdapter: adaptadores específicos de fuente que traducen payloads a AnalyticsEvent.
 
-#### 4.2.6.3. Application Layer
+#### 2.6.6.1.3. Application Layer
 
-### Command Handlers
+Command Handlers
 - AnalyticsEventCommandServiceImpl: procesa IngestAnalyticsEventCommand con normalización y validación de esquema.
 - MetricDefinitionCommandServiceImpl: maneja DefineMetricCommand.
 - MetricMaterializationCommandServiceImpl: ejecuta MaterializeMetricCommand, planificando trabajos por ventana.
 - DashboardCommandServiceImpl: maneja CreateDashboardCommand.
 - InsightCommandServiceImpl: ejecuta GenerateInsightCommand.
 
-### Query Handlers
+Query Handlers
 - AnalyticsEventQueryServiceImpl: resuelve GetEventsQuery con filtros y paginación.
 - MetricQueryServiceImpl: resuelve GetMetricDefinitionByIdQuery y GetComputedMetricsQuery.
 - DashboardQueryServiceImpl: resuelve GetDashboardByIdQuery.
 - InsightQueryServiceImpl: resuelve GetInsightsQuery.
 
-### Procesamiento asíncrono
+Procesamiento asíncrono
 - EventIngestionWorker: consumidor de Kafka para tópicos de eventos, aplica EventNormalizationService, persiste AnalyticsEvent.
 - MetricScheduler: job scheduler que dispara MaterializeMetricCommand por ventanas definidas (e.g., cada 1 min/5 min/1 h/1 d).
 - InsightDetector: proceso batch/stream que ejecuta reglas de umbral y detección simple de anomalías (z-score) sobre métricas materializadas.
 
-#### 4.2.6.4. Infrastructure Layer
+#### 2.6.6.1.4. Infrastructure Layer
 
 En la capa de infraestructura se gestionan persistencia, mensajería y cómputo.
 
-### Persistencia
+Persistencia
 - AnalyticsEventRepository (append-only, particionado por fecha): búsqueda por rango de tiempo y filtros.
 - MetricDefinitionRepository: almacenamiento de definiciones y reglas.
 - ComputedMetricRepository: almacenamiento de series materializadas con índices por metricId + periodo + dimensiones.
 - InsightRepository: almacenamiento de hallazgos con severidad y timestamps.
 
-### Mensajería
+Mensajería
 - KafkaTopics: community.events, activities.events, challenges.events, codeRunner.events, iam.events, userProfile.events, analytics.dead-letter.
 - DeadLetterHandler: manejo de mensajes no procesables con retentativas y trazabilidad.
 
-### Servicios de Plataforma
+Servicios de Plataforma
 - TimeProvider, IdGenerator con garantías de unicidad y orden parcial.
 - SchemaRegistryClient para validación de payloads (opcional).
 
-### Consideraciones de Diseño
+Consideraciones de Diseño
 - Idempotency: claves de deduplicación por correlationId + eventName + actorId + occurredAt.
 - Privacy by Design: anonimización/pseudonimización opcional para reportes agregados.
 - Multi-tenant ready (si aplica a futuro): dimensiones de tenant en métricas y eventos.
 
-#### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/AnalyticsComponent.png" alt="Analytics Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+#### 2.6.6.1.5. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter2/assets/c4/AnalyticsComponent.png" alt="Analytics Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
+#### 2.6.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 Dado el amplio alcance del contexto de Analytics, colocar todos los diagramas de clase aquí no es factible.
 
 
-### 4.2.7. Bounded Context: Code Runner
+### 2.6.7.1 Bounded Context: Code Runner
 
-## Visión General
+Visión General
 
 El **CodeRunner Microservice** es un sistema de ejecución de código distribuido y seguro que permite ejecutar código en múltiples lenguajes de programación de forma aislada y controlada. Utiliza una arquitectura de pipeline para procesar solicitudes de ejecución desde la detección del lenguaje hasta el análisis completo de resultados.
 
-### Características Principales
+Características Principales
 
 - **Ejecución Multi-lenguaje**: Python, Java, JavaScript, C#, C++, Go, Rust
 - **Seguridad Avanzada**: Análisis de código malicioso y validación de seguridad
@@ -1398,7 +1398,7 @@ El **CodeRunner Microservice** es un sistema de ejecución de código distribuid
 - **Monitoreo**: Métricas en tiempo real y logging comprehensivo
 
 
-## Arquitectura del Pipeline
+Arquitectura del Pipeline
 
 El CodeRunner implementa un **patrón de pipeline** que procesa cada solicitud de ejecución a través de múltiples etapas especializadas:
 
@@ -1412,7 +1412,7 @@ graph LR
     F --> G[Completion]
 ```
 
-### Etapas del Pipeline
+Etapas del Pipeline
 
 | Etapa | Componente | Función | Tiempo Estimado |
 |-------|------------|---------|-----------------|
@@ -1423,9 +1423,9 @@ graph LR
 | 5 | **Result Analysis** | Analiza resultados, rendimiento y genera recomendaciones | ~300ms |
 
 
-## Componentes Principales
+Componentes Principales
 
-### 1. **LanguageDetector**
+1. **LanguageDetector**
 **Propósito**: Identificación automática del lenguaje de programación
 
 **Funcionamiento**:
@@ -1443,7 +1443,7 @@ func (p *PythonDetectionStrategy) CanDetect(code string) bool {
 }
 ```
 
-### 2. **CodeSafetyReview**
+2. **CodeSafetyReview**
 **Propósito**: Validación de seguridad y detección de amenazas
 
 **Capas de Seguridad**:
@@ -1464,7 +1464,7 @@ type SafetyReviewResult struct {
 }
 ```
 
-### 3. **ExecutionPlanner**
+3. **ExecutionPlanner**
 **Propósito**: Planificación optimizada de recursos y entorno de ejecución
 
 **Funcionalidades**:
@@ -1489,7 +1489,7 @@ func (ep *ExecutionPlanner) CreateExecutionPlan(request CodeExecutionRequest) Ex
 }
 ```
 
-### 4. **DockerEngineRunner**
+4. **DockerEngineRunner**
 **Propósito**: Ejecución aislada y monitoreo de contenedores
 
 **Características**:
@@ -1513,7 +1513,7 @@ func (der *DockerEngineRunner) ExecuteCode(plan ExecutionPlan) ExecutionResult {
 }
 ```
 
-### 5. **ExecutionAnalyzer**
+5. **ExecutionAnalyzer**
 **Propósito**: Análisis profundo y generación de insights
 
 **Tipos de Análisis**:
@@ -1535,7 +1535,7 @@ type ExecutionAnalysis struct {
 }
 ```
 
-### 6. **ExecutionQueueManager**
+6. **ExecutionQueueManager**
 **Propósito**: Orquestación del pipeline y gestión de colas
 
 **Responsabilidades**:
@@ -1545,9 +1545,9 @@ type ExecutionAnalysis struct {
 - **Load Balancing**: Distribución de carga entre nodos
 - **Manejo de Errores**: Reintentos, escalamiento, recuperación
 
-## Flujo de Ejecución
+Flujo de Ejecución
 
-### 1. **Recepción de Solicitud**
+1. **Recepción de Solicitud**
 ```json
 {
   "requestId": "uuid-123",
@@ -1559,36 +1559,36 @@ type ExecutionAnalysis struct {
 }
 ```
 
-### 2. **Detección de Lenguaje**
+2. **Detección de Lenguaje**
 - Si no se especifica lenguaje, se detecta automáticamente
 - Se selecciona la estrategia de detección apropiada
 - Se genera configuración de runtime
 
-### 3. **Revisión de Seguridad**
+3. **Revisión de Seguridad**
 - Análisis estático de vulnerabilidades
 - Detección de patrones maliciosos
 - Validación de recursos y complejidad
 - **Resultado**: APPROVED/REJECTED con recomendaciones
 
-### 4. **Planificación de Ejecución**
+4. **Planificación de Ejecución**
 - Selección de imagen Docker optimizada
 - Cálculo de recursos necesarios
 - Configuración de seguridad y aislamiento
 - **Resultado**: Plan de ejecución detallado
 
-### 5. **Ejecución en Docker**
+5. **Ejecución en Docker**
 - Creación de contenedor aislado
 - Monitoreo en tiempo real
 - Captura de logs y métricas
 - **Resultado**: Logs, métricas, artifacts
 
-### 6. **Análisis de Resultados**
+6. **Análisis de Resultados**
 - Evaluación de pruebas y rendimiento
 - Análisis de calidad de código
 - Comparación con benchmarks
 - **Resultado**: Análisis completo con recomendaciones
 
-### 7. **Entrega de Resultados**
+7. **Entrega de Resultados**
 ```json
 {
   "requestId": "uuid-123",
@@ -1604,31 +1604,31 @@ type ExecutionAnalysis struct {
 }
 ```
 
-## Base de Datos PostgreSQL
+Base de Datos PostgreSQL
 
-### **Esquema Principal**
+**Esquema Principal**
 
-#### **Tablas de Configuración**
+**Tablas de Configuración**
 - `language_configurations`: Configuraciones por lenguaje
 - `docker_images`: Registro de imágenes Docker
 - `safety_rules`: Reglas de seguridad configurables
 
-#### **Tablas de Ejecución**
+**Tablas de Ejecución**
 - `execution_requests`: Solicitudes de ejecución
 - `execution_results`: Resultados de ejecución
 - `execution_plans`: Planes de ejecución generados
 
-#### **Tablas de Análisis**
+**Tablas de Análisis**
 - `execution_analyses`: Análisis completos
 - `performance_benchmarks`: Datos de benchmarking
 - `recommendations`: Recomendaciones generadas
 
-#### **Tablas de Seguridad**
+ **Tablas de Seguridad**
 - `security_incidents`: Incidentes de seguridad
 - `malicious_patterns`: Patrones maliciosos detectados
 - `audit_logs`: Logs de auditoría
 
-### **Consultas Típicas**
+**Consultas Típicas**
 
 ```sql
 -- Obtener estadísticas de rendimiento por lenguaje
@@ -1650,31 +1650,31 @@ GROUP BY threat_type
 ORDER BY incidents DESC;
 ```
 
-## Seguridad y Validación
+Seguridad y Validación
 
-### **Capas de Seguridad**
+**Capas de Seguridad**
 
-#### 1. **Análisis Pre-ejecución**
+1. **Análisis Pre-ejecución**
 - Escaneo de código estático
 - Detección de vulnerabilidades conocidas
 - Validación de sintaxis y estructura
 
-#### 2. **Aislamiento de Ejecución**
+2. **Aislamiento de Ejecución**
 - Contenedores Docker con recursos limitados
 - Namespaces aislados (PID, Network, Mount)
 - Restricciones de capabilities del kernel
 
-#### 3. **Monitoreo Runtime**
+3. **Monitoreo Runtime**
 - Detección de comportamiento anómalo
 - Limits de recursos en tiempo real
 - Terminación automática por violaciones
 
-#### 4. **Análisis Post-ejecución**
+4. **Análisis Post-ejecución**
 - Análisis de logs para actividad sospechosa
 - Validación de compliance
 - Generación de alertas de seguridad
 
-### **Tipos de Amenazas Detectadas**
+**Tipos de Amenazas Detectadas**
 
 | Tipo | Descripción | Acción |
 |------|-------------|--------|
@@ -1685,23 +1685,23 @@ ORDER BY incidents DESC;
 | **Network Access** | Intentos de conexión externa | BLOCK + Log |
 
 
-## Monitoreo y Análisis
+Monitoreo y Análisis
 
-### **Métricas de Rendimiento**
+**Métricas de Rendimiento**
 
-#### **Métricas del Sistema**
+**Métricas del Sistema**
 - **Throughput**: Solicitudes procesadas por segundo
 - **Latencia**: Tiempo de respuesta por etapa del pipeline
 - **Disponibilidad**: Uptime del servicio
 - **Tasa de Error**: Porcentaje de ejecuciones fallidas
 
-#### **Métricas de Ejecución**
+**Métricas de Ejecución**
 - **Tiempo de Ejecución**: Por lenguaje y complejidad
 - **Uso de Recursos**: CPU, memoria, almacenamiento
 - **Calidad de Código**: Scores de mantenibilidad y complejidad
 - **Patrones de Uso**: Lenguajes más populares, tipos de problemas
 
-### **Dashboard de Monitoreo**
+**Dashboard de Monitoreo**
 
 ```go
 type SystemMetrics struct {
@@ -1713,28 +1713,28 @@ type SystemMetrics struct {
 }
 ```
 
-### **Alertas y Notificaciones**
+**Alertas y Notificaciones**
 - **Alta CPU/Memoria**: Cuando uso > 80%
 - **Cola Larga**: Cuando > 100 solicitudes pendientes
 - **Errores Frecuentes**: Cuando tasa de error > 5%
 - **Amenazas de Seguridad**: Detección de código malicioso
 
 
-## Escalabilidad y Performance
+Escalabilidad y Performance
 
-### **Estrategias de Escalabilidad**
+Estrategias de Escalabilidad**
 
-#### 1. **Escalado Horizontal**
+1. **Escalado Horizontal**
 - Múltiples instancias del servicio
 - Load balancing inteligente por carga de trabajo
 - Auto-scaling basado en métricas
 
-#### 2. **Gestión de Recursos**
+2. **Gestión de Recursos**
 - Pool de contenedores pre-calentados
 - Cache de imágenes Docker frecuentes
 - Optimización de recursos por lenguaje
 
-#### 3. **Optimizaciones de Performance**
+3. **Optimizaciones de Performance**
 ```go
 // Cache de configuraciones frecuentes
 type ConfigCache struct {
@@ -1751,7 +1751,7 @@ type ContainerPool struct {
 }
 ```
 
-### **Benchmarks de Performance**
+**Benchmarks de Performance**
 
 | Lenguaje | Tiempo Promedio | Memoria Promedio | Throughput |
 |----------|----------------|------------------|------------|
@@ -1761,24 +1761,24 @@ type ContainerPool struct {
 | C#       | 2.8s          | 96MB            | 140 req/min |
 
 
-### **Diagramas de clase de cada modulo**
+**Diagramas de clase de cada modulo**
 
 En el siguiente orden de ejecución del pipeline:
 
 1) Language Detection
-<img src="../chapter4/assets/ddd-layers/code-runner/LanguageDetector.png" alt="Code Runner - LanguageDetector" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/code-runner/LanguageDetector.png" alt="Code Runner - LanguageDetector" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 2) Code Safety Review
-<img src="../chapter4/assets/ddd-layers/code-runner/CodeSafetyReview.png" alt="Code Runner - CodeSafetyReview" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/code-runner/CodeSafetyReview.png" alt="Code Runner - CodeSafetyReview" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 3) Execution Planning
-<img src="../chapter4/assets/ddd-layers/code-runner/ExecutionPlanner.png" alt="Code Runner - ExecutionPlanner" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/code-runner/ExecutionPlanner.png" alt="Code Runner - ExecutionPlanner" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 4) Docker Execution
-<img src="../chapter4/assets/ddd-layers/code-runner/DockerEngineRunner.png" alt="Code Runner - DockerEngineRunner" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/code-runner/DockerEngineRunner.png" alt="Code Runner - DockerEngineRunner" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 5) Result Analysis
-<img src="../chapter4/assets/ddd-layers/code-runner/ExecutionAnalyzer.png" alt="Code Runner - ExecutionAnalyzer" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/code-runner/ExecutionAnalyzer.png" alt="Code Runner - ExecutionAnalyzer" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 6) Queue and Orchestration
-<img src="../chapter4/assets/ddd-layers/code-runner/ExecutionQueueManager.png" alt="Code Runner - ExecutionQueueManager" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/code-runner/ExecutionQueueManager.png" alt="Code Runner - ExecutionQueueManager" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
