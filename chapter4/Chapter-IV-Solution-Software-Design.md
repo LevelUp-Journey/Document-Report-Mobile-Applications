@@ -1,6 +1,4 @@
-# Capítulo IV: Solution Software Design
-
-## 4.1. Strategic-Level Domain-Driven Design
+# 2.5. Strategic-Level Domain-Driven Design
 
 El **Strategic-Level Domain-Driven Design** constituye la base fundamental para el desarrollo de la aplicación LevelUpJourney. Este enfoque nos permite identificar y definir los límites de los contextos de dominio, establecer las relaciones entre ellos y crear una arquitectura de software sólida que soporte los objetivos del negocio.
 
@@ -10,11 +8,11 @@ En esta fase estratégica, nos enfocamos en:
 - **Modelado de relaciones**: Definición de cómo interactúan los diferentes contextos
 - **Arquitectura de alto nivel**: Diseño de la estructura general del sistema
 
-### 4.1.1. EventStorming
+### 2.1.1. EventStorming
 
 El **EventStorming** es una técnica de modelado colaborativo que nos permite explorar y comprender el dominio complejo de LevelUpJourney. Esta técnica facilita la identificación de eventos de dominio, comandos, agregados y bounded contexts a través de sesiones colaborativas con expertos del dominio.
 
-#### 4.1.1.1. Candidate Context Discovery
+#### 2.5.1.1. Candidate Context Discovery
 
 La **Candidate Context Discovery** es el proceso mediante el cual identificamos los posibles bounded contexts dentro del dominio de LevelUpJourney. Este proceso se basa en el análisis de los eventos, comandos y agregados identificados durante las sesiones de EventStorming.
 
@@ -67,7 +65,7 @@ Flows de eventos principales:
 - **El Estudiante envía su solución a un challenge**: Flujo desde que el estudiante envía su solución a un challenge
 <img src="../chapter4/assets/domain-event-flows/Challenges-flow-2.png" alt="Challenges Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.1.1.2. Domain Message Flows Modeling
+#### 2.5.1.2. Domain Message Flows Modeling
 
 El **Domain Message Flows Modeling** mapea cómo los mensajes (eventos, comandos) fluyen entre los diferentes bounded contexts identificados. Este modelado es crucial para entender las dependencias y patrones de comunicación del sistema.
 
@@ -88,7 +86,7 @@ Message Flows
 5. Scenario: Student Start Challenge
 <img src="../chapter4/assets/message-flow/MessageFlow5.png" alt="Message Flow - Student Start Challenge" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.1.1.3. Bounded Context Canvases
+#### 2.5.1.3. Bounded Context Canvases
 
 Los **Bounded Context Canvases** proporcionan una visión detallada de cada contexto delimitado, documentando sus responsabilidades, interfaces, eventos y relaciones con otros contextos.
 
@@ -106,11 +104,11 @@ Los **Bounded Context Canvases** proporcionan una visión detallada de cada cont
 <img src="../chapter4/assets/canvases/Analytics-Canvas.png" alt="Analytics Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
-### 4.1.2. Context Mapping
+### 2.5.2. Context Mapping
 
 El **Context Mapping** define explícitamente las relaciones entre los bounded contexts identificados, estableciendo patrones de integración y clarificando las responsabilidades de cada contexto en las interacciones.
 
-### 4.1.3. Software Architecture
+### 2.5.3. Software Architecture
 
 La **Software Architecture** traduce el diseño estratégico en una arquitectura técnica concreta, proporcionando los diagramas y especificaciones necesarios para guiar la implementación del sistema LevelUpJourney.
 
@@ -122,7 +120,7 @@ Principios arquitectónicos adoptados:
 4. **Escalabilidad**: Capacidad de escalar contextos independientemente
 5. **Mantenibilidad**: Facilidad para realizar cambios y evolucionar el sistema
 
-#### 4.1.3.1. Software Architecture Context Level Diagrams
+#### 2.5.3.1. Software Architecture Context Level Diagrams
 
 Los **diagramas de nivel de contexto** proporcionan una vista de alto nivel del sistema LevelUpJourney, mostrando cómo interactúa con usuarios externos y sistemas externos.
 
@@ -137,7 +135,7 @@ Como sistemas externos identificamos:
 - Google OAuth Provider: Facilita el inicio de sesión de los usuarios 
 - Github OAuth Provider: Facilita el inicio de sesión de los usuarios 
 
-#### 4.1.3.2. Software Architecture Container Level Diagrams
+#### 2.5.3.2. Software Architecture Container Level Diagrams
 
 Los **diagramas de nivel de contenedor** descomponen el sistema LevelUpJourney en contenedores de alto nivel, mostrando las principales tecnologías y responsabilidades. Este diagrama ilustra la arquitectura distribuida de microservicios adoptada para garantizar escalabilidad, mantenibilidad y separación de responsabilidades.
 
@@ -182,7 +180,7 @@ Los contenedores se comunican siguiendo patrones establecidos:
 
 Esta arquitectura asegura que LevelUpJourney pueda escalar eficientemente, mantener alta disponibilidad, y evolucionar de manera independiente en cada uno de sus dominios funcionales.
 
-#### 4.1.3.3. Software Architecture Deployment Diagrams
+#### 2.5.3.3. Software Architecture Deployment Diagrams
 
 Los **diagramas de despliegue** muestran cómo los contenedores se mapean a infraestructura física o virtual, incluyendo consideraciones de escalabilidad, disponibilidad y seguridad. Este diagrama visualiza la distribución física del sistema LevelUpJourney, destacando cómo los componentes del software se despliegan sobre la infraestructura en la nube y otros entornos de ejecución.
 
@@ -354,7 +352,7 @@ Para fortalecer y optimizar el deployment actual, se identifican las siguientes 
 
 Estas mejoras proporcionarían una arquitectura de producción robusta, escalable y enterprise-ready, capaz de soportar el crecimiento futuro de LevelUpJourney mientras mantiene altos estándares de rendimiento, seguridad y disponibilidad.
 
-## 4.2. Tactical-Level Domain-Driven Design
+## 2.6. Tactical-Level Domain-Driven Design
 
 Introducción al Diseño Táctico
 
@@ -362,8 +360,9 @@ El **Tactical-Level Domain-Driven Design** representa la materialización concre
 
 Para el sistema LevelUpJourney, hemos identificado seis bounded contexts principales que cubren las necesidades fundamentales de la plataforma: **IAM** (Identity and Access Management) para la gestión de identidades y autenticación, **API Gateway** como punto de entrada unificado y gestión de APIs, **Community** para las funcionalidades sociales y de comunidad, **Code Runner** para la ejecución y evaluación de código, **Class Activities** para la gestión de actividades académicas y seguimiento del progreso estudiantil, y **Analytics**.
 
-### 4.2.1. Bounded Context: Challenges
-#### 4.2.1.1. Domain Layer
+### 2.6.1.1. Bounded Context: Challenges
+
+#### 2.6.1.1.1. Domain Layer
 
 Challenges
 
@@ -437,7 +436,7 @@ Domain Services
   Interfaces que definen la lógica de orquestación entre los comandos y consultas del dominio de soluciones.  
 
 
-#### 4.2.1.2. Interface Layer
+#### 2.6.1.2.1. Interface Layer
 
 Challenges
 
@@ -487,7 +486,7 @@ Solution Interface
 Solution Report Interface
 <img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsInterfaces.png" alt="Solution Reports Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.1.3. Application Layer
+#### 2.6.1.3.1. Application Layer
 
 En la **Application Layer** se gestionan los flujos de procesos del negocio mediante la definición de **Command Handlers** y **Query Handlers**, los cuales materializan las capacidades del bounded context y orquestan las interacciones con el dominio.  
 
@@ -526,7 +525,7 @@ Solution Report Application
 <img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsApplication.png" alt="Solution Reports Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
-#### 4.2.1.4. Infrastructure Layer
+#### 2.6.1.4.1. Infrastructure Layer
 
 En la **Infrastructure Layer** se muestran las clases encargadas de conectar la aplicación con servicios externos, particularmente **bases de datos** y la **implementación de los repositorios** definidos en el **Domain Layer**.  
 
@@ -548,11 +547,11 @@ Solution Infrastructure
 Solution Report Infrastructure
 <img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsInfrastructure.png" alt="Solution Reports Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+#### 2.6.1.5.1. Bounded Context Software Architecture Component Level Diagrams
 <img src="../chapter4/assets/c4/ChallengesComponents.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+#### 2.6.1.6.1. Bounded Context Software Architecture Code Level Diagrams
+##### 2.6.1.6.1.1. Bounded Context Domain Layer Class Diagrams
 
 Challenges Domain
 <img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomain.png" alt="Challenges Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
@@ -563,7 +562,7 @@ Solution Domain
 Solution Report Domain
 <img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsDomain.png" alt="Solution Reports Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-##### 4.2.1.6.2. Bounded Context Database Design Diagram
+##### 2.6.1.6.2.1.  Bounded Context Database Design Diagram
 
 Challenges Database Diagram
 <img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomainDatabaseDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
@@ -589,8 +588,8 @@ Solution Report Database Diagram
 
 
 
-### 4.2.2. Bounded Context: Class Activities
-#### 4.2.2.1. Domain Layer
+### 2.6.2.1 Bounded Context: Class Activities
+#### 2.6.1.1.1. Domain Layer
 
 Value Objects
 En los diagramas se definen múltiples objetos de valor que encapsulan identificadores y propiedades inmutables que representan conceptos centrales del dominio:
@@ -627,7 +626,7 @@ Estas interfaces garantizan separación de responsabilidades y un punto claro de
 Repositories (Abstracciones)
 Aunque en los diagramas no se muestran implementaciones específicas de repositorios, se asume la existencia de **interfaces de Repository** en la capa de dominio para la persistencia de agregados como `QuizActivity` o `LiveSession`. Estas actúan como puertos que serán implementados en la capa de infraestructura.
 
-#### 4.2.2.2. Interface Layer
+#### 2.6.1.1.2. Interface Layer
 
 
 QuizActivities
@@ -664,7 +663,7 @@ Activities Manager Interface
 Class Activity Session Manager Interface
 <img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerInterfaces.png" alt="Class Activity Session Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.2.3. Application Layer
+#### 2.6.3.1.3. Application Layer
 
 QuizActivity
 - **Command Handlers**:  
@@ -690,7 +689,7 @@ Activities Manager Application
 Class Activity Session Manager Application
 <img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerApplication.png" alt="Class Activity Session Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.2.4. Infrastructure Layer
+#### 2.6.4.1.4. Infrastructure Layer
 
 En los diagramas presentados:  
 
@@ -709,11 +708,11 @@ Activities Manager Infrastructure
 Class Activity Session Manager Infrastructure
 <img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerInfrastructure.png" alt="Class Activity Session Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+#### 2.6.5.1.5. Bounded Context Software Architecture Component Level Diagrams
 <img src="../chapter4/assets/c4/ClassActivitiesComponent.png" alt="Class Activity Session Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+#### 2.6.6.1.6. Bounded Context Software Architecture Code Level Diagrams
+##### 2.6.6.1.6.1. Bounded Context Domain Layer Class Diagrams
 
 Activities Manager Domain
 <img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerDomain.png" alt="Activities Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
@@ -721,7 +720,7 @@ Activities Manager Domain
 Class Activity Session Manager Domain
 <img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomain.png" alt="Class Activity Session Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-##### 4.2.2.6.2. Bounded Context Database Design Diagram
+##### 2.6.6.1.6.2. Bounded Context Database Design Diagram
 Activities Manager Database Design
 <img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerDomainDatabase.png" alt="Activities Manager Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
@@ -738,8 +737,8 @@ Class Activity Session Manager Database Design
 
 
 
-### 4.2.3. Bounded Context: Community
-#### 4.2.3.1. Domain Layer
+### 2.6.3.1. Bounded Context: Community
+#### 2.6.3.1.1. Domain Layer
 
 Value Objects
 En este dominio se definen objetos de valor que encapsulan identidades y propiedades inmutables:
@@ -771,7 +770,7 @@ El dominio expone interfaces que representan contratos de servicio para procesar
 Repositories (Abstracciones)
 Aunque no se visualizan en el diagrama, se infiere la necesidad de **interfaces de repositorios** para la persistencia de agregados como `Post` y entidades relacionadas (`Comment`, `Like`), las cuales serán implementadas en la capa de infraestructura.
 
-#### 4.2.3.2. Interface Layer
+#### 2.6.3.2.1.  Interface Layer
 
 Controllers
 
@@ -818,7 +817,7 @@ Los **controllers** utilizan los **resources** como contratos de entrada para ga
 Community Manager Interface
 <img src="../chapter4/assets/ddd-layers/community/CommunityManagerInterfaces.png" alt="Community Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.3.3. Application Layer
+#### 2.6.3.3.1. Application Layer
 
 Posts
 - **Command Handlers**:  
@@ -838,7 +837,7 @@ Comments
 Community Manager Application
 <img src="../chapter4/assets/ddd-layers/community/CommunityManagerApplication.png" alt="Community Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.3.4. Infrastructure Layer
+#### 2.6.3.4.1. Infrastructure Layer
 
 En el diagrama presentado:  
 
@@ -848,19 +847,20 @@ En el diagrama presentado:
 
 - El `LikeRepository` gestiona la entidad `Like`, ofreciendo operaciones para validar la existencia de un "like" en relación con `PostId` o `CommentId` y un `UserId`, además de contar reacciones y consultar listas de likes asociados. También permite la eliminación de likes por `PostId` o `CommentId`.
 
-### Community Manager Infrastructure
+Community Manager Infrastructure
+
 <img src="../chapter4/assets/ddd-layers/community/CommunityManagerInfrastructure.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+#### 2.6.3.5.1. Bounded Context Software Architecture Component Level Diagrams
 <img src="../chapter4/assets/c4/CommunityComponents.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+#### 2.6.3.6.1. Bounded Context Software Architecture Code Level Diagrams
+##### 2.6.3.6.1.1. Bounded Context Domain Layer Class Diagrams
 
 Community Manager Domain
 <img src="../chapter4/assets/ddd-layers/community/CommunityManagerDomain.png" alt="Community Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-##### 4.2.3.6.2. Bounded Context Database Design Diagram
+##### 2.6.3.6.1.2. Bounded Context Database Design Diagram
 
 Community Manager 
 
@@ -876,8 +876,8 @@ Community Manager
 
 
 
-### 4.2.4. Bounded Context: Identity and Access Management (IAM)
-#### 4.2.4.1. Domain Layer
+### 2.6.4.1. Bounded Context: Identity and Access Management (IAM)
+#### 2.6.4.1.1. Domain Layer
 
 Aggregate Roots y Entities
 - **User (Aggregate Root)**:  
@@ -925,7 +925,7 @@ Interfaces que orquestan lógica de negocio más allá de una sola entidad:
 
 
 
-#### 4.2.4.2. Interface Layer
+#### 2.6.4.1.2 Interface Layer
 
 
 1. Controllers
@@ -1009,9 +1009,9 @@ El ACL protege al microservicio de dependencias directas con APIs externas, tran
 De esta manera, el *Interface Layer* sirve como frontera clara entre los consumidores externos (clientes o frontends) y el **core del microservicio IAM**.  
 
 IAM Interface
-<img src="../chapter4/assets/ddd-layers/iam/IAMInterfaces.png" alt="IAM Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/iam/IamInterfaces.png" alt="IAM Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.4.3. Application Layer
+#### 2.6.4.1.3. Application Layer
 
 
 Users
@@ -1037,9 +1037,9 @@ Event Handlers
   - `ApplicationReadyEventHandler` maneja el evento `ApplicationReadyEvent`, inicializando roles mediante `RoleCommandService`.  
 
 IAM Application
-<img src="../chapter4/assets/ddd-layers/iam/IAMApplication.png" alt="IAM Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/iam/IamApplication.png" alt="IAM Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.4.4. Infrastructure Layer
+#### 2.6.4.1.4. Infrastructure Layer
 
 
 En el diagrama presentado:  
@@ -1055,28 +1055,28 @@ En el diagrama presentado:
 - En la **OAuth2 Layer**, clases como `OAuth2AuthenticationSuccessHandler` y `OAuth2AuthenticationFailureHandler` gestionan el flujo de autenticación OAuth2 en casos de éxito o fallo, interactuando con servicios de usuario, rol y token. La clase `HttpCookieOAuth2AuthorizationRequestRepository` administra solicitudes OAuth2 mediante cookies, controlando la serialización, almacenamiento y eliminación de datos de autorización.  
 
 IAM Infrastructure
-<img src="../chapter4/assets/ddd-layers/iam/IAMInfrastructure.png" alt="IAM Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/iam/IamInfrastructure.png" alt="IAM Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/IAMComponents.png" alt="IAM Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+#### 2.6.4.1.5. Bounded Context Software Architecture Component Level Diagrams
+<img src="../chapter4/assets/c4/IamComponents.png" alt="IAM Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+#### 2.6.4.1.6. Bounded Context Software Architecture Code Level Diagrams
+##### 2.6.4.1.6.1. Bounded Context Domain Layer Class Diagrams
 
 IAM Domain
-<img src="../chapter4/assets/ddd-layers/iam/IAMDomain.png" alt="IAM Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/iam/IamDomain.png" alt="IAM Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-##### 4.2.4.6.2. Bounded Context Database Design Diagram
+##### 2.6.4.1.6.2. Bounded Context Database Design Diagram
 IAM Database Design
-<img src="../chapter4/assets/ddd-layers/iam/IAMDomainDatabase.png" alt="IAM Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter4/assets/ddd-layers/iam/IamDomainDatabase.png" alt="IAM Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 
 
 
 
-### 4.2.5. Bounded Context: User Profile
-#### 4.2.5.1. Domain Layer
+### 2.6.5.1. Bounded Context: User Profile
+#### 2.6.5.1.1. Domain Layer
 
 Value Objects
 Los objetos de valor garantizan inmutabilidad y consistencia en atributos clave del perfil:
@@ -1132,7 +1132,7 @@ Interfaces que abstraen lógica de negocio transversal y la orquestación de com
   Servicio especializado en generar identificadores únicos (`username`) para garantizar unicidad y evitar colisiones en la creación de perfiles.
 
 
-#### 4.2.5.2. Interface Layer
+#### 2.6.5.1.2. Interface Layer
 
 
 En esta capa se definen los **puntos de entrada** de la aplicación.  
@@ -1199,7 +1199,7 @@ Clases encargadas de convertir entre **Resources (DTOs)** y **Comandos/Entidades
 User Profile Interface
 <img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementInterfaces.png" alt="User Profile Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.5.3. Application Layer
+#### 2.6.5.1.3. Application Layer
 
 Profiles
 - **Command Handlers**:  
@@ -1225,7 +1225,7 @@ Outbound Services
 User Profile Application
 <img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementApplication.png" alt="User Profile Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.5.4. Infrastructure Layer
+#### 2.6.5.1.4. Infrastructure Layer
 
 En el diagrama presentado:
 
@@ -1242,25 +1242,25 @@ En el diagrama presentado:
 User Profile Infrastructure
 <img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementInfrastructure.png" alt="User Profile Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
+#### 2.6.5.1.5. Bounded Context Software Architecture Component Level Diagrams
 <img src="../chapter4/assets/c4/UserProfileComponents.png" alt="User Profile Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
-##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
+#### 2.6.5.1.6. Bounded Context Software Architecture Code Level Diagrams
+##### 2.6.5.1.1.1. Bounded Context Domain Layer Class Diagrams
 
 User Profile Domain
 <img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementDomain.png" alt="User Profile Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
-##### 4.2.5.6.2. Bounded Context Database Design Diagram
+##### 2.6.5.1.1.2. Bounded Context Database Design Diagram
 User Profile Database Design
 <img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementDomainDatabase.png" alt="User Profile Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 
-### 4.2.6. Bounded Context: Analytics
+### 2.6.6.1 Bounded Context: Analytics
 
-#### 4.2.6.1. Domain Layer
+#### 2.6.6.1.1 Domain Layer
 
 Propósito del dominio
 El bounded context de Analytics centraliza la recolección, modelado y consulta de métricas y eventos de uso generados por otros contextos (Community, Class Activities, Challenges, Code Runner, User Profile, IAM). Su objetivo es ofrecer insights accionables para mejorar engagement, efectividad de aprendizaje y operación de la plataforma.
@@ -1307,7 +1307,7 @@ Domain Services
 - InsightDetectionService: aplica reglas umbral y detección básica de anomalías/tendencias.
 
 
-#### 4.2.6.2. Interface Layer
+#### 2.6.6.1.2. Interface Layer
 
 Controllers
 - AnalyticsEventsController
@@ -1331,7 +1331,7 @@ Integraciones y Anti-Corruption Layer (ACL)
 - EventBusSubscriber (Kafka): suscriptor a tópicos de eventos de otros contextos, aplica normalización y reintentos idempotentes.
 - CommunityEventsAdapter, ClassActivitiesEventsAdapter, ChallengesEventsAdapter, CodeRunnerEventsAdapter, IamEventsAdapter, UserProfileEventsAdapter: adaptadores específicos de fuente que traducen payloads a AnalyticsEvent.
 
-#### 4.2.6.3. Application Layer
+#### 2.6.6.1.3. Application Layer
 
 Command Handlers
 - AnalyticsEventCommandServiceImpl: procesa IngestAnalyticsEventCommand con normalización y validación de esquema.
@@ -1351,7 +1351,7 @@ Procesamiento asíncrono
 - MetricScheduler: job scheduler que dispara MaterializeMetricCommand por ventanas definidas (e.g., cada 1 min/5 min/1 h/1 d).
 - InsightDetector: proceso batch/stream que ejecuta reglas de umbral y detección simple de anomalías (z-score) sobre métricas materializadas.
 
-#### 4.2.6.4. Infrastructure Layer
+#### 2.6.6.1.4. Infrastructure Layer
 
 En la capa de infraestructura se gestionan persistencia, mensajería y cómputo.
 
@@ -1374,14 +1374,14 @@ Consideraciones de Diseño
 - Privacy by Design: anonimización/pseudonimización opcional para reportes agregados.
 - Multi-tenant ready (si aplica a futuro): dimensiones de tenant en métricas y eventos.
 
-#### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
+#### 2.6.6.1.5. Bounded Context Software Architecture Component Level Diagrams
 <img src="../chapter4/assets/c4/AnalyticsComponent.png" alt="Analytics Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
-#### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
+#### 2.6.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 Dado el amplio alcance del contexto de Analytics, colocar todos los diagramas de clase aquí no es factible.
 
 
-### 4.2.7. Bounded Context: Code Runner
+### 2.6.7.1 Bounded Context: Code Runner
 
 Visión General
 
