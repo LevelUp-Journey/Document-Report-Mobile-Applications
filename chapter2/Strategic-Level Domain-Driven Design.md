@@ -29,41 +29,41 @@ Contextos candidatos identificados:
 
 Flows de eventos principales:
 - **Registro de usuario**: Flujo desde la creación de cuenta
-<img src="../chapter4/assets/domain-event-flows/IAM-flow-1.png" alt="IAM Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/IAM-flow-1.png" alt="IAM Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **Publicacion de un Post**: Creacion de un post y aumento de puntos de actividad al profesor que publica
-<img src="../chapter4/assets/domain-event-flows/Community-flow-1.png" alt="Community Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Community-flow-1.png" alt="Community Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 - **Crear Analitica cuando un post es visto**: Cada vez que un post es visto, se crea una nueva analitica
-<img src="../chapter4/assets/domain-event-flows/Community-flow-2.png" alt="Community Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>  
+<img src="../chapter2/assets/domain-event-flows/Community-flow-2.png" alt="Community Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>  
 
 - **Crear un Quiz Activity**: Flujo desde la creacion de un quiz activity
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-1.png" alt="Class Activities Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-1.png" alt="Class Activities Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **Empezar una sesion de clase en vivo**: Flujo desde el inicio de una sesion en vivo
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-2.png" alt="Class Activities Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-2.png" alt="Class Activities Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **Un participante ingresa mediante QR a una sesion en vivo**: Flujo desde que un participante ingresa a una sesion en vivo mediante QR
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-3.png" alt="Class Activities Flow 3" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-3.png" alt="Class Activities Flow 3" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **El profesor empieza con las preguntas interactivas**: Flujo desde que el profesor inicia las preguntas interactivas
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-4.png" alt="Class Activities Flow 4" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-4.png" alt="Class Activities Flow 4" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **El estudiante responde a una pregunta interactiva**: Flujo desde que el estudiante responde a una pregunta interactiva
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-5.png" alt="Class Activities Flow 5" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-5.png" alt="Class Activities Flow 5" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **El profesor termina una pregunta interactiva**: Flujo desde que el profesor termina una pregunta interactiva
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-6.png" alt="Class Activities Flow 6" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-6.png" alt="Class Activities Flow 6" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **El profesor termina la sesion en vivo**: Flujo desde que el profesor termina la sesion en vivo
-<img src="../chapter4/assets/domain-event-flows/Class-Activities-flow-7.png" alt="Class Activities Flow 7" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Class-Activities-flow-7.png" alt="Class Activities Flow 7" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **El Estudiante empieza a resolver un challenge**: Flujo desde que el estudiante empieza a resolver un challenge
-<img src="../chapter4/assets/domain-event-flows/Challenges-flow-1.png" alt="Challenges Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Challenges-flow-1.png" alt="Challenges Flow 1" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 - **El Estudiante envía su solución a un challenge**: Flujo desde que el estudiante envía su solución a un challenge
-<img src="../chapter4/assets/domain-event-flows/Challenges-flow-2.png" alt="Challenges Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/domain-event-flows/Challenges-flow-2.png" alt="Challenges Flow 2" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.5.1.2. Domain Message Flows Modeling
 
@@ -72,36 +72,36 @@ El **Domain Message Flows Modeling** mapea cómo los mensajes (eventos, comandos
 Message Flows
 
 1. Teacher Publish a Post
-<img src="../chapter4/assets/message-flow/MessageFlow1.png" alt="Message Flow - Teacher Publish a Post" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/message-flow/MessageFlow1.png" alt="Message Flow - Teacher Publish a Post" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 2. Scenario: student scan a QR and join a live session
-<img src="../chapter4/assets/message-flow/MessageFlow2.png" alt="Message Flow - Student scan QR and join live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/message-flow/MessageFlow2.png" alt="Message Flow - Student scan QR and join live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 3. Scenario: Teacher end a live session
-<img src="../chapter4/assets/message-flow/MessageFlow3.png" alt="Message Flow - Teacher end a live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/message-flow/MessageFlow3.png" alt="Message Flow - Teacher end a live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 4. Scenario: Teacher creates a live session
-<img src="../chapter4/assets/message-flow/MessageFlow4.png" alt="Message Flow - Teacher creates a live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/message-flow/MessageFlow4.png" alt="Message Flow - Teacher creates a live session" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 5. Scenario: Student Start Challenge
-<img src="../chapter4/assets/message-flow/MessageFlow5.png" alt="Message Flow - Student Start Challenge" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/message-flow/MessageFlow5.png" alt="Message Flow - Student Start Challenge" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.5.1.3. Bounded Context Canvases
 
 Los **Bounded Context Canvases** proporcionan una visión detallada de cada contexto delimitado, documentando sus responsabilidades, interfaces, eventos y relaciones con otros contextos.
 
 - **IAM Bounded Context Canvas**
-<img src="../chapter4/assets/canvases/IAM-Canvas.png" alt="IAM Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/canvases/IAM-Canvas.png" alt="IAM Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 - **Challenges Bounded Context Canvas**
-<img src="../chapter4/assets/canvases/Challenges-Canvas.png" alt="Challenges Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/canvases/Challenges-Canvas.png" alt="Challenges Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 - **Community Bounded Context Canvas**
-<img src="../chapter4/assets/canvases/Community-Canvas.png" alt="Community Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/canvases/Community-Canvas.png" alt="Community Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 - **Code Runner Bounded Context Canvas**
-<img src="../chapter4/assets/canvases/CodeRunner-Canvas.png" alt="Code Runner Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/canvases/CodeRunner-Canvas.png" alt="Code Runner Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 - **Class Activities Bounded Context Canvas**
-<img src="../chapter4/assets/canvases/ClassActivitiesManager-Canvas.png" alt="Class Activities Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/canvases/ClassActivitiesManager-Canvas.png" alt="Class Activities Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 - **Analytics Bounded Context Canvas**
-<img src="../chapter4/assets/canvases/Analytics-Canvas.png" alt="Analytics Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/canvases/Analytics-Canvas.png" alt="Analytics Bounded Context Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 ### 2.5.2. Context Mapping
@@ -124,7 +124,7 @@ Principios arquitectónicos adoptados:
 
 Los **diagramas de nivel de contexto** proporcionan una vista de alto nivel del sistema LevelUpJourney, mostrando cómo interactúa con usuarios externos y sistemas externos.
 
-<img src="../chapter4/assets/c4/ContextDiagram.png" alt="C4 Context Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/c4/ContextDiagram.png" alt="C4 Context Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Identificamos que los usuarios quienes van a interactuar con el sistema son 3.
 - Student: Estudiante que participa dentro de la plataforma para mejorar sus habilidades de programación
@@ -139,7 +139,7 @@ Como sistemas externos identificamos:
 
 Los **diagramas de nivel de contenedor** descomponen el sistema LevelUpJourney en contenedores de alto nivel, mostrando las principales tecnologías y responsabilidades. Este diagrama ilustra la arquitectura distribuida de microservicios adoptada para garantizar escalabilidad, mantenibilidad y separación de responsabilidades.
 
-<img src="../chapter4/assets/c4/ContainerDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/c4/ContainerDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Análisis del Container Diagram
 
@@ -184,7 +184,7 @@ Esta arquitectura asegura que LevelUpJourney pueda escalar eficientemente, mante
 
 Los **diagramas de despliegue** muestran cómo los contenedores se mapean a infraestructura física o virtual, incluyendo consideraciones de escalabilidad, disponibilidad y seguridad. Este diagrama visualiza la distribución física del sistema LevelUpJourney, destacando cómo los componentes del software se despliegan sobre la infraestructura en la nube y otros entornos de ejecución.
 
-<img src="../chapter4/assets/deployment/DeploymentDiagram.png" alt="Deployment Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/deployment/DeploymentDiagram.png" alt="Deployment Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Análisis del Deployment Diagram
 
@@ -478,13 +478,13 @@ Resources
 
 
 Challenges Interface
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesInterfaces.png" alt="Challenges Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/ChallengesInterfaces.png" alt="Challenges Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Solution Interface
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsInterfaces.png" alt="Solutions Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionsInterfaces.png" alt="Solutions Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Solution Report Interface
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsInterfaces.png" alt="Solution Reports Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionReportsInterfaces.png" alt="Solution Reports Interface Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.1.3.1. Application Layer
 
@@ -516,13 +516,13 @@ Solutions
 
 
 Challenges Application
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesApplication.png" alt="Challenges Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/ChallengesApplication.png" alt="Challenges Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Solution Application
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsApplication.png" alt="Solutions Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionsApplication.png" alt="Solutions Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Solution Report Application
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsApplication.png" alt="Solution Reports Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionReportsApplication.png" alt="Solution Reports Application Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 #### 2.6.1.4.1. Infrastructure Layer
@@ -539,39 +539,39 @@ En los diagramas presentados:
 
 
 Challenges Infrastructure
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesInfrastructure.png" alt="Challenges Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/ChallengesInfrastructure.png" alt="Challenges Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Solution Infrastructure
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsInfrastructure.png" alt="Solutions Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionsInfrastructure.png" alt="Solutions Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Solution Report Infrastructure
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsInfrastructure.png" alt="Solution Reports Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionReportsInfrastructure.png" alt="Solution Reports Infrastructure Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.1.5.1. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/ChallengesComponents.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/c4/ChallengesComponents.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.1.6.1. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.1.6.1.1. Bounded Context Domain Layer Class Diagrams
 
 Challenges Domain
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomain.png" alt="Challenges Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/ChallengesDomain.png" alt="Challenges Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Solution Domain
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionsDomain.png" alt="Solutions Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionsDomain.png" alt="Solutions Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Solution Report Domain
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportsDomain.png" alt="Solution Reports Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionReportsDomain.png" alt="Solution Reports Domain Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ##### 2.6.1.6.2.1.  Bounded Context Database Design Diagram
 
 Challenges Database Diagram
-<img src="../chapter4/assets/ddd-layers/challenges/ChallengesDomainDatabaseDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/ChallengesDomainDatabaseDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Solution Database Diagram
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionDomainDatabaseDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionDomainDatabaseDiagram.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Solution Report Database Diagram
-<img src="../chapter4/assets/ddd-layers/challenges/SolutionReportDomainDatabase.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/challenges/SolutionReportDomainDatabase.png" alt="C4 Container Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 
@@ -658,10 +658,10 @@ Resources
 
 
 Activities Manager Interface
-<img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerInterfaces.png" alt="Activities Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/class-activities/ActivitiesManagerInterfaces.png" alt="Activities Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Class Activity Session Manager Interface
-<img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerInterfaces.png" alt="Class Activity Session Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/class-activities/ClassActivitySessionManagerInterfaces.png" alt="Class Activity Session Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.3.1.3. Application Layer
 
@@ -684,10 +684,10 @@ LiveSession
   - `LiveSessionQueryServiceImpl` resuelve consultas como `GetLiveSessionByIdQuery`, `GetParticipantsBySessionIdQuery`, `GetLeaderboardQuery`, `GetCurrentQuestionQuery`, `GetCurrentQuestionDetailsQuery`.  
 
 Activities Manager Application
-<img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerApplication.png" alt="Activities Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/class-activities/ActivitiesManagerApplication.png" alt="Activities Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Class Activity Session Manager Application
-<img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerApplication.png" alt="Class Activity Session Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/class-activities/ClassActivitySessionManagerApplication.png" alt="Class Activity Session Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.4.1.4. Infrastructure Layer
 
@@ -703,29 +703,29 @@ En los diagramas presentados:
   El `CurrentQuestionRepository` gestiona la entidad `CurrentQuestion`, con búsquedas por `SessionId`, estado activo e incluso consultas globales por preguntas activas, junto con operaciones de eliminación ligadas a una sesión.  
 
 Activities Manager Infrastructure
-<img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerInfrastructure.png" alt="Activities Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/class-activities/ActivitiesManagerInfrastructure.png" alt="Activities Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Class Activity Session Manager Infrastructure
-<img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerInfrastructure.png" alt="Class Activity Session Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/class-activities/ClassActivitySessionManagerInfrastructure.png" alt="Class Activity Session Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.5.1.5. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/ClassActivitiesComponent.png" alt="Class Activity Session Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/c4/ClassActivitiesComponent.png" alt="Class Activity Session Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.6.1.6.1. Bounded Context Domain Layer Class Diagrams
 
 Activities Manager Domain
-<img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerDomain.png" alt="Activities Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/class-activities/ActivitiesManagerDomain.png" alt="Activities Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Class Activity Session Manager Domain
-<img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomain.png" alt="Class Activity Session Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomain.png" alt="Class Activity Session Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ##### 2.6.6.1.6.2. Bounded Context Database Design Diagram
 Activities Manager Database Design
-<img src="../chapter4/assets/ddd-layers/class-activities/ActivitiesManagerDomainDatabase.png" alt="Activities Manager Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/class-activities/ActivitiesManagerDomainDatabase.png" alt="Activities Manager Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 Class Activity Session Manager Database Design
-<img src="../chapter4/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomainDatabase.png" alt="Class Activity Session Manager Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/class-activities/ClassActivitySessionManagerDomainDatabase.png" alt="Class Activity Session Manager Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 
@@ -815,7 +815,7 @@ Los **controllers** utilizan los **resources** como contratos de entrada para ga
 
 
 Community Manager Interface
-<img src="../chapter4/assets/ddd-layers/community/CommunityManagerInterfaces.png" alt="Community Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/community/CommunityManagerInterfaces.png" alt="Community Manager Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.3.3.1. Application Layer
 
@@ -835,7 +835,7 @@ Comments
 
 
 Community Manager Application
-<img src="../chapter4/assets/ddd-layers/community/CommunityManagerApplication.png" alt="Community Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/community/CommunityManagerApplication.png" alt="Community Manager Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.3.4.1. Infrastructure Layer
 
@@ -849,22 +849,22 @@ En el diagrama presentado:
 
 Community Manager Infrastructure
 
-<img src="../chapter4/assets/ddd-layers/community/CommunityManagerInfrastructure.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/community/CommunityManagerInfrastructure.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.3.5.1. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/CommunityComponents.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/c4/CommunityComponents.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.3.6.1. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.3.6.1.1. Bounded Context Domain Layer Class Diagrams
 
 Community Manager Domain
-<img src="../chapter4/assets/ddd-layers/community/CommunityManagerDomain.png" alt="Community Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/community/CommunityManagerDomain.png" alt="Community Manager Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ##### 2.6.3.6.1.2. Bounded Context Database Design Diagram
 
 Community Manager 
 
-<img src="../chapter4/assets/ddd-layers/community/CommunityManagerDomainDatabase.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/community/CommunityManagerDomainDatabase.png" alt="Community Manager Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 
@@ -1009,7 +1009,7 @@ El ACL protege al microservicio de dependencias directas con APIs externas, tran
 De esta manera, el *Interface Layer* sirve como frontera clara entre los consumidores externos (clientes o frontends) y el **core del microservicio IAM**.  
 
 IAM Interface
-<img src="../chapter4/assets/ddd-layers/iam/IamInterfaces.png" alt="IAM Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/iam/IamInterfaces.png" alt="IAM Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.4.1.3. Application Layer
 
@@ -1037,7 +1037,7 @@ Event Handlers
   - `ApplicationReadyEventHandler` maneja el evento `ApplicationReadyEvent`, inicializando roles mediante `RoleCommandService`.  
 
 IAM Application
-<img src="../chapter4/assets/ddd-layers/iam/IamApplication.png" alt="IAM Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/iam/IamApplication.png" alt="IAM Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.4.1.4. Infrastructure Layer
 
@@ -1055,20 +1055,20 @@ En el diagrama presentado:
 - En la **OAuth2 Layer**, clases como `OAuth2AuthenticationSuccessHandler` y `OAuth2AuthenticationFailureHandler` gestionan el flujo de autenticación OAuth2 en casos de éxito o fallo, interactuando con servicios de usuario, rol y token. La clase `HttpCookieOAuth2AuthorizationRequestRepository` administra solicitudes OAuth2 mediante cookies, controlando la serialización, almacenamiento y eliminación de datos de autorización.  
 
 IAM Infrastructure
-<img src="../chapter4/assets/ddd-layers/iam/IamInfrastructure.png" alt="IAM Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/iam/IamInfrastructure.png" alt="IAM Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.4.1.5. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/IamComponents.png" alt="IAM Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/c4/IamComponents.png" alt="IAM Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.4.1.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.4.1.6.1. Bounded Context Domain Layer Class Diagrams
 
 IAM Domain
-<img src="../chapter4/assets/ddd-layers/iam/IamDomain.png" alt="IAM Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/iam/IamDomain.png" alt="IAM Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 ##### 2.6.4.1.6.2. Bounded Context Database Design Diagram
 IAM Database Design
-<img src="../chapter4/assets/ddd-layers/iam/IamDomainDatabase.png" alt="IAM Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/iam/IamDomainDatabase.png" alt="IAM Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 
@@ -1197,7 +1197,7 @@ Clases encargadas de convertir entre **Resources (DTOs)** y **Comandos/Entidades
 - Garantizar la separación entre la capa de presentación y el dominio, evitando acoplamientos directos.  
 
 User Profile Interface
-<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementInterfaces.png" alt="User Profile Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/user-profile/ProfileManagementInterfaces.png" alt="User Profile Interface" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.5.1.3. Application Layer
 
@@ -1223,7 +1223,7 @@ Outbound Services
   - `ExternalIamService` expone la integración con servicios externos de gestión de identidad y acceso.  
 
 User Profile Application
-<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementApplication.png" alt="User Profile Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/user-profile/ProfileManagementApplication.png" alt="User Profile Application" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.5.1.4. Infrastructure Layer
 
@@ -1240,21 +1240,21 @@ En el diagrama presentado:
 - En la capa de **Domain**, se encuentran las entidades y value objects (`Profile`, `Username`, `Badge`, `Experience`, `Level`, `Ranking`) que son utilizadas por los repositorios de infraestructura para mantener la coherencia entre el dominio y la base de datos.  
 
 User Profile Infrastructure
-<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementInfrastructure.png" alt="User Profile Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/user-profile/ProfileManagementInfrastructure.png" alt="User Profile Infrastructure" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.5.1.5. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/UserProfileComponents.png" alt="User Profile Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/c4/UserProfileComponents.png" alt="User Profile Component Level Diagram" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.5.1.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.5.1.1.1. Bounded Context Domain Layer Class Diagrams
 
 User Profile Domain
-<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementDomain.png" alt="User Profile Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/user-profile/ProfileManagementDomain.png" alt="User Profile Domain" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 ##### 2.6.5.1.1.2. Bounded Context Database Design Diagram
 User Profile Database Design
-<img src="../chapter4/assets/ddd-layers/user-profile/ProfileManagementDomainDatabase.png" alt="User Profile Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/user-profile/ProfileManagementDomainDatabase.png" alt="User Profile Database Design" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 
 
@@ -1375,7 +1375,7 @@ Consideraciones de Diseño
 - Multi-tenant ready (si aplica a futuro): dimensiones de tenant en métricas y eventos.
 
 #### 2.6.6.1.5. Bounded Context Software Architecture Component Level Diagrams
-<img src="../chapter4/assets/c4/AnalyticsComponent.png" alt="Analytics Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/c4/AnalyticsComponent.png" alt="Analytics Canvas" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 #### 2.6.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 Dado el amplio alcance del contexto de Analytics, colocar todos los diagramas de clase aquí no es factible.
@@ -1766,19 +1766,19 @@ type ContainerPool struct {
 En el siguiente orden de ejecución del pipeline:
 
 1) Language Detection
-<img src="../chapter4/assets/ddd-layers/code-runner/LanguageDetector.png" alt="Code Runner - LanguageDetector" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/code-runner/LanguageDetector.png" alt="Code Runner - LanguageDetector" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 2) Code Safety Review
-<img src="../chapter4/assets/ddd-layers/code-runner/CodeSafetyReview.png" alt="Code Runner - CodeSafetyReview" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/code-runner/CodeSafetyReview.png" alt="Code Runner - CodeSafetyReview" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 3) Execution Planning
-<img src="../chapter4/assets/ddd-layers/code-runner/ExecutionPlanner.png" alt="Code Runner - ExecutionPlanner" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/code-runner/ExecutionPlanner.png" alt="Code Runner - ExecutionPlanner" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 4) Docker Execution
-<img src="../chapter4/assets/ddd-layers/code-runner/DockerEngineRunner.png" alt="Code Runner - DockerEngineRunner" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/code-runner/DockerEngineRunner.png" alt="Code Runner - DockerEngineRunner" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 5) Result Analysis
-<img src="../chapter4/assets/ddd-layers/code-runner/ExecutionAnalyzer.png" alt="Code Runner - ExecutionAnalyzer" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/code-runner/ExecutionAnalyzer.png" alt="Code Runner - ExecutionAnalyzer" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
 
 6) Queue and Orchestration
-<img src="../chapter4/assets/ddd-layers/code-runner/ExecutionQueueManager.png" alt="Code Runner - ExecutionQueueManager" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
+<img src="../chapter2/assets/ddd-layers/code-runner/ExecutionQueueManager.png" alt="Code Runner - ExecutionQueueManager" style="display: block; margin: auto; max-width: 100%; height: auto;"/>
