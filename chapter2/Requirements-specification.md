@@ -4,7 +4,7 @@
 <div align="justify"
 
 
-La elaboración de las user stories en esta sección partió de la definición previa de las épicas, que permitieron agrupar los requisitos en bloques funcionales coherentes y alineados con los objetivos del proyecto. Las épicas funcionaron como marcos conceptuales amplios que organizaron las funcionalidades por áreas clave de valor, asegurando que cada conjunto de historias respondiera a una necesidad estratégica concreta identificada en el análisis TO-BE y en el impact mapping.
+La elaboración de las user stories en esta sección partió de la definición previa de las épicas, que permitieron agrupar los requisitos en bloques funcionales coherentes y alineados con los objetivos del proyecto. Las épicas funcionaron como marcos conceptuales amplios que organizaron las funcionalidades por áreas clave de valor, asegurando que cada conjunto de historias respondiera a una necesidad estratégica concreta identificada en el impact mapping.
 
 A partir de cada épica se redactaron user stories que describen, desde la perspectiva del usuario final, las funcionalidades esperadas y el propósito que persiguen. Estas historias se detallaron con criterios de aceptación claros para definir el comportamiento esperado del sistema y facilitar su validación. Este enfoque permitió transformar objetivos generales en funcionalidades pequeñas, independientes y priorizables, manteniendo la trazabilidad con su épica de origen y con los objetivos de aprendizaje y retención definidos para el proyecto.
 
