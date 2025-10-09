@@ -330,22 +330,46 @@ El análisis del User Task Matrix revela varias tareas que son altamente frecuen
 
 ### 2.3.5. Ubiquitous Language
 
-| Term      | Definition                                                                                                                                                                                                                              |
-|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Student   | Usuario principal de la plataforma, perteneciente a los primeros ciclos universitarios (1° a 3°). Interactúa con los retos de programación resolviéndolos en el editor de código, acumulando puntos, logros y posiciones en el ranking. |
-| Teacher   | Usuario que diseña, gestiona y evalúa los retos de programación. Define las instrucciones, casos de prueba y criterios de evaluación automática.                                                                                        |
-| Admin     | Usuario con permisos de supervisión y moderación. Puede gestionar usuarios.                                                                                                                                                             |
-| Activity  | Actividad académica creada por un profesor que el estudiante debe resolver en el editor de código.                                                                                                                                      |
-| Points    | Puntaje que el estudiante obtiene al resolver el reto, calculado según corrección, eficiencia.                                                                                                                                          |
-| Score     | Total acumulado de puntos de un estudiante en toda la plataforma. Es la métrica principal para el progreso, nivel y ranking.                                                                                                            |
-| Ranking   | Clasificación de los estudiantes basada en puntos acumulados, retos completados y desempeño en la plataforma. Puede mostrarse a nivel global, por curso o por reto específico.                                                          |
-| Rank      | Distinción visual o insignia especial otorgada al estudiante cuando alcanza un determinado puesto o hito dentro del ranking.                                                                                                            |
-| Level     | Representa el grado de experiencia del estudiante dentro de la plataforma. Aumenta conforme se acumula score y se completan hitos específicos.                                                                                          |
-| Profile   | Espacio individual del estudiante donde se muestran sus retos completados, historial de envíos, puntos, insignias, niveles alcanzados y progreso general dentro de la plataforma.                                                       |
-| Community | Sección tipo feed donde solo Teachers pueden publicar y los Students solo pueden comentar. Usada para avisos y actividades.                                                                                                             |
 
-
-
-
-
-
+| Término | Definición |
+|---------|------------|
+| User | Persona registrada en el sistema que puede autenticarse y acceder a la plataforma con permisos específicos según los roles asignados. |
+| Role | Perfil de permisos que determina qué acciones y recursos puede acceder un usuario dentro del sistema. |
+| Roles | Categorías de tipos de usuarios disponibles en la plataforma: ROLE_STUDENT para estudiantes, ROLE_TEACHER para profesores y ROLE_ADMIN para administradores del sistema. |
+| EmailAddress | Identificador único utilizado por los usuarios para iniciar sesión y recibir comunicaciones del sistema. Debe seguir los estándares válidos de formato de correo electrónico. |
+| Password | Credencial secreta que los usuarios crean para proteger el acceso a su cuenta. Debe cumplir requisitos de seguridad para prevenir accesos no autorizados. |
+| TokenPair | Conjunto de credenciales de seguridad (tokens de acceso y refresco) emitidas después de una autenticación exitosa, permitiendo a los usuarios mantenerse conectados y realizar solicitudes autorizadas. |
+| OAuth2UserInfo | Información de perfil (nombre, correo electrónico, foto de perfil) obtenida cuando un usuario inicia sesión a través de proveedores externos como Google o GitHub. |
+| SignUpCommand | Solicitud de un nuevo usuario para crear una cuenta en el sistema con su correo electrónico, contraseña y asignaciones de roles iniciales. |
+| SignInCommand | Solicitud de un usuario existente para autenticarse y acceder al sistema usando sus credenciales de correo electrónico y contraseña. |
+| SeedRolesCommand | Operación de configuración inicial que crea los tipos de roles predeterminados (Estudiante, Teacher, Administrador) cuando la aplicación se inicia por primera vez. |
+| GetUserByIdQuery | Solicitud para recuperar la información de un usuario específico usando su identificador único del sistema. |
+| GetUserByEmail_addressQuery | Solicitud para encontrar la información de cuenta de un usuario usando su dirección de correo electrónico. |
+| GetAllUsersQuery | Solicitud para recuperar la lista completa de todos los usuarios registrados en el sistema. |
+| GetRoleByNameQuery | Solicitud para recuperar información sobre un tipo de rol específico (Estudiante, Teacher o Administrador) por su nombre. |
+| GetAllRolesQuery | Solicitud para recuperar la lista completa de tipos de roles disponibles en el sistema. |
+| Profile | Cuenta de usuario que contiene información personal y participa en el sistema de gamificación. |
+| PersonName | Nombre y apellido del usuario utilizados para identificación. |
+| Username | Identificador único asignado a cada perfil en el formato USER + 9 dígitos. |
+| ProfileUrl | Dirección web externa que vincula a información adicional del perfil del usuario. |
+| ProfileRank | Asociación entre un perfil de usuario y su nivel competitivo actual con puntuación acumulada. |
+| Rank | Nivel competitivo o liga que los usuarios pueden alcanzar según sus rangos de puntuación. |
+| RankName | Nombre que identifica un nivel competitivo específico (Bronze, Silver, Gold, Platinum, Diamond, Master, Grandmaster). |
+| Score | Puntos numéricos que representan el rendimiento y progreso del usuario en el sistema. |
+| ScoreAuditLog | Registro histórico que rastrea todos los cambios de puntuación para rendición de cuentas y transparencia. |
+| ScoreChangeReason | Explicación que describe por qué se agregaron o restaron puntos de la puntuación del usuario. |
+| ScoreChangeType | Categoría de modificación de puntuación (Adición, Sustracción, Finalización de Desafío, Falla de Desafío, Ajuste Manual, Corrección del Sistema). |
+| Leaderboard | Lista de clasificación que muestra los usuarios con mejor rendimiento según sus puntuaciones actuales. |
+| CreateProfileCommand | Solicitud para registrar un nuevo perfil de usuario en el sistema. |
+| CreateProfileRankCommand | Solicitud para asignar estado de clasificación inicial a un perfil recién creado. |
+| AddScoreCommand | Solicitud para otorgar puntos al perfil de un usuario por logros o finalizaciones. |
+| SubtractScoreCommand | Solicitud para deducir puntos del perfil de un usuario debido a fallas o penalizaciones. |
+| InitializeRanksCommand | Solicitud para crear los niveles competitivos predefinidos en el sistema. |
+| GetAllProfilesQuery | Solicitud para recuperar la lista completa de perfiles de usuario registrados. |
+| GetProfileByIdQuery | Solicitud para encontrar un perfil específico usando su identificador único. |
+| GetProfileByUsernameQuery | Solicitud para encontrar un perfil usando su nombre de usuario. |
+| GetProfileRankByProfileIdQuery | Solicitud para recuperar la información de clasificación de un perfil de usuario específico. |
+| GetAllRanksQuery | Solicitud para recuperar todos los niveles competitivos disponibles en el sistema. |
+| GetRankByNameQuery | Solicitud para encontrar un nivel competitivo específico por su nombre. |
+| GetScoreHistoryByProfileIdQuery | Solicitud para recuperar todos los cambios de puntuación históricos de un usuario específico. |
+| GetLeaderboardQuery | Solicitud para recuperar los mejores usuarios clasificados por puntuación con límite opcional. |
