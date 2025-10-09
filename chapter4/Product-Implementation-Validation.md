@@ -79,7 +79,33 @@ Para asegurar la consistencia y calidad del código, el equipo adopta las siguie
 - **Gherkin (Archivos .feature):** Se utiliza la guía [Gherkin Conventions for Readable Specifications](https://docs.cucumber.io/gherkin/reference/#conventions) para escribir escenarios de prueba claros y comprensibles.
 
 ### 4.1.4. Software Deployment Configuration
+Esta sección detalla la configuración y los pasos necesarios para el despliegue de cada producto digital de la solución.
 
+**Landing Page (Astro.js):**
+1.  **Disparador:** Un `push` o `merge` a la rama `main` en el repositorio de GitHub.
+2.  **CI/CD:** Vercel se encarga automáticamente del proceso de CI/CD.
+3.  **Build:** Vercel instala las dependencias (`npm install`) y construye el sitio estático (`npm run build`).
+4.  **Deploy:** Los archivos estáticos generados se despliegan en **Vercel** para su publicación.
+
+**Backend (Spring Boot Web Services):**
+1.  **Disparador:** Un `push` o `merge` a la rama `main`.
+2.  **CI/CD:** Un workflow de GitHub Actions se activa.
+3.  **Build & Test:** El workflow compila el código, ejecuta las pruebas unitarias y de integración (`mvn clean install`).
+4.  **Contenerización:** Se construye una imagen Docker de la aplicación a partir de su Dockerfile.
+5.  **Push a Registro:** La imagen Docker se etiqueta y se sube a **Azure Container Registry**.
+6.  **Deploy:** Se actualiza el servicio en **Azure Container Apps** para que utilice la nueva imagen del contenedor, completando el despliegue.
+
+**Mobile Application (Jetpack Compose):**
+1.  **Disparador:** Creación de una `release` en el repositorio de GitHub.
+2.  **CI/CD:** Un workflow de GitHub Actions se activa para construir la aplicación.
+3.  **Build & Sign:** El workflow genera un Android App Bundle (`.aab`) firmado para producción.
+4.  **Deploy:** El archivo `.aab` se sube a la **Google Play Console**. Desde allí, se gestiona el lanzamiento a través de los diferentes canales (interno, alfa, beta, producción) para su publicación en la Google Play Store.
+
+**Diagrama de Despliegue (C4 Model):**
+
+A continuación, se muestra el diagrama de despliegue que ilustra la infraestructura y la disposición de los componentes de la solución en los diferentes entornos.
+
+![Deployment Diagram](../chapter2/assets/deployment/DeploymentDiagram.png)
 ## 4.2. Landing Page & Mobile Application Implementation
 
 ### 4.2.1. Sprint n
