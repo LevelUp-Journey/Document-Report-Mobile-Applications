@@ -38,8 +38,45 @@ A continuación, se especifican las herramientas de software utilizadas por el e
 | GitHub Actions               | CI/CD para automatización de despliegues        | [github.com/features/actions](https://github.com/features/actions) |
 
 ### 4.1.2. Source Code Management
+Se utiliza GitHub como plataforma y sistema de control de versiones para gestionar el código fuente de todos los productos.
 
-### 4.1.3. Source Code Style Guide & Conventions
+- **Repositorio de Backend (Web Services):** [https://github.com/LevelUp-Journey](https://github.com/LevelUp-Journey)
+- **Repositorio de Frontend (Landing Page):** [https://github.com/LevelUp-Journey/Landing-Page](https://github.com/LevelUp-Journey/Landing-Page)
+- **Repositorio de Aplicación Móvil:** [https://github.com/LevelUp-Journey/MobileApp-Front](https://github.com/LevelUp-Journey/MobileApp-Front)
+
+**Workflow de Control de Versiones (GitFlow)**
+
+Se adopta el modelo de branching GitFlow para organizar el trabajo y gestionar las versiones del software.
+
+- **`main`:** Esta rama siempre contiene el código de producción estable. Solo se fusiona desde las ramas `release` y `hotfix`.
+- **`develop`:** Es la rama principal de desarrollo. Contiene las últimas funcionalidades desarrolladas y estables. Sirve como base para crear nuevas ramas de `feature`.
+
+**Convenciones de Nomenclatura de Ramas:**
+
+- **Feature Branches:** Se crean a partir de `develop` para trabajar en nuevas funcionalidades.
+  - **Formato:** `feature/<nombre-descriptivo-de-la-feature>`
+  - **Ejemplo:** `feature/user-authentication`
+- **Release Branches:** Se crean a partir de `develop` cuando se prepara una nueva versión de producción. Permiten la preparación final (pruebas, correcciones menores).
+  - **Formato:** `release/vX.Y.Z` (siguiendo Semantic Versioning)
+  - **Ejemplo:** `release/v1.0.0`
+- **Hotfix Branches:** Se crean a partir de `main` para corregir errores críticos en producción.
+  - **Formato:** `hotfix/vX.Y.Z`
+  - **Ejemplo:** `hotfix/v1.0.1`
+
+**Versionamiento Semántico (Semantic Versioning):**
+Todas las releases seguirán el estándar de [Semantic Versioning 2.0.0](https://semver.org/). El formato de versión es `MAJOR.MINOR.PATCH`.
+
+**Convencional Commits:**
+Todos los mensajes de commit deben seguir la especificación de [Conventional Commits](https://www.conventionalcommits.org/). Esto mejora la legibilidad del historial y permite automatizar la generación de changelogs.
+- **Ejemplo:** `feat: allow users to upload a profile picture`
+
+### 4.1.3. Source Code Style Guide & Coding Conventions
+Para asegurar la consistencia y calidad del código, el equipo adopta las siguientes guías de estilo y convenciones. El inglés es el idioma estándar para todo el código y la nomenclatura.
+
+- **Java (Backend):** Se sigue la [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html) junto con las convenciones y el formato de código estándar de [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-code-style).
+- **TypeScript (Landing Page):** Se adhiere a la [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html).
+- **Kotlin (Aplicación Móvil):** Se aplican las [convenciones de codificación oficiales de Kotlin](https://kotlinlang.org/docs/coding-conventions.html) y las guías recomendadas para Jetpack Compose.
+- **Gherkin (Archivos .feature):** Se utiliza la guía [Gherkin Conventions for Readable Specifications](https://docs.cucumber.io/gherkin/reference/#conventions) para escribir escenarios de prueba claros y comprensibles.
 
 ### 4.1.4. Software Deployment Configuration
 
