@@ -240,4 +240,47 @@ El sistema de navegación se estructura mediante un header fijo que permanece vi
 
 #### 3.1.4.4. Mobile Applications User Flow Diagrams
 
+
+![FLOW 1-](<./assets/user-flows/FLOW 1-.png>)
+
+**Flow 1: Autenticación y Gestión de Perfil de Usuario**  
+En el contexto de Level Up Journey, este flujo inicia con el proceso de autenticación, donde los estudiantes y docentes pueden registrarse o iniciar sesión utilizando métodos tradicionales (correo y contraseña) o integraciones con plataformas externas como GitHub y Google, facilitando el acceso rápido y seguro. Una vez autenticados, los usuarios acceden a la página principal de la aplicación móvil, desde donde pueden navegar a su perfil personal para gestionar configuraciones como preferencias de idioma, notificaciones y datos de cuenta. Este flujo asegura una experiencia de onboarding fluida, alineada con los objetivos de retención estudiantil al reducir barreras de entrada y promover la personalización del entorno de aprendizaje.
+
+![FLOW 2](<./assets/user-flows/FLOW 2.png>)
+
+**Flow 2: Interacción Comunitaria para Estudiantes**  
+Dentro de la sección Comunidad de Level Up Journey, los estudiantes pueden explorar publicaciones compartidas por docentes y compañeros, fomentando un entorno colaborativo que apoya el aprendizaje social. Este flujo permite a los estudiantes visualizar posts relevantes sobre temas de programación, desafíos o consejos, y participar activamente mediante comentarios, lo que refuerza la comunidad educativa y facilita el intercambio de conocimientos. Esta funcionalidad está diseñada para mejorar la motivación y el compromiso estudiantil, integrándose con las épicas de retención y aprobación al promover interacciones que complementan las actividades de clase tradicionales.
+
+![FLOW 3 - 1](<./assets/user-flows/FLOW 3 - 1.png>)
+
+**Flow 3: Participación en Actividades de Juego (Parte 1)**  
+Este flujo describe el proceso de unión a una actividad de juego (conocida como "class activity") en Level Up Journey, donde los estudiantes escanean un código QR o ingresan un código de invitación proporcionado por el docente. Tras unirse, configuran un nickname personalizado, pasan por pantallas de carga que preparan la experiencia, y esperan a que el docente inicie el juego. Este diseño gamificado busca aumentar la participación activa en cursos de programación iniciales, alineándose con los objetivos de la startup para combatir la deserción estudiantil mediante experiencias interactivas y competitivas.
+
+![FLOW 3 - 2](<./assets/user-flows/FLOW 3 -2.png>)
+
+**Flow 3: Participación en Actividades de Juego (Parte 2)**  
+Continuando el flujo, una vez iniciado el juego, los estudiantes responden preguntas de manera interactiva, recibiendo feedback inmediato sobre respuestas correctas o incorrectas, lo que refuerza el aprendizaje práctico en lenguajes como Python o JavaScript. Al finalizar, se visualiza un podio que destaca a los top 5 estudiantes, promoviendo un sentido de logro y competencia saludable. Esta mecánica gamificada integra elementos de refuerzo académico, apoyando la retención y aprobación al hacer el estudio más engaging y motivador.
+
+![FLOW 3 - 3](<./assets/user-flows/FLOW 3-3.png>)
+
+**Flow 3: Participación en Actividades de Juego (Parte 3)**  
+La conclusión del flujo muestra la transición a la pantalla final, donde los estudiantes ven los resultados del podio, fomentando la reflexión sobre el desempeño y el aprendizaje adquirido. Este enfoque visual y competitivo está optimizado para dispositivos móviles, asegurando accesibilidad y usabilidad, y contribuye directamente a los objetivos de bienestar social y educación de la startup al integrar diversión con contenido pedagógico.
+
+![FLOW 4](<./assets/user-flows/FLOW 4.png>)
+
+**Flow 4: Creación y Gestión de Publicaciones por Docentes en Comunidad**  
+Los docentes en Level Up Journey acceden a la Comunidad y seleccionan la opción de "Agregar" para crear nuevas publicaciones, que inicialmente entran en estado de borrador para permitir revisiones. Una vez listos, publican el post, haciéndolo visible para estudiantes y colegas. Posteriormente, pueden gestionar opciones como editar o eliminar, facilitando la moderación del contenido educativo. Este flujo empodera a los docentes como líderes en la plataforma, alineándose con la visión de la startup de fomentar equipos multidisciplinarios para soluciones digitales orientadas a la educación.
+
+![FLOW 5](<./assets/user-flows/FLOW 5.png>)
+
+**Flow 5: Biblioteca y Creación de Juegos por Docentes**  
+En la Biblioteca de Level Up Journey, los docentes visualizan todas sus actividades de juego (o "class activities"), incluyendo aquellas eliminadas para referencia histórica. Desde aquí, pueden crear nuevos juegos, agregando preguntas y seleccionando formatos como quiz o verdadero/falso, adaptados a temas de programación. Esta funcionalidad permite a los docentes diseñar contenido personalizado, apoyando la diferenciación pedagógica y contribuyendo a la mejora de tasas de aprobación mediante herramientas interactivas y flexibles.
+
+![FLOW 6](<./assets/user-flows/FLOW 6.png>)
+
+**Flow 6: Hosting y Control de Juegos por Docentes**  
+Los docentes inician el lanzamiento de un juego desde la Biblioteca, asumiendo el rol de anfitrión. Esperan a que los estudiantes se unan, inician la actividad, controlan el avance de preguntas y, al final, visualizan el podio de resultados. Este flujo otorga control total al docente, facilitando sesiones de clase dinámicas y evaluativas, y se integra con los objetivos de la startup para desarrollar soluciones que combinen educación con gamificación, promoviendo un aprendizaje efectivo y retención estudiantil.
+
+
+
 #### 3.1.4.5. Mobile Applications Prototyping
