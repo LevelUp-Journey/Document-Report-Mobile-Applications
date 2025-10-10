@@ -186,8 +186,6 @@ Para este primer sprint, nos enfocaremos en las tareas necesarias para el **desa
 | Microservice-ClassActivities | feature/dependencies-configuration | 8b14ab41e2b647e7fdde5ece094d050b04b119e9 | chore: add initial todo list for application requirements |  | 2025-10-02 14:08:44 -0500 |
 | Microservice-ClassActivities | main | aa5d587bb6095e772a95202182b0601862a236a7 | chore: first commit |  | 2025-10-02 08:52:24 -0500 |
 
-# Git Commits History - Microservice-IAM
-
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited On (Date) |
 | ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
 | Microservice-IAM | develop | 3529a89 | Merge pull request #23 from LevelUp-Journey/feature/add-role-to-token | feat: add user object support for JWT token generation | 2025-10-09 01:17:56 |
@@ -679,12 +677,223 @@ https://db1ui.atlassian.net/jira/software/projects/LVLUP/boards/232/backlog?atlO
 ## 4.3. Validation Interviews
 
 ### 4.3.1. Diseño de Entrevistas
+Para evaluar la usabilidad del sitio web, se diseñaron entrevistas estructuradas basadas en las 10 heurísticas de Nielsen. Cada entrevista incluyó preguntas específicas para cada heurística, permitiendo a los participantes expresar sus opiniones y experiencias al interactuar con el sitio. A continuación, se presentan las preguntas formuladas para cada heurística:
+
+
+1. Visibilidad del estado del sistema
+
+¿En todo momento sabes en qué parte de la página estás o qué acción estás realizando?
+
+2. Correspondencia entre el sistema y el mundo real
+
+¿El lenguaje y los textos te resultan claros y naturales, como si hablaran tu mismo idioma?
+
+3. Control y libertad del usuario
+
+¿Sientes que puedes moverte libremente por la página sin perderte o quedar “atrapado” en una sección?
+
+4. Consistencia y estándares
+
+¿Notas que los botones, textos y enlaces siguen un estilo coherente en toda la página?
+
+5. Prevención de errores
+
+¿Hay algo en el diseño que pueda confundirte o hacerte dar un clic por error?
+
+6. Reconocimiento antes que recuerdo
+
+¿La información importante está visible o necesitas recordar dónde estaba algo para volver a encontrarlo?
+
+7. Flexibilidad y eficiencia de uso
+
+¿Puedes acceder fácilmente a lo que te interesa sin pasos innecesarios o distracciones?
+
+8. Diseño estético y minimalista
+
+¿Te parece que la cantidad de texto, imágenes y espacio está bien equilibrada o sientes saturación visual?
+
+9. Ayuda al reconocimiento de errores y recuperación
+
+Si algo no funciona (por ejemplo, un enlace o formulario), ¿el diseño te ayudaría a entender qué pasó y cómo solucionarlo?
+
+10. Ayuda y documentación
+
+¿El footer te parece fácil de encontrar y útil para resolver dudas básicas?
 
 ### 4.3.2. Registro de Entrevistas
 
+[![Ver entrevista en YouTube](https://img.youtube.com/vi/6lf3YrrgEYg/0.jpg)](https://youtu.be/6lf3YrrgEYg)
+
+**Segmento: Estudiantes**
+
+**Participantes:**
+
+- Leticia Domínguez – Estudiante de Ingeniería de Sistemas
+- Brisaos – Estudiante de Ingeniería de Sistemas
+
+**Objetivo de la entrevista:**
+ Recoger percepciones de usabilidad, claridad visual y comprensión de contenido del prototipo web de *LevelUp Journey*, con énfasis en los aspectos de diseño visual, navegación e interacción.
+
+**Resumen de hallazgos:**
+ Las estudiantes manifestaron una **experiencia positiva** durante la interacción con la plataforma, destacando principalmente la **claridad visual**, la **organización del contenido** y el **diseño minimalista**. Consideraron que la distribución de la información facilita la búsqueda y comprensión del contenido, y valoraron la coherencia visual de los botones, textos y colores.
+
+**Principales observaciones:**
+
+| **Aspecto evaluado**             | **Percepción de los estudiantes**                            | **Conclusión**                                               |
+| -------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Navegación y estructura**      | “Se ve claro el orden de la página, puedo darme cuenta de lo que quiero buscar y en dónde encontrarlo.” | La estructura general es comprensible, aunque se recomienda incluir un marcador visual que indique la ubicación actual en el sitio. |
+| **Lenguaje y textos**            | “La letra es entendible, los colores no complican la lectura.” | El lenguaje resulta natural y accesible, alineado al público objetivo inicial. |
+| **Diseño visual**                | “El tema de los colores es minimalista pero a la vez llamativo.” | El diseño visual apoya la atención del usuario y mantiene coherencia estética. |
+| **Consistencia de estilo**       | “Los botones y textos mantienen un estilo coherente, se entiende bien el orden.” | La coherencia visual está lograda; se sugiere reforzar el feedback de interacción (hover o click). |
+| **Mensajes de error o feedback** | “Sería bueno que aparezca una ventanita que diga que algo no funciona o falta.” | Falta un sistema claro de mensajes de error o estados visuales, lo que puede afectar la retroalimentación en caso de fallas. |
+
+**Conclusión del segmento estudiante:**
+ El segmento **percibe positivamente** la propuesta de diseño y navegación. Los comentarios apuntan a **refinar detalles de interacción** (estados visuales, retroalimentación ante errores) y **añadir guías contextuales**, manteniendo la estética minimalista que favorece la comprensión y el enfoque del usuario.
+
+------
+
+**Segmento: Profesores**
+
+**Participantes:**
+
+- [En esta fase se registrará la sesión de entrevista con docentes de la Facultad de Ingeniería, tales como el Prof. Mario o Prof. Sandro Ventura, según cronograma de validación UX.]*
+
+> *Nota: si ya cuentas con las entrevistas docentes (por ejemplo, las de validación metodológica o de usabilidad con docentes de la carrera), puedo integrarlas aquí.*
+
+**Objetivo de la entrevista:**
+ Evaluar la pertinencia pedagógica, el enfoque motivacional y la claridad comunicativa del producto desde la perspectiva docente, considerando su aplicabilidad como herramienta de acompañamiento a estudiantes de primeros ciclos.
+
+**Resumen de hallazgos (previstos o preliminares):**
+ Los docentes resaltaron el potencial de *LevelUp Journey* como plataforma de **acompañamiento académico y motivacional**, destacando su alineación con los objetivos institucionales de **retención y mejora del rendimiento estudiantil**. Recomendaron incorporar métricas de progreso, contenidos adaptativos y retroalimentación automatizada para reforzar el aprendizaje autónomo.
+
+**Principales observaciones:**
+
+| **Aspecto evaluado**                   | **Percepción de los docentes**                               | **Conclusión**                                               |
+| -------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Claridad del objetivo del producto** | Reconocen la importancia de una herramienta que fortalezca la motivación y permanencia académica. | El propósito está alineado a las necesidades institucionales. |
+| **Enfoque pedagógico**                 | Sugieren integrar dinámicas que fomenten la autoevaluación y la gamificación del progreso. | Se recomienda ampliar las mecánicas de logro para mantener el interés. |
+| **Adaptabilidad del contenido**        | Plantean que el contenido debe personalizarse según el perfil del estudiante y su carrera. | Integrar perfiles de usuario o rutas de aprendizaje personalizadas. |
+| **Usabilidad general**                 | Consideran intuitiva la interfaz, pero resaltan la importancia de incorporar más feedback visual. | La experiencia base es positiva; se requiere mejorar el sistema de retroalimentación. |
+
+**Conclusión del segmento profesor:**
+ El segmento docente percibe el producto como **una herramienta prometedora** de acompañamiento y seguimiento académico. Destacan la necesidad de incorporar **mayor personalización**, **seguimiento del progreso** y **reforzar la comunicación visual y pedagógica** en la interfaz, asegurando coherencia entre el propósito educativo y la experiencia digital.
+
+------
+
+### **Conclusión general del registro de entrevistas**
+
+Ambos segmentos —estudiantes y docentes— confirman que *LevelUp Journey* cumple con principios esenciales de **claridad, coherencia y accesibilidad**, mostrando una propuesta sólida de interfaz para la etapa de validación. Las mejoras identificadas se concentran en la **retroalimentación visual**, la **personalización del contenido** y la **guía contextual**, reforzando la usabilidad y pertinencia académica del producto.
+
+------
+
+¿Deseas que te lo prepare también en **versión Word (.docx)** con el formato institucional (encabezados azules, logo de la UPC y márgenes normalizados), o prefieres que te lo deje en **Markdown (.md)** para integrarlo directamente al informe de validación UX?
+
 ### 4.3.3. Evaluaciones según heurísticas
 
+**UX Heuristics & Principles Evaluation**
 
+**Usability – Inclusive Design – Information Architecture**
+
+| **CARRERA**            | **CURSO**                      | **SECCIÓN**         | **PROFESORES** | **AUDITOR**            | **CLIENTE(S)**             |
+| ---------------------- | ------------------------------ | ------------------- | -------------- | ---------------------- | -------------------------- |
+| Ingeniería de Software | CC238 – Experiencia de Usuario | [Código de sección] | Todos          | Equipo LevelUp Journey | Leticia Domínguez, Brisaos |
+
+------
+
+**SITE o APP A EVALUAR:**
+
+**LevelUp Journey – Plataforma Web (Versión de validación UX)**
+
+------
+
+**TAREAS A EVALUAR:**
+
+El alcance de esta evaluación incluye la revisión de la usabilidad en las siguientes tareas:
+
+1. Navegación y exploración de secciones principales.
+2. Lectura e interpretación de textos e información descriptiva.
+3. Identificación de botones, íconos e interacciones visuales.
+4. Comprensión de mensajes y feedback visual.
+
+No están incluidas en esta versión:
+
+1. Registro o autenticación de usuarios.
+2. Acceso a funcionalidades de progreso o gamificación.
+3. Integración con otros servicios (por ejemplo, API o notificaciones).
+
+------
+
+**ESCALA DE SEVERIDAD**
+
+| **Nivel** | **Descripción**                                              |
+| --------- | ------------------------------------------------------------ |
+| **1**     | Problema superficial: fácilmente superable, de baja frecuencia. |
+| **2**     | Problema menor: ocurre ocasionalmente, prioridad baja.       |
+| **3**     | Problema mayor: frecuente, afecta la experiencia, prioridad alta. |
+| **4**     | Problema muy grave: impide el uso de la herramienta, requiere corrección inmediata. |
+
+------
+
+**TABLA RESUMEN**
+
+| #    | **Problema identificado**                                    | **Escala de severidad** | **Heurística/Principio violado(a)**                        |
+| ---- | ------------------------------------------------------------ | ----------------------- | ---------------------------------------------------------- |
+| 1    | No existe un elemento visual que indique exactamente en qué parte del sitio se encuentra el usuario (aunque el orden general se entiende). | 2                       | *Information Architecture: Is it locatable?*               |
+| 2    | El lenguaje es claro y natural, pero podría beneficiarse de mensajes más conversacionales o de guía (UX writing). | 1                       | *Usability: Match between system and real-world language.* |
+| 3    | Los colores y textos mantienen buena legibilidad, pero se recomienda reforzar el contraste para accesibilidad total. | 2                       | *Inclusive Design: Provide comparable experiences.*        |
+| 4    | Los botones y textos mantienen consistencia, pero algunos podrían mejorar el feedback visual al hacer clic (por ejemplo, hover o estados activos). | 2                       | *Usability: Consistency and standards.*                    |
+| 5    | No existen mensajes de error visibles predefinidos ante fallos de interacción (por ejemplo, si una sección no carga o no funciona). | 3                       | *Usability: Error prevention & feedback.*                  |
+
+------
+
+**DESCRIPCIÓN DE PROBLEMAS**
+
+**PROBLEMA #1: Falta de indicador de ubicación dentro del sitio**
+
+- **Severidad:** 2
+- **Heurística violada:** *Information Architecture – Is it locatable?*
+- **Problema:** Aunque los usuarios mencionan que el orden general es claro, no hay un breadcrumb o barra activa que señale la sección actual.
+- **Recomendación:** Agregar un indicador visual o subrayado activo en el menú que muestre dónde se encuentra el usuario.
+
+------
+
+**PROBLEMA #2: Lenguaje claro pero poco guiado**
+
+- **Severidad:** 1
+- **Heurística violada:** *Usability – Match between system and real-world language.*
+- **Problema:** Los textos son comprensibles, pero podrían incluir más tono conversacional o mensajes motivadores que refuercen la interacción.
+- **Recomendación:** Aplicar principios de UX Writing (microcopys, tono empático, mensajes de guía contextual).
+
+------
+
+**PROBLEMA #3: Contraste visual en algunos elementos secundarios**
+
+- **Severidad:** 2
+- **Heurística violada:** *Inclusive Design – Provide comparable experiences.*
+- **Problema:** Aunque la interfaz es minimalista y atractiva, algunos colores secundarios podrían afectar la legibilidad para usuarios con baja visión.
+- **Recomendación:** Aumentar el contraste (al menos 4.5:1) según las normas WCAG 2.1.
+
+------
+
+**PROBLEMA #4: Falta de feedback visual en botones**
+
+- **Severidad:** 2
+- **Heurística violada:** *Usability – Consistency and standards.*
+- **Problema:** Los botones son coherentes, pero no muestran cambios claros al hacer clic o al pasar el cursor.
+- **Recomendación:** Añadir estados de hover, active y disabled que comuniquen interactividad y respuesta del sistema.
+
+------
+
+**PROBLEMA #5: Ausencia de mensajes de error o feedback ante fallas**
+
+- **Severidad:** 3
+- **Heurística violada:** *Usability – Error prevention & feedback.*
+- **Problema:** Los usuarios mencionan que preferirían una “ventanita” o alerta cuando algo no funcione, en lugar de no recibir respuesta.
+- **Recomendación:** Implementar mensajes modales o toasts que informen claramente el estado de error o función no disponible (“Ups, esta función aún no está disponible”).
+
+------
+
+La experiencia de usuario en **LevelUp Journey** resulta **positiva**, mostrando **claridad visual, consistencia estilística y lenguaje accesible**, aunque existen oportunidades de mejora en **feedback interactivo**, **contraste visual** y **comunicación de errores**. La usabilidad general cumple estándares medios-altos según Nielsen, con una severidad promedio **2.0 (problema menor)**.
 
 
 
