@@ -1263,8 +1263,431 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   </tr>
 </table>
 
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>PROF-US-001</td>
+    <td>Usuario</td>
+    <td>Alta</td>
+    <td>Como usuario, quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Crear perfil con username y rank inicial</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como usuario, quiero crear mi perfil con un <em>username</em> y un <em>rank</em> inicial para participar en la gamificación y aparecer en los rankings de la plataforma.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: creación de perfil</strong></li>
+        <li>Dado que estoy autenticado y proporciono nombre, apellido y URL opcional</li>
+        <li>Cuando registro mi perfil</li>
+        <li>Entonces el sistema crea el perfil y genera un <strong>Username</strong> en formato <code>USER#########</code></li>
+        <li>Y asigna el nivel <strong>Bronze</strong> con <strong>1000 puntos</strong></li>
+        <li>Y registra el evento en el historial de cambios de puntuación</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>PROF-US-002</td>
+    <td>Usuario</td>
+    <td>Alta</td>
+    <td>Como usuario, quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Consultar perfil por ID o Username</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como usuario, quiero consultar mi perfil por ID o <em>username</em> para ver mi información actual registrada en la plataforma.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: consulta de perfil</strong></li>
+        <li>Dado un perfil existente</li>
+        <li>Cuando consulto por su ID o por su <em>Username</em></li>
+        <li>Entonces obtengo el nombre completo, el <strong>Username</strong> y la URL de perfil si existe</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>PROF-US-003</td>
+    <td>Docente o Administrador</td>
+    <td>Alta</td>
+    <td>Como usuario, quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Listar perfiles</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como docente o administrador, quiero listar los perfiles de los usuarios para poder administrarlos desde la plataforma.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: listado de perfiles</strong></li>
+        <li>Dado que poseo permisos para listar perfiles</li>
+        <li>Cuando consulto el listado general</li>
+        <li>Entonces recibo <strong>id</strong>, <strong>nombre completo</strong>, <strong>Username</strong> y <strong>URL</strong> de cada perfil</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>PROF-US-004</td>
+    <td>Docente o Administrador</td>
+    <td>Alta</td>
+    <td>Como administrador o docente, quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Seed de niveles competitivos</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como docente o administrador, quiero inicializar los niveles competitivos para habilitar el ranking general de la plataforma.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: inicialización de niveles</strong></li>
+        <li>Dado que el sistema no tiene niveles registrados</li>
+        <li>Cuando ejecuto la operación de <em>seed</em></li>
+        <li>Entonces se crean los 7 niveles (<strong>Bronze → Grandmaster</strong>) con rangos establecidos</li>
+        <li>Y si ya existen, la operación no duplica registros</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>PROF-US-005</td>
+    <td>Usuario</td>
+    <td>Alta</td>
+    <td>Como administrador o docente, quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Consultar niveles</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como usuario, quiero consultar los niveles competitivos para conocer sus rangos y requisitos, entendiendo mi progreso dentro del sistema de gamificación.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: catálogo de niveles</strong></li>
+        <li>Dado niveles competitivos existentes</li>
+        <li>Cuando los consulto todos o por nombre</li>
+        <li>Entonces recibo su <strong>nombre</strong>, <strong>rango de puntuación</strong> y <strong>orden</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>PROF-US-006</td>
+    <td>Docente o Administrador</td>
+    <td>Alta</td>
+    <td>Como administrador o docente, quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Agregar puntos y evaluar ascenso</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como docente o administrador, quiero agregar puntos y evaluar el ascenso de los usuarios para reflejar sus logros y avances dentro del sistema de gamificación.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: incremento de puntuación</strong></li>
+        <li>Dado un perfil con puntaje actual y total acumulado</li>
+        <li>Cuando agrego <strong>N puntos</strong> con una razón y referencia opcional</li>
+        <li>Entonces el puntaje actual y el total acumulado aumentan en <strong>N</strong></li>
+        <li>Y se registra un evento de auditoría con el puntaje anterior/nuevo y el tipo de cambio</li>
+        <li>Y si el nuevo puntaje cruza el umbral de nivel, el nivel competitivo se actualiza</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>PROF-US-007</td>
+    <td>Usuario</td>
+    <td>Alta</td>
+    <td>Como usuario, quiero consultar mi puntuación/nivel e historial para seguir mi progreso y auditar cambios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Consultar nivel y puntuación actual</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como usuario, quiero consultar mi puntuación y nivel actuales para conocer mi estado competitivo dentro de la plataforma y evaluar mi progreso.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: estado competitivo</strong></li>
+        <li>Dado un perfil existente</li>
+        <li>Cuando consulto su estado competitivo</li>
+        <li>Entonces obtengo el <strong>ID del perfil</strong>, el <strong>nivel actual</strong> (ID y nombre), la <strong>puntuación vigente</strong> y la <strong>total acumulada</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>PROF-US-008</td>
+    <td>Usuario o Administrador</td>
+    <td>Alta</td>
+    <td>Como usuario, quiero consultar mi puntuación/nivel e historial para seguir mi progreso y auditar cambios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Ver historial de cambios de puntuación</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como usuario o administrador, quiero ver el historial de puntuación para auditar los cambios y mantener la trazabilidad del progreso dentro del sistema.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: auditoría de puntajes</strong></li>
+        <li>Dado un perfil con eventos de puntuación</li>
+        <li>Cuando consulto el historial</li>
+        <li>Entonces veo la <strong>fecha/hora</strong>, el <strong>tipo de cambio</strong>, los <strong>puntos</strong>, el <strong>puntaje anterior/nuevo</strong>, la <strong>razón</strong> y la <strong>referencia externa</strong> por cada evento</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>PROF-US-009</td>
+    <td>Usuario</td>
+    <td>Alta</td>
+    <td>Como comunidad, quiero un leaderboard con límites para reconocer a los mejores y fomentar competencia sana.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Leaderboard con límite y orden</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como usuario, quiero ver el leaderboard para conocer a los mejores participantes y motivarme a mejorar mi rendimiento en la plataforma.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: top por puntuación</strong></li>
+        <li>Dado perfiles con distintas puntuaciones</li>
+        <li>Cuando solicito el leaderboard con límite <strong>L</strong> (por defecto 10, máximo 100)</li>
+        <li>Entonces recibo la lista ordenada de mayor a menor puntuación</li>
+        <li>Y cada entrada muestra el <strong>ID del perfil</strong>, el <strong>nombre del nivel</strong> y la <strong>puntuación</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>PROF-US-010</td>
+    <td>Docente o Administrador</td>
+    <td>Alta</td>
+    <td>Como administrador o docente, quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Reasignación automática de nivel</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como docente o administrador, quiero que el sistema reasigne el nivel automáticamente para mantener la coherencia con los rangos establecidos de cada nivel competitivo.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: cruce de umbral</strong></li>
+        <li>Dado un perfil con nivel actual y puntaje cercano al umbral superior</li>
+        <li>Cuando recibe puntos que superan el rango del nivel actual</li>
+        <li>Entonces el sistema reasigna el nivel competitivo correspondiente según los rangos definidos</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 
 
