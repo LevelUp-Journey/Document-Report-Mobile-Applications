@@ -910,6 +910,240 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   </tr>
 </table>
 
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-018</td>
+    <td>Student</td>
+    <td>Alta</td>
+    <td>Como Student, quiero consultar el estado de una sesión en vivo para conocer su progreso.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Consultar sesión</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Student, deseo consultar en tiempo real el estado de una sesión activa para conocer su progreso, la pregunta actual y cuántos participantes están conectados, permitiéndome seguir el ritmo del quiz.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: ver estado</strong></li>
+        <li>Dado un <strong>código de sesión válido</strong></li>
+        <li>Cuando consulto la sesión</li>
+        <li>Entonces el sistema responde con el <strong>estado actual</strong> de la sesión, el <strong>índice de pregunta activa</strong> y los <strong>participantes conectados</strong></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Story Points</th>
+  </tr>
+  <tr>
+    <td colspan="4"><strong>2 (Fibonacci)</strong></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-019</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero retirar a un participante que incumpla normas para mantener el orden.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Expulsar participante</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo expulsar a un participante de una sesión en vivo que incumpla las normas o cause interrupciones, para mantener el orden y la continuidad del quiz.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: expulsión</strong></li>
+        <li>Dado que soy un <strong>Teacher autenticado</strong></li>
+        <li>Y el participante está <strong>activo</strong> en la sesión</li>
+        <li>Cuando ejecuto la acción de expulsión</li>
+        <li>Entonces el sistema lo marca como <strong>fuera de la sesión</strong></li>
+        <li>Y emite el evento <strong>ParticipantKickedEvent</strong></li>
+        <br>
+        <li>Y si el participante sale voluntariamente</li>
+        <li>Entonces el sistema emite <strong>ParticipantLeftEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Story Points</th>
+  </tr>
+  <tr>
+    <td colspan="4"><strong>3 (Fibonacci)</strong></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-020</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero generar un reporte de una sesión finalizada para analizar resultados.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Generar reporte</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo generar un reporte consolidado de la sesión finalizada para analizar los resultados y la participación de los estudiantes.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: generar o reutilizar</strong></li>
+        <li>Dado que la sesión está <strong>finalizada</strong></li>
+        <li>Cuando solicito generar el reporte</li>
+        <li>Entonces, si no existe, se <strong>crea</strong> y se devuelve su <strong>ID</strong></li>
+        <li>Y si ya existe, se <strong>devuelve el reporte existente</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-021</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero consultar un reporte para revisar resultados por participante y pregunta.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Consultar reporte</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo ver el contenido de un reporte generado para revisar el desempeño por participante y las estadísticas por pregunta.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: ver reporte</strong></li>
+        <li>Dado un <strong>ID de reporte</strong> válido</li>
+        <li>Cuando consulto el reporte</li>
+        <li>Entonces recibo el <strong>resumen</strong> general, los <strong>resultados por participante</strong> y las <strong>estadísticas por pregunta</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-022</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero exportar un reporte a Excel o CSV para compartir y analizar.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Exportar reporte</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo exportar el reporte consolidado de una sesión en formato <strong>Excel (.xlsx)</strong> o <strong>CSV</strong> para compartirlo con otros docentes o analizarlo externamente.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: exportar formatos</strong></li>
+        <li>Dado un <strong>ID de reporte válido</strong></li>
+        <li>Cuando elijo el formato de exportación <strong>EXCEL</strong> o <strong>CSV</strong></li>
+        <li>Entonces el sistema genera el archivo con el contenido del <strong>SessionReport</strong></li>
+        <li>Y permite su <strong>descarga directa</strong> o acceso mediante enlace temporal seguro</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Story Points</th>
+  </tr>
+  <tr>
+    <td colspan="4"><strong>3 (Fibonacci)</strong></td>
+  </tr>
+</table>
 
 <table>
   <tr>
