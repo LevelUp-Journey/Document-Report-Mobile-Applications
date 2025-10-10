@@ -161,29 +161,29 @@ Esta sección define la identidad visual y los patrones de diseño que aseguran 
 **Versionado y documentación del Design System:**
 - Documentación este documento como guía de estilos
 - Versionado control de versiones con Git
-- Consistencia revisiones regulares de implementació
+- Consistencia revisiones regulares de implementación
 
-  ![1c05e5c8-f479-4e5f-815c-d44a0104caae3](<./assets/Components/1c05e5c8-f479-4e5f-815c-d44a0104caae 3.svg>)
+  ![1c05e5c8-f479-4e5f-815c-d44a0104caae 3.svg](assets/Components/1c05e5c8-f479-4e5f-815c-d44a0104caae%203.svg)
   ![7e4f1287-0466-43a9-b7ed-d1315976c28f](./assets/Components/7e4f1287-0466-43a9-b7ed-d1315976c28f.svg)
   ![b2d19ef2-33a7-469c-a13f-7fa3b16bcaec](./assets/Components/b2d19ef2-33a7-469c-a13f-7fa3b16bcaec.svg)
   ![Background](./assets/Components/Background.svg)
-  ![Button10](<./assets/Components/Button 10.svg>)
-  ![Button11](<./assets/Components/Button 11.svg>)
-  ![Button12](<./assets/Components/Button 12.svg>)
-  ![Button13](<./assets/Components/Button 13.svg>)
-  ![Button14](<./assets/Components/Button 14.svg>)
-  ![Button15](<./assets/Components/Button 15.svg>)
-  ![Button16](<./assets/Components/Button 16.svg>)
-  ![Button4](<./assets/Components/Button4.svg>)
-  ![CardRecent](<./assets/Components/Card Recent.svg>)
-  ![Component1](<./assets/Components/Component 1.svg>)
+![Button 10](assets/Components/Button%2010.svg)
+  ![Button 11.svg](assets/Components/Button%2011.svg)
+![Button 12.svg](assets/Components/Button%2012.svg)
+![Button 13.svg](assets/Components/Button%2013.svg)
+![Button 14.svg](assets/Components/Button%2014.svg)
+![Button 15.svg](assets/Components/Button%2015.svg)
+![Button 16.svg](assets/Components/Button%2016.svg)
+  ![Button4.svg](assets/Components/Button4.svg)
+  ![Card Recent.svg](assets/Components/Card%20Recent.svg)
+![Component 1.svg](assets/Components/Component%201.svg)
   ![Content](./assets/Components/Content.svg)
-  ![Frame1321317519](<./assets/Components/Frame 1321317519.svg>)
-  ![Frame1321317520](<./assets/Components/Frame 1321317520.svg>)
-  ![Frame1321317521](<./assets/Components/Frame 1321317521.svg>)
-  ![Frame1321317522](<./assets/Components/Frame 1321317522.svg>)
-  ![Frame1321317523](<./assets/Components/Frame 1321317523.svg>)
-  ![Group60](<./assets/Components/Group 60.svg>)
+  ![Frame 1321317519.svg](assets/Components/Frame%201321317519.svg)
+![Frame 1321317520.svg](assets/Components/Frame%201321317520.svg)
+![Frame 1321317521.svg](assets/Components/Frame%201321317521.svg)
+![Frame 1321317522.svg](assets/Components/Frame%201321317522.svg)
+![Frame 1321317523.svg](assets/Components/Frame%201321317523.svg)
+  ![Group 60.svg](assets/Components/Group%2060.svg)
   ![State-layer-1](./assets/Components/State-layer-1.svg)
   ![state-layer](./assets/Components/state-layer.svg)
   ![State-layer](./assets/Components/State-layer.svg)
@@ -192,35 +192,99 @@ Esta sección define la identidad visual y los patrones de diseño que aseguran 
 
 #### 3.1.2.1. Organization Systems
 
+El contenido de **Level Up Journey** se organiza bajo un esquema jerárquico y temático, priorizando la claridad en la navegación tanto para estudiantes como docentes.  
+En la **Landing Page**, la jerarquía visual guía la atención desde el *hero* principal (mensaje motivacional y CTA) hacia secciones secundarias como características, beneficios y testimonios.  
+
+En la **aplicación móvil**, la organización se orienta a las tareas del usuario (*task-oriented design*) mediante módulos:
+
+- **Home:** Accesos rápidos.
+- **Comunidad:** interacción social y publicaciones.
+- **Actividades:** retos y juegos educativos.
+- **Perfil:** Datos personales.
+- **Ajustes:** Preferencias de usuario.
+
+Los esquemas de categorización se basan en tópicos (lenguajes de programación, retos, docentes). 
+Esta estructura favorece la accesibilidad y evita sobrecarga cognitiva.
 
 
 #### 3.1.2.2. Labelling Systems
 
-- Landing Page
+El **sistema de etiquetado** en *Level Up Journey* asegura consistencia semántica y accesibilidad en todos los entornos.  
+Se implementa bajo una estructura jerárquica, multilingüe y accesible, adaptada tanto a la **Landing Page** como a la **aplicación móvil**.
 
-El sistema de etiquetado se implementa mediante atributos `data-i18n` que permiten la internacionalización dinámica del contenido. Cada elemento textual incluye un identificador único que referencia las claves en los archivos JSON de traducción (`es.json`, `en.json`). El sistema se activa mediante JavaScript que escanea el DOM en busca de elementos con `data-i18n`, recupera el valor correspondiente según el idioma seleccionado y actualiza el contenido en tiempo real. Los identificadores siguen una estructura jerárquica (ejemplo: `section1.title`, `section2.card1.description`) que facilita la organización y mantenimiento de las traducciones. Para elementos de formulario, se emplean atributos `placeholder` dinámicos que se actualizan junto con el cambio de idioma. Los botones incluyen atributos `aria-label` para accesibilidad, proporcionando descripciones alternativas en el idioma activo. El sistema de etiquetado asegura consistencia visual mediante clases CSS que mantienen el estilo tipográfico independientemente del contenido dinámico.
+En la **Landing Page**, las etiquetas se gestionan mediante el atributo `data-i18n`, que permite la internacionalización dinámica del contenido.  
+Cada texto se asocia a un identificador único vinculado con las claves de traducción en los archivos JSON (`es.json`, `en.json`).  
+Un script en **JavaScript** escanea el DOM, obtiene los valores según el idioma seleccionado y actualiza los textos en tiempo real, sin recargar la página.
 
-- Aplicación Móvil
+Los identificadores siguen una estructura jerárquica y semántica —por ejemplo:  
+`section1.title`, `section2.card1.description`— lo que facilita el mantenimiento y ampliación del sistema de traducción.  
+Los elementos de formularios utilizan *placeholders* dinámicos, mientras que los botones y enlaces incluyen atributos `aria-label` que describen su función para usuarios con lectores de pantalla.
+
+En la **aplicación móvil**, las etiquetas se definen en los archivos de recursos nativos:  
+`strings.xml` (Android) y `Localizable.strings` (iOS).  
+Cada texto visible en la interfaz se representa mediante una clave descriptiva (`login_title`, `game_button_start`, `profile_label_email`), lo que garantiza coherencia y fácil localización.  
+El idioma del sistema del dispositivo determina automáticamente qué conjunto de recursos se carga, manteniendo la experiencia homogénea entre plataformas.
+
 
 #### 3.1.2.3. SEO Tags and Meta Tags
 
-- Landing Page
+Los **metadatos y etiquetas SEO** se configuran con el propósito de optimizar la visibilidad de *Level Up Journey* en motores de búsqueda y mejorar la accesibilidad técnica del sitio web.
 
-Los metadatos SEO se configuran en el elemento `<head>` del documento HTML principal. El título de página se establece como "LevelUp Journey" mediante la etiqueta `<title>`, optimizado para motores de búsqueda con palabras clave relevantes al producto educativo. El atributo `lang` se define como "es" por defecto, cambiando dinámicamente según la selección de idioma del usuario. El favicon se implementa mediante `<link rel="icon">` apuntando a `/level-up-cat-happy.svg`, proporcionando identificación visual consistente en pestañas del navegador. La etiqueta `<meta name="viewport">` con `content="width=device-width"` asegura renderizado responsivo en dispositivos móviles. El generador de contenido se identifica mediante `<meta name="generator">` con el valor de `Astro.generator`, facilitando el rastreo técnico. La codificación de caracteres se establece como UTF-8 mediante `<meta charset="utf-8">`, garantizando compatibilidad con caracteres especiales en múltiples idiomas. No se incluyen meta descriptions explícitas, lo que representa una oportunidad de optimización futura para mejorar el posicionamiento en resultados de búsqueda.
+En la **Landing Page**, los elementos principales incluyen:
 
-- Aplicación Móvil
+```html
+<title>Level Up Journey | Aprende Programando Jugando</title>
+
+<meta name="description" content="Plataforma educativa gamificada que combina programación, retos y comunidad para estudiantes y docentes.">
+
+<meta name="keywords" content="educación digital, programación, gamificación, aprendizaje interactivo">
+
+<meta name="author" content="Equipo Level Up Journey">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="/level-up-cat-happy.svg" type="image/svg+xml">
+
+<html lang="es">
+```
+
 
 #### 3.1.2.4. Searching Systems
 
-No se implementara sajnasjbsajnklas
+En la **Landing Page**, no se implementa un motor de búsqueda tradicional debido a su carácter informativo.  
+Sin embargo, se utilizan estrategias que **simulan una búsqueda guiada**, como el desplazamiento suave hacia secciones ancladas mediante botones *CTA* y una estructura jerárquica clara que facilita la orientación del usuario.
+
+En la **aplicación móvil**, el sistema de búsqueda estará diseñado para mejorar la interacción dentro de los módulos **Comunidad**.  
+Incluye:
+
+- Campo de búsqueda global con ícono de lupa.
+- Filtros contextuales (tipo de contenido, autor, fecha).
+
+Este sistema reduce la carga cognitiva del usuario y facilita el acceso rápido a información relevante, optimizando la experiencia de navegación dentro de la app.
+
 
 #### 3.1.2.5. Navigation Systems
 
-- Landing Page
+El **sistema de navegación** de *Level Up Journey* está diseñado para proporcionar una experiencia fluida y accesible tanto en entorno web como móvil, manteniendo coherencia en los patrones de interacción.
 
-El sistema de navegación se estructura mediante un header fijo que permanece visible durante el scroll, implementado con `position: fixed` y `z-index: 50`. El componente principal incluye un enlace de logo que redirige a la página inicial, acompañado de controles de navegación posicionados a la derecha. El selector de idioma se presenta como un menú desplegable activado por clic, mostrando opciones para español ("ES") e inglés ("EN") con estilos que incluyen backdrop-blur y transiciones suaves. El botón de cuenta de usuario se representa mediante un icono SVG con atributo `aria-label` para accesibilidad. Al hacer scroll, el header adquiere una clase `scrolled` que aplica un fondo semi-transparente (`rgba(23, 23, 23, 0.95)`) y efecto de desenfoque (`backdrop-filter: blur(12px)`), mejorando la legibilidad sobre contenido variable. La navegación interna se maneja mediante scroll suave a secciones ancladas, aunque no se implementan enlaces de menú tradicionales. El footer proporciona navegación secundaria con enlaces institucionales organizados en estructura de grid, manteniendo consistencia con la paleta de colores del sistema de diseño.
+En la **Landing Page**, se implementa un **header fijo** (`position: fixed; z-index: 50`) que permanece visible durante el desplazamiento.  
+Este incluye:
 
-- Aplicación Móvil
+- Logotipo que redirige al inicio.
+- Selector de idioma desplegable (ES/EN) con transiciones suaves y efecto *backdrop-blur*.
+- Botón de cuenta de usuario (`account.svg`) con `aria-label` para accesibilidad.
+
+Al hacer *scroll*, el *header* adopta la clase `scrolled`, aplicando un fondo semitransparente (`rgba(23,23,23,0.95)`) y desenfoque de fondo, mejorando la legibilidad sobre el contenido variable.  
+El *footer* presenta enlaces secundarios (privacidad, contacto, redes) organizados en una cuadrícula coherente con el sistema de diseño.
+
+En la **aplicación móvil**, la navegación se basa en una **barra inferior fija** (*bottom navigation bar*) con iconografía minimalista (`home.svg`, `community.svg`, `games.svg`, `profile.svg`).  
+Cada ítem cuenta con un estado activo (`fill-red-600`) y animaciones *ease-in-out* que proporcionan retroalimentación táctil.  
+Las transiciones entre pantallas se gestionan mediante un sistema de **Stack Navigator**, manteniendo el contexto y estado del usuario.
+
+Este enfoque garantiza una experiencia coherente, intuitiva y accesible en todas las plataformas de *Level Up Journey*.
+
 
 ### 3.1.3. Landing Page UI Design
 
@@ -241,42 +305,42 @@ El sistema de navegación se estructura mediante un header fijo que permanece vi
 #### 3.1.4.4. Mobile Applications User Flow Diagrams
 
 
-![FLOW 1-](<./assets/user-flows/FLOW 1-.png>)
+![FLOW 1-.png](assets/user-flows/FLOW%201-.png)
 
 **Flow 1: Autenticación y Gestión de Perfil de Usuario**  
 En el contexto de Level Up Journey, este flujo inicia con el proceso de autenticación, donde los estudiantes y docentes pueden registrarse o iniciar sesión utilizando métodos tradicionales (correo y contraseña) o integraciones con plataformas externas como GitHub y Google, facilitando el acceso rápido y seguro. Una vez autenticados, los usuarios acceden a la página principal de la aplicación móvil, desde donde pueden navegar a su perfil personal para gestionar configuraciones como preferencias de idioma, notificaciones y datos de cuenta. Este flujo asegura una experiencia de onboarding fluida, alineada con los objetivos de retención estudiantil al reducir barreras de entrada y promover la personalización del entorno de aprendizaje.
 
-![FLOW 2](<./assets/user-flows/FLOW 2.png>)
+![FLOW 2.png](assets/user-flows/FLOW%202.png)
 
 **Flow 2: Interacción Comunitaria para Estudiantes**  
 Dentro de la sección Comunidad de Level Up Journey, los estudiantes pueden explorar publicaciones compartidas por docentes y compañeros, fomentando un entorno colaborativo que apoya el aprendizaje social. Este flujo permite a los estudiantes visualizar posts relevantes sobre temas de programación, desafíos o consejos, y participar activamente mediante comentarios, lo que refuerza la comunidad educativa y facilita el intercambio de conocimientos. Esta funcionalidad está diseñada para mejorar la motivación y el compromiso estudiantil, integrándose con las épicas de retención y aprobación al promover interacciones que complementan las actividades de clase tradicionales.
 
-![FLOW 3 - 1](<./assets/user-flows/FLOW 3 - 1.png>)
+![FLOW 3 - 1.png](assets/user-flows/FLOW%203%20-%201.png)
 
 **Flow 3: Participación en Actividades de Juego (Parte 1)**  
 Este flujo describe el proceso de unión a una actividad de juego (conocida como "class activity") en Level Up Journey, donde los estudiantes escanean un código QR o ingresan un código de invitación proporcionado por el docente. Tras unirse, configuran un nickname personalizado, pasan por pantallas de carga que preparan la experiencia, y esperan a que el docente inicie el juego. Este diseño gamificado busca aumentar la participación activa en cursos de programación iniciales, alineándose con los objetivos de la startup para combatir la deserción estudiantil mediante experiencias interactivas y competitivas.
 
-![FLOW 3 - 2](<./assets/user-flows/FLOW 3 -2.png>)
+![FLOW 3 -2.png](assets/user-flows/FLOW%203%20-2.png)
 
 **Flow 3: Participación en Actividades de Juego (Parte 2)**  
 Continuando el flujo, una vez iniciado el juego, los estudiantes responden preguntas de manera interactiva, recibiendo feedback inmediato sobre respuestas correctas o incorrectas, lo que refuerza el aprendizaje práctico en lenguajes como Python o JavaScript. Al finalizar, se visualiza un podio que destaca a los top 5 estudiantes, promoviendo un sentido de logro y competencia saludable. Esta mecánica gamificada integra elementos de refuerzo académico, apoyando la retención y aprobación al hacer el estudio más engaging y motivador.
 
-![FLOW 3 - 3](<./assets/user-flows/FLOW 3-3.png>)
+![FLOW 3-3.png](assets/user-flows/FLOW%203-3.png)
 
 **Flow 3: Participación en Actividades de Juego (Parte 3)**  
 La conclusión del flujo muestra la transición a la pantalla final, donde los estudiantes ven los resultados del podio, fomentando la reflexión sobre el desempeño y el aprendizaje adquirido. Este enfoque visual y competitivo está optimizado para dispositivos móviles, asegurando accesibilidad y usabilidad, y contribuye directamente a los objetivos de bienestar social y educación de la startup al integrar diversión con contenido pedagógico.
 
-![FLOW 4](<./assets/user-flows/FLOW 4.png>)
+![FLOW 4.png](assets/user-flows/FLOW%204.png)
 
 **Flow 4: Creación y Gestión de Publicaciones por Docentes en Comunidad**  
 Los docentes en Level Up Journey acceden a la Comunidad y seleccionan la opción de "Agregar" para crear nuevas publicaciones, que inicialmente entran en estado de borrador para permitir revisiones. Una vez listos, publican el post, haciéndolo visible para estudiantes y colegas. Posteriormente, pueden gestionar opciones como editar o eliminar, facilitando la moderación del contenido educativo. Este flujo empodera a los docentes como líderes en la plataforma, alineándose con la visión de la startup de fomentar equipos multidisciplinarios para soluciones digitales orientadas a la educación.
 
-![FLOW 5](<./assets/user-flows/FLOW 5.png>)
+![FLOW 5.png](assets/user-flows/FLOW%205.png)
 
 **Flow 5: Biblioteca y Creación de Juegos por Docentes**  
 En la Biblioteca de Level Up Journey, los docentes visualizan todas sus actividades de juego (o "class activities"), incluyendo aquellas eliminadas para referencia histórica. Desde aquí, pueden crear nuevos juegos, agregando preguntas y seleccionando formatos como quiz o verdadero/falso, adaptados a temas de programación. Esta funcionalidad permite a los docentes diseñar contenido personalizado, apoyando la diferenciación pedagógica y contribuyendo a la mejora de tasas de aprobación mediante herramientas interactivas y flexibles.
 
-![FLOW 6](<./assets/user-flows/FLOW 6.png>)
+![FLOW 6.png](assets/user-flows/FLOW%206.png)
 
 **Flow 6: Hosting y Control de Juegos por Docentes**  
 Los docentes inician el lanzamiento de un juego desde la Biblioteca, asumiendo el rol de anfitrión. Esperan a que los estudiantes se unan, inician la actividad, controlan el avance de preguntas y, al final, visualizan el podio de resultados. Este flujo otorga control total al docente, facilitando sesiones de clase dinámicas y evaluativas, y se integra con los objetivos de la startup para desarrollar soluciones que combinen educación con gamificación, promoviendo un aprendizaje efectivo y retención estudiantil.
@@ -284,3 +348,13 @@ Los docentes inician el lanzamiento de un juego desde la Biblioteca, asumiendo e
 
 
 #### 3.1.4.5. Mobile Applications Prototyping
+
+El **prototipo interactivo** se desarrolló en **Figma**, conectando todas las pantallas y flujos de usuario.  
+
+El prototipo permite evaluar la **fluidez del recorrido**, la **claridad visual de objetivos** y el **nivel de engagement percibido**.  
+Durante la validación con estudiantes y docentes se observó:
+
+- Navegación fluida y comprensión inmediata de íconos.
+- Alta satisfacción visual y motivacional.
+
+
