@@ -110,21 +110,51 @@ A continuación, se muestra el diagrama de despliegue que ilustra la infraestruc
 
 ### 4.2.1. Sprint n
 
+Para este primer sprint, nos enfocaremos en las tareas necesarias para el **desarrollo del backend (70%)** y la **implementación inicial de la Landing Page** de **LevelUp Journey**. El equipo distribuirá las actividades según las áreas técnicas —infraestructura, API, base de datos y diseño visual— con el objetivo de establecer una base sólida para los siguientes incrementos del producto.
+
 #### 4.2.1.1. Sprint Planning n
+
+| **Sprint #**                        | **Sprint 1**                                                 |
+| ----------------------------------- | ------------------------------------------------------------ |
+| **Sprint Planning Background**      | Durante este primer sprint, el equipo se enfocará en desarrollar la base técnica del sistema (backend) y la interfaz inicial (landing page) que permita validar la propuesta de valor del proyecto **LevelUp Journey**. |
+| **Date**                            | 2025-10-10                                                   |
+| **Time**                            | 10:30 AM                                                     |
+| **Location**                        | Reunión virtual vía Microsoft Teams                          |
+| **Prepared By**                     | Mateo Alemán Romano                                          |
+| **Attendees (to planning meeting)** | Dante Mateo Aleman Romano / Jonatan Ariel Acuña Corahua / Fabrizio Alessandro Contreras Peralta/ Romina Guadalupe Maita Falckenheiner/ Paolo Alessandro Torres Flores |
+| **Sprint Goal & User Stories**      | **Sprint 1 Goal:** Implementar el **backend al 70 %** (autenticación, base de datos y API principal) y desarrollar la **Landing Page** funcional con secciones de presentación y registro para validar la interacción inicial de los usuarios.**Sprint Metric:** Validar endpoints funcionales en entorno local y contar con la Landing desplegada en entorno de prueba. |
+| **Sprint 1 Velocity**               | 110 Story Points                                             |
+| **Sum of Story Points**             | 95 Story Points                                              |
 
 #### 4.2.1.2. Sprint Backlog n
 
+PONER EL LINK DE JIRA
+
 #### 4.2.1.3. Development Evidence for Sprint Review
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited On (Date) |
+| ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
+|            |        |           |                |                     |                    |
 
 #### 4.2.1.4. Testing Suite Evidence for Sprint Review
 
+FOTO DEL JIRA
+
 #### 4.2.1.5. Execution Evidence for Sprint Review
+
+fotos de la landing
 
 #### 4.2.1.6. Services Documentation Evidence for Sprint Review
 
+fotos del swagger
+
 #### 4.2.1.7. Software Deployment Evidence for Sprint Review
 
+fotos de renbder y del repo y del dokcer 
+
 #### 4.2.1.8. Team Collaboration Insights during Sprint
+
+fotos de los repos con los networks 
 
 ## 4.3. Validation Interviews
 
