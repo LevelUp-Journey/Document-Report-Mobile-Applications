@@ -1689,6 +1689,567 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   </tr>
 </table>
 
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TPROF-001</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como usuario (ROLE_STUDENT/ROLE_TEACHER), quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint POST /profiles</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como desarrollador, quiero exponer <strong>POST /profiles</strong> para crear perfiles con <em>username</em> único y <em>rank</em> inicial, habilitando identidad y gamificación desde el inicio.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: creación válida</strong></li>
+        <li>Dado el endpoint "/profiles" y un usuario autenticado (STUDENT/TEACHER/ADMIN)</li>
+        <li>Cuando envío <code>firstName</code>, <code>lastName</code> y <code>profileUrl</code> opcional válidos</li>
+        <li>Entonces responde <strong>201 Created</strong> con <code>profileId=UUIDv4</code>, <strong>username</strong> en formato <code>USER#########</code>, <strong>rank</strong> inicial <strong>Bronze</strong> y <strong>1000 puntos</strong>, y registra auditoría de puntuación</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: validación de datos</strong></li>
+        <li>Dado payload inválido</li>
+        <li>Entonces responde <strong>400 Bad Request</strong> con mensajes claros</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TPROF-002</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como usuario (ROLE_STUDENT/ROLE_TEACHER), quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Obtener perfil por ID</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como desarrollador, quiero exponer <strong>GET /profiles/{profileId}</strong> con control RBAC para permitir la consulta segura del perfil de un usuario según sus permisos.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: propietario o rol con permiso</strong></li>
+        <li>Dado <code>profileId</code> válido y un token del propietario o <strong>TEACHER/ADMIN</strong></li>
+        <li>Cuando consulto el recurso</li>
+        <li>Entonces respondo <strong>200 OK</strong> con nombre completo, <strong>username</strong> y <strong>profileUrl</strong></li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: recurso inexistente o sin permisos</strong></li>
+        <li>Dado <code>profileId</code> inexistente o rol sin permiso</li>
+        <li>Entonces respondo <strong>404 Not Found</strong> o <strong>403 Forbidden</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TPROF-003</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como usuario (ROLE_STUDENT/ROLE_TEACHER), quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Obtener perfil por Username</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como desarrollador, quiero exponer <strong>GET /profiles/username/{username}</strong> para permitir la búsqueda y consulta de perfiles por nombre de usuario.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: username existente</strong></li>
+        <li>Dado un <code>username</code> válido</li>
+        <li>Cuando consulto <code>/profiles/username/{username}</code></li>
+        <li>Entonces respondo <strong>200 OK</strong> con los datos del perfil</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: username inexistente</strong></li>
+        <li>Dado un <code>username</code> inexistente</li>
+        <li>Cuando consulto <code>/profiles/username/{username}</code></li>
+        <li>Entonces respondo <strong>404 Not Found</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TPROF-004</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Listar perfiles (paginado)</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como desarrollador, quiero exponer <strong>GET /profiles</strong> con paginación y filtro para soportar listados administrativos y optimizar la gestión de usuarios desde el panel de control.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: acceso permitido y paginación</strong></li>
+        <li>Dado <strong>ROLE_TEACHER</strong> o <strong>ROLE_ADMIN</strong></li>
+        <li>Cuando consulto <code>/profiles?page=N&amp;size=M&amp;search?</code></li>
+        <li>Entonces respondo <strong>200 OK</strong> en &lt; 1s con la página solicitada</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: acceso denegado</strong></li>
+        <li>Dado un usuario sin permisos</li>
+        <li>Entonces respondo <strong>403 Forbidden</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TPROF-005</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Seed de niveles</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como desarrollador, quiero exponer <strong>POST /ranks/seed</strong> de forma idempotente para garantizar la disponibilidad de los niveles competitivos sin duplicar registros existentes.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: creación idempotente</strong></li>
+        <li>Dado que faltan niveles competitivos</li>
+        <li>Cuando invoco <code>/ranks/seed</code> con <strong>ROLE_TEACHER</strong> o <strong>ROLE_ADMIN</strong></li>
+        <li>Entonces crea solo los faltantes y responde <strong>200 OK</strong></li>
+        <li>Y si ya existen, no duplica los registros</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TPROF-006</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Listar y detallar niveles</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como desarrollador, quiero exponer <strong>GET /ranks</strong> y <strong>GET /ranks/{rankName}</strong> para permitir la consulta del catálogo de niveles competitivos y sus detalles asociados.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: listado</strong></li>
+        <li>Dado un usuario autenticado</li>
+        <li>Cuando consulto <code>/ranks</code></li>
+        <li>Entonces respondo <strong>200 OK</strong> con los 7 niveles y sus rangos</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: detalle por nombre</strong></li>
+        <li>Dado <code>rankName</code> válido</li>
+        <li>Cuando consulto <code>/ranks/{rankName}</code></li>
+        <li>Entonces respondo <strong>200 OK</strong> o <strong>404 Not Found</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TPROF-007</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Agregar puntos y evaluar ascenso</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como desarrollador, quiero exponer <strong>POST /profiles/{profileId}/scores:add</strong> transaccional para sumar puntos, auditar el cambio y evaluar ascenso de rango.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: incremento con auditoría y ascenso</strong></li>
+        <li>Dado <strong>ROLE_TEACHER</strong> o <strong>ROLE_ADMIN</strong> y un <code>profileId</code> válido</li>
+        <li>Cuando envío <code>points &gt; 0</code>, <code>reason</code> y <code>externalRefId</code> opcional</li>
+        <li>Entonces respondo <strong>200 OK</strong>, incremento <strong>currentScore</strong> y <strong>totalScore</strong>, registro <strong>ScoreAuditLog</strong> con puntaje anterior/nuevo y tipo de cambio, y actualizo <strong>rank</strong> si cruza umbral (todo en una transacción)</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: datos inválidos o sin permisos</strong></li>
+        <li>Dado <code>points &lt;= 0</code> o rol insuficiente</li>
+        <li>Entonces respondo <strong>400 Bad Request</strong> o <strong>403 Forbidden</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TPROF-008</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Obtener estado competitivo</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como desarrollador, quiero exponer <strong>GET /profiles/{profileId}/score</strong> para consultar el estado competitivo del perfil, incluyendo su nivel actual y puntuaciones vigentes.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: estado actual</strong></li>
+        <li>Dado <code>profileId</code> válido y permisos (propietario o <strong>TEACHER/ADMIN</strong>)</li>
+        <li>Cuando consulto el estado competitivo</li>
+        <li>Entonces respondo <strong>200 OK</strong> con <code>{ profileId, rankId, rankName, currentScore, totalScore }</code></li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: perfil inexistente</strong></li>
+        <li>Dado un <code>id</code> inválido</li>
+        <li>Entonces respondo <strong>404 Not Found</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TPROF-009</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Listar historial de puntuación</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como desarrollador, quiero exponer <strong>GET /profiles/{profileId}/score/audit-logs</strong> con orden cronológico para proveer una auditoría completa de los cambios de puntuación.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: historial disponible</strong></li>
+        <li>Dado un perfil con eventos registrados</li>
+        <li>Cuando consulto <code>audit-logs</code></li>
+        <li>Entonces respondo <strong>200 OK</strong> con lista ordenada por fecha/hora incluyendo <strong>tipo de cambio</strong>, <strong>puntos</strong>, <strong>puntaje anterior/nuevo</strong>, <strong>razón</strong> y <strong>referencia externa</strong></li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: perfil inexistente o sin eventos</strong></li>
+        <li>Dado un <code>id</code> inválido</li>
+        <li>Entonces respondo <strong>404 Not Found</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TPROF-010</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como comunidad (todos los roles), quiero un leaderboard con límites para reconocer a los mejores y fomentar competencia sana.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Leaderboard top-N</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como desarrollador, quiero exponer <strong>GET /leaderboard</strong> con límite y orden descendente para ofrecer visibilidad del top de usuarios y fortalecer la competitividad dentro de la comunidad.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: top por puntuación</strong></li>
+        <li>Dado usuarios con distintas puntuaciones</li>
+        <li>Cuando consulto <code>/leaderboard?limit=L</code> (por defecto 10, máximo 100)</li>
+        <li>Entonces respondo <strong>200 OK</strong> con <strong>L</strong> entradas ordenadas descendentemente por <strong>currentScore</strong> e incluyo <strong>profileId</strong>, <strong>rankName</strong> y <strong>currentScore</strong></li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: límite inválido</strong></li>
+        <li>Dado <code>L &gt; 100</code> o <code>L &lt;= 0</code></li>
+        <li>Entonces respondo <strong>400 Bad Request</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TPROF-011</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como usuario (ROLE_STUDENT/ROLE_TEACHER), quiero consultar mi puntuación/nivel e historial para seguir mi progreso y auditar cambios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Documentación y errores estándar</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como desarrollador, quiero documentar OpenAPI y aplicar códigos HTTP consistentes para asegurar contratos claros y predecibles entre servicios y consumidores de la API.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: documentación disponible</strong></li>
+        <li>Dado el servicio operativo</li>
+        <li>Cuando accedo a <strong>Swagger UI</strong> o al <strong>JSON OpenAPI</strong></li>
+        <li>Entonces encuentro todos los endpoints con esquemas, parámetros y respuestas documentadas</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: errores consistentes</strong></li>
+        <li>Dado validaciones o recursos inexistentes</li>
+        <li>Entonces el servicio responde con códigos <strong>400 / 404 / 409 / 401 / 403</strong> según corresponda, con mensajes trazables</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TPROF-012</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como usuario (ROLE_STUDENT/ROLE_TEACHER), quiero consultar mi puntuación/nivel e historial para seguir mi progreso y auditar cambios.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">IDs y auditoría de entidades</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como desarrollador, quiero asegurar el uso de identificadores <strong>UUID v4</strong> y auditoría de entidades para mantener la trazabilidad, integridad y unicidad en la base de datos.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: creación de recursos</strong></li>
+        <li>Dado la creación de <strong>Profile</strong> y <strong>ScoreAuditLog</strong></li>
+        <li>Cuando se persisten en la base de datos</li>
+        <li>Entonces usan <strong>UUID v4</strong> como identificadores y campos auditables <strong>createdAt / updatedAt</strong> gestionados automáticamente</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+
 
 
 ## 2.4.2. Impact Mapping.
