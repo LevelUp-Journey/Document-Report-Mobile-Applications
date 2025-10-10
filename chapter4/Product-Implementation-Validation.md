@@ -279,27 +279,403 @@ PONER EL LINK DE JIRA
 | Microservice-IAM | feature/add-basic-folder-schema | 7d3a784 | feat: add basic user model and registration command | | 2025-08-26 12:45:06 |
 | Microservice-IAM | feature/add-basic-folder-schema | cc51ccd | chore: first commit | | 2025-08-26 12:32:24 |
 
+| Repository      | Branch                          | Commit Id | Commit Message                                               | Commit Message Body                                          | Committed On (Date) |
+| --------------- | ------------------------------- | --------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------- |
+| MobileApp-Front | origin/feature/fix-endpoints    | 75be640   | refactor: implement authentication flow on MainScreen        | Implements an authentication flow on the `MainScreen`. The screen now automatically attempts to sign in with test credentials upon initialization. Quizzes are only fetched after a successful authentication.<br><br>Key changes:<br>- Adds an authentication state management flow to `MainScreen` using `AuthViewModel` and `AuthState`.<br>- `MainScreen` now handles authentication loading, success, and error states before displaying quiz data.<br>- The `HomeContent` composable is updated to display authentication status and errors.<br>- Extensive logging has been added to `AuthRepository`, `QuizRepository`, `ApiClient`, and `MainScreen` to trace the authentication and data fetching processes.<br>- The `AppHeader` and unnecessary navigation parameters (`onProfileClick`, `onMenuClick`) have been removed from `JoinScreen`. | 2025-10-09 23:59:01 |
+| MobileApp-Front | HEAD -> develop, origin/develop | c8424b6   | Merge pull request #3 from LevelUp-Journey/feature/add-login-register | Feature/add login register                                   | 2025-10-09 22:32:44 |
+| MobileApp-Front | develop                         | b2c1263   | feat: add join activity flow and app header                  | Adds the user flow for joining an activity, offering options to join via QR code scan or by entering a PIN. This includes the creation of `JoinScreen`, `QRScanScreen`, and `PinJoinScreen`. A reusable `AppHeader` composable has also been added.<br><br>Key changes:<br>- Creates `JoinScreen` to present QR and PIN joining options.<br>- Implements `PinJoinScreen` for users to enter a 6-digit code.<br>- Adds `QRScanScreen` as a placeholder for camera-based QR scanning.<br>- Introduces a reusable `AppHeader` component for a consistent look.<br>- Sets up the API service, repository, and ViewModel for fetching quizzes. | 2025-10-09 22:31:16 |
+| MobileApp-Front | develop                         | a842933   | refactor: replace HomeScreen with MainScreen and improve navigation | Refactors the navigation flow by replacing `HomeScreen` with `MainScreen` as the primary destination after login. This change streamlines the user experience by integrating the "Join Game" functionality directly into the main tabbed interface. The `ProfileScreen` has been removed as part of this refactor.<br><br>Key changes:<br>- `MainScreen` is now the central hub, accessible after login.<br>- `JoinScreen` is integrated as a tab within `MainScreen`, replacing the placeholder content.<br>- The `ProfileScreen` and its associated navigation logic have been deleted.<br>- Navigation logic in `AppNavHost` is updated to reflect the new `MainScreen` flow and removes routes for the old `HomeScreen` and `ProfileScreen`.<br>- UI consistency is improved across various screens (`Community`, `Comments`, `JoinGame`, etc.) by applying a background color from the Material theme and standardizing padding. | 2025-10-09 22:30:40 |
+| MobileApp-Front | develop                         | 702d9ff   | Merge pull request #2 from LevelUp-Journey/feature/add-login-register | Feature/add login register                                   | 2025-10-09 22:26:48 |
+| MobileApp-Front | develop                         | 44eb4a1   | chore: allow 192.168.0.119 for local development             |                                                              | 2025-10-09 22:24:45 |
+| MobileApp-Front | develop                         | d20674d   | feat: add teacher verification and main screen               | Implements a teacher verification flow and adds a new `MainScreen` to display user quizzes. Refactors the login and sign-up screens with an improved UI.<br><br>Key changes:<br>- Adds `TeacherVerificationScreen` to handle OTP validation for users with teacher emails.<br>- Introduces `MainScreen` with a bottom navigation bar and a "My Quizzes" section that fetches and displays data from the API.<br>- Updates `SignUpScreen` to redirect teachers to the new verification flow.<br>- Redesigns `LoginScreen` with a modern card-based UI and improved branding.<br>- Deletes obsolete `AccountTypeScreen` and `BirthDateScreen`.<br>- Adds `QuizApiService` to `ApiClient` for fetching quiz data. | 2025-10-09 22:24:39 |
+| MobileApp-Front | develop                         | 83160cf   | feat: redesign auth screens and add quiz entities            | Redesigns the `WelcomeScreen` and `SignUpScreen` for a more modern and user-friendly experience, applying consistent theming and improved layout. Introduces data entities for `Quiz`.<br><br>### `WelcomeScreen`<br>- Replaces the bottom drawer with a streamlined layout featuring primary and secondary action buttons for registration and login.<br>- Updates the color scheme to use `primaryContainer` for a softer look.<br>- Refreshes text and iconography to be in Spanish.<br><br>### `SignUpScreen`<br>- Implements a complete visual overhaul with a card-based form, improved spacing, and iconography.<br>- Adds a "full name" field and robust real-time validation for all input fields.<br>- Introduces logic to differentiate between student and teacher registration based on email format.<br>- A back button is added for better navigation.<br><br>### `SettingsScreen`<br>- Applies `MaterialTheme` colors for a consistent look and feel with the rest of the app.<br>- Minor UI adjustments to padding and layout for better alignment.<br><br>### Data Layer<br>- Adds `Quiz`, `QuizResponse`, and `Pageable` data classes to model the quiz data structure from the API. | 2025-10-09 22:14:56 |
+| MobileApp-Front | develop                         | 6f2fcfe   | feat: redesign auth screens and add quiz entities            | Redesigns the `WelcomeScreen` and `SignUpScreen` for a more modern and user-friendly experience, applying consistent theming and improved layout. Introduces data entities for `Quiz`.<br><br>### `WelcomeScreen`<br>- Replaces the bottom drawer with a streamlined layout featuring primary and secondary action buttons for registration and login.<br>- Updates the color scheme to use `primaryContainer` for a softer look.<br>- Refreshes text and iconography to be in Spanish.<br><br>### `SignUpScreen`<br>- Implements a complete visual overhaul with a card-based form, improved spacing, and iconography.<br>- Adds a "full name" field and robust real-time validation for all input fields.<br>- Introduces logic to differentiate between student and teacher registration based on email format.<br>- A back button is added for better navigation.<br><br>### `SettingsScreen`<br>- Applies `MaterialTheme` colors for a consistent look and feel with the rest of the app.<br>- Minor UI adjustments to padding and layout for better alignment.<br><br>### Data Layer<br>- Adds `Quiz`, `QuizResponse`, and `Pageable` data classes to model the quiz data structure from the API. | 2025-10-09 22:14:15 |
+| MobileApp-Front | develop                         | e4ff31e   | chore: ignore .idea directory                                | This change updates the `.gitignore` file to exclude the `.idea` directory, which contains IDE-specific settings. | 2025-10-09 17:39:50 |
+| MobileApp-Front | develop                         | 179097d   | Merge pull request #1 from LevelUp-Journey/feature/add-class-activity | Feature/add class activity                                   | 2025-10-07 16:25:30 |
+| MobileApp-Front | develop                         | 93d293f   | refactor: update AuthRepository import to align with IAM module structure |                                                              | 2025-10-07 16:21:59 |
+| MobileApp-Front | develop                         | a827731   | refactor: update package structure to align with IAM module  |                                                              | 2025-10-07 16:21:46 |
+| MobileApp-Front | develop                         | ce7e835   | feat: add API client and authentication repository with user management |                                                              | 2025-10-07 16:21:29 |
+| MobileApp-Front | develop                         | 1dae53f   | feat: implement Material 3 theme and typography              | Refactors the application's theme to fully support Material 3, including dynamic colors and distinct light/dark color schemes. This update also introduces a new typography scale using Google Fonts.<br><br>Key changes:<br>- Replaces the old `RedTheme` with a comprehensive M3 color system (`Color.kt`).<br>- Implements `LevelUpJourneyTheme` to handle light/dark modes and dynamic coloring (`Theme.kt`).<br>- Defines a new `Typography` scale using Poppins and Inter from Google Fonts (`Type.kt`).<br>- Adds font XML files (`inter.xml`, `poppins.xml`, `jetbrains_mono.xml`) and the Google Fonts dependency.<br>- Creates a `GitHubIcon` composable that adapts to the system theme.<br>- Updates various screens (`WelcomeScreen`, `HomeScreen`, `JoinContent`, etc.) to use the new `MaterialTheme.colorScheme` and `typography` values, ensuring consistent design. | 2025-10-07 16:05:17 |
+| MobileApp-Front | develop                         | 1700f87   | refactor: implement bottom navigation and improve auth UI    | Refactors the `HomeScreen` to use a `NavigationBar` for switching between Home, Join, and Community tabs. This change introduces separate composable content for each tab.<br><br>This commit also improves the alignment and padding of the authentication screens for a better user experience.<br><br>Key changes:<br>- Adds `HomeContent`, `JoinContent`, and `CommunityContent` for the respective `HomeScreen` tabs.<br>- Implements `NavigationBar` in `HomeScreen` to manage tab selection.<br>- Adjusts the layout of `LoginScreen` and `SignUpScreen` to be vertically centered and respect status bar padding.<br>- Adds the `cat_smile.png` pet asset. | 2025-10-07 15:21:10 |
+| MobileApp-Front | develop                         | 820c556   | feat: add authentication flow and IAM integration            | Implements the complete authentication flow, including sign-in and sign-up screens, and integrates with the backend Identity and Access Management (IAM) service. This includes API services for authentication and user management, repositories to handle data logic, and a view model to manage the UI state.<br><br>Key changes:<br>- Added `LoginScreen` and `SignUpScreen` with form validation and state handling.<br>- Introduced `AuthRepository` for handling sign-in, sign-up, and token management using DataStore.<br>- Created `ApiClient` with Retrofit for making API calls, including an authenticated client with an auth interceptor.<br>- Added `AuthViewModel` to connect the UI with the repository and manage authentication state.<br>- Defined data models for authentication requests/responses and user/role entities.<br>- Configured network security to allow cleartext traffic for local development.<br>- Updated navigation in `AppNavHost` to use the new authentication screens and flow.<br>- Added dependencies for Retrofit, OkHttp, and DataStore. | 2025-10-07 14:52:34 |
+| MobileApp-Front | develop                         | d8869c5   | feat: add register screen with validation                    | Implements the `RegisterScreen` with input fields for email, password, and password confirmation. Adds comprehensive client-side validation for all fields to ensure data integrity before submission.<br><br>Key changes:<br>- Adds `OutlinedTextField` for email, password, and confirm password.<br>- Implements state management for input values and password visibility toggles.<br>- Introduces validation logic for email format, password strength (length, case, numbers), and password matching.<br>- Displays error messages and password requirement hints to guide the user.<br>- Disables the "Create Account" button until the form is valid.<br>- Adds a pet image asset to the screen.<br>- Ignores `.env` file in git. | 2025-10-07 13:16:39 |
+| MobileApp-Front | develop                         | 46e24f4   | feat: add red theme and new assets                           | Adds a new red color scheme and various new assets. This includes drawable resources for a red gradient, a red button background, and a new vector logo. SVG assets for Google and GitHub icons have also been added to the assets folder.<br><br>Key changes include:<br>- Adding a `LevelUpJourneyApplication` class to support SVG decoding with Coil.<br>- Updating dependencies to use the versions from the `libs` catalog.<br>- Replacing a static icon with an `AsyncImage` to load the new Google SVG.<br>- Adding the `CAMERA` permission in the `AndroidManifest.xml`. | 2025-10-07 13:04:40 |
+| MobileApp-Front | develop                         | ab328f6   | feat: add red theme and new dependencies                     | Adds a new red color scheme and applies it throughout the app. Implements a redesigned `WelcomeScreen` with a bottom drawer layout.<br><br>Key changes include:<br>- Adding a comprehensive set of dependencies for features like Ktor, Room, Coil, and authentication.<br>- Replacing `Image` composables with `AsyncImage` from Coil.<br>- Updating the package structure for the `Post` model.<br>- Deleting the old `logo.png` drawable. | 2025-10-07 12:34:23 |
+| MobileApp-Front | develop                         | df47220   | chore: add ui theme and pet assets                           |                                                              | 2025-10-07 11:48:55 |
+| MobileApp-Front | develop                         | 403e2f0   | chore: add quiz, question and answer entities                |                                                              | 2025-10-04 08:46:30 |
+| MobileApp-Front | develop                         | 2b37005   | chore: update navigation up to class activities              |                                                              | 2025-10-03 17:58:02 |
+| MobileApp-Front | develop                         | 635656e   | chore: add class activity flow                               |                                                              | 2025-10-03 17:57:49 |
+| MobileApp-Front | develop                         | 9e0f2f5   | chore: add JoinGameScreen                                    |                                                              | 2025-10-03 17:57:36 |
+| MobileApp-Front | develop                         | 52f1983   | chore: add EnterPinScreen                                    |                                                              | 2025-10-03 17:57:25 |
+| MobileApp-Front | develop                         | 79a91e5   | chore: add ConnectingScreen to be realistic                  |                                                              | 2025-10-03 17:57:11 |
+| MobileApp-Front | develop                         | 5ee4edd   | chore: update button to enter the activity                   |                                                              | 2025-10-03 17:56:48 |
+| MobileApp-Front | origin/feature/add-community    | 7b6137c   | chore: add navigation to new screens                         |                                                              | 2025-10-03 16:31:44 |
+| MobileApp-Front | origin/feature/add-community    | 848e4dd   | chore: add CommunityScreen and CommentsScreen                |                                                              | 2025-10-03 16:31:34 |
+| MobileApp-Front | origin/feature/add-community    | e5e43e5   | chore: create data class post                                |                                                              | 2025-10-03 16:31:13 |
+| MobileApp-Front | origin/feature/add-community    | e079dbe   | chore: update settings view                                  |                                                              | 2025-10-03 16:30:27 |
+| MobileApp-Front | origin/main, origin/HEAD, main  | 6049a3d   | fix: Delete .idea directory                                  |                                                              | 2025-10-02 23:31:32 |
+| MobileApp-Front | main                            | 5421e3f   | First commit: add up to home screen                          |                                                              | 2025-10-02 23:27:36 |
+| MobileApp-Front | main                            | e6e4cd6   | Initial commit                                               |                                                              | 2025-10-02 23:21:51 |
+
+---
 
 
 #### 4.2.1.4. Testing Suite Evidence for Sprint Review
 
-FOTO DEL JIRA
+Feature: Registro de Nuevos Usuarios
+Como usuario nuevo  
+Quiero registrarme con email y contraseña  
+Para acceder a la plataforma con seguridad (rol estudiante por defecto)
+
+Scenario: Registro exitoso con email y contraseña válidos
+**ID:** IAM-US-001  
+**Given** que soy un usuario nuevo sin cuenta en la plataforma  
+**And** proporciono el email "nuevo.usuario@example.com" (formato RFC 5322 válido)  
+**And** proporciono una contraseña "SecureP@ss123" que cumple las políticas de seguridad  
+**When** envío la solicitud de registro sin especificar roles  
+**Then** el sistema crea una nueva cuenta de usuario  
+**And** el email se normaliza a minúsculas "nuevo.usuario@example.com"  
+**And** se me asigna automáticamente el rol ROLE_STUDENT  
+**And** recibo una confirmación de registro exitoso  
+**And** puedo iniciar sesión con mis credenciales
+
+Scenario: Rechazo de registro con email inválido
+**ID:** IAM-US-001  
+**Given** que soy un usuario nuevo  
+**And** proporciono un email inválido "usuario-sin-arroba.com"  
+**And** proporciono una contraseña válida  
+**When** envío la solicitud de registro  
+**Then** el sistema rechaza la solicitud  
+**And** muestra el mensaje "El email proporcionado no es válido"  
+**And** no se crea ninguna cuenta
+
+Scenario: Rechazo de registro con contraseña débil
+**ID:** IAM-US-001  
+**Given** que soy un usuario nuevo  
+**And** proporciono un email válido "usuario@example.com"  
+**And** proporciono una contraseña débil "123"  
+**When** envío la solicitud de registro  
+**Then** el sistema rechaza la solicitud  
+**And** muestra el mensaje "La contraseña no cumple con los requisitos de seguridad"  
+**And** no se crea ninguna cuenta
+
+Scenario: Rechazo de registro con email ya registrado
+**ID:** IAM-US-001  
+**Given** que existe un usuario con email "existente@example.com"  
+**And** intento registrarme con el mismo email "existente@example.com"  
+**When** envío la solicitud de registro  
+**Then** el sistema rechaza la solicitud  
+**And** muestra el mensaje "El email ya está registrado"  
+**And** no se crea una cuenta duplicada
+
+---
+
+Feature: Inicio de Sesión y Gestión de Tokens
+Como usuario autenticado  
+Quiero iniciar sesión y gestionar tokens (validar y refrescar)  
+Para mantener una sesión segura y continua
+
+Scenario: Inicio de sesión exitoso con credenciales válidas
+**ID:** IAM-US-002  
+**Given** que existe un usuario registrado con email "usuario@test.com" y contraseña "Pass@word123"  
+**When** envío una solicitud de inicio de sesión con email "usuario@test.com" y contraseña "Pass@word123"  
+**Then** el sistema autentica las credenciales mediante comparación segura  
+**And** retorna los datos del usuario (ID, email, roles)  
+**And** retorna un token de acceso (access token) válido  
+**And** retorna un token de actualización (refresh token) válido  
+**And** puedo usar el access token para acceder a recursos protegidos
+
+Scenario: Rechazo de inicio de sesión con email incorrecto
+**ID:** IAM-US-003  
+**Given** que existe un usuario con email "correcto@test.com"  
+**When** intento iniciar sesión con email "incorrecto@test.com" y una contraseña cualquiera  
+**Then** el sistema rechaza la autenticación  
+**And** muestra el mensaje "Credenciales inválidas"  
+**And** no retorna tokens  
+**And** no revela si el email existe o no (seguridad)
+
+Scenario: Rechazo de inicio de sesión con contraseña incorrecta
+**ID:** IAM-US-003  
+**Given** que existe un usuario con email "usuario@test.com" y contraseña correcta  
+**When** intento iniciar sesión con email "usuario@test.com" y contraseña "ContraseñaIncorrecta"  
+**Then** el sistema rechaza la autenticación  
+**And** muestra el mensaje "Credenciales inválidas"  
+**And** no retorna tokens
+
+Scenario: Renovación de sesión con refresh token válido
+**ID:** IAM-US-004  
+**Given** que inicié sesión previamente y obtuve un refresh token válido  
+**And** el refresh token no ha expirado  
+**When** envío una solicitud de renovación con el refresh token  
+**Then** el sistema valida el refresh token  
+**And** genera un nuevo access token  
+**And** genera un nuevo refresh token  
+**And** los nuevos tokens reemplazan a los anteriores  
+**And** puedo continuar usando la plataforma sin volver a autenticarme
+
+Scenario: Rechazo de renovación con refresh token expirado
+**ID:** IAM-US-004  
+**Given** que tengo un refresh token que expiró hace 2 días  
+**When** intento renovar mi sesión con el refresh token expirado  
+**Then** el sistema rechaza la renovación  
+**And** muestra el mensaje "Token expirado"  
+**And** no genera nuevos tokens  
+**And** debo iniciar sesión nuevamente
+
+Scenario: Validación de access token vigente
+**ID:** IAM-US-005  
+**Given** que tengo un access token emitido por el sistema hace 5 minutos  
+**And** el token aún no ha expirado  
+**When** solicito validar el access token  
+**Then** el sistema confirma que el token es válido  
+**And** retorna el email asociado al token  
+**And** puedo usar el token para acceder a recursos protegidos
+
+Scenario: Rechazo de validación de access token expirado
+**ID:** IAM-US-005  
+**Given** que tengo un access token que expiró hace 1 hora  
+**When** solicito validar el access token  
+**Then** el sistema indica que el token no es válido  
+**And** muestra el mensaje "Token expirado"  
+**And** no puedo acceder a recursos protegidos
+
+---
+
+Feature: Autenticación con Proveedores OAuth2
+Como usuario nuevo  
+Quiero autenticarme con Google o GitHub  
+Para ingresar rápidamente sin crear contraseña
+
+Scenario: Primer login con Google exitoso
+**ID:** IAM-US-006  
+**Given** que no tengo una cuenta en la plataforma  
+**And** inicio sesión con mi cuenta de Google  
+**When** Google retorna mis datos válidos (email, nombre)  
+**Then** el sistema registra automáticamente mi cuenta  
+**And** me asigna el rol ROLE_STUDENT por defecto  
+**And** emite un access token válido  
+**And** emite un refresh token válido  
+**And** puedo acceder inmediatamente a la plataforma
+
+Scenario: Login subsecuente con Google
+**ID:** IAM-US-006  
+**Given** que previamente me registré usando Google  
+**And** mi cuenta ya existe en el sistema  
+**When** inicio sesión nuevamente con Google  
+**Then** el sistema identifica mi cuenta existente  
+**And** no crea una cuenta duplicada  
+**And** emite nuevos tokens de acceso  
+**And** mantengo mis roles y datos previamente configurados
+
+Scenario: Primer login con GitHub sin email público
+**ID:** IAM-US-007  
+**Given** que no tengo una cuenta en la plataforma  
+**And** inicio sesión con mi cuenta de GitHub  
+**And** GitHub no devuelve mi email (email privado)  
+**And** mi login de GitHub es "developerJohn"  
+**When** GitHub retorna mis datos sin email  
+**Then** el sistema genera un identificador alternativo "developerJohn@github.oauth"  
+**And** registra mi cuenta con ese identificador  
+**And** me asigna el rol ROLE_STUDENT  
+**And** emite tokens de acceso  
+**And** puedo usar la plataforma normalmente
+
+Scenario: Login con GitHub con email público
+**ID:** IAM-US-007  
+**Given** que inicio sesión con GitHub  
+**And** GitHub devuelve mi email "john@developer.com"  
+**When** completo la autenticación  
+**Then** el sistema registra mi cuenta con el email real "john@developer.com"  
+**And** no usa el identificador alternativo  
+**And** emite tokens de acceso
+
+---
+
+Feature: Gestión de Usuarios y Roles
+Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER)  
+Quiero gestionar usuarios y roles  
+Para controlar el acceso y permisos del sistema
+
+Scenario: Listar todos los usuarios como administrador
+**ID:** IAM-US-008  
+**Given** que soy un administrador autenticado con rol ROLE_ADMIN  
+**And** existen 50 usuarios registrados en el sistema  
+**When** solicito listar todos los usuarios  
+**Then** recibo la lista completa de 50 usuarios  
+**And** cada usuario muestra su ID, email y roles asignados  
+**And** la lista se ordena por fecha de creación
+
+Scenario: Obtener usuario específico por ID
+**ID:** IAM-US-009  
+**Given** que tengo un token válido con permisos de docente o administrador  
+**And** existe un usuario con UUID "123e4567-e89b-12d3-a456-426614174000"  
+**When** consulto el usuario por su UUID  
+**Then** obtengo la información completa del usuario  
+**And** veo su email, roles asignados y fecha de registro  
+**And** veo su estado activo/inactivo
+
+Scenario: Obtener usuario específico por email
+**ID:** IAM-US-009  
+**Given** que tengo un token válido con permisos  
+**And** existe un usuario con email "estudiante@university.edu"  
+**When** consulto el usuario por su email "estudiante@university.edu"  
+**Then** obtengo la información del usuario  
+**And** veo su ID, roles y datos asociados
+
+Scenario: Usuario no encontrado por ID inexistente
+**ID:** IAM-US-009  
+**Given** que tengo un token válido  
+**And** no existe un usuario con UUID "999e9999-e99b-99d9-a999-999999999999"  
+**When** intento consultar ese UUID  
+**Then** el sistema retorna "Usuario no encontrado"  
+**And** no retorna datos de usuario
+
+Scenario: Listar roles disponibles en el sistema
+**ID:** IAM-US-010  
+**Given** que tengo permisos de ROLE_TEACHER o ROLE_ADMIN  
+**When** consulto el catálogo de roles  
+**Then** obtengo la lista de roles disponibles  
+**And** veo ROLE_STUDENT con su descripción  
+**And** veo ROLE_TEACHER con su descripción  
+**And** veo ROLE_ADMIN con su descripción
+
+Scenario: Consultar rol específico por nombre
+**ID:** IAM-US-010  
+**Given** que tengo permisos de docente o administrador  
+**When** consulto el rol "ROLE_TEACHER" por su nombre  
+**Then** obtengo los detalles del rol  
+**And** veo su nombre, permisos asociados y descripción
+
+Scenario: Inicialización de roles base del sistema
+**ID:** IAM-US-011  
+**Given** que el sistema se inicia por primera vez  
+**And** no existen roles en la base de datos  
+**When** se ejecuta la operación de seed de roles  
+**Then** se crean los 3 roles predefinidos: ROLE_STUDENT, ROLE_TEACHER, ROLE_ADMIN  
+**And** cada rol se crea con sus permisos correspondientes  
+**And** la operación completa exitosamente
+
+Scenario: Verificación de roles existentes sin duplicar
+**ID:** IAM-US-011  
+**Given** que los roles ROLE_STUDENT y ROLE_TEACHER ya existen en el sistema  
+**And** falta crear ROLE_ADMIN  
+**When** ejecuto la operación de seed de roles  
+**Then** el sistema verifica los roles existentes  
+**And** no duplica ROLE_STUDENT ni ROLE_TEACHER  
+**And** crea únicamente ROLE_ADMIN  
+**And** finaliza sin errores
+
+Scenario: Asignar rol individual a usuario
+**ID:** IAM-US-013  
+**Given** que soy un administrador autenticado  
+**And** existe un usuario "usuario@test.com" con rol ROLE_STUDENT  
+**And** el rol ROLE_TEACHER existe en el sistema  
+**When** asigno el rol ROLE_TEACHER al usuario  
+**Then** el usuario tiene ahora los roles ROLE_STUDENT y ROLE_TEACHER  
+**And** el sistema valida la existencia del rol antes de asignar  
+**And** no se crean roles duplicados
+
+Scenario: Asignar múltiples roles en lote
+**ID:** IAM-US-013  
+**Given** que soy un administrador autenticado  
+**And** existe un usuario "profesor@university.edu" solo con ROLE_STUDENT  
+**When** asigno los roles ROLE_TEACHER y ROLE_ADMIN en una sola operación  
+**Then** el usuario tiene ahora los 3 roles: ROLE_STUDENT, ROLE_TEACHER y ROLE_ADMIN  
+**And** no se generan duplicados  
+**And** la asignación se registra en el historial de cambios
+
+Scenario: Garantizar ROLE_STUDENT si usuario no tiene roles
+**ID:** IAM-US-013  
+**Given** que existe un usuario sin roles asignados (inconsistencia de datos)  
+**When** el sistema valida los roles del usuario  
+**Then** automáticamente se asigna ROLE_STUDENT  
+**And** el usuario tiene al menos un rol para operar en la plataforma
+
+Scenario: Rechazo de asignación de rol inexistente
+**ID:** IAM-US-013  
+**Given** que soy un administrador  
+**And** intento asignar un rol "ROLE_SUPERUSER" que no existe  
+**When** ejecuto la asignación  
+**Then** el sistema rechaza la operación  
+**And** muestra el mensaje "El rol no existe"  
+**And** no se modifica la lista de roles del usuario
+
+---
+
+Feature: Evaluación de Fortaleza de Contraseñas
+Como usuario  
+Quiero evaluar la fortaleza de mi contraseña  
+Para mejorar mi seguridad antes de registrarme o cambiarla
+
+Scenario: Contraseña muy fuerte (puntaje 5)
+**ID:** IAM-US-012  
+**Given** que proporciono la contraseña "MyV3ry$tr0ng&C0mpl3xP@ssw0rd!"  
+**When** solicito evaluar su fortaleza  
+**Then** el sistema calcula un puntaje de 5  
+**And** clasifica la contraseña como "Muy Fuerte"  
+**And** indica que es segura para usar
+
+Scenario: Contraseña fuerte (puntaje 4)
+**ID:** IAM-US-012  
+**Given** que proporciono la contraseña "S3cur3P@ssw0rd"  
+**When** solicito evaluar su fortaleza  
+**Then** el sistema calcula un puntaje de 4  
+**And** clasifica la contraseña como "Fuerte"  
+**And** cumple con los requisitos mínimos de seguridad
+
+Scenario: Contraseña moderada (puntaje 3)
+**ID:** IAM-US-012  
+**Given** que proporciono la contraseña "password123"  
+**When** solicito evaluar su fortaleza  
+**Then** el sistema calcula un puntaje de 3  
+**And** clasifica la contraseña como "Moderada"  
+**And** sugiere mejorarla con más caracteres especiales
+
+Scenario: Contraseña débil (puntaje 1-2)
+**ID:** IAM-US-012  
+**Given** que proporciono la contraseña "12345"  
+**When** solicito evaluar su fortaleza  
+**Then** el sistema calcula un puntaje de 1  
+**And** clasifica la contraseña como "Muy Débil"  
+**And** rechaza su uso para registro  
+**And** muestra recomendaciones para crear una contraseña fuerte
+
+Scenario: Validación de contraseña al registrarse
+**ID:** IAM-US-012  
+**Given** que intento registrarme con la contraseña "weak"  
+**And** la contraseña tiene un puntaje de 1  
+**When** envío la solicitud de registro  
+**Then** el sistema evalúa automáticamente la fortaleza  
+**And** rechaza el registro por contraseña débil  
+**And** solicita una contraseña con puntaje >= 4
 
 #### 4.2.1.5. Execution Evidence for Sprint Review
 
-fotos de la landing
+[![Tablero de Sprint en Jira — Ejecución del Sprint](https://i.imgur.com/OrIo6DS.png)](https://i.imgur.com/OrIo6DS.png "Abrir imagen en tamaño completo")
+
+https://db1ui.atlassian.net/jira/software/projects/LVLUP/boards/232/backlog?atlOrigin=eyJpIjoiODZlNDdmOWIxYzcwNGI3ZDhiNTdhNWIzM2FiMjM4YjgiLCJwIjoiaiJ9 
 
 #### 4.2.1.6. Services Documentation Evidence for Sprint Review
 
-fotos del swagger
+![Sprint Report A](https://imgur.com/pGco5S2.png)
+![Sprint Report B](https://imgur.com/3xhWwxS.png)
+![Sprint Report C](https://imgur.com/dbJMNGy.png)
+![Sprint Report D](https://imgur.com/RXm81bf.png)
 
 #### 4.2.1.7. Software Deployment Evidence for Sprint Review
 
-fotos de renbder y del repo y del dokcer 
+![Sprint Planning Summary](https://i.imgur.com/3to79c3.png)
 
 #### 4.2.1.8. Team Collaboration Insights during Sprint
 
-fotos de los repos con los networks 
+![Sprint Board 1](https://i.imgur.com/M5yUNCI.png)
+![Sprint Board 2](https://i.imgur.com/QPg6tH5.png)
+![Sprint Board 3](https://i.imgur.com/lIBs8MQ.png)
+![Sprint Board 4](https://i.imgur.com/rEJ8OkV.png)
+![Sprint Board 5](https://i.imgur.com/oefRGtm.png)
+![Sprint Board 6](https://i.imgur.com/5EBUhaj.png)
+![Sprint Board 7](https://i.imgur.com/7JLlPYG.png)
+![Sprint Board 8](https://i.imgur.com/qhq1BF9.png)
 
 ## 4.3. Validation Interviews
 
@@ -308,3 +684,10 @@ fotos de los repos con los networks
 ### 4.3.2. Registro de Entrevistas
 
 ### 4.3.3. Evaluaciones según heurísticas
+
+
+
+
+
+
+
