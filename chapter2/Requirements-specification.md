@@ -24,7 +24,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-001</td>
     <td>Teacher</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
   </tr>
   <tr>
@@ -55,12 +55,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
         <li>Y emite el evento <strong>QuizCreatedEvent</strong></li>
       </ul>
     </td>
-  </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>2 (Fibonacci)</strong></td>
   </tr>
 </table>
 
@@ -105,12 +99,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>1 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -123,7 +111,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-003</td>
     <td>Teacher</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
   </tr>
   <tr>
@@ -154,12 +142,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>1 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -172,7 +154,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-004</td>
     <td>Teacher</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
   </tr>
   <tr>
@@ -203,12 +185,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
         <li>Y se emite el evento <strong>QuizPublishedEvent</strong></li>
       </ul>
     </td>
-  </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>2 (Fibonacci)</strong></td>
   </tr>
 </table>
 
@@ -254,12 +230,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>3 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -272,7 +242,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-006</td>
     <td>Teacher</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como Teacher, quiero gestionar preguntas y respuestas del quiz para asegurar calidad y validez pedagógica.</td>
   </tr>
   <tr>
@@ -303,12 +273,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>2 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -321,7 +285,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-007</td>
     <td>Teacher</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como Teacher, quiero gestionar preguntas y respuestas del quiz para asegurar calidad y validez pedagógica.</td>
   </tr>
   <tr>
@@ -352,12 +316,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>1 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -404,12 +362,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>3 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -422,7 +374,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-008</td>
     <td>Usuario</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
   </tr>
   <tr>
@@ -455,12 +407,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
         <li>Entonces el sistema <strong>devuelve sus datos</strong>, incluyendo sus preguntas y respuestas si están disponibles</li>
       </ul>
     </td>
-  </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>3 (Fibonacci)</strong></td>
   </tr>
 </table>
 
@@ -474,7 +420,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-009</td>
     <td>Student</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como Student, quiero descubrir quizzes públicos para participar o reutilizar contenido.</td>
   </tr>
   <tr>
@@ -503,12 +449,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
         <li>Entonces recibo la <strong>página filtrada</strong> con <strong>datos básicos</strong> del quiz (id, nombre, categoría, autor, estado, imagen opcional)</li>
       </ul>
     </td>
-  </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>2 (Fibonacci)</strong></td>
   </tr>
 </table>
 
@@ -551,12 +491,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
         <li>Entonces obtengo <strong>solo los quizzes creados por mí</strong>, en el formato paginado solicitado</li>
       </ul>
     </td>
-  </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>2 (Fibonacci)</strong></td>
   </tr>
 </table>
 
@@ -601,12 +535,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>3 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -619,7 +547,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-012</td>
     <td>Student</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como Student, quiero unirme a una sesión en vivo para responder el quiz.</td>
   </tr>
   <tr>
@@ -653,12 +581,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>3 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -671,7 +593,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-013</td>
     <td>Teacher</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como Teacher, quiero iniciar la sesión cuando haya participantes para comenzar la evaluación.</td>
   </tr>
   <tr>
@@ -703,12 +625,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>2 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -721,7 +637,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-014</td>
     <td>Teacher</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como Teacher, quiero iniciar la pregunta actual para que los participantes respondan.</td>
   </tr>
   <tr>
@@ -752,12 +668,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>2 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -770,7 +680,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-015</td>
     <td>Student</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como Student, quiero enviar mi respuesta y obtener puntaje según corrección y tiempo.</td>
   </tr>
   <tr>
@@ -803,12 +713,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
         <li>Entonces el sistema <strong>rechaza</strong> el nuevo intento</li>
       </ul>
     </td>
-  </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>3 (Fibonacci)</strong></td>
   </tr>
 </table>
 
@@ -853,12 +757,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>2 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -871,7 +769,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-017</td>
     <td>Teacher</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como Teacher, quiero finalizar la sesión y obtener el ranking final para retroalimentación.</td>
   </tr>
   <tr>
@@ -902,12 +800,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>3 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -920,7 +812,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>US-018</td>
     <td>Student</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como Student, quiero consultar el estado de una sesión en vivo para conocer su progreso.</td>
   </tr>
   <tr>
@@ -949,12 +841,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
         <li>Entonces el sistema responde con el <strong>estado actual</strong> de la sesión, el <strong>índice de pregunta activa</strong> y los <strong>participantes conectados</strong></li>
       </ul>
     </td>
-  </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>2 (Fibonacci)</strong></td>
   </tr>
 </table>
 
@@ -1002,12 +888,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
         <li>Entonces el sistema emite <strong>ParticipantLeftEvent</strong></li>
       </ul>
     </td>
-  </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>3 (Fibonacci)</strong></td>
   </tr>
 </table>
 
@@ -1137,12 +1017,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
       </ul>
     </td>
   </tr>
-  <tr>
-    <th colspan="4" style="color: green;">Story Points</th>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>3 (Fibonacci)</strong></td>
-  </tr>
 </table>
 
 <table>
@@ -1199,7 +1073,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>COMM-US-002</td>
     <td>Docente</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como docente, quiero crear y gestionar publicaciones.</td>
   </tr>
   <tr>
@@ -1334,7 +1208,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>COMM-US-005</td>
     <td>Estudiante</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como estudiante, quiero visualizar y participar en la comunidad.</td>
   </tr>
   <tr>
@@ -1478,7 +1352,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>COMM-US-007</td>
     <td>Usuario</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario, quiero notificaciones y búsqueda.</td>
   </tr>
   <tr>
@@ -1910,7 +1784,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-010</td>
     <td>Administrador o docente</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente, quiero gestionar usuarios y roles</td>
   </tr>
   <tr>
@@ -1952,7 +1826,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-011</td>
     <td>Administrador o docente</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como administrador o docente, quiero gestionar usuarios y roles</td>
   </tr>
   <tr>
@@ -2127,7 +2001,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-002</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario autenticado, quiero iniciar sesión y gestionar tokens (validar y refrescar) para mantener una sesión segura y continua.</td>
   </tr>
   <tr>
@@ -2175,7 +2049,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-003</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario autenticado, quiero iniciar sesión y gestionar tokens (validar y refrescar) para mantener una sesión segura y continua.</td>
   </tr>
   <tr>
@@ -2269,7 +2143,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-005</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar usuarios y roles para controlar el acceso y permisos del sistema.</td>
   </tr>
   <tr>
@@ -2412,7 +2286,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-008</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar usuarios y roles para controlar el acceso y permisos del sistema.</td>
   </tr>
   <tr>
@@ -2824,7 +2698,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>PROF-US-002</td>
     <td>Usuario</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario, quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
   </tr>
   <tr>
@@ -2951,7 +2825,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>PROF-US-005</td>
     <td>Usuario</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como administrador o docente, quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -2993,7 +2867,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>PROF-US-006</td>
     <td>Docente o Administrador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente, quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -3164,7 +3038,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>PROF-US-010</td>
     <td>Docente o Administrador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como administrador o docente, quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -3348,7 +3222,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-004</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -3395,7 +3269,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-005</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -3438,7 +3312,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-006</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -3486,7 +3360,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-007</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -3675,7 +3549,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-011</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario (ROLE_STUDENT/ROLE_TEACHER), quiero consultar mi puntuación/nivel e historial para seguir mi progreso y auditar cambios.</td>
   </tr>
   <tr>
