@@ -679,6 +679,48 @@ https://db1ui.atlassian.net/jira/software/projects/LVLUP/boards/232/backlog?atlO
 ## 4.3. Validation Interviews
 
 ### 4.3.1. Diseño de Entrevistas
+Para evaluar la usabilidad del sitio web, se diseñaron entrevistas estructuradas basadas en las 10 heurísticas de Nielsen. Cada entrevista incluyó preguntas específicas para cada heurística, permitiendo a los participantes expresar sus opiniones y experiencias al interactuar con el sitio. A continuación, se presentan las preguntas formuladas para cada heurística:
+
+
+1. Visibilidad del estado del sistema
+
+¿En todo momento sabes en qué parte de la página estás o qué acción estás realizando?
+
+2. Correspondencia entre el sistema y el mundo real
+
+¿El lenguaje y los textos te resultan claros y naturales, como si hablaran tu mismo idioma?
+
+3. Control y libertad del usuario
+
+¿Sientes que puedes moverte libremente por la página sin perderte o quedar “atrapado” en una sección?
+
+4. Consistencia y estándares
+
+¿Notas que los botones, textos y enlaces siguen un estilo coherente en toda la página?
+
+5. Prevención de errores
+
+¿Hay algo en el diseño que pueda confundirte o hacerte dar un clic por error?
+
+6. Reconocimiento antes que recuerdo
+
+¿La información importante está visible o necesitas recordar dónde estaba algo para volver a encontrarlo?
+
+7. Flexibilidad y eficiencia de uso
+
+¿Puedes acceder fácilmente a lo que te interesa sin pasos innecesarios o distracciones?
+
+8. Diseño estético y minimalista
+
+¿Te parece que la cantidad de texto, imágenes y espacio está bien equilibrada o sientes saturación visual?
+
+9. Ayuda al reconocimiento de errores y recuperación
+
+Si algo no funciona (por ejemplo, un enlace o formulario), ¿el diseño te ayudaría a entender qué pasó y cómo solucionarlo?
+
+10. Ayuda y documentación
+
+¿El footer te parece fácil de encontrar y útil para resolver dudas básicas?
 
 ### 4.3.2. Registro de Entrevistas
 
