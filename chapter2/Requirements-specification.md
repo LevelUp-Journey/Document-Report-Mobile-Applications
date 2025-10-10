@@ -22,6 +22,1011 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th>Epic</th>
   </tr>
   <tr>
+    <td>US-001</td>
+    <td>Teacher</td>
+    <td>Baja</td>
+    <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Crear quiz</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo registrar un nuevo quiz con nombre, categoría, descripción e imagen de portada, asociándolo a mi usuario para comenzar el proceso de evaluación.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: crear quiz válido</strong></li>
+        <li>Dado que soy un <strong>Teacher autenticado</strong></li>
+        <li>Y tengo un <strong>nombre</strong> y una <strong>categoría válidos</strong></li>
+        <li>Cuando solicito crear el quiz</li>
+        <li>Entonces el sistema registra el quiz asociado a mi usuario</li>
+        <li>Y emite el evento <strong>QuizCreatedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-002</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Actualizar quiz</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo actualizar los datos básicos de un quiz existente —como nombre, descripción, categoría o imagen— sin alterar su autoría ni su identificador, para mantener la coherencia del contenido.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: actualizar datos de quiz</strong></li>
+        <li>Dado que soy el <strong>creador del quiz</strong></li>
+        <li>Cuando edito su <strong>nombre</strong>, <strong>descripción</strong>, <strong>categoría</strong> o <strong>imagen</strong></li>
+        <li>Entonces el sistema guarda los cambios</li>
+        <li>Y conserva la <strong>autoría</strong> e <strong>identificador</strong> del quiz</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-003</td>
+    <td>Teacher</td>
+    <td>Baja</td>
+    <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Eliminar quiz</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo eliminar un quiz existente para retirarlo del uso académico y mantener actualizado el banco de evaluaciones.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: eliminar un quiz existente</strong></li>
+        <li>Dado que soy el <strong>creador</strong> del quiz</li>
+        <li>Cuando solicito <strong>eliminar</strong> el quiz</li>
+        <li>Entonces el sistema elimina el quiz del registro</li>
+        <li>Y no puede ser consultado posteriormente</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-004</td>
+    <td>Teacher</td>
+    <td>Baja</td>
+    <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Publicar quiz</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo publicar un quiz previamente creado y con preguntas válidas para hacerlo visible y accesible a los estudiantes.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: publicar quiz con preguntas</strong></li>
+        <li>Dado que soy el <strong>creador</strong> del quiz</li>
+        <li>Y el quiz tiene al menos <strong>una pregunta válida</strong></li>
+        <li>Cuando solicito <strong>publicar</strong> el quiz</li>
+        <li>Entonces su estado cambia a <strong>PUBLIC</strong></li>
+        <li>Y se emite el evento <strong>QuizPublishedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-005</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero gestionar preguntas y respuestas del quiz para asegurar calidad y validez pedagógica.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Agregar pregunta</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo agregar una pregunta a un quiz existente, definiendo su tipo, puntuación, tiempo de respuesta y posibles alternativas, para mantener la calidad y variedad en las evaluaciones.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: agregar pregunta válida</strong></li>
+        <li>Dado que el quiz es de mi autoría</li>
+        <li>Y defino el tipo <strong>MULTIPLE_CHOICE</strong> o <strong>TRUE_FALSE</strong></li>
+        <li>Y cumplo las reglas de cantidad de respuestas y definición de la(s) respuesta(s) correcta(s)</li>
+        <li>Cuando agrego la pregunta al quiz</li>
+        <li>Entonces el sistema registra la nueva pregunta correctamente asociada al quiz</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-006</td>
+    <td>Teacher</td>
+    <td>Baja</td>
+    <td>Como Teacher, quiero gestionar preguntas y respuestas del quiz para asegurar calidad y validez pedagógica.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Actualizar pregunta</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo actualizar una pregunta existente dentro de un quiz, modificando su contenido, tipo, puntuación, tiempo o respuestas, asegurando que se cumplan las reglas de consistencia pedagógica y técnica.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: actualizar pregunta</strong></li>
+        <li>Dado que el quiz es de mi autoría</li>
+        <li>Y la pregunta existe</li>
+        <li>Cuando modifico el <strong>contenido</strong>, <strong>tipo</strong>, <strong>puntos</strong>, <strong>tiempo</strong> o <strong>respuestas</strong> cumpliendo las reglas de cada tipo</li>
+        <li>Entonces el sistema guarda la actualización correctamente</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-007</td>
+    <td>Teacher</td>
+    <td>Baja</td>
+    <td>Como Teacher, quiero gestionar preguntas y respuestas del quiz para asegurar calidad y validez pedagógica.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Eliminar pregunta</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo eliminar una pregunta de un quiz existente para mantener la relevancia y coherencia del contenido evaluativo.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: eliminar pregunta de quiz</strong></li>
+        <li>Dado que el quiz es de mi autoría</li>
+        <li>Y la pregunta existe</li>
+        <li>Cuando solicito eliminarla</li>
+        <li>Entonces el sistema elimina la pregunta del quiz</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-008</td>
+    <td>Usuario</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Consultar quiz</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como usuario, deseo consultar un quiz por su identificador, con la opción de incluir sus preguntas y respuestas, para visualizar su contenido según los permisos de acceso establecidos.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: consultar quiz PRIVATE vs PUBLIC</strong></li>
+        <li>Dado un quiz con estado <strong>PRIVATE</strong></li>
+        <li>Cuando no soy su creador</li>
+        <li>Entonces el sistema <strong>deniega la consulta</strong></li>
+        <br>
+        <li>Y dado un quiz con estado <strong>PUBLIC</strong></li>
+        <li>Cuando lo consulto</li>
+        <li>Entonces el sistema <strong>devuelve sus datos</strong>, incluyendo sus preguntas y respuestas si están disponibles</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-008</td>
+    <td>Usuario</td>
+    <td>Baja</td>
+    <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Consultar quiz</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como usuario, deseo consultar un quiz por su identificador, con la opción de incluir sus preguntas y respuestas, para visualizar su contenido según los permisos de acceso establecidos.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: consultar quiz PRIVATE vs PUBLIC</strong></li>
+        <li>Dado un quiz con estado <strong>PRIVATE</strong></li>
+        <li>Cuando no soy su creador</li>
+        <li>Entonces el sistema <strong>deniega la consulta</strong></li>
+        <br>
+        <li>Y dado un quiz con estado <strong>PUBLIC</strong></li>
+        <li>Cuando lo consulto</li>
+        <li>Entonces el sistema <strong>devuelve sus datos</strong>, incluyendo sus preguntas y respuestas si están disponibles</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-009</td>
+    <td>Student</td>
+    <td>Baja</td>
+    <td>Como Student, quiero descubrir quizzes públicos para participar o reutilizar contenido.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Listar quizzes públicos</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Student, deseo listar quizzes públicos con paginación y filtros por categoría y término de búsqueda para encontrar contenido relevante y participar.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: listado con filtros</strong></li>
+        <li>Dado que existen quizzes con visibilidad <strong>PUBLIC</strong></li>
+        <li>Cuando aplico <strong>categoría</strong> y <strong>término de búsqueda</strong> y solicito una página (número y tamaño)</li>
+        <li>Entonces recibo la <strong>página filtrada</strong> con <strong>datos básicos</strong> del quiz (id, nombre, categoría, autor, estado, imagen opcional)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-010</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero ver mis quizzes para gestionarlos fácilmente.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Listar mis quizzes</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo listar mis quizzes con paginación y filtros para administrarlos de manera eficiente desde el panel.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: listado de autor</strong></li>
+        <li>Dado que soy <strong>Teacher</strong></li>
+        <li>Cuando consulto mis quizzes aplicando <strong>filtros</strong> y <strong>paginación</strong></li>
+        <li>Entonces obtengo <strong>solo los quizzes creados por mí</strong>, en el formato paginado solicitado</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-011</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero dirigir sesiones en vivo para evaluar en tiempo real y obtener participación de los estudiantes.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Crear sesión en vivo</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo crear una sesión en vivo a partir de un quiz con estado <strong>PUBLIC</strong> para evaluar en tiempo real y generar un código único que los estudiantes puedan usar para unirse.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: crear sesión</strong></li>
+        <li>Dado que el quiz tiene estado <strong>PUBLIC</strong></li>
+        <li>Cuando solicito crear la sesión en vivo</li>
+        <li>Entonces el sistema genera un <strong>código único de sesión</strong></li>
+        <li>Y emite el evento <strong>SessionCreatedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-012</td>
+    <td>Student</td>
+    <td>Media</td>
+    <td>Como Student, quiero unirme a una sesión en vivo para responder el quiz.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Unirse a sesión</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Student, deseo unirme a una sesión en vivo que acepte participantes, registrando mi rol y conexión dentro del quiz en tiempo real, con soporte para reconexión en caso de desconexión temporal.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: unirse y reingresar</strong></li>
+        <li>Dado que la sesión está <strong>aceptando jugadores</strong></li>
+        <li>Cuando me uno por primera vez</li>
+        <li>Entonces el sistema registra mi participación</li>
+        <li>Y emite el evento <strong>ParticipantJoinedEvent</strong></li>
+        <br>
+        <li>Y cuando me reconecto a la misma sesión</li>
+        <li>Entonces el sistema emite <strong>ParticipantRejoinedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-013</td>
+    <td>Teacher</td>
+    <td>Baja</td>
+    <td>Como Teacher, quiero iniciar la sesión cuando haya participantes para comenzar la evaluación.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Iniciar sesión</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo iniciar una sesión en vivo cuando existan participantes registrados, para dar inicio a la evaluación y cambiar el estado de la sesión a <strong>IN_PROGRESS</strong>.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: iniciar con participantes</strong></li>
+        <li>Dado que soy <strong>Teacher</strong></li>
+        <li>Y hay al menos <strong>un participante</strong> en la sesión</li>
+        <li>Cuando inicio la sesión</li>
+        <li>Entonces el estado de la sesión cambia a <strong>IN_PROGRESS</strong></li>
+        <li>Y se emite el evento <strong>SessionStartedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-014</td>
+    <td>Teacher</td>
+    <td>Baja</td>
+    <td>Como Teacher, quiero iniciar la pregunta actual para que los participantes respondan.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Iniciar pregunta</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo iniciar la pregunta activa de la sesión en vivo, para habilitar que los participantes comiencen a responder dentro del tiempo asignado.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: iniciar pregunta válida</strong></li>
+        <li>Dado que la sesión está en estado <strong>IN_PROGRESS</strong></li>
+        <li>Cuando inicio la pregunta activa</li>
+        <li>Entonces se marca el <strong>inicio de la pregunta</strong></li>
+        <li>Y se emite el evento <strong>QuestionStartedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-015</td>
+    <td>Student</td>
+    <td>Media</td>
+    <td>Como Student, quiero enviar mi respuesta y obtener puntaje según corrección y tiempo.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Enviar respuesta</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Student, deseo enviar mi respuesta a la pregunta activa durante la sesión en vivo para registrar mi resultado, considerando la corrección y el tiempo de respuesta.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: enviar única respuesta</strong></li>
+        <li>Dado que no he respondido la pregunta actual</li>
+        <li>Cuando envío mi respuesta</li>
+        <li>Entonces el sistema registra la <strong>corrección</strong>, los <strong>puntos obtenidos</strong> y el <strong>tiempo de envío</strong></li>
+        <li>Y emite el evento <strong>AnswerSubmittedEvent</strong></li>
+        <br>
+        <li>Y si intento responder de nuevo</li>
+        <li>Entonces el sistema <strong>rechaza</strong> el nuevo intento</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-016</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero cerrar la pregunta y avanzar a la siguiente para continuar la sesión.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Avanzar pregunta</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo finalizar la pregunta actual y avanzar a la siguiente dentro de la sesión en vivo, para continuar con la evaluación de manera ordenada y progresiva.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: avanzar en progreso</strong></li>
+        <li>Dado que la sesión está en estado <strong>IN_PROGRESS</strong></li>
+        <li>Cuando avanzo de pregunta</li>
+        <li>Entonces el sistema incrementa el <strong>índice de pregunta actual</strong></li>
+        <li>Y se emite el evento <strong>QuestionAdvancedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-017</td>
+    <td>Teacher</td>
+    <td>Baja</td>
+    <td>Como Teacher, quiero finalizar la sesión y obtener el ranking final para retroalimentación.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Finalizar sesión y ranking</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo cerrar la sesión en vivo y generar un ranking de los participantes con base en su rendimiento y tiempo de respuesta, para brindar retroalimentación y cerrar la actividad de forma ordenada.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: cerrar sesión</strong></li>
+        <li>Dado que soy un Teacher autenticado</li>
+        <li>Cuando finalizo la sesión en curso</li>
+        <li>Entonces el sistema calcula el <strong>ranking final</strong> de los participantes según puntuación y tiempo</li>
+        <li>Y emite el evento <strong>SessionFinishedEvent</strong> con la clasificación completa</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-018</td>
+    <td>Student</td>
+    <td>Media</td>
+    <td>Como Student, quiero consultar el estado de una sesión en vivo para conocer su progreso.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Consultar sesión</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Student, deseo consultar en tiempo real el estado de una sesión activa para conocer su progreso, la pregunta actual y cuántos participantes están conectados, permitiéndome seguir el ritmo del quiz.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: ver estado</strong></li>
+        <li>Dado un <strong>código de sesión válido</strong></li>
+        <li>Cuando consulto la sesión</li>
+        <li>Entonces el sistema responde con el <strong>estado actual</strong> de la sesión, el <strong>índice de pregunta activa</strong> y los <strong>participantes conectados</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-019</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero retirar a un participante que incumpla normas para mantener el orden.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Expulsar participante</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo expulsar a un participante de una sesión en vivo que incumpla las normas o cause interrupciones, para mantener el orden y la continuidad del quiz.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: expulsión</strong></li>
+        <li>Dado que soy un <strong>Teacher autenticado</strong></li>
+        <li>Y el participante está <strong>activo</strong> en la sesión</li>
+        <li>Cuando ejecuto la acción de expulsión</li>
+        <li>Entonces el sistema lo marca como <strong>fuera de la sesión</strong></li>
+        <li>Y emite el evento <strong>ParticipantKickedEvent</strong></li>
+        <br>
+        <li>Y si el participante sale voluntariamente</li>
+        <li>Entonces el sistema emite <strong>ParticipantLeftEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-020</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero generar un reporte de una sesión finalizada para analizar resultados.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Generar reporte</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo generar un reporte consolidado de la sesión finalizada para analizar los resultados y la participación de los estudiantes.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: generar o reutilizar</strong></li>
+        <li>Dado que la sesión está <strong>finalizada</strong></li>
+        <li>Cuando solicito generar el reporte</li>
+        <li>Entonces, si no existe, se <strong>crea</strong> y se devuelve su <strong>ID</strong></li>
+        <li>Y si ya existe, se <strong>devuelve el reporte existente</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-021</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero consultar un reporte para revisar resultados por participante y pregunta.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Consultar reporte</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo ver el contenido de un reporte generado para revisar el desempeño por participante y las estadísticas por pregunta.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: ver reporte</strong></li>
+        <li>Dado un <strong>ID de reporte</strong> válido</li>
+        <li>Cuando consulto el reporte</li>
+        <li>Entonces recibo el <strong>resumen</strong> general, los <strong>resultados por participante</strong> y las <strong>estadísticas por pregunta</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-022</td>
+    <td>Teacher</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero exportar un reporte a Excel o CSV para compartir y analizar.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Exportar reporte</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Teacher, deseo exportar el reporte consolidado de una sesión en formato <strong>Excel (.xlsx)</strong> o <strong>CSV</strong> para compartirlo con otros docentes o analizarlo externamente.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: exportar formatos</strong></li>
+        <li>Dado un <strong>ID de reporte válido</strong></li>
+        <li>Cuando elijo el formato de exportación <strong>EXCEL</strong> o <strong>CSV</strong></li>
+        <li>Entonces el sistema genera el archivo con el contenido del <strong>SessionReport</strong></li>
+        <li>Y permite su <strong>descarga directa</strong> o acceso mediante enlace temporal seguro</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
     <td>COMM-US-001</td>
     <td>Docente</td>
     <td>Alta</td>
@@ -68,7 +1073,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>COMM-US-002</td>
     <td>Docente</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como docente, quiero crear y gestionar publicaciones.</td>
   </tr>
   <tr>
@@ -203,7 +1208,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>COMM-US-005</td>
     <td>Estudiante</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como estudiante, quiero visualizar y participar en la comunidad.</td>
   </tr>
   <tr>
@@ -347,7 +1352,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>COMM-US-007</td>
     <td>Usuario</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario, quiero notificaciones y búsqueda.</td>
   </tr>
   <tr>
@@ -779,7 +1784,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-010</td>
     <td>Administrador o docente</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente, quiero gestionar usuarios y roles</td>
   </tr>
   <tr>
@@ -821,7 +1826,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-011</td>
     <td>Administrador o docente</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como administrador o docente, quiero gestionar usuarios y roles</td>
   </tr>
   <tr>
@@ -996,7 +2001,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-002</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario autenticado, quiero iniciar sesión y gestionar tokens (validar y refrescar) para mantener una sesión segura y continua.</td>
   </tr>
   <tr>
@@ -1044,7 +2049,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-003</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario autenticado, quiero iniciar sesión y gestionar tokens (validar y refrescar) para mantener una sesión segura y continua.</td>
   </tr>
   <tr>
@@ -1138,7 +2143,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-005</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar usuarios y roles para controlar el acceso y permisos del sistema.</td>
   </tr>
   <tr>
@@ -1281,7 +2286,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-008</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar usuarios y roles para controlar el acceso y permisos del sistema.</td>
   </tr>
   <tr>
@@ -1693,7 +2698,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>PROF-US-002</td>
     <td>Usuario</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario, quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
   </tr>
   <tr>
@@ -1820,7 +2825,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>PROF-US-005</td>
     <td>Usuario</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como administrador o docente, quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -1862,7 +2867,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>PROF-US-006</td>
     <td>Docente o Administrador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente, quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -2033,7 +3038,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>PROF-US-010</td>
     <td>Docente o Administrador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como administrador o docente, quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -2217,7 +3222,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-004</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -2264,7 +3269,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-005</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -2307,7 +3312,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-006</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -2355,7 +3360,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-007</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -2544,7 +3549,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-011</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario (ROLE_STUDENT/ROLE_TEACHER), quiero consultar mi puntuación/nivel e historial para seguir mi progreso y auditar cambios.</td>
   </tr>
   <tr>
