@@ -392,7 +392,6 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
 </table>
 
 
-
 <table>
   <tr>
     <th>Story ID</th>
