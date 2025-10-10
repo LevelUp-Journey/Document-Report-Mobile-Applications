@@ -4969,7 +4969,63 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   </tr>
 </table>
 
-
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>Type</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP06</td>
+    <td>Spike (Investigación Técnica)</td>
+    <td>Alta</td>
+    <td>Observabilidad en Tiempo Real con OpenTelemetry</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Explorar OpenTelemetry + Prometheus + Grafana para métricas, trazas y errores en tiempo real</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos explorar el uso de <strong>OpenTelemetry</strong> junto con <strong>Prometheus</strong> y <strong>Grafana</strong>
+      para establecer una solución de observabilidad en tiempo real (métricas, trazas y errores) que garantice la calidad de servicio y facilite el diagnóstico.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: trazas end-to-end instrumentadas y visibles</strong></li>
+        <li>Dado que necesitamos confirmar la <strong>trazabilidad completa</strong></li>
+        <li>Cuando instrumentamos un flujo mínimo <strong>API Gateway → Servicio A → Kafka Producer → Kafka Consumer (Servicio B)</strong> con OpenTelemetry (propagación W3C <code>traceparent</code>) y enviamos spans vía <strong>OTLP</strong> al <em>OpenTelemetry Collector</em></li>
+        <li>Entonces en <strong>Grafana</strong> (con <strong>Tempo/Jaeger</strong> como backend de trazas) se visualiza una <strong>traza única</strong> que encadena spans de gateway, servicios y consumidores Kafka</li>
+        <li>Y los spans incluyen atributos clave (<code>http.route</code>, <code>messaging.system=kafka</code>, <code>enduser.id</code> simulado); se dejan <strong>capturas/IDs</strong> y <strong>pasos de configuración</strong> documentados</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 2: métricas + alerta de latencia p95</strong></li>
+        <li>Dado que debemos alertar ante <strong>degradación</strong></li>
+        <li>Cuando exponemos métricas con OTel (histogramas <code>http.server.duration</code>) y las recolecta <strong>Prometheus</strong> (vía OTel Collector → Prometheus exporter)</li>
+        <li>Entonces definimos una <strong>alerta</strong> en Grafana/Prometheus: <strong>p95 &gt; 300 ms</strong> durante 5 min (usando <code>histogram_quantile</code>)</li>
+        <li>Y la alerta se dispara y <strong>notifica</strong> al canal acordado (Alertmanager/Grafana Alerting); se documentan la <strong>regla</strong>, el <strong>panel</strong> y el <strong>destino de notificación</strong></li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 3: errores y correlación con logs</strong></li>
+        <li>Dado que necesitamos <strong>diagnosticar fallos</strong> rápidamente</li>
+        <li>Cuando registramos excepciones con OTel (<code>status=ERROR</code>, eventos <code>exception.*</code>) y habilitamos <strong>exemplars</strong> para correlacionar métricas con trazas, además de propagar <code>trace_id</code> a logs (JSON)</li>
+        <li>Entonces en Grafana podemos: ver el <strong>ratio de errores</strong> por endpoint/servicio, saltar desde un <strong>exemplar</strong> de la serie temporal a la traza específica, y desde la traza abrir los <strong>logs correlacionados</strong> por <code>trace_id</code></li>
+        <li>Y se documenta la configuración del Collector (pipelines, exporters) y se entregan <strong>dashboards base</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 
 
@@ -5104,4 +5160,10 @@ Cada uno de estos objetivos se desglosa en el mapa en impactos esperados (impact
 | 103     | TPROF-010     | Leaderboard top-N                                            | 3            |
 | 104     | TPROF-011     | Documentación y errores estándar                             | 2            |
 | 105     | TPROF-012     | IDs y auditoría de entidades                                 | 2            |
+| 106     | SP01          | WebSocket + OAuth2 para Sesiones en Vivo                     | 3            |
+| 107     | SP02          | API Gateway para Autenticación y Rate Limiting               | 3            |
+| 108     | SP03          | Apache Kafka para Respuestas en Vivo                         | 2            |
+| 109     | SP04          | Proveedor PostgreSQL: Aiven                                  | 2            |
+| 110     | SP05          | Spring Data Mongo para Social Feed1                          | 1            |
+| 111     | SP06          | Observabilidad en Tiempo Real con OpenTelemetry              | 5            |
 
