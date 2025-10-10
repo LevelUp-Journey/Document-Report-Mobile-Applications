@@ -722,6 +722,8 @@ Si algo no funciona (por ejemplo, un enlace o formulario), ¿el diseño te ayuda
 
 ### 4.3.2. Registro de Entrevistas
 
+[![Ver entrevista en YouTube](https://img.youtube.com/vi/6lf3YrrgEYg/0.jpg)](https://youtu.be/6lf3YrrgEYg)
+
 **Segmento: Estudiantes**
 
 **Participantes:**
