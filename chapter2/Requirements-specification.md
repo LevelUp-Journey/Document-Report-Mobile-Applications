@@ -14,6 +14,383 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
 
 <br />
 
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>COMM-US-001</td>
+    <td>Docente</td>
+    <td>Alta</td>
+    <td>Como docente, quiero crear y gestionar publicaciones.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Crear publicación con multimedia</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como docente, quiero crear una publicación con título, contenido y archivos multimedia para compartir información con los estudiantes y fomentar la comunicación académica.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: creación de publicación con archivos</strong></li>
+        <li>Dado que soy un docente autenticado (<strong>ROLE_TEACHER</strong>)</li>
+        <li>Cuando creo una publicación con título, contenido en texto enriquecido, tipo y categoría</li>
+        <li>Y adjunto hasta <strong>5 archivos multimedia</strong> (máx <strong>10MB</strong> cada uno)</li>
+        <li>Entonces la publicación se crea exitosamente</li>
+        <li>Y queda visible inmediatamente para todos los estudiantes</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>COMM-US-002</td>
+    <td>Docente</td>
+    <td>Alta</td>
+    <td>Como docente, quiero crear y gestionar publicaciones.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Editar y eliminar publicaciones</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como docente, quiero editar o eliminar mis publicaciones para corregir errores o remover contenido obsoleto, manteniendo actualizada la información compartida con los estudiantes.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: edición de publicación</strong></li>
+        <li>Dado una publicación que creé anteriormente</li>
+        <li>Cuando modifico su título, contenido, tipo o categoría</li>
+        <li>Entonces los cambios se guardan con un indicador de <strong>"editado"</strong></li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: eliminación de publicación</strong></li>
+        <li>Dado una publicación existente creada por mí</li>
+        <li>Cuando elimino la publicación</li>
+        <li>Entonces se elimina junto con todos sus <strong>comentarios</strong> y <strong>likes asociados</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>COMM-US-003</td>
+    <td>Docente</td>
+    <td>Alta</td>
+    <td>Como docente, quiero crear y gestionar publicaciones.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Fijar publicaciones importantes</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como docente, quiero fijar publicaciones importantes al inicio del feed para destacar anuncios urgentes y asegurar su visibilidad ante los estudiantes.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: fijar anuncio urgente</strong></li>
+        <li>Dado que tengo una publicación importante creada</li>
+        <li>Cuando la marco como <strong>fijada</strong></li>
+        <li>Entonces aparece al inicio del feed</li>
+        <li>Y solo pueden existir hasta <strong>3 publicaciones fijadas</strong> simultáneamente</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>COMM-US-004</td>
+    <td>Estudiante</td>
+    <td>Alta</td>
+    <td>Como estudiante, quiero visualizar y participar en la comunidad.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Visualizar feed de publicaciones</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como estudiante, quiero ver el feed de publicaciones ordenado cronológicamente para mantenerme informado sobre las novedades académicas y actividades compartidas por docentes o compañeros.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: navegación del feed</strong></li>
+        <li>Dado que soy un estudiante autenticado (<strong>ROLE_STUDENT</strong>)</li>
+        <li>Cuando accedo al feed de la comunidad</li>
+        <li>Entonces veo las publicaciones ordenadas cronológicamente</li>
+        <li>Y las publicaciones <strong>fijadas</strong> aparecen al inicio</li>
+        <li>Y visualizo <strong>título</strong>, <strong>extracto</strong>, <strong>autor</strong>, <strong>fecha</strong> y <strong>contadores de comentarios/likes</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>COMM-US-005</td>
+    <td>Estudiante</td>
+    <td>Alta</td>
+    <td>Como estudiante, quiero visualizar y participar en la comunidad.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Comentar en publicaciones</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como estudiante, quiero comentar en publicaciones para participar en discusiones académicas, compartir opiniones y realizar preguntas a docentes o compañeros.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: crear y editar comentario</strong></li>
+        <li>Dado que veo una publicación de interés</li>
+        <li>Cuando escribo un comentario de hasta <strong>500 caracteres</strong></li>
+        <li>Entonces el comentario se publica con mi <strong>nombre</strong>, <strong>foto</strong> y <strong>fecha</strong></li>
+        <li>Y puedo <strong>editarlo</strong> dentro de las primeras <strong>24 horas</strong></li>
+        <li>Y puedo <strong>eliminarlo</strong> en cualquier momento</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>COMM-US-006</td>
+    <td>Estudiante</td>
+    <td>Alta</td>
+    <td>Como estudiante, quiero visualizar y participar en la comunidad.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Reaccionar con likes</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como estudiante, quiero dar <strong>like</strong> a publicaciones y comentarios para expresar aprecio por contenido valioso y fomentar la participación positiva dentro de la comunidad.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: dar y quitar like</strong></li>
+        <li>Dado que veo una publicación o comentario</li>
+        <li>Cuando doy <strong>like</strong></li>
+        <li>Entonces el <strong>contador de likes</strong> aumenta</li>
+        <li>Y mi like queda registrado</li>
+        <li>Y cuando lo quito</li>
+        <li>Entonces el contador disminuye</li>
+        <li>Y puedo ver la <strong>lista de usuarios</strong> que dieron like</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>COMM-US-007</td>
+    <td>Usuario</td>
+    <td>Alta</td>
+    <td>Como usuario, quiero notificaciones y búsqueda.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Recibir notificaciones en tiempo real</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como usuario, quiero recibir notificaciones en tiempo real para mantenerme informado sobre nuevas publicaciones, comentarios y actividades relevantes dentro de la comunidad, según mis preferencias configuradas.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: notificación de nueva publicación</strong></li>
+        <li>Dado que soy un estudiante activo</li>
+        <li>Cuando un docente crea una nueva publicación</li>
+        <li>Entonces recibo una <strong>notificación en tiempo real</strong></li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: notificación al docente</strong></li>
+        <li>Dado que soy un docente</li>
+        <li>Cuando un estudiante comenta mi publicación</li>
+        <li>Entonces recibo una notificación inmediata del nuevo comentario</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: configuración de notificaciones</strong></li>
+        <li>Dado mis preferencias de usuario</li>
+        <li>Cuando modifico qué tipos de notificaciones deseo recibir</li>
+        <li>Entonces el sistema actualiza mi configuración y aplica los cambios en tiempo real</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>COMM-US-007</td>
+    <td>Usuario</td>
+    <td>Alta</td>
+    <td>Como usuario, quiero notificaciones y búsqueda.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Recibir notificaciones en tiempo real</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como usuario, quiero recibir notificaciones en tiempo real para mantenerme informado sobre nuevas publicaciones, comentarios y actividades relevantes dentro de la comunidad, según mis preferencias configuradas.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: notificación de nueva publicación</strong></li>
+        <li>Dado que soy un estudiante activo</li>
+        <li>Cuando un docente crea una nueva publicación</li>
+        <li>Entonces recibo una <strong>notificación en tiempo real</strong></li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: notificación al docente</strong></li>
+        <li>Dado que soy un docente</li>
+        <li>Cuando un estudiante comenta mi publicación</li>
+        <li>Entonces recibo una notificación inmediata del nuevo comentario</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario: configuración de notificaciones</strong></li>
+        <li>Dado mis preferencias de usuario</li>
+        <li>Cuando modifico qué tipos de notificaciones deseo recibir</li>
+        <li>Entonces el sistema actualiza mi configuración y aplica los cambios en tiempo real</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
 
 
 <table>
