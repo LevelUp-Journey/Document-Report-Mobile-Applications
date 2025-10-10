@@ -31,7 +31,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Crear quiz</td>
+    <td colspan="4" style="color: green;">Crear quiz</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -75,7 +75,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Actualizar quiz</td>
+    <td colspan="4" style="color: green;">Actualizar quiz</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -118,7 +118,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Eliminar quiz</td>
+    <td colspan="4" style="color: green;">Eliminar quiz</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -161,7 +161,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Publicar quiz</td>
+    <td colspan="4" style="color: green;">Publicar quiz</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -205,7 +205,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Agregar pregunta</td>
+    <td colspan="4" style="color: green;">Agregar pregunta</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -249,7 +249,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Actualizar pregunta</td>
+    <td colspan="4" style="color: green;">Actualizar pregunta</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -292,7 +292,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Eliminar pregunta</td>
+    <td colspan="4" style="color: green;">Eliminar pregunta</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -335,7 +335,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Consultar quiz</td>
+    <td colspan="4" style="color: green;">Consultar quiz</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -381,7 +381,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Consultar quiz</td>
+    <td colspan="4" style="color: green;">Consultar quiz</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -427,7 +427,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Listar quizzes públicos</td>
+    <td colspan="4" style="color: green;">Listar quizzes públicos</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -469,7 +469,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Listar mis quizzes</td>
+    <td colspan="4" style="color: green;">Listar mis quizzes</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -511,7 +511,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Crear sesión en vivo</td>
+    <td colspan="4" style="color: green;">Crear sesión en vivo</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -554,7 +554,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Unirse a sesión</td>
+    <td colspan="4" style="color: green;">Unirse a sesión</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -600,7 +600,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Iniciar sesión</td>
+    <td colspan="4" style="color: green;">Iniciar sesión</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -644,7 +644,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Iniciar pregunta</td>
+    <td colspan="4" style="color: green;">Iniciar pregunta</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -687,7 +687,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Enviar respuesta</td>
+    <td colspan="4" style="color: green;">Enviar respuesta</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -733,7 +733,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Avanzar pregunta</td>
+    <td colspan="4" style="color: green;">Avanzar pregunta</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -776,7 +776,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Finalizar sesión y ranking</td>
+    <td colspan="4" style="color: green;">Finalizar sesión y ranking</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -819,7 +819,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Consultar sesión</td>
+    <td colspan="4" style="color: green;">Consultar sesión</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -861,7 +861,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Expulsar participante</td>
+    <td colspan="4" style="color: green;">Expulsar participante</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -908,7 +908,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Generar reporte</td>
+    <td colspan="4" style="color: green;">Generar reporte</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -951,7 +951,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Consultar reporte</td>
+    <td colspan="4" style="color: green;">Consultar reporte</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -993,7 +993,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Exportar reporte</td>
+    <td colspan="4" style="color: green;">Exportar reporte</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1038,7 +1038,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint POST /quizzes</td>
+    <td colspan="4" style="color: green;">Implementar endpoint POST /quizzes</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1083,7 +1083,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint PUT /quizzes/{id}</td>
+    <td colspan="4" style="color: green;">Implementar endpoint PUT /quizzes/{id}</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1126,7 +1126,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint DELETE /quizzes/{id}</td>
+    <td colspan="4" style="color: green;">Implementar endpoint DELETE /quizzes/{id}</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1169,7 +1169,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint DELETE /quizzes/{id}</td>
+    <td colspan="4" style="color: green;">Implementar endpoint DELETE /quizzes/{id}</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1212,7 +1212,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint POST /quizzes/{id}/questions</td>
+    <td colspan="4" style="color: green;">Implementar endpoint POST /quizzes/{id}/questions</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1254,7 +1254,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint PUT /questions/{id}</td>
+    <td colspan="4" style="color: green;">Implementar endpoint PUT /questions/{id}</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1296,7 +1296,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint DELETE /questions/{id}</td>
+    <td colspan="4" style="color: green;">Implementar endpoint DELETE /questions/{id}</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1339,7 +1339,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint GET /quizzes/{id}</td>
+    <td colspan="4" style="color: green;">Implementar endpoint GET /quizzes/{id}</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1386,7 +1386,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint GET /quizzes/public</td>
+    <td colspan="4" style="color: green;">Implementar endpoint GET /quizzes/public</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1428,7 +1428,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint GET /users/{userId}/quizzes</td>
+    <td colspan="4" style="color: green;">Implementar endpoint GET /users/{userId}/quizzes</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1470,7 +1470,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint POST /sessions</td>
+    <td colspan="4" style="color: green;">Implementar endpoint POST /sessions</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1513,7 +1513,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint POST /sessions/{code}/join</td>
+    <td colspan="4" style="color: green;">Implementar endpoint POST /sessions/{code}/join</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1556,7 +1556,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint POST /sessions/{id}/start</td>
+    <td colspan="4" style="color: green;">Implementar endpoint POST /sessions/{id}/start</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1599,7 +1599,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint POST /sessions/{id}/questions/start</td>
+    <td colspan="4" style="color: green;">Implementar endpoint POST /sessions/{id}/questions/start</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1642,7 +1642,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint POST /sessions/{id}/answers</td>
+    <td colspan="4" style="color: green;">Implementar endpoint POST /sessions/{id}/answers</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1685,7 +1685,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint POST /sessions/{id}/questions/advance</td>
+    <td colspan="4" style="color: green;">Implementar endpoint POST /sessions/{id}/questions/advance</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1728,7 +1728,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint POST /sessions/{id}/finish</td>
+    <td colspan="4" style="color: green;">Implementar endpoint POST /sessions/{id}/finish</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1771,7 +1771,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint GET /sessions/{code}</td>
+    <td colspan="4" style="color: green;">Implementar endpoint GET /sessions/{code}</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1814,7 +1814,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint POST /sessions/{id}/participants/{participantId}/kick</td>
+    <td colspan="4" style="color: green;">Implementar endpoint POST /sessions/{id}/participants/{participantId}/kick</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1858,7 +1858,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint POST /sessions/{id}/reports</td>
+    <td colspan="4" style="color: green;">Implementar endpoint POST /sessions/{id}/reports</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1902,7 +1902,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint GET /reports/{id}</td>
+    <td colspan="4" style="color: green;">Implementar endpoint GET /reports/{id}</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1945,7 +1945,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint GET /reports/{id}/export</td>
+    <td colspan="4" style="color: green;">Implementar endpoint GET /reports/{id}/export</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -1989,7 +1989,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar WebSocket con baja latencia</td>
+    <td colspan="4" style="color: green;">Implementar WebSocket con baja latencia</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2033,7 +2033,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar alta disponibilidad</td>
+    <td colspan="4" style="color: green;">Implementar alta disponibilidad</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2078,7 +2078,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Crear publicación con multimedia</td>
+    <td colspan="4" style="color: green;">Crear publicación con multimedia</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2122,7 +2122,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Editar y eliminar publicaciones</td>
+    <td colspan="4" style="color: green;">Editar y eliminar publicaciones</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2170,7 +2170,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Fijar publicaciones importantes</td>
+    <td colspan="4" style="color: green;">Fijar publicaciones importantes</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2213,7 +2213,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Visualizar feed de publicaciones</td>
+    <td colspan="4" style="color: green;">Visualizar feed de publicaciones</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2257,7 +2257,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Comentar en publicaciones</td>
+    <td colspan="4" style="color: green;">Comentar en publicaciones</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2301,7 +2301,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Reaccionar con likes</td>
+    <td colspan="4" style="color: green;">Reaccionar con likes</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2347,7 +2347,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Recibir notificaciones en tiempo real</td>
+    <td colspan="4" style="color: green;">Recibir notificaciones en tiempo real</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2401,7 +2401,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Recibir notificaciones en tiempo real</td>
+    <td colspan="4" style="color: green;">Recibir notificaciones en tiempo real</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2456,7 +2456,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Registro con validaciones y rol por defecto</td>
+    <td colspan="4" style="color: green;">Registro con validaciones y rol por defecto</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2498,7 +2498,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Inicio de sesión (email/contraseña)</td>
+    <td colspan="4" style="color: green;">Inicio de sesión (email/contraseña)</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2539,7 +2539,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Rechazo por credenciales inválidas</td>
+    <td colspan="4" style="color: green;">Rechazo por credenciales inválidas</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2581,7 +2581,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Renovación de token (refresh)</td>
+    <td colspan="4" style="color: green;">Renovación de token (refresh)</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2623,7 +2623,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Validación de token de acceso</td>
+    <td colspan="4" style="color: green;">Validación de token de acceso</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2665,7 +2665,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Autenticación con proveedores (Google/GitHub)</td>
+    <td colspan="4" style="color: green;">Autenticación con proveedores (Google/GitHub)</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2707,7 +2707,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Caso GitHub sin email</td>
+    <td colspan="4" style="color: green;">Caso GitHub sin email</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2749,7 +2749,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Listar usuarios (ADMIN)</td>
+    <td colspan="4" style="color: green;">Listar usuarios (ADMIN)</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2791,7 +2791,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Obtener usuario por ID o email</td>
+    <td colspan="4" style="color: green;">Obtener usuario por ID o email</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2833,7 +2833,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Listar roles y consultar rol</td>
+    <td colspan="4" style="color: green;">Listar roles y consultar rol</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2875,7 +2875,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Seed de roles base</td>
+    <td colspan="4" style="color: green;">Seed de roles base</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2917,7 +2917,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Puntaje de fortaleza 0–5</td>
+    <td colspan="4" style="color: green;">Puntaje de fortaleza 0–5</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -2959,7 +2959,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Asignación de múltiples roles</td>
+    <td colspan="4" style="color: green;">Asignación de múltiples roles</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3001,7 +3001,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar POST /auth/signup</td>
+    <td colspan="4" style="color: green;">Implementar POST /auth/signup</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3050,7 +3050,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar POST /auth/signin</td>
+    <td colspan="4" style="color: green;">Implementar POST /auth/signin</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3098,7 +3098,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar POST /auth/token/refresh</td>
+    <td colspan="4" style="color: green;">Implementar POST /auth/token/refresh</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3145,7 +3145,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar POST /auth/token/validate</td>
+    <td colspan="4" style="color: green;">Implementar POST /auth/token/validate</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3192,7 +3192,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar /auth/oauth2/authorize y /auth/oauth2/callback</td>
+    <td colspan="4" style="color: green;">Implementar /auth/oauth2/authorize y /auth/oauth2/callback</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3240,7 +3240,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar GET /users (paginado)</td>
+    <td colspan="4" style="color: green;">Implementar GET /users (paginado)</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3287,7 +3287,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar GET /users/{userId} y GET /users:by-email</td>
+    <td colspan="4" style="color: green;">Implementar GET /users/{userId} y GET /users:by-email</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3335,7 +3335,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar GET /roles y GET /roles/{roleName}</td>
+    <td colspan="4" style="color: green;">Implementar GET /roles y GET /roles/{roleName}</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3383,7 +3383,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar POST /roles/seed</td>
+    <td colspan="4" style="color: green;">Implementar POST /roles/seed</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3426,7 +3426,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar POST /auth/password/strength</td>
+    <td colspan="4" style="color: green;">Implementar POST /auth/password/strength</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3473,7 +3473,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar POST /users/{userId}/roles</td>
+    <td colspan="4" style="color: green;">Implementar POST /users/{userId}/roles</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3520,7 +3520,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Documentación OpenAPI 3.0</td>
+    <td colspan="4" style="color: green;">Documentación OpenAPI 3.0</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3562,7 +3562,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Configurar HTTPS y CORS</td>
+    <td colspan="4" style="color: green;">Configurar HTTPS y CORS</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3609,7 +3609,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Filtro de autenticación/autorización JWT</td>
+    <td colspan="4" style="color: green;">Filtro de autenticación/autorización JWT</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3656,7 +3656,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Logging y métricas de seguridad</td>
+    <td colspan="4" style="color: green;">Logging y métricas de seguridad</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3703,7 +3703,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Crear perfil con username y rank inicial</td>
+    <td colspan="4" style="color: green;">Crear perfil con username y rank inicial</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3747,7 +3747,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Consultar perfil por ID o Username</td>
+    <td colspan="4" style="color: green;">Consultar perfil por ID o Username</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3789,7 +3789,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Listar perfiles</td>
+    <td colspan="4" style="color: green;">Listar perfiles</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3831,7 +3831,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Seed de niveles competitivos</td>
+    <td colspan="4" style="color: green;">Seed de niveles competitivos</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3874,7 +3874,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Consultar niveles</td>
+    <td colspan="4" style="color: green;">Consultar niveles</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3916,7 +3916,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Agregar puntos y evaluar ascenso</td>
+    <td colspan="4" style="color: green;">Agregar puntos y evaluar ascenso</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -3960,7 +3960,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Consultar nivel y puntuación actual</td>
+    <td colspan="4" style="color: green;">Consultar nivel y puntuación actual</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4002,7 +4002,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Ver historial de cambios de puntuación</td>
+    <td colspan="4" style="color: green;">Ver historial de cambios de puntuación</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4044,7 +4044,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Leaderboard con límite y orden</td>
+    <td colspan="4" style="color: green;">Leaderboard con límite y orden</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4087,7 +4087,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Reasignación automática de nivel</td>
+    <td colspan="4" style="color: green;">Reasignación automática de nivel</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4129,7 +4129,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Implementar endpoint POST /profiles</td>
+    <td colspan="4" style="color: green;">Implementar endpoint POST /profiles</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4176,7 +4176,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Obtener perfil por ID</td>
+    <td colspan="4" style="color: green;">Obtener perfil por ID</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4223,7 +4223,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Obtener perfil por Username</td>
+    <td colspan="4" style="color: green;">Obtener perfil por Username</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4271,7 +4271,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Listar perfiles (paginado)</td>
+    <td colspan="4" style="color: green;">Listar perfiles (paginado)</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4318,7 +4318,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Seed de niveles</td>
+    <td colspan="4" style="color: green;">Seed de niveles</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4361,7 +4361,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Listar y detallar niveles</td>
+    <td colspan="4" style="color: green;">Listar y detallar niveles</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4409,7 +4409,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Agregar puntos y evaluar ascenso</td>
+    <td colspan="4" style="color: green;">Agregar puntos y evaluar ascenso</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4456,7 +4456,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Obtener estado competitivo</td>
+    <td colspan="4" style="color: green;">Obtener estado competitivo</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4503,7 +4503,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Listar historial de puntuación</td>
+    <td colspan="4" style="color: green;">Listar historial de puntuación</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4551,7 +4551,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Leaderboard top-N</td>
+    <td colspan="4" style="color: green;">Leaderboard top-N</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4598,7 +4598,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">Documentación y errores estándar</td>
+    <td colspan="4" style="color: green;">Documentación y errores estándar</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
@@ -4645,7 +4645,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
     <th colspan="4" style="color: green;">Title</th>
   </tr>
   <tr>
-    <td colspan="4">IDs y auditoría de entidades</td>
+    <td colspan="4" style="color: green;">IDs y auditoría de entidades</td>
   </tr>
   <tr>
     <th colspan="4" style="color: green;">Description</th>
