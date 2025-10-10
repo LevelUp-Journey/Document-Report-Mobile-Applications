@@ -4671,7 +4671,361 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
 </table>
 
 
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>Type</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP01</td>
+    <td>Spike (Investigación Técnica)</td>
+    <td>Alta</td>
+    <td>WebSocket + OAuth2 para Sesiones en Vivo</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Integrar WebSocket con OAuth2 y JWT para autenticación en sesiones en vivo</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos investigar cómo integrar WebSocket con OAuth2 y JWT
+      para documentar un método seguro de establecer sesiones en vivo con autenticación válida,
+      asegurando la protección de los canales de comunicación en tiempo real.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: investigación documental y bibliográfica</strong></li>
+        <li>Dado que el equipo no conoce un método claro para autenticar WebSockets con OAuth2 y JWT</li>
+        <li>Cuando se revisa documentación oficial, artículos técnicos y ejemplos en GitHub</li>
+        <li>Entonces se identifican al menos <strong>dos enfoques viables</strong> y se documentan sus ventajas, desventajas y requisitos técnicos en un informe comparativo</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 2: prototipo de autenticación exitosa</strong></li>
+        <li>Dado que se dispone de un entorno de prueba controlado</li>
+        <li>Cuando se implementa un prototipo mínimo con <strong>handshake WebSocket</strong> que valida un <strong>JWT</strong> emitido previamente</li>
+        <li>Entonces la conexión se establece correctamente y el flujo queda documentado paso a paso en una guía técnica</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 3: validación de errores y casos límite</strong></li>
+        <li>Dado que el prototipo permite pruebas controladas</li>
+        <li>Cuando se intenta conectar con tokens inválidos o expirados</li>
+        <li>Entonces el servidor <strong>rechaza o cierra la conexión</strong> según corresponda</li>
+        <li>Y se documenta el manejo de errores recomendado para la implementación futura</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>Type</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP02</td>
+    <td>Spike (Investigación Técnica)</td>
+    <td>Alta</td>
+    <td>API Gateway para Autenticación y Rate Limiting</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Evaluar implementación de API Gateway con autenticación, rate limiting y CORS centralizado</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos evaluar el uso de un <strong>API Gateway</strong> 
+      para definir una estrategia centralizada de autenticación, limitación de uso (rate limiting) 
+      y enrutamiento hacia los microservicios, con el fin de mejorar la seguridad, el control de tráfico 
+      y la mantenibilidad de la arquitectura distribuida.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: validación de JWT en prototipo</strong></li>
+        <li>Dado que el equipo desconoce cómo validar <strong>JWT</strong> en un API Gateway</li>
+        <li>Cuando se revisa documentación oficial y ejemplos en GitHub</li>
+        <li>Y se implementa un prototipo que reenvía solicitudes con un <strong>JWT válido</strong> a un servicio de prueba</li>
+        <li>Entonces la solicitud es aceptada y enrutada correctamente</li>
+        <li>Y el flujo queda documentado con diagramas y pasos reproducibles</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 2: prueba de políticas de rate limiting</strong></li>
+        <li>Dado que se requiere definir límites de uso centralizados</li>
+        <li>Cuando se configura una política de <strong>50 solicitudes por minuto</strong> en el prototipo</li>
+        <li>Y se ejecutan pruebas de carga con múltiples peticiones simultáneas</li>
+        <li>Entonces el sistema responde con <strong>HTTP 429 Too Many Requests</strong> al superar el límite</li>
+        <li>Y se documenta la política y parámetros utilizados</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 3: configuración de CORS centralizado</strong></li>
+        <li>Dado que el equipo necesita manejar <strong>CORS</strong> desde el gateway</li>
+        <li>Cuando se aplican reglas para permitir solo dominios autorizados</li>
+        <li>Y se realiza una solicitud <strong>preflight</strong> desde un frontend autorizado</li>
+        <li>Entonces se reciben las cabeceras <strong>CORS correctas</strong> (Access-Control-Allow-*)</li>
+        <li>Y la configuración final queda registrada en la guía técnica</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>Type</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP03</td>
+    <td>Spike (Investigación Técnica)</td>
+    <td>Alta</td>
+    <td>Apache Kafka para Respuestas en Vivo</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Evaluar Apache Kafka para procesar respuestas en tiempo real con métricas de sesión</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos investigar el uso de <strong>Apache Kafka</strong> para procesar respuestas en tiempo real,
+      a fin de identificar una arquitectura que permita calcular métricas de sesión sin afectar el rendimiento de la plataforma.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: prototipo y medición de latencia</strong></li>
+        <li>Dado que el equipo necesita validar el procesamiento en tiempo real</li>
+        <li>Cuando se construye un prototipo con un tópico de entrada (<code>responses.ses_01A</code>) y un job de stream (Kafka Streams o Flink) que agrega métricas (conteo, promedio, p50/p95)</li>
+        <li>Entonces se evidencia, con mediciones reproducibles, una <strong>latencia p95 ≤ 1 s</strong> desde publicación hasta métrica agregada</li>
+        <li>Y se documenta la configuración (particiones, acks, <code>batch.size</code>, <code>linger.ms</code>, etc.)</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 2: validación de esquema</strong></li>
+        <li>Dado que se requiere estabilidad de contrato de datos</li>
+        <li>Cuando se integra un <strong>Schema Registry</strong> (p. ej., Avro/JSON Schema) y se publican eventos válidos e inválidos</li>
+        <li>Entonces los eventos válidos son procesados y los inválidos son rechazados con <strong>logs trazables</strong></li>
+        <li>Y se documentan compatibilidades (<strong>BACKWARD/FORWARD</strong>) y el procedimiento para evolución de esquema</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 3: manejo de errores y DLQ</strong></li>
+        <li>Dado que el sistema debe ser tolerante a mensajes malformados o no procesables</li>
+        <li>Cuando el consumidor encuentra un evento con error irrecuperable</li>
+        <li>Entonces el mensaje se enruta a un tópico <strong>DLQ</strong> con metadatos (offset, key, excepción) y el flujo principal continúa</li>
+        <li>Y se documenta la política de <strong>reintentos</strong>, <strong>dead lettering</strong> y <strong>observabilidad</strong> (métricas/alertas)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>Type</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP04</td>
+    <td>Spike (Investigación Técnica)</td>
+    <td>Alta</td>
+    <td>Proveedor PostgreSQL: Aiven</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Evaluar Aiven como proveedor de PostgreSQL gestionado con HA, seguridad y respaldos automáticos</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos evaluar a <strong>Aiven</strong> como proveedor de <strong>PostgreSQL gestionado</strong>,
+      para determinar si cumple con los requisitos de alta disponibilidad, seguridad y respaldos automáticos
+      de la base de datos principal del sistema.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: backup y Point-in-Time Restore (PITR) con métricas</strong></li>
+        <li>Dado una base de prueba con dataset conocido (filas y checksums registrados)</li>
+        <li>Cuando se habilitan y verifican los <strong>backups automáticos</strong> y se ejecuta un restore a un punto en el tiempo T</li>
+        <li>Entonces los datos restaurados coinciden (conteos y checksums)</li>
+        <li>Y se documentan los valores observados de <strong>RPO</strong> y <strong>RTO</strong>, junto con los pasos exactos del proceso PITR</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 2: failover automático en plan HA</strong></li>
+        <li>Dado un clúster con <strong>alta disponibilidad (HA)</strong> habilitada</li>
+        <li>Cuando se fuerza una conmutación (mantenimiento, switchover o caída simulada del primario)</li>
+        <li>Entonces el servicio sigue disponible mediante el endpoint gestionado</li>
+        <li>Y se mide el tiempo de <strong>failover efectivo</strong>, documentando además el comportamiento del cliente (p. ej., pgbouncer o connection string)</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 3: controles de seguridad y aislamiento de red</strong></li>
+        <li>Dado que se requiere <strong>seguridad en tránsito y en reposo</strong></li>
+        <li>Cuando se verifica el uso de <strong>TLS</strong> para conexiones, cifrado en reposo, aislamiento de red (VPC peering o allow-lists) y políticas de acceso (roles/ACLs)</li>
+        <li>Entonces se valida que los controles funcionan (tests de conexión con/sin TLS, accesos permitidos/denegados por red)</li>
+        <li>Y se documenta la configuración aplicada, junto con logs, auditoría y hallazgos de seguridad detectados</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>Type</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP05</td>
+    <td>Spike (Investigación Técnica)</td>
+    <td>Alta</td>
+    <td>Spring Data Mongo para Social Feed</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Evaluar Spring Data MongoDB para publicaciones, comentarios y reacciones con foco en rendimiento y escalabilidad</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos investigar el uso de <strong>Spring Data MongoDB</strong> para validar si soporta
+      publicaciones, comentarios y reacciones con el rendimiento y la escalabilidad requeridos en el módulo social
+      (feed, conteos, concurrencia y crecimiento sostenido).
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: feed paginado con índices y evidencia de latencia</strong></li>
+        <li>Dado que necesitamos validar la lectura eficiente del feed</li>
+        <li>Cuando construimos un prototipo con Spring Data MongoDB que pagina publicaciones (ordenadas por <code>createdAt</code> y/o <code>score</code>) usando índices adecuados</li>
+        <li>Y cargamos una colección de prueba (≥ 100k publicaciones)</li>
+        <li>Entonces obtenemos <strong>p95 ≤ 200 ms</strong> para páginas típicas (tamaño definido)</li>
+        <li>Y dejamos evidencia con <code>explain()</code> de las consultas, índices usados y recomendaciones (p. ej., <em>keyset pagination</em> vs <code>skip/limit</code>) documentadas</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 2: contador de “likes” bajo alta concurrencia (sin sobrecontar)</strong></li>
+        <li>Dado que debemos evitar sobreconteo con múltiples usuarios reaccionando al mismo post</li>
+        <li>Cuando implementamos operaciones atómicas (<code>$inc</code> / <code>$addToSet</code> con índice único por <code>postId+userId</code> o patrón equivalente) y simulamos concurrencia</li>
+        <li>Entonces no se produce sobreconteo (la métrica de likes coincide con los eventos únicos)</li>
+        <li>Y se documenta el patrón elegido, pruebas de carrera realizadas y <em>trade-offs</em> (consistencia vs. costo)</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 3: estrategia de escalabilidad (particionado/sharding) para el feed</strong></li>
+        <li>Dado que el volumen y el acceso al feed pueden crecer significativamente</li>
+        <li>Cuando evaluamos claves de partición candidatas (p. ej., <code>hashed(postId)</code> o compuesta <code>authorId+createdAt</code>) y medimos distribución / “hot partitions” en entorno de prueba</li>
+        <li>Entonces documentamos la estrategia recomendada (clave de shard, índices, balanceo esperado), riesgos identificados y lineamientos de migración/operación (TTL/archivado, colecciones inmutables para posts, colecciones separadas para reacciones)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>Type</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP06</td>
+    <td>Spike (Investigación Técnica)</td>
+    <td>Alta</td>
+    <td>Observabilidad en Tiempo Real con OpenTelemetry</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Explorar OpenTelemetry + Prometheus + Grafana para métricas, trazas y errores en tiempo real</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como equipo de desarrollo, queremos explorar el uso de <strong>OpenTelemetry</strong> junto con <strong>Prometheus</strong> y <strong>Grafana</strong>
+      para establecer una solución de observabilidad en tiempo real (métricas, trazas y errores) que garantice la calidad de servicio y facilite el diagnóstico.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario 1: trazas end-to-end instrumentadas y visibles</strong></li>
+        <li>Dado que necesitamos confirmar la <strong>trazabilidad completa</strong></li>
+        <li>Cuando instrumentamos un flujo mínimo <strong>API Gateway → Servicio A → Kafka Producer → Kafka Consumer (Servicio B)</strong> con OpenTelemetry (propagación W3C <code>traceparent</code>) y enviamos spans vía <strong>OTLP</strong> al <em>OpenTelemetry Collector</em></li>
+        <li>Entonces en <strong>Grafana</strong> (con <strong>Tempo/Jaeger</strong> como backend de trazas) se visualiza una <strong>traza única</strong> que encadena spans de gateway, servicios y consumidores Kafka</li>
+        <li>Y los spans incluyen atributos clave (<code>http.route</code>, <code>messaging.system=kafka</code>, <code>enduser.id</code> simulado); se dejan <strong>capturas/IDs</strong> y <strong>pasos de configuración</strong> documentados</li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 2: métricas + alerta de latencia p95</strong></li>
+        <li>Dado que debemos alertar ante <strong>degradación</strong></li>
+        <li>Cuando exponemos métricas con OTel (histogramas <code>http.server.duration</code>) y las recolecta <strong>Prometheus</strong> (vía OTel Collector → Prometheus exporter)</li>
+        <li>Entonces definimos una <strong>alerta</strong> en Grafana/Prometheus: <strong>p95 &gt; 300 ms</strong> durante 5 min (usando <code>histogram_quantile</code>)</li>
+        <li>Y la alerta se dispara y <strong>notifica</strong> al canal acordado (Alertmanager/Grafana Alerting); se documentan la <strong>regla</strong>, el <strong>panel</strong> y el <strong>destino de notificación</strong></li>
+      </ul>
+      <ul>
+        <li><strong>Escenario 3: errores y correlación con logs</strong></li>
+        <li>Dado que necesitamos <strong>diagnosticar fallos</strong> rápidamente</li>
+        <li>Cuando registramos excepciones con OTel (<code>status=ERROR</code>, eventos <code>exception.*</code>) y habilitamos <strong>exemplars</strong> para correlacionar métricas con trazas, además de propagar <code>trace_id</code> a logs (JSON)</li>
+        <li>Entonces en Grafana podemos: ver el <strong>ratio de errores</strong> por endpoint/servicio, saltar desde un <strong>exemplar</strong> de la serie temporal a la traza específica, y desde la traza abrir los <strong>logs correlacionados</strong> por <code>trace_id</code></li>
+        <li>Y se documenta la configuración del Collector (pipelines, exporters) y se entregan <strong>dashboards base</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 
 
@@ -4806,4 +5160,10 @@ Cada uno de estos objetivos se desglosa en el mapa en impactos esperados (impact
 | 103     | TPROF-010     | Leaderboard top-N                                            | 3            |
 | 104     | TPROF-011     | Documentación y errores estándar                             | 2            |
 | 105     | TPROF-012     | IDs y auditoría de entidades                                 | 2            |
+| 106     | SP01          | WebSocket + OAuth2 para Sesiones en Vivo                     | 3            |
+| 107     | SP02          | API Gateway para Autenticación y Rate Limiting               | 3            |
+| 108     | SP03          | Apache Kafka para Respuestas en Vivo                         | 2            |
+| 109     | SP04          | Proveedor PostgreSQL: Aiven                                  | 2            |
+| 110     | SP05          | Spring Data Mongo para Social Feed1                          | 1            |
+| 111     | SP06          | Observabilidad en Tiempo Real con OpenTelemetry              | 5            |
 
