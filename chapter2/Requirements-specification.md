@@ -1019,6 +1019,1048 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   </tr>
 </table>
 
+
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-001</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint POST /quizzes</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero exponer un endpoint REST para crear quizzes con validaciones y emisión de eventos de dominio, garantizando la integridad de datos y la trazabilidad de las operaciones dentro del sistema.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: creación exitosa</strong></li>
+        <li>Dado un <strong>payload válido</strong> con nombre, categoría, descripción e imagen</li>
+        <li>Y un usuario con <strong>rol Teacher</strong></li>
+        <li>Cuando envío una solicitud <strong>POST /quizzes</strong></li>
+        <li>Entonces el sistema responde <strong>201 Created</strong> con el <strong>ID del quiz</strong></li>
+        <li>Y emite el evento <strong>QuizCreatedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-002</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint PUT /quizzes/{id}</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint para actualizar quizzes existentes, aplicando validaciones de autoría y consistencia de datos, garantizando que solo el creador pueda modificar su contenido.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: actualización autorizada</strong></li>
+        <li>Dado un <strong>quiz existente</strong> y su <strong>creador autenticado</strong></li>
+        <li>Cuando envío una solicitud <strong>PUT</strong> con datos válidos</li>
+        <li>Entonces el sistema responde <strong>200 OK</strong> y actualiza el quiz</li>
+        <li>Y conserva la <strong>autoría original</strong> del recurso</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-003</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint DELETE /quizzes/{id}</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que permita eliminar quizzes de forma controlada, asegurando que solo el creador o un administrador autorizado pueda ejecutar la acción y manteniendo la integridad del sistema.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: eliminación exitosa</strong></li>
+        <li>Dado un <strong>quiz existente</strong> y un <strong>usuario autenticado con rol de creador o administrador</strong></li>
+        <li>Cuando envío una solicitud <strong>DELETE</strong> al recurso</li>
+        <li>Entonces el sistema responde <strong>204 No Content</strong></li>
+        <li>Y elimina el quiz de forma <strong>permanente</strong> del repositorio</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-003</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint DELETE /quizzes/{id}</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que permita eliminar quizzes de forma controlada, asegurando que solo el creador o un administrador autorizado pueda ejecutar la acción y manteniendo la integridad del sistema.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: eliminación exitosa</strong></li>
+        <li>Dado un <strong>quiz existente</strong> y un <strong>usuario autenticado con rol de creador o administrador</strong></li>
+        <li>Cuando envío una solicitud <strong>DELETE</strong> al recurso</li>
+        <li>Entonces el sistema responde <strong>204 No Content</strong></li>
+        <li>Y elimina el quiz de forma <strong>permanente</strong> del repositorio</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-005</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero gestionar preguntas y respuestas del quiz para asegurar calidad y validez pedagógica.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint POST /quizzes/{id}/questions</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero agregar preguntas a un quiz con validaciones de tipo y respuestas para asegurar la calidad pedagógica y la consistencia del contenido evaluativo.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: agregar pregunta válida</strong></li>
+        <li>Dado un <strong>quiz</strong> existente y un <strong>payload</strong> con tipo, puntos, tiempo y respuestas</li>
+        <li>Cuando envío <strong>POST</strong> a <code>/quizzes/{id}/questions</code></li>
+        <li>Entonces el sistema responde <strong>201 Created</strong> y registra la pregunta asociada al quiz</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-006</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero gestionar preguntas y respuestas del quiz para asegurar calidad y validez pedagógica.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint PUT /questions/{id}</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero actualizar preguntas aplicando reglas de validación (tipo, respuestas, puntaje, tiempo) para mantener la consistencia pedagógica y técnica del quiz.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: actualización válida</strong></li>
+        <li>Dado una <strong>pregunta existente</strong> y el <strong>autor del quiz</strong> autenticado</li>
+        <li>Cuando envío <strong>PUT</strong> con cambios válidos (contenido, tipo, puntos, tiempo, respuestas cumpliendo reglas)</li>
+        <li>Entonces el sistema responde <strong>200 OK</strong> y actualiza la pregunta</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-007</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero gestionar preguntas y respuestas del quiz para asegurar calidad y validez pedagógica.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint DELETE /questions/{id}</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que permita eliminar preguntas de un quiz con los permisos adecuados, asegurando la correcta gestión del contenido y evitando inconsistencias en el cuestionario.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: eliminación autorizada</strong></li>
+        <li>Dado una <strong>pregunta existente</strong> y el <strong>autor del quiz autenticado</strong></li>
+        <li>Cuando envío una solicitud <strong>DELETE /questions/{id}</strong></li>
+        <li>Entonces el sistema responde <strong>204 No Content</strong></li>
+        <li>Y elimina la pregunta de forma permanente del sistema</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-008</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint GET /quizzes/{id}</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint para consultar quizzes por su identificador, aplicando control de visibilidad según el estado (PUBLIC o PRIVATE) y el rol del usuario solicitante, garantizando seguridad y confidencialidad del contenido.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: consulta pública</strong></li>
+        <li>Dado un <strong>quiz con estado PUBLIC</strong></li>
+        <li>Cuando envío una solicitud <strong>GET /quizzes/{id}</strong></li>
+        <li>Entonces el sistema responde <strong>200 OK</strong> con los datos del quiz</li>
+        <br>
+        <li><strong>Escenario: acceso restringido</strong></li>
+        <li>Dado un <strong>quiz PRIVATE</strong> y un usuario que no es el creador</li>
+        <li>Entonces el sistema responde <strong>403 Forbidden</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-009</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Student, quiero descubrir quizzes públicos para participar o reutilizar contenido.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint GET /quizzes/public</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que liste los quizzes con visibilidad pública, incorporando paginación, filtros por categoría y búsqueda textual, para facilitar el descubrimiento y reutilización de contenido educativo.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: listado filtrado</strong></li>
+        <li>Dado filtros por <strong>categoría</strong> y <strong>término de búsqueda</strong></li>
+        <li>Cuando envío una solicitud <strong>GET /quizzes/public</strong> con parámetros de consulta</li>
+        <li>Entonces el sistema responde <strong>200 OK</strong> con una <strong>página paginada</strong> de quizzes públicos que cumplen los criterios</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-010</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero ver mis quizzes para gestionarlos fácilmente.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint GET /users/{userId}/quizzes</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que permita listar los quizzes creados por un usuario específico, aplicando autenticación y filtros opcionales, para facilitar la gestión de sus propios contenidos de evaluación.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: listado propio</strong></li>
+        <li>Dado un <strong>usuario autenticado</strong></li>
+        <li>Cuando envío una solicitud <strong>GET /users/{userId}/quizzes</strong></li>
+        <li>Entonces el sistema responde <strong>200 OK</strong> con los quizzes del usuario, presentados en una <strong>lista paginada</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-011</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero dirigir sesiones en vivo para evaluar en tiempo real y obtener participación de los estudiantes.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint POST /sessions</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint para crear sesiones en vivo basadas en quizzes públicos, generando códigos únicos para identificar cada sesión y permitir la participación interactiva de los estudiantes en tiempo real.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: creación exitosa</strong></li>
+        <li>Dado un <strong>quiz con estado PUBLIC</strong></li>
+        <li>Cuando envío una solicitud <strong>POST /sessions</strong></li>
+        <li>Entonces el sistema responde <strong>201 Created</strong> con un <strong>código único de sesión</strong></li>
+        <li>Y emite el evento <strong>SessionCreatedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-012</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Student, quiero unirme a una sesión en vivo para responder el quiz.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint POST /sessions/{code}/join</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que permita a los estudiantes unirse a sesiones activas mediante un código único, registrando su participación y emitiendo eventos para trazabilidad y sincronización en tiempo real.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: unión exitosa</strong></li>
+        <li>Dado una <strong>sesión</strong> que está aceptando participantes</li>
+        <li>Cuando envío una solicitud <strong>POST /sessions/{code}/join</strong></li>
+        <li>Entonces el sistema responde <strong>200 OK</strong> y registra al participante en la sesión</li>
+        <li>Y emite el evento <strong>ParticipantJoinedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-013</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero iniciar la sesión cuando haya participantes para comenzar la evaluación.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint POST /sessions/{id}/start</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que permita iniciar sesiones en vivo solo cuando existan participantes y el host esté autenticado, garantizando control de flujo y consistencia del estado de la sesión.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: inicio válido</strong></li>
+        <li>Dado una <strong>sesión</strong> con participantes registrados y el <strong>host autenticado</strong></li>
+        <li>Cuando envío una solicitud <strong>POST /sessions/{id}/start</strong></li>
+        <li>Entonces el sistema cambia el estado de la sesión a <strong>IN_PROGRESS</strong></li>
+        <li>Y emite el evento <strong>SessionStartedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-014</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero iniciar la pregunta actual para que los participantes respondan.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint POST /sessions/{id}/questions/start</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que permita iniciar la pregunta activa dentro de una sesión en vivo, asegurando la correcta transición de estados y habilitando el flujo de respuestas de los participantes.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: inicio de pregunta</strong></li>
+        <li>Dado una <strong>sesión</strong> en estado <strong>IN_PROGRESS</strong></li>
+        <li>Cuando envío una solicitud <strong>POST /sessions/{id}/questions/start</strong></li>
+        <li>Entonces el sistema marca el <strong>inicio de la pregunta actual</strong></li>
+        <li>Y emite el evento <strong>QuestionStartedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-015</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Student, quiero enviar mi respuesta y obtener puntaje según corrección y tiempo.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint POST /sessions/{id}/answers</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que registre las respuestas enviadas por los participantes durante la sesión, aplicando validaciones de integridad para evitar duplicados y garantizar el correcto cálculo de puntaje y tiempo de respuesta.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: respuesta única</strong></li>
+        <li>Dado una <strong>pregunta activa</strong> y aún <strong>no respondida</strong> por el participante</li>
+        <li>Cuando envío una solicitud <strong>POST /sessions/{id}/answers</strong></li>
+        <li>Entonces el sistema <strong>registra la respuesta</strong> correctamente</li>
+        <li>Y emite el evento <strong>AnswerSubmittedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-016</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero cerrar la pregunta y avanzar a la siguiente para continuar la sesión.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint POST /sessions/{id}/questions/advance</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que permita al host avanzar a la siguiente pregunta de la sesión en vivo, controlando la secuencia del flujo y manteniendo sincronizados a los participantes.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: avance válido</strong></li>
+        <li>Dado una <strong>sesión</strong> en estado <strong>IN_PROGRESS</strong> y un <strong>host autenticado</strong></li>
+        <li>Cuando envío una solicitud <strong>POST /sessions/{id}/questions/advance</strong></li>
+        <li>Entonces el sistema <strong>incrementa el índice</strong> de la pregunta actual</li>
+        <li>Y emite el evento <strong>QuestionAdvancedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-017</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero finalizar la sesión y obtener el ranking final para retroalimentación.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint POST /sessions/{id}/finish</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero finalizar sesiones en vivo calculando el ranking de participantes para cerrar la actividad y disponer de resultados consolidados.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: finalización</strong></li>
+        <li>Dado una sesión en estado <strong>IN_PROGRESS</strong> y el <strong>host</strong> autenticado</li>
+        <li>Cuando envío <strong>POST /sessions/{id}/finish</strong></li>
+        <li>Entonces el sistema <strong>calcula el ranking</strong> final de los participantes</li>
+        <li>Y emite el evento <strong>SessionFinishedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-018</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Student, quiero consultar el estado de una sesión en vivo para conocer su progreso.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint GET /sessions/{code}</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint para consultar el estado de sesiones en vivo por código,
+      de modo que los participantes puedan ver el progreso: estado, índice de pregunta actual y participantes activos.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: consulta estado</strong></li>
+        <li>Dado un <strong>código</strong> de sesión válido</li>
+        <li>Cuando envío una solicitud <strong>GET /sessions/{code}</strong></li>
+        <li>Entonces el sistema responde <strong>200 OK</strong> con <strong>estado</strong> de la sesión, <strong>índice</strong> de la pregunta actual y <strong>participantes activos</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-019</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero retirar a un participante que incumpla normas para mantener el orden.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint POST /sessions/{id}/participants/{participantId}/kick</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que permita a un host expulsar participantes activos de una sesión en vivo,
+      de manera controlada y registrando eventos de expulsión para auditoría y trazabilidad.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: expulsión</strong></li>
+        <li>Dado un <strong>host autenticado</strong> y un <strong>participante activo</strong> en la sesión</li>
+        <li>Cuando envío una solicitud <strong>POST /sessions/{id}/participants/{participantId}/kick</strong></li>
+        <li>Entonces el sistema <strong>marca al participante como fuera</strong></li>
+        <li>Y emite el evento <strong>ParticipantKickedEvent</strong></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-020</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero generar un reporte de una sesión finalizada para analizar resultados.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint POST /sessions/{id}/reports</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que genere reportes consolidados de sesiones finalizadas,
+      de modo que los docentes puedan acceder a resultados resumidos y análisis posteriores al cierre.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: generación</strong></li>
+        <li>Dado una <strong>sesión finalizada</strong></li>
+        <li>Cuando envío <strong>POST /sessions/{id}/reports</strong></li>
+        <li>Entonces el sistema <strong>crea un nuevo reporte</strong> si no existe</li>
+        <li>Y si ya existe, <strong>devuelve el reporte existente</strong> sin duplicar</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-021</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero consultar un reporte para revisar resultados por participante y pregunta.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint GET /reports/{id}</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint para consultar reportes detallados de sesiones finalizadas,
+      permitiendo obtener información resumida y estadísticas por participante y pregunta para el análisis docente.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: consulta de reporte</strong></li>
+        <li>Dado un <strong>id de reporte válido</strong></li>
+        <li>Cuando envío una solicitud <strong>GET /reports/{id}</strong></li>
+        <li>Entonces el sistema responde <strong>200 OK</strong> con <strong>resumen general</strong> y <strong>estadísticas</strong> por participante y por pregunta</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-022</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero exportar un reporte a Excel o CSV para compartir y analizar.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar endpoint GET /reports/{id}/export</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar un endpoint que permita exportar los reportes de sesión 
+      en formatos Excel (.xlsx) o CSV, asegurando compatibilidad con herramientas externas 
+      y facilitando el análisis y la difusión de resultados.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: exportación</strong></li>
+        <li>Dado un <strong>id de reporte válido</strong> y un <strong>formato solicitado (Excel o CSV)</strong></li>
+        <li>Cuando envío una solicitud <strong>GET /reports/{id}/export</strong></li>
+        <li>Entonces el sistema responde <strong>200 OK</strong> y devuelve el <strong>archivo generado</strong> en el formato correspondiente</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-024</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero dirigir sesiones en vivo para evaluar en tiempo real y obtener participación de los estudiantes.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar WebSocket con baja latencia</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero implementar comunicación en tiempo real mediante WebSockets con protocolo STOMP, 
+      asegurando baja latencia en la transmisión de mensajes durante sesiones en vivo, 
+      de modo que las interacciones entre docentes y estudiantes sean fluidas y sin retrasos perceptibles.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: latencia WebSocket</strong></li>
+        <li>Dado una <strong>sesión con 500 participantes activos</strong></li>
+        <li>Cuando se envían mensajes con tamaño ≤ 2 KB mediante <strong>STOMP</strong></li>
+        <li>Entonces el sistema mantiene una latencia <strong>p95 ≤ 200 ms</strong> en la entrega de mensajes</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TUS-025</td>
+    <td>Desarrollador</td>
+    <td>Alta</td>
+    <td>Como Teacher, quiero gestionar quizzes (crear, actualizar, publicar, eliminar) para evaluar a los estudiantes con contenido curado.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Title</th>
+  </tr>
+  <tr>
+    <td colspan="4">Implementar alta disponibilidad</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      Como Desarrollador, quiero garantizar alta disponibilidad en los servicios del microservicio de quizzes,
+      asegurando que la API permanezca operativa el 99.9% del tiempo mensual mediante monitoreo, balanceo de carga
+      y despliegues resilientes, de modo que los usuarios puedan acceder sin interrupciones significativas.
+    </td>
+  </tr>
+  <tr>
+    <th colspan="4" style="color: green;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <ul>
+        <li><strong>Escenario: disponibilidad del servicio</strong></li>
+        <li>Dado un <strong>mes operativo completo</strong></li>
+        <li>Cuando se monitorea el tiempo activo del servicio</li>
+        <li>Entonces la API mantiene un <strong>uptime ≥ 99.9%</strong> mensual medido por herramientas de observabilidad</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
 <table>
   <tr>
     <th>Story ID</th>
