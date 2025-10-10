@@ -128,11 +128,10 @@ Para este primer sprint, nos enfocaremos en las tareas necesarias para el **desa
 
 #### 4.2.1.2. Sprint Backlog n
 
-PONER EL LINK DE JIRA
+[![Tablero de Sprint en Jira — Ejecución del Sprint](https://i.imgur.com/50KeyXQ.png)](https://i.imgur.com/OrIo6DS.png "Abrir imagen en tamaño completo")
 
 #### 4.2.1.3. Development Evidence for Sprint Review
 
-# Commit History - LevelUp-Journey/Landing-Page
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited On (Date) |
 | ---------- | ------ | --------- | -------------- | ------------------- | ------------------ |
@@ -651,7 +650,7 @@ Scenario: Validación de contraseña al registrarse
 
 #### 4.2.1.5. Execution Evidence for Sprint Review
 
-[![Tablero de Sprint en Jira — Ejecución del Sprint](https://i.imgur.com/OrIo6DS.png)](https://i.imgur.com/OrIo6DS.png "Abrir imagen en tamaño completo")
+[![Tablero de Sprint en Jira — Ejecución del Sprint](https://i.imgur.com/JpBulKB.png)](https://i.imgur.com/OrIo6DS.png "Abrir imagen en tamaño completo")
 
 https://db1ui.atlassian.net/jira/software/projects/LVLUP/boards/232/backlog?atlOrigin=eyJpIjoiODZlNDdmOWIxYzcwNGI3ZDhiNTdhNWIzM2FiMjM4YjgiLCJwIjoiaiJ9 
 
