@@ -87,6 +87,7 @@ Como parte del proceso de definición de la problemática, se aplicó la técnic
 ### 1.2.2. Lean UX Process
 #### 1.2.2.1. Lean UX Problem Statements
 <div align="justify"
+
 Nuestro servicio busca mejorar la motivación, el compromiso y el rendimiento académico de los estudiantes de primeros ciclos en la UPC con el fin de reducir la deserción y fortalecer la permanencia. Sin embargo, en carreras como Ingeniería de Software e Ingeniería de Sistemas los índices de aprobación son críticos, pues solo entre un 10 % y 20 % de los estudiantes matriculados logran aprobar los cursos iniciales. A pesar de que la universidad ofrece talleres y actividades de comunidad, la asistencia es mínima y muchos alumnos no revisan los canales institucionales, muestran desinterés en realizar tareas y carecen de hábitos académicos, lo que genera altos niveles de desaprobación y abandono, afectando la continuidad de la trayectoria académica y los indicadores de retención de la universidad.
 
 ¿Cómo podríamos rediseñar la experiencia de los estudiantes de primeros ciclos en la UPC para incrementar su motivación y participación activa, logrando así una mejora en las tasas de aprobación y retención académica?
@@ -189,16 +190,17 @@ Estos supuestos guiarán el diseño, minimizarán riesgos y permitirán una vali
 
 <div align="justify"
 
-1. **Creemos que** al implementar un sistema de registro sencillo para estudiantes de primeros ciclos, **se logrará que** al menos el 80 % pueda incorporarse sin asistencia técnica, **sabremos que esto es cierto cuando** la mayoría complete el registro en menos de cinco minutos y sin soporte adicional.
-2. **Creemos que** al mostrar los retos semanales en la página principal, **se logrará que** el 70 % de los estudiantes consulte esta sección regularmente para organizar su avance académico, **sabremos que esto es cierto cuando** veamos un incremento en la frecuencia de acceso semanal a dicha funcionalidad.
-3. **Creemos que** al integrar un sistema de logros e insignias, **se logrará que** los estudiantes experimenten mayor motivación y sentido de pertenencia, **sabremos que esto es cierto cuando** al menos el 65 % consulte sus logros y niveles de manera recurrente.
-4. **Creemos que** al ofrecer un editor de prácticas con validación automática, **se logrará que** un 50 % de los estudiantes envíe soluciones recurrentemente y fortalezca su constancia académica, **sabremos que esto es cierto cuando** el uso semanal del editor aumente y se reduzcan las tareas no entregadas.
-5. **Creemos que** al proveer feedback inmediato en las prácticas, **se logrará que** un 70 % de los estudiantes declare que mejoró sus entregas y redujo su frustración académica, **sabremos que esto es cierto cuando** el número de intentos corregidos satisfactoriamente incremente por ciclo.
-6. **Creemos que** al implementar una tabla de ranking, **se logrará que** al menos el 50 % de los estudiantes se motive mediante la comparación con sus pares, **sabremos que esto es cierto cuando** las consultas al ranking ocurran de manera regular semana tras semana.
-7. **Creemos que** al habilitar un perfil con insignias y niveles visibles, **se logrará que** los estudiantes refuercen su sentido de progreso académico, **sabremos que esto es cierto cuando** al menos el 65 % de los usuarios revise esta sección semanalmente.
-8. **Creemos que** al habilitar un foro de comunidad, **se logrará que** los estudiantes fortalezcan vínculos académicos y de apoyo con sus compañeros y docentes, **sabremos que esto es cierto cuando** al menos el 40 % publique o interactúe en el foro durante el ciclo.
-9. **Creemos que** al integrar un sistema de notificaciones internas, **se logrará que** un 60 % de los estudiantes acceda oportunamente a retos y anuncios relevantes, **sabremos que esto es cierto cuando** las métricas de acceso tras una notificación superen el uso del correo institucional.
-10. **Creemos que** al diseñar la plataforma con criterios inclusivos y adaptables, **se logrará que** al menos el 90 % de los estudiantes pueda utilizarla correctamente desde distintos dispositivos, **sabremos que esto es cierto cuando** los reportes de accesibilidad muestren satisfacción y ausencia de barreras de uso.
+
+| Hipótesis | Prioridad |
+|---|---|
+| **Creemos que** al proveer feedback inmediato en las prácticas, **se logrará que** un 70 % de los estudiantes declare que mejoró sus entregas y redujo su frustración académica, **sabremos que esto es cierto cuando** el número de intentos corregidos satisfactoriamente incremente por ciclo. | Alta      |
+| **Creemos que** al integrar un sistema de logros e insignias, **se logrará que** los estudiantes experimenten mayor motivación y sentido de pertenencia, **sabremos que esto es cierto cuando** al menos el 65 % consulte sus logros y niveles de manera recurrente. | Alta      |
+| **Creemos que** al mostrar los retos semanales en la página principal, **se logrará que** el 70 % de los estudiantes consulte esta sección regularmente para organizar su avance académico, **sabremos que esto es cierto cuando** veamos un incremento en la frecuencia de acceso semanal a dicha funcionalidad. | Media     |
+| **Creemos que** al diseñar la plataforma con criterios inclusivos y adaptables, **se logrará que** al menos el 90 % de los estudiantes pueda utilizarla correctamente desde distintos dispositivos, **sabremos que esto es cierto cuando** los reportes de accesibilidad muestren satisfacción y ausencia de barreras de uso. | Media     |
+| **Creemos que** al habilitar un perfil con insignias y niveles visibles, **se logrará que** los estudiantes refuercen su sentido de progreso académico, **sabremos que esto es cierto cuando** al menos el 65 % de los usuarios revise esta sección semanalmente. | Media     |
+| **Creemos que** al implementar una tabla de ranking, **se logrará que** al menos el 50 % de los estudiantes se motive mediante la comparación con sus pares, **sabremos que esto es cierto cuando** las consultas al ranking ocurran de manera regular semana tras semana. | Media     |
+| **Creemos que** al habilitar un foro de comunidad, **se logrará que** los estudiantes fortalezcan vínculos académicos y de apoyo con sus compañeros y docentes, **sabremos que esto es cierto cuando** al menos el 40 % publique o interactúe en el foro durante el ciclo. | Baja      |
+| **Creemos que** al implementar un sistema de registro sencillo para estudiantes de primeros ciclos, **se logrará que** al menos el 80 % pueda incorporarse sin asistencia técnica, **sabremos que esto es cierto cuando** la mayoría complete el registro en menos de cinco minutos y sin soporte adicional. | Baja      |
 
 </div>
 
