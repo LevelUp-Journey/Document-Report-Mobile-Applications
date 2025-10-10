@@ -26,7 +26,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-001</td>
     <td>Usuario</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario nuevo, quiero registrarme con email y contraseña para acceder a la plataforma</td>
   </tr>
   <tr>
@@ -68,7 +68,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-002</td>
     <td>Usuario</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario autenticado, quiero iniciar sesión y gestionar tokens</td>
   </tr>
   <tr>
@@ -109,7 +109,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-003</td>
     <td>Usuario</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario autenticado, quiero iniciar sesión y gestionar tokens</td>
   </tr>
   <tr>
@@ -151,7 +151,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-004</td>
     <td>Usuario autenticado</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario autenticado, quiero iniciar sesión y gestionar tokens</td>
   </tr>
   <tr>
@@ -193,7 +193,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-005</td>
     <td>Usuario autenticado</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario autenticado, quiero iniciar sesión y gestionar tokens</td>
   </tr>
   <tr>
@@ -235,7 +235,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-006</td>
     <td>Usuario nuevo</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario nuevo, quiero registrarme con email y contraseña para acceder a la plataforma</td>
   </tr>
   <tr>
@@ -277,7 +277,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-007</td>
     <td>Usuario de GitHub sin email</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario nuevo, quiero registrarme con email y contraseña para acceder a la plataforma</td>
   </tr>
   <tr>
@@ -319,7 +319,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-008</td>
     <td>Administrador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente, quiero gestionar usuarios y roles</td>
   </tr>
   <tr>
@@ -361,7 +361,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-009</td>
     <td>Administrador o docente</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como administrador o docente, quiero gestionar usuarios y roles</td>
   </tr>
   <tr>
@@ -529,7 +529,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>IAM-US-013</td>
     <td>Administrador o docente</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente, quiero gestionar usuarios y roles</td>
   </tr>
   <tr>
@@ -571,7 +571,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-001</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario nuevo, quiero registrarme con email y contraseña para acceder a la plataforma con seguridad (rol estudiante por defecto).</td>
   </tr>
   <tr>
@@ -715,7 +715,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-004</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario autenticado, quiero iniciar sesión y gestionar tokens (validar y refrescar) para mantener una sesión segura y continua.</td>
   </tr>
   <tr>
@@ -810,7 +810,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-006</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar usuarios y roles para controlar el acceso y permisos del sistema.</td>
   </tr>
   <tr>
@@ -857,7 +857,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-007</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar usuarios y roles para controlar el acceso y permisos del sistema.</td>
   </tr>
   <tr>
@@ -953,7 +953,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-009</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar usuarios y roles para controlar el acceso y permisos del sistema.</td>
   </tr>
   <tr>
@@ -996,7 +996,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-010</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario, quiero evaluar la fortaleza de mi contraseña para mejorar mi seguridad antes de registrarme o cambiarla.</td>
   </tr>
   <tr>
@@ -1043,7 +1043,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-011</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar usuarios y roles para controlar el acceso y permisos del sistema.</td>
   </tr>
   <tr>
@@ -1090,7 +1090,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-012</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar usuarios y roles para controlar el acceso y permisos del sistema.</td>
   </tr>
   <tr>
@@ -1132,7 +1132,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-013</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar usuarios y roles para controlar el acceso y permisos del sistema.</td>
   </tr>
   <tr>
@@ -1179,7 +1179,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-014</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar usuarios y roles para controlar el acceso y permisos del sistema.</td>
   </tr>
   <tr>
@@ -1226,7 +1226,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TIAM-015</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar usuarios y roles para controlar el acceso y permisos del sistema.</td>
   </tr>
   <tr>
@@ -1273,7 +1273,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>PROF-US-001</td>
     <td>Usuario</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario, quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
   </tr>
   <tr>
@@ -1359,7 +1359,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>PROF-US-003</td>
     <td>Docente o Administrador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario, quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
   </tr>
   <tr>
@@ -1401,7 +1401,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>PROF-US-004</td>
     <td>Docente o Administrador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente, quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -1699,7 +1699,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-001</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como usuario (ROLE_STUDENT/ROLE_TEACHER), quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
   </tr>
   <tr>
@@ -1746,7 +1746,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-002</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario (ROLE_STUDENT/ROLE_TEACHER), quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
   </tr>
   <tr>
@@ -1793,7 +1793,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-003</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario (ROLE_STUDENT/ROLE_TEACHER), quiero crear y mantener mi perfil para identificarme en la plataforma y en rankings.</td>
   </tr>
   <tr>
@@ -2026,7 +2026,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-008</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Media</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -2073,7 +2073,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-009</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como administrador o docente (ROLE_ADMIN/ROLE_TEACHER), quiero gestionar puntuación y niveles para reflejar progreso y motivar a los usuarios.</td>
   </tr>
   <tr>
@@ -2121,7 +2121,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-010</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como comunidad (todos los roles), quiero un leaderboard con límites para reconocer a los mejores y fomentar competencia sana.</td>
   </tr>
   <tr>
@@ -2215,7 +2215,7 @@ De forma complementaria, se definieron technical stories asociadas a las mismas 
   <tr>
     <td>TPROF-012</td>
     <td>Desarrollador</td>
-    <td>Alta</td>
+    <td>Baja</td>
     <td>Como usuario (ROLE_STUDENT/ROLE_TEACHER), quiero consultar mi puntuación/nivel e historial para seguir mi progreso y auditar cambios.</td>
   </tr>
   <tr>
