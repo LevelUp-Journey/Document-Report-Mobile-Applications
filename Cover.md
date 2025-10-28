@@ -15,8 +15,9 @@
   <h2 style="margin: 5px 0;">Universidad Peruana de Ciencias Aplicadas</h2>
   <h3 style="margin: 5px 0;">Ingeniería de Software</h3>
 
-  <p style="margin: 5px 0;">Ciclo: <strong>06</strong> &nbsp;|&nbsp; Sección: <strong>1827</strong></p>
-  <p style="margin: 5px 0;">Curso: <strong>Aplicaciones para Dispositivos Móviles  </strong></p>
+  <p style="margin: 5px 0;">Periodo: <strong>202520</strong></p>
+  <p style="margin: 5px 0;"><strong>1ACC0238</strong>&nbsp;|&nbsp;<strong>Aplicaciones para Dispositivos Móviles</strong></p>
+  <p style="margin: 5px 0;">NRC: <strong>1827</strong></p>
   <p style="margin: 5px 0;">Docente: <strong>David Gerardo Quevedo Velasco  </strong></p>
 
   <hr style="width: 50%; margin: 25px auto; border: 1px solid #999;"/>
@@ -27,13 +28,12 @@
   <p style="margin: 5px 0;">Producto: <strong>LevelUp Journey</strong></p>
 
   <!-- Integrantes -->
-  <p style="margin: 4px 0;">Jonatan Ariel Acuña Corahua – <code>u20211b995</code></p>
-  <p style="margin: 4px 0;">Dante Mateo Aleman Romano – <code>U202319963</code></p>
-  <p style="margin: 4px 0;">Fabrizio Alessandro Contreras Peralta – <code>u202319889</code></p>
-  <p style="margin: 4px 0;">Romina Guadalupe Maita Falckenheiner – <code>u202213765</code></p>
-  <p style="margin: 4px 0;">Paolo Alessandro Torres Flores – <code>u20221f613</code></p>
+  <p style="margin: 4px 0;"><code>u20211b995</code> - Jonatan Ariel Acuña Corahua</p>
+  <p style="margin: 4px 0;"><code>U202319963</code> - Dante Mateo Aleman Romano</p>
+  <p style="margin: 4px 0;"><code>u202319889</code> - Fabrizio Alessandro Contreras Peralta</p>
 
   <!-- Fecha -->
-  <p style="margin-top: 25px;"><em>Octubre 2025 &nbsp;|&nbsp; Periodo Académico: 2025-02</em></p>
+  <p style="margin-top: 25px;"><em>Octubre 2025</em></p>
+
 </div>
 
