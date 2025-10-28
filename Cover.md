@@ -16,7 +16,8 @@
   <h3 style="margin: 5px 0;">Ingeniería de Software</h3>
 
   <p style="margin: 5px 0;">Periodo: <strong>202520</strong></p>
-  <p style="margin: 5px 0;"><strong>1ACC0238<strong>&nbsp;|&nbsp;<strong>Aplicaciones para Dispositivos Móviles<strong>  </strong></p>
+  <p style="margin: 5px 0;"><strong>1ACC0238</strong>&nbsp;|&nbsp;<strong>Aplicaciones para Dispositivos Móviles</strong></p>
+  <p style="margin: 5px 0;">NRC: <strong>1827</strong></p>
   <p style="margin: 5px 0;">Docente: <strong>David Gerardo Quevedo Velasco  </strong></p>
 
   <hr style="width: 50%; margin: 25px auto; border: 1px solid #999;"/>
