@@ -128,6 +128,8 @@ El Sprint 1 se enfoca en establecer las bases del microservicio de comunidad, im
 
 #### 4.2.1.2. Sprint Backlog n1
 
+https://trello.com/invite/b/6916c172472e47bfa3b0fff1/ATTI3f3b4b3732cc82a36cf475d87f496e611E485B05/lvl-down
+
 
 | User Story Id | Title | Work-Item / Task Id | Title | Description | Estimation (Hours) | Assigned To | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -425,6 +427,8 @@ El Sprint 2 expande las capacidades con un sistema de feed paginado, manejo avan
 | **Sum of Story Points**             | 92           |
 
 #### 4.2.1.2. Sprint Backlog n2
+
+https://trello.com/invite/b/6916c172472e47bfa3b0fff1/ATTI3f3b4b3732cc82a36cf475d87f496e611E485B05/lvl-down
 
 | User Story Id | Title | Work-Item / Task Id | Title | Description | Estimation (Hours) | Assigned To | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -855,6 +859,8 @@ El Sprint 3 completa el sistema de autenticación y gestión de usuarios, implem
 
 #### 4.2.1.2. Sprint Backlog n3
 
+https://trello.com/invite/b/6916c172472e47bfa3b0fff1/ATTI3f3b4b3732cc82a36cf475d87f496e611E485B05/lvl-down
+
 | User Story Id | Title                                                      | Work-Item / Task Id | Title                                                      | Description                                                  | Estimation (Hours) | Assigned To     | Status |
 | ------------- | ---------------------------------------------------------- | ------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ | ------------------ | --------------- | ------ |
 | IAM-US-003    | Rechazo por credenciales inválidas                         | IAM-US-003          | Rechazo por credenciales inválidas                         | Como usuario, quiero recibir mensajes claros si mis credenciales son inválidas para corregir el acceso. | 3                  | Mateo | To-do  |
@@ -1235,8 +1241,6 @@ ID: PROF-US-009
 
 
 ### 4.2.1. Sprint n4
-
-resumen
 
 #### 4.2.1.1. Sprint Planning n4
 
