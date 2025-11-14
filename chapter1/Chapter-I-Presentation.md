@@ -81,9 +81,10 @@ LevelUp Journey será un proyecto orientado a desarrollar una comunidad digital 
 #### 1.2.2.1. Lean UX Problem Statements
 <div align="justify"
 
-En la Universidad Peruana de Ciencias Aplicadas (UPC) se observan índices de aprobación críticamente bajos en los cursos iniciales, con datos que sitúan la aprobación entre el 10 % y el 20 %. Aunque la institución ofrece talleres y actividades de acompañamiento, la asistencia y el uso de los canales institucionales son mínimos; muchos estudiantes carecen de hábitos de estudio sostenibles, muestran desinterés para completar tareas y enfrentan dificultades para integrarse a la vida universitaria. Estas condiciones generan altas tasas de desaprobación y abandono, afectando la continuidad de la trayectoria académica y los indicadores de retención institucional. El primer desafío será diagnosticar los factores académicos, organizacionales y comunicacionales que explican esta desmotivación y abandono, y, a partir de esa evidencia, definir cómo una comunidad digital gamificada puede incrementar la motivación, promover la participación habitual y reducir la deserción en los primeros ciclos.
+En la Universidad Peruana de Ciencias Aplicadas (UPC), los estudiantes de los primeros ciclos de las carreras de ingeniería suelen presentar dificultades para socializar, expresarse y comunicarse de manera efectiva, lo que afecta su integración, su participación en clase y su capacidad para coordinar trabajos académicos. La ausencia de espacios que fomenten interacciones naturales y vínculos entre compañeros genera grupos aislados, baja cohesión y un ambiente poco colaborativo, especialmente en programas donde predomina un perfil técnico y reservado. Esta falta de conexión limita el desarrollo de habilidades blandas fundamentales para su desempeño académico y profesional, como la comunicación escrita, la expresión de ideas y el trabajo en equipo.
 
-¿Qué elementos de una comunidad digital gamificada (posts, likes, retos, círculos por curso) resultan más eficaces para aumentar la motivación y la participación de estudiantes de primeros ciclos en la UPC, y cómo se traducen esas mejoras en tasas de aprobación y retención?
+¿Cómo impulsar la socialización y fortalecer las habilidades comunicativas de los estudiantes de ingeniería en sus primeros ciclos para mejorar su integración y participación académica?
+
 </div>
 
 #### 1.2.2.2. Lean UX Assumptions
