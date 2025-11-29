@@ -3,20 +3,17 @@
 ### 1.1.1. Descripción de la Startup
 
 <div align="justify"
+**LevelUp Journey** surgirá como respuesta a un problema constante dentro del entorno universitario: la dispersión de información académica y la dificultad que tienen los estudiantes para mantenerse al día con los anuncios importantes de cursos, actividades y coordinaciones internas. En los primeros ciclos, esta situación se agrava debido a la etapa de adaptación, donde los estudiantes reciben avisos por múltiples canales —WhatsApp, Telegram, redes sociales, correos y grupos informales—, lo que genera confusión, pérdida de mensajes y baja participación en actividades académicas. En ese contexto, la propuesta ofrecerá una alternativa innovadora para centralizar la comunicación mediante un sistema de anuncios estructurado en un formato de chat dinámico, directo y fácil de usar.
 
-​	LevelUp Journey surgirá como respuesta a un problema recurrente en el ámbito universitario: la desmotivación y el abandono en los primeros ciclos académicos. Los estudiantes en etapas iniciales enfrentarán dificultades de adaptación, tanto en lo académico como en lo personal, lo que aumentará la probabilidad de deserción. En ese contexto, la propuesta ofrecerá una alternativa innovadora para fortalecer el compromiso y la permanencia estudiantil mediante una comunidad digital que centralizará la comunicación y la coordinación entre pares y docentes.
+​	La plataforma se organizará alrededor de una experiencia similar a una aplicación de mensajería, donde los comunicados aparecerán como mensajes y los estudiantes podrán reaccionar, expresar interés, confirmar asistencia y responder de forma inmediata. Más que un canal informativo, *LevelUp Journey* será un espacio para mejorar la comunicación interna y reducir la sobrecarga de canales dispersos. Los usuarios interactuarán mediante reacciones, respuestas rápidas, notificaciones y categorización automática de anuncios, lo que permitirá un seguimiento ordenado y accesible de la información esencial del curso o facultad.
 
+​	Su funcionamiento se basará en la interacción fluida entre docentes, centros de estudiantes o áreas académicas que generarán los anuncios, y los estudiantes que los recibirán en un entorno unificado. Los emisores podrán enviar avisos segmentados, programar comunicados y verificar el alcance mediante métricas de interacción; mientras que los estudiantes tendrán un espacio central donde visualizar, reaccionar y gestionar los avisos relevantes sin depender de grupos externos o delegados informales. Esta dinámica impulsará una comunicación más clara, reducirá la pérdida de información y fortalecerá el vínculo entre los actores académicos.
 
-​	La plataforma se fundamentará en la gamificación —la incorporación de dinámicas propias de los videojuegos, como puntos, niveles, insignias y retos— aplicadas a un entorno comunitario. Más que un recurso tecnológico, LevelUp Journey será una estrategia pedagógica que convertirá la experiencia educativa en un proceso más dinámico, atractivo y significativo. Los estudiantes interactuarán a través de posts, likes, comentarios y retos, viendo su progreso representado en logros concretos que potenciarán su motivación.
+​	La **misión** de **LevelUp Journey** es mejorar la comunicación académica mediante una plataforma de anuncios centralizada en formato chat, orientada a estudiantes que requieren recibir información clara, organizada y accesible durante sus primeros ciclos universitarios. Buscaremos ofrecer un entorno dinámico donde los comunicados sean fáciles de comprender, responder y priorizar, fortaleciendo la autonomía, la organización y la participación estudiantil.
 
+​	La **visión** de **LevelUp Journey** será consolidarse como la herramienta de referencia para comunicación académica en instituciones de educación superior en Latinoamérica, reconocida por optimizar el flujo de información, reducir la saturación de canales dispersos y mejorar la interacción entre estudiantes y entidades académicas. Aspiraremos a que universidades, escuelas y coordinaciones adopten un modelo de comunicación más ordenado, medible y eficiente a través del uso de la plataforma.
 
-​	Su funcionamiento se basará en la interacción continua entre docentes y estudiantes: los docentes configurarán desafíos y actividades académicas, y los estudiantes participarán publicando, comentando, reaccionando y acumulando logros, además de recibir retroalimentación rápida sobre su desempeño. Esta dinámica promoverá la autonomía en el aprendizaje y generará un sentido de progreso tangible, elementos claves para fortalecer la perseverancia y la autoconfianza en la vida universitaria, a la vez que reducirá la dependencia del delegado tradicional.
-
-​	La **misión** de **LevelUp Journey** es fortalecer la permanencia estudiantil en los primeros ciclos mediante una comunidad digital gamificada que motivará, acompañará y potenciará el aprendizaje autónomo. Buscaremos ofrecer experiencias educativas dinámicas y significativas —con posts, likes, comentarios y retos— que incentiven la participación, el compromiso y la autoconfianza de los estudiantes en su proceso académico.
-
-​	La **visión** de **LevelUp Journey** será consolidarse como la comunidad de referencia en gamificación educativa en Latinoamérica, reconocida por transformar los primeros ciclos universitarios en entornos más conectados, activos y colaborativos. Aspiraremos a que instituciones y estudiantes adopten una comunicación distribuida —reemplazando la dependencia del delegado— y construyan comunidades resilientes, comprometidas y orientadas al progreso continuo.
-
-​	**LevelUp Journey** estará dirigido principalmente a estudiantes de primer a tercer ciclo de todas las carreras, un grupo que suele enfrentar mayores riesgos de abandono por dificultades de adaptación académica y social durante la transición a la educación superior; además, la plataforma, concebida como una comunidad digital con posts, likes, comentarios y retos que reemplazará el rol del delegado, será útil para las instituciones educativas al contribuir a reducir la deserción, fortalecer el compromiso académico y mejorar el rendimiento en los cursos iniciales.
+​	**LevelUp Journey** estará dirigido principalmente a estudiantes de primer a tercer ciclo, quienes suelen enfrentar mayores dificultades para organizar su vida académica durante su transición a la educación superior. La plataforma permitirá un acceso claro a anuncios clave del curso o facultad, incorporando reacciones, notificaciones y categorización automática para facilitar la comprensión de la información. Asimismo, será útil para docentes y áreas académicas, quienes podrán comunicar avisos de forma estructurada, evitar la dependencia del delegado tradicional y mejorar el nivel de coordinación y participación dentro de los primeros ciclos.
 
 </div>
 
@@ -35,45 +32,31 @@
 ## 1.2. Solution Profile
 ### 1.2.1. Antecedentes y problemática
 <div align="justify"
-
 Como parte del proceso de definición de la problemática, se aplicó la técnica The 5 W’s and 2 H’s (Who, What, Where, When, Why, How, How Much), permitiendo estructurar de manera preliminar la descripción de los antecedentes y el planteamiento del problema.
-1. **Who (Quién)**
 
-   ​	**LevelUp Journey** tendrá como stakeholders principales a la comunidad completa de la Universidad Peruana de Ciencias Aplicadas (UPC). Estará dirigido a estudiantes de 1.º a 3.º ciclo de todas las carreras de la UPC; en su fase inicial se implementará un piloto transversal que incluirá representaciones de distintas facultades para validar la adopción y ajustar la propuesta. También serán beneficiarios directos los docentes, ayudantes y coordinadores académicos, quienes usarán la comunidad digital (posts, likes, comentarios y retos) para motivar la participación, monitorear el progreso y activar intervenciones tempranas. Finalmente, las unidades institucionales responsables de gestión académica y retención actuarán como actores clave, impulsando la implementación, facilitando recursos y evaluando el impacto en la reducción de la deserción y la mejora de la experiencia educativa en el campus.
+- **Who (Quién)**
+   LevelUp Journey tendrá como stakeholders principales a los estudiantes universitarios de los primeros ciclos de la Universidad Peruana de Ciencias Aplicadas (UPC), quienes suelen recibir información académica en múltiples canales dispersos. También serán actores relevantes los docentes, coordinadores y unidades académicas responsables de difundir avisos oficiales. Dichos actores se beneficiarán de un sistema unificado que permitirá mejorar el flujo informativo y evitar la dependencia de chats informales administrados por estudiantes. La institución, por su parte, contará con un canal centralizado para fortalecer la coordinación interna y mejorar la experiencia educativa durante los ciclos de adaptación universitaria.
 
-2. **What (Qué)**
+- **What (Qué)**
+   El problema central que LevelUp Journey abordará será la dispersión y pérdida de anuncios académicos debido al uso simultáneo de canales informales como WhatsApp, Telegram, Messenger y redes sociales. Los estudiantes enfrentan saturación de mensajes personales mezclados con comunicados importantes, lo que dificulta su lectura, priorización y seguimiento. Esta falta de centralización afecta la participación en actividades, la organización personal y el rendimiento académico en los primeros ciclos, etapa en la que los estudiantes aún no adoptan hábitos eficientes de gestión informativa.
 
-   ​	El problema central que abordará **LevelUp Journey** será la desmotivación y el abandono temprano en los primeros ciclos universitarios. Los estudiantes no solo enfrentarán retos académicos y de adaptación, sino también dificultades en hábitos y organización personal: falta de interés para completar tareas, baja disciplina para asistir a clases, y escaso uso de canales formales de comunicación (por ejemplo, el correo institucional).
+- **Where (Dónde)**
+   La problemática se observa dentro de la UPC, especialmente en los cursos de los tres primeros ciclos, donde se han detectado patrones de desorganización comunicacional. Los anuncios circulan en grupos informales creados por estudiantes, sin control sobre el volumen de mensajes ni mecanismos para resaltar información prioritaria. La baja utilización del correo institucional intensifica la dispersión informativa. LevelUp Journey se enfocará en brindar un canal oficial y centralizado accesible desde dispositivos móviles.
 
-   ​	La carencia de herramientas que integren motivación con dinámicas comunitarias y atractivas —posts, likes, comentarios, retos y recompensas— hará que los alumnos no perciban un valor inmediato en las actividades académicas. Esto fomentará la desidia, reducirá la participación en clases y actividades complementarias, desaprovechará potenciales talentos y aumentará el riesgo de deserción en los primeros ciclos.
+- **When (Cuándo)**
+   La necesidad aparece desde el inicio de la vida universitaria, durante los primeros ciclos en los que los estudiantes deben adaptarse a nuevas responsabilidades y rutinas. El problema se vuelve más crítico en semanas de evaluaciones, entregas y eventos institucionales, cuando el volumen de mensajes incrementa y se dificulta distinguir entre información relevante y conversaciones cotidianas. La pertinencia de un sistema centralizado se mantendrá en el corto y mediano plazo debido al crecimiento de la comunicación digital y la necesidad de herramientas que aseguren claridad en el flujo informativo.
 
-3. **Where (Dónde)**
+- **Why (Por qué)**
+   LevelUp Journey será necesario porque actualmente no existe un canal académico centralizado que ordene y priorice los anuncios dirigidos a los estudiantes. La dependencia de chats informales genera pérdida de información, confusión y baja participación en actividades relevantes. La ausencia de un sistema que permita reaccionar, marcar anuncios, clasificarlos o recibir recordatorios contribuye a un ambiente de desorganización que afecta el rendimiento y el seguimiento académico. A nivel institucional, esta situación repercute en la coordinación interna, la retención estudiantil y los indicadores de desempeño académico.
 
-   ​	**LevelUp Journey** se enfocará en la Universidad Peruana de Ciencias Aplicadas (UPC) en su conjunto, con un piloto transversal que incluirá representaciones de distintas facultades para validar la adopción y ajustar la propuesta. En varios programas y en los primeros ciclos se ha detectado un nivel crítico de aprobación —con rangos referidos entre el 10 % y 20 % de estudiantes que superan los cursos en determinadas materias—, lo que indica un riesgo significativo de deserción temprana. A este panorama se suman factores secundarios que afectan el rendimiento: hábitos de estudio deficientes, baja motivación para asistir y completar tareas, y escaso uso de canales formales de comunicación (por ejemplo, el correo institucional). **LevelUp Journey** buscará atender esta realidad mediante dinámicas de gamificación integradas en una comunidad digital por curso, diseñadas para aumentar la motivación, fomentar la participación activa y generar un sentido de logro progresivo que se traduzca en mejores tasas de aprobación y mayor permanencia estudiantil.
-   
-   ​	LevelUp Journey buscará abordar esta realidad mediante dinámicas de gamificación integradas en una comunidad digital por curso, diseñadas para aumentar la motivación, fomentar la participación activa y generar un sentido de logro progresivo que se traduzca en mejores tasas de aprobación y mayor permanencia estudiantil.
+- **How (Cómo)**
+   En la actualidad, los docentes y coordinadores dependen de delegados o grupos creados por estudiantes para enviar anuncios, lo que genera retrasos, duplicidad de mensajes y pérdida de información entre conversaciones personales. Los canales institucionales formales tienen baja adopción y no logran asegurar alcance efectivo. La falta de un flujo estructurado de comunicación provoca desorden, desinformación y dificultades para que los estudiantes identifiquen avisos prioritarios durante los ciclos de mayor carga académica.
 
-4. **When (Cuándo)**
+- **How Much (Cuánto)**
+   El impacto se manifiesta en pérdida de tiempo, baja participación en actividades, dificultades para cumplir entregas, riesgo académico y desorientación en los primeros ciclos. Para la institución, la desorganización comunicacional afecta los indicadores de gestión educativa, complica la coordinación entre áreas y reduce la capacidad de realizar intervenciones tempranas. Este problema implica costos en términos de rendimiento estudiantil, eficiencia operativa y calidad del proceso formativo.
 
-   ​	La necesidad se evidenciará desde el inicio de la trayectoria universitaria, especialmente durante los tres primeros ciclos, periodo en el que los estudiantes tendrán que adaptarse a nuevas exigencias académicas y sociales. Esta problemática seguirá siendo prioritaria en el corto y mediano plazo, y se espera que su relevancia aumente ante la creciente competencia educativa y la necesidad de garantizar trayectorias formativas más sostenibles. **LevelUp Journey** se orientará a intervenir en esa ventana crítica para impulsar la retención y el acompañamiento temprano.
-
-5. **Why (Por qué)**
-
-   ​	La razón principal por la que **LevelUp Journey** será necesaria es que actualmente no existen herramientas integradas que combinen motivación, acompañamiento y comunicación efectiva para los estudiantes de los primeros ciclos. Esta carencia hará que muchos alumnos no perciban valor inmediato en las actividades académicas, pierdan motivación y no adopten hábitos de estudio sostenibles, lo que elevará la probabilidad de deserción. Además, la dependencia de canales dispersos y del delegado como único punto de contacto provocará pérdida de información y baja participación colectiva. Institucionalmente, esto impactará negativamente en la retención, los indicadores de calidad y la sostenibilidad financiera de la UPC. Por ello, **LevelUp Journey** intervendrá para centralizar la comunicación, incentivar la participación mediante dinámicas gamificadas, ofrecer retroalimentación temprana y generar métricas accionables para intervenciones oportunas.
-
-6. **How (Cómo)**
-
-   ​	Actualmente, la universidad cuenta con espacios de acompañamiento como talleres, asesorías y actividades de comunidad, pero según encuestas aplicadas de manera interna, la asistencia es muy baja o casi inexistente. Esto revela que el problema no radica únicamente en la falta de iniciativas, sino en la escasa motivación y compromiso de los estudiantes para aprovecharlas.
-
-   ​	Los procesos de apoyo académico se encuentran desarticulados: los docentes ofrecen espacios complementarios y la universidad organiza actividades, pero los estudiantes no las perciben como valiosas o atractivas. Además, la comunicación institucional mediante canales formales como el correo Outlook suele ser ignorada, lo que limita el alcance de los esfuerzos. Como resultado, la mayoría de los alumnos no logra visualizar beneficios inmediatos en su participación, lo que refuerza los bajos niveles de compromiso y aprobación en los cursos de los primeros ciclos.
-
-7. **How Much (Cuánto)**
-
-   ​	El impacto académico y social es significativo: la deserción universitaria temprana representa una reducción de hasta un 20 % en las cohortes iniciales en diversas instituciones de la región. A nivel individual, los estudiantes pierden tiempo, recursos económicos y motivación para retomar sus estudios. Para las universidades, la pérdida de matrícula temprana limita ingresos, afecta indicadores de calidad y reduce la capacidad de proyectar crecimiento sostenido.
-   
-- Delimitación del alcance del proyecto:
-
-LevelUp Journey será un proyecto orientado a desarrollar una comunidad digital interactiva destinada a mantener informados a los estudiantes y fomentar la formación de círculos de apoyo académico y social; su alcance comprenderá el desarrollo de una aplicación nativa para Android en `Kotlin` y una aplicación multiplataforma en `Flutter` (iOS/Android) que incluirán registro y autenticación de usuarios, feed de publicaciones, creación de posts, comentarios, reacciones (likes), grupos por curso y gestión de perfiles; además se construirá un backend en `Java` con arquitectura de microservicios compuesto por `iam` (autenticación y autorización con emisión de `JWT`), `profiles` (gestión y búsqueda de datos de usuario) y `community` (gestión de publicaciones, comentarios, reacciones y grupos), exponiendo APIs REST documentadas con `OpenAPI`. La solución contará con persistencia en bases de datos como `PostgreSQL` o `MongoDB`, contendorización con `Docker` y monitoreo básico, y cumplirá requisitos no funcionales esenciales como comunicación segura por `HTTPS`, control de accesos por roles, latencias apropiadas para una experiencia móvil fluida y capacidad de escalado horizontal inicial; los entregables incluirán builds para pruebas de las aplicaciones, los microservicios desplegables en un entorno de prueba y la documentación técnica y guías de uso para la validación del piloto.
+- **Delimitación del alcance del proyecto:**
+   LevelUp Journey será un proyecto orientado a desarrollar un sistema de comunicación académica centralizado basado en un formato de chat de anuncios. Su alcance comprenderá el desarrollo de una aplicación nativa para Android en Kotlin y una aplicación multiplataforma en Flutter que incluirán registro y autenticación de usuarios, recepción de anuncios, reacciones, filtros, notificaciones y organización automática de comunicados. Se construirá un backend en Java con arquitectura de microservicios compuesto por los módulos iam (autenticación y autorización), profiles (gestión de perfiles) y announcements (gestión de anuncios, reacciones y métricas). Se implementarán APIs REST documentadas con OpenAPI, persistencia en PostgreSQL o MongoDB, containerización con Docker y comunicación segura mediante HTTPS. Como delimitación del MVP, los estudiantes no podrán publicar anuncios hasta contar con un sistema de moderación formal; solo docentes, coordinadores o unidades autorizadas podrán emitir comunicados durante la primera versión funcional.
 
 </div>
 
@@ -81,119 +64,115 @@ LevelUp Journey será un proyecto orientado a desarrollar una comunidad digital 
 #### 1.2.2.1. Lean UX Problem Statements
 <div align="justify"
 
-En la Universidad Peruana de Ciencias Aplicadas (UPC), los estudiantes de los primeros ciclos de las carreras de ingeniería suelen presentar dificultades para socializar, expresarse y comunicarse de manera efectiva, lo que afecta su integración, su participación en clase y su capacidad para coordinar trabajos académicos. La ausencia de espacios que fomenten interacciones naturales y vínculos entre compañeros genera grupos aislados, baja cohesión y un ambiente poco colaborativo, especialmente en programas donde predomina un perfil técnico y reservado. Esta falta de conexión limita el desarrollo de habilidades blandas fundamentales para su desempeño académico y profesional, como la comunicación escrita, la expresión de ideas y el trabajo en equipo.
+En la Universidad Peruana de Ciencias Aplicadas (UPC), los estudiantes de los primeros ciclos suelen enfrentar dificultades para mantenerse informados sobre anuncios académicos esenciales, ya que reciben comunicados a través de múltiples canales informales como chats de WhatsApp, Telegram, Messenger y grupos administrados por delegados. Esta dispersión de información provoca pérdida de avisos, confusión, retrasos en entregas, baja participación en actividades y falta de claridad sobre prioridades académicas. La ausencia de un sistema centralizado que organice los comunicados y permita reacciones rápidas afecta la adaptación de los estudiantes durante los primeros ciclos, etapa crítica en la construcción de hábitos, responsabilidad y autonomía académica.
 
-¿Cómo impulsar la socialización y fortalecer las habilidades comunicativas de los estudiantes de ingeniería en sus primeros ciclos para mejorar su integración y participación académica?
+¿Cómo centralizar y organizar los anuncios académicos para que los estudiantes de primeros ciclos accedan a información clara, oportuna y priorizada que facilite su participación y adaptación universitaria?
 
 </div>
 
 #### 1.2.2.2. Lean UX Assumptions
 <div align="justify"
 
-En el desarrollo de Level Up Journey, se identificaron y formalizaron un conjunto de supuestos (assumptions) fundamentales siguiendo la metodología de Lean UX. Estos assumptions representan nuestras creencias iniciales sobre los usuarios, los resultados esperados, el impacto en el negocio, las funcionalidades críticas y la capacidad de los sistemas de información para soportar la solución propuesta. Declararlos explícitamente permite orientar el diseño del producto hacia un enfoque basado en evidencias, minimizar riesgos y validar tempranamente las decisiones estratégicas. Para estructurarlos, se han considerado cinco categorías principales:
+En el desarrollo de LevelUp Journey, se identificaron y formalizaron un conjunto de supuestos fundamentales siguiendo la metodología de Lean UX. Estos assumptions representan creencias iniciales sobre los usuarios, el impacto esperado, los beneficios institucionales, las funcionalidades críticas y la viabilidad técnica de la solución. Declararlos de manera explícita permite orientar el diseño hacia un modelo basado en evidencias, minimizar riesgos y validar de forma temprana las decisiones estratégicas. Para estructurarlos, se utilizan cinco categorías: User Assumptions, User Outcome Assumptions, Business Assumptions, Business Outcome Assumptions y Feature Assumptions.
 
 **Categorías de Supuestos:**
 
 - **User Assumptions:** Necesidades y comportamientos esperados de los usuarios.
+
 - **User Outcome Assumptions:** Beneficios que los usuarios deberían obtener.
+
 - **Business Assumptions:** Modelo de negocio y el entorno de mercado.
+
 - **Business Outcome Assumptions:** Impactos positivos esperados en el negocio.
+
 - **Feature Assumptions:** Funcionalidades específicas y resolución de necesidades.
 
-
+  
 
 Estos supuestos guiarán el diseño, minimizarán riesgos y permitirán una validación temprana.
 
-- **User Assumptions:** Necesidades y comportamientos esperados de los usuarios.
-  - Los estudiantes de primeros ciclos se sienten desmotivados frente a los cursos iniciales, lo que se refleja en que al menos el 60 % manifiesta haber perdido motivación durante los dos primeros ciclos.
-  - Los alumnos no revisan con frecuencia el correo institucional Outlook, ya que menos del 30 % lo consulta más de dos veces por semana.
-  - La flojera y el desinterés afectan el rendimiento académico, evidenciado en que más del 50 % no entrega al menos una tarea por curso en el ciclo.
-  - Los estudiantes prefieren experiencias interactivas y visuales frente a métodos tradicionales, lo cual se confirma en que un 70 % indica mayor motivación con dinámicas de retos, juegos o quizzes.
-  - La falta de hábitos de estudio y organización constituye una dificultad recurrente, pues más del 60 % reconoce no contar con un horario fijo de planificación académica.
-  - Los profesores requieren herramientas que permitan motivar a los estudiantes en clase, lo cual se observa en que más del 65 % declara dificultades para mantener la atención en los primeros ciclos.
-  - Los docentes buscan retroalimentar de manera más ágil a los estudiantes, dado que al menos un 70 % indica que el tiempo de entrega de calificaciones limita la efectividad de su labor.
-  - Los profesores valoran tener un sistema centralizado para gestionar retos y actividades, ya que más del 55 % reporta dificultades al coordinar materiales y evaluaciones en múltiples canales.
-  - Los docentes consideran importante hacer seguimiento del progreso individual de sus alumnos, reflejado en que más del 60 % manifiesta que carece de herramientas accesibles para monitorear el avance en tiempo real.
-  - Los profesores necesitan fomentar la participación en espacios de comunidad académica, pues al menos un 50 % señala que los estudiantes no muestran interés en asistir a talleres o actividades extracurriculares.
+**User Assumptions:** Necesidades y comportamientos esperados de los usuarios.
 
+- Los estudiantes de primeros ciclos revisan con frecuencia aplicaciones de mensajería, pero no consultan canales institucionales como el correo Outlook, lo que genera pérdida de información académica.
+- Los alumnos experimentan dificultades para distinguir entre mensajes personales y avisos relevantes, lo que produce confusión y retraso en la lectura de comunicados.
+- La falta de un canal centralizado genera desinterés hacia ciertos anuncios, ya que los estudiantes se sienten saturados por la cantidad de mensajes enviados en múltiples plataformas.
+- La mayoría de estudiantes requiere un formato simple y directo para consumir información, preferentemente similar a un chat o línea de tiempo.
+- Los alumnos de primeros ciclos necesitan notificaciones claras y oportunas que prioricen actividades, recordatorios y plazos de entrega.
+- Los estudiantes valoran la posibilidad de reaccionar rápidamente a los mensajes, ya sea confirmando asistencia, mostrando interés o solicitando información adicional.
+- Los docentes necesitan un canal que asegure que los estudiantes reciban los comunicados oficiales sin depender de intermediarios como delegados.
+- Los docentes requieren métricas básicas para conocer el alcance de los anuncios y verificar quiénes los han recibido o reaccionado.
+- Las coordinaciones académicas buscan evitar la pérdida de información relevante en canales que no pueden monitorear.
+- Los actores institucionales consideran importante mejorar la organización informativa de los primeros ciclos para asegurar una adaptación más fluida.
 
-- **User Outcome Assumptions:** Beneficios que los usuarios deberían obtener.
-  - Los estudiantes incrementarán su motivación académica, reflejado en que al menos el 70 % de los usuarios activos participe semanalmente en retos y actividades.
-  - Los alumnos mejorarán su constancia en la entrega de tareas, de modo que al menos el 60 % logre completar todos los retos o actividades asignadas en cada ciclo.
-  - Los estudiantes experimentarán un sentido de logro y pertenencia, evidenciado en que al menos el 65 % consulte de manera recurrente su progreso, insignias y niveles.
-  - Los alumnos fortalecerán sus hábitos de estudio y organización, logrando que un 50 % de los participantes declare haber implementado rutinas semanales de repaso.
-  - Los estudiantes aumentarán sus tasas de aprobación en cursos iniciales, alcanzando un crecimiento mínimo del 20 % en comparación con ciclos previos sin la plataforma.
-  - Los docentes podrán motivar con mayor efectividad a los estudiantes, reflejado en que al menos un 60 % de ellos perciba mayor participación activa en sus clases.
-  - Los profesores tendrán la capacidad de retroalimentar de manera más inmediata, de modo que un 70 % de los estudiantes reciba comentarios o resultados en tiempo real.
-  - Los docentes podrán gestionar sus actividades de forma más eficiente, logrando que al menos un 50 % reduzca el tiempo dedicado a la preparación y seguimiento de retos.
-  - Los profesores contarán con herramientas claras para monitorear el progreso, lo que se reflejará en que un 65 % utilice regularmente los reportes de avance en sus cursos.
-  - Los docentes podrán fomentar mayor asistencia a talleres y actividades, alcanzando un incremento del 30 % en la participación de sus estudiantes en espacios de comunidad.
-  
-- **Business Assumptions:** Modelo de negocio y el entorno de mercado.
-  - La UPC considera prioritaria la reducción de la deserción estudiantil en los primeros ciclos, reflejado en que al menos un 10 % de mejora en la tasa de retención generaría un impacto positivo en sus indicadores de calidad.
-  - Mejorar las tasas de aprobación en Ingeniería de Software, Ingeniería de Sistemas e Ingeniería de Ciberseguridad incrementará la sostenibilidad académica, al lograr que un 20 % adicional de estudiantes avance satisfactoriamente a ciclos superiores.
-  - Una plataforma de gamificación que eleve la participación estudiantil aportará un valor diferencial frente a la competencia, estimado en que un 15 % de nuevos postulantes perciba a la UPC como innovadora en metodologías educativas.
-  - La implementación de un piloto exitoso permitirá escalar la solución a todas las carreras de la universidad, proyectando un crecimiento de uso superior al 50 % de los estudiantes de primeros ciclos en los dos primeros años.
-  - La retención de estudiantes en los primeros ciclos se traducirá en una mejora de ingresos sostenibles, al evitar pérdidas equivalentes a la deserción de entre el 15 % y 20 % de las cohortes iniciales.
-  - El uso de la plataforma fortalecerá el prestigio institucional de la UPC, lo cual se reflejará en rankings y encuestas externas donde se espera un incremento de al menos 10 puntos en la percepción de innovación educativa.
-  - La integración de esta solución digital permitirá a la universidad consolidar un ecosistema académico más eficiente, reduciendo en un 30 % la dispersión de esfuerzos en talleres, asesorías y actividades extracurriculares que actualmente tienen baja asistencia.
-  - La inversión en una solución propia será más rentable que depender de plataformas externas, con un retorno esperado en menos de tres ciclos académicos al disminuir los costos asociados a la deserción.
-  - El proyecto sentará las bases para su futura comercialización hacia otras universidades de la región, con un mercado potencial de miles de estudiantes de primeros ciclos en carreras de alta deserción.
-  - El éxito del piloto fortalecerá la relación entre la UPC y su comunidad académica, aumentando en al menos un 20 % la satisfacción estudiantil medida en encuestas internas al cierre de cada ciclo.
-  
-- **Business Outcome Assumptions:** Impactos positivos esperados en el negocio.
+**User Outcome Assumptions:** Beneficios esperados para los usuarios.
 
-  - La tasa de aprobación en los primeros ciclos de Ingeniería de Software, Ingeniería de Sistemas e Ingeniería de Ciberseguridad aumentará al menos en un 20 % en comparación con ciclos previos.
+- Los estudiantes podrán mantenerse informados con mayor claridad si cuentan con un canal único de anuncios formales.
+- Los alumnos mejorarán su organización al recibir avisos con filtros, categorías y recordatorios automáticos.
+- Los estudiantes incrementarán su participación en actividades si reconocen fácilmente la prioridad e importancia de cada comunicado.
+- Los alumnos disminuirán la pérdida de plazos y tareas al recibir notificaciones oportunas en un entorno ordenado.
+- Los estudiantes desarrollarán mejores hábitos de planificación al acceder a información en un espacio estructurado.
+- Los docentes podrán verificar el alcance real de sus comunicados mediante estadísticas de visualización y reacciones.
+- Los profesores podrán reducir la duplicidad de mensajes y la dependencia de grupos informales.
+- Los coordinadores académicos podrán monitorear la distribución de información para realizar intervenciones oportunas.
+- Las áreas institucionales podrán mejorar la comunicación en los primeros ciclos, lo que se traducirá en una experiencia más organizada para los estudiantes.
+- La claridad informativa reducirá el estrés y la sobrecarga percibida por los estudiantes durante los ciclos iniciales.
 
-  - La retención estudiantil en la UPC mejorará significativamente, alcanzando un incremento mínimo del 10 % en la permanencia de los alumnos en los tres primeros ciclos.
+**Business Assumptions:** Modelo institucional y entorno educativo.
 
-  - La universidad logrará reducir en un 15 % los casos de deserción temprana, fortaleciendo sus indicadores de calidad académica.
+- La UPC prioriza la mejora en la comunicación académica como un factor estratégico para fortalecer la experiencia estudiantil.
+- La dispersión informativa actual impacta negativamente en la organización interna y en el seguimiento institucional de estudiantes.
+- Reducir la pérdida de información mejorará la eficiencia de las coordinaciones al disminuir consultas repetitivas o malinterpretaciones de comunicados.
+- Un canal centralizado será más eficiente que mantener múltiples grupos en plataformas externas sin control institucional.
+- La implementación de un sistema propio permitirá una comunicación más fiable y trazable.
+- La claridad informativa disminuirá la cantidad de reclamos o confusiones relacionadas con plazos, actividades y evaluaciones.
+- Un flujo de información ordenado reducirá costos operativos asociados a reprocesos y aclaraciones administrativas.
+- La solución establecerá bases para extender la plataforma a otras facultades y programas académicos.
+- La universidad podrá integrar la herramienta con sistemas internos si la adopción inicial demuestra impacto positivo.
+- Un sistema de comunicación centralizado será percibido como una mejora institucional por parte de estudiantes y docentes.
 
-  - La satisfacción estudiantil se verá incrementada, con un aumento del 20 % en las valoraciones positivas de las encuestas internas de percepción académica.
+**Business Outcome Assumptions:** Resultados esperados para la institución.
 
-  - El prestigio institucional de la UPC se consolidará, reflejado en un incremento de al menos 10 puntos en indicadores externos de innovación educativa.
+- La claridad informativa incrementará la participación en actividades académicas.
+- La centralización reducirá la desinformación y mejorará el seguimiento de los estudiantes en riesgo.
+- Los indicadores de experiencia estudiantil reflejarán mejoras en la percepción de organización y acompañamiento.
+- La institución podrá monitorear el flujo comunicacional y detectar cuellos de botella informativos.
+- La reducción de errores y confusiones permitirá optimizar procesos administrativos.
+- La plataforma contribuirá a fortalecer la integración de estudiantes en los primeros ciclos.
+- La universidad dispondrá de información para identificar patrones en la lectura y recepción de anuncios.
+- El sistema permitirá una distribución más uniforme y eficiente de actividades institucionales.
+- La adopción del canal oficial desplazará progresivamente el uso de chats informales.
+- La plataforma facilitará decisiones basadas en datos sobre comunicación académica.
 
-  - La implementación de *LevelUp Journey* permitirá un uso más eficiente de recursos de acompañamiento académico, reduciendo en un 30 % la inversión en talleres y actividades con baja asistencia.
+**Feature Assumptions:** Funcionalidades y solución de necesidades.
 
-  - La universidad obtendrá un retorno financiero positivo al disminuir las pérdidas asociadas a la deserción, recuperando al menos un 70 % del costo invertido en el piloto en menos de tres ciclos académicos.
+- La visualización de anuncios en formato chat permitirá una lectura más natural y accesible para los estudiantes.
+- Las reacciones rápidas facilitarán la interacción con los comunicados y permitirán medir el alcance sin esfuerzo adicional.
+- Las categorías y etiquetas ayudarán a priorizar avisos por tipo de actividad, curso o grado de urgencia.
+- El sistema de notificaciones internas asegurará la recepción oportuna de información relevante.
+- La búsqueda y filtrado permitirán acceder rápidamente a comunicados anteriores sin depender de conversaciones largas.
+- La interfaz simple y ordenada mejorará la adopción de la plataforma.
+- La autenticación mediante roles permitirá que solo personal autorizado publique anuncios.
+- El registro de métricas ofrecerá indicadores de lectura y participación.
+- La sincronización entre versiones móviles garantizará acceso desde distintos dispositivos.
+- La integración futura con sistemas institucionales permitirá escalar el alcance de la solución.
 
-  - El proyecto facilitará la expansión a otras facultades de la UPC, con un crecimiento proyectado del 50 % de estudiantes de primeros ciclos que adopten la plataforma en dos años.
-
-  - La implementación exitosa sentará las bases para comercializar la solución en otras universidades, abriendo un mercado potencial de miles de estudiantes en instituciones con altos índices de deserción.
-
-  - La percepción de valor en la comunidad educativa mejorará, evidenciada en que al menos un 60 % de docentes y estudiantes considere la plataforma como un apoyo real para la experiencia académica.
-
-- **Feature Assumptions:** Funcionalidades específicas y resolución de necesidades.
-
-  - El sistema de registro e inicio de sesión permitirá a los estudiantes incorporarse de manera sencilla, reflejado en que al menos el 80 % logre registrarse correctamente sin asistencia técnica.
-  - La visualización de retos semanales en la página principal facilitará la organización académica, evidenciado en que un 70 % de los estudiantes consulte esta sección al menos una vez por semana.
-  - El sistema de retos y logros motivará la participación continua, alcanzando que un 60 % de los usuarios activos complete al menos un reto semanal.
-  - El editor de prácticas y su validación automática incrementarán la constancia de los estudiantes en su aprendizaje, demostrado en que al menos el 50 % envíe soluciones de manera recurrente cada semana.
-  - El feedback inmediato de los resultados reducirá la frustración académica, evidenciado en que un 70 % de los estudiantes declare que los mensajes de retroalimentación les ayudaron a mejorar sus entregas.
-  - La tabla de ranking fomentará la competitividad positiva, logrando que un 50 % de los estudiantes consulte su posición en el ranking de manera regular.
-  - El perfil con insignias y niveles reforzará el sentido de progreso, evidenciado en que un 65 % de usuarios revise sus logros y nivel al menos una vez por semana.
-  - El foro de comunidad permitirá fortalecer el vínculo entre estudiantes y docentes, alcanzando que al menos el 40 % de los usuarios publique o interactúe con contenido cada ciclo.
-  - El sistema de notificaciones internas mejorará la comunicación institucional, reflejado en que un 60 % de los estudiantes acceda a un reto o anuncio gracias a una alerta de la plataforma.
-  - El diseño inclusivo y adaptable garantizará la accesibilidad, evidenciado en que al menos el 90 % de los estudiantes logre usar la plataforma correctamente desde distintos dispositivos y sin barreras de lectura.
-
-
-</div>
+- </div>
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
 <div align="justify"
-
-
-| Hipótesis | Prioridad |
-|---|---|
-| **Creemos que** al proveer feedback inmediato en las prácticas, **se logrará que** un 70 % de los estudiantes declare que mejoró sus entregas y redujo su frustración académica, **sabremos que esto es cierto cuando** el número de intentos corregidos satisfactoriamente incremente por ciclo. | Alta      |
-| **Creemos que** al integrar un sistema de logros e insignias, **se logrará que** los estudiantes experimenten mayor motivación y sentido de pertenencia, **sabremos que esto es cierto cuando** al menos el 65 % consulte sus logros y niveles de manera recurrente. | Alta      |
-| **Creemos que** al mostrar los retos semanales en la página principal, **se logrará que** el 70 % de los estudiantes consulte esta sección regularmente para organizar su avance académico, **sabremos que esto es cierto cuando** veamos un incremento en la frecuencia de acceso semanal a dicha funcionalidad. | Media     |
-| **Creemos que** al diseñar la plataforma con criterios inclusivos y adaptables, **se logrará que** al menos el 90 % de los estudiantes pueda utilizarla correctamente desde distintos dispositivos, **sabremos que esto es cierto cuando** los reportes de accesibilidad muestren satisfacción y ausencia de barreras de uso. | Media     |
-| **Creemos que** al habilitar un perfil con insignias y niveles visibles, **se logrará que** los estudiantes refuercen su sentido de progreso académico, **sabremos que esto es cierto cuando** al menos el 65 % de los usuarios revise esta sección semanalmente. | Media     |
-| **Creemos que** al implementar una tabla de ranking, **se logrará que** al menos el 50 % de los estudiantes se motive mediante la comparación con sus pares, **sabremos que esto es cierto cuando** las consultas al ranking ocurran de manera regular semana tras semana. | Media     |
-| **Creemos que** al habilitar un foro de comunidad, **se logrará que** los estudiantes fortalezcan vínculos académicos y de apoyo con sus compañeros y docentes, **sabremos que esto es cierto cuando** al menos el 40 % publique o interactúe en el foro durante el ciclo. | Baja      |
-| **Creemos que** al implementar un sistema de registro sencillo para estudiantes de primeros ciclos, **se logrará que** al menos el 80 % pueda incorporarse sin asistencia técnica, **sabremos que esto es cierto cuando** la mayoría complete el registro en menos de cinco minutos y sin soporte adicional. | Baja      |
+| Hipótesis                                                    | Prioridad |
+| ------------------------------------------------------------ | --------- |
+| **Creemos que** al centralizar todos los anuncios académicos en un formato de chat ordenado, **se logrará que** los estudiantes accedan a la información con mayor claridad y reduzcan la pérdida de mensajes importantes, **sabremos que esto es cierto cuando** al menos el 70 % consulte los anuncios dentro de las primeras 24 horas. | Alta      |
+| **Creemos que** al permitir reacciones rápidas en cada anuncio, **se logrará que** los estudiantes expresen interés, confirmen asistencia o indiquen recepción de la información, **sabremos que esto es cierto cuando** más del 60 % utilice alguna reacción en los comunicados académicos. | Alta      |
+| **Creemos que** al implementar notificaciones internas priorizadas, **se logrará que** los estudiantes visualicen los anuncios urgentes o relevantes sin depender de chats personales, **sabremos que esto es cierto cuando** al menos el 75 % acceda a un comunicado desde una alerta de la plataforma. | Alta      |
+| **Creemos que** al clasificar los anuncios por categorías como tareas, actividades, eventos o recordatorios, **se logrará que** los estudiantes organicen mejor sus responsabilidades, **sabremos que esto es cierto cuando** más del 60 % utilice los filtros para revisar información por tipo. | Media     |
+| **Creemos que** al mostrar los anuncios recientes en una sección destacada, **se logrará que** los estudiantes identifiquen más rápido la información esencial del día, **sabremos que esto es cierto cuando** se incremente la frecuencia de acceso a esta sección durante cada semana del ciclo. | Media     |
+| **Creemos que** al incluir un historial consultable de anuncios, **se logrará que** los estudiantes recuperen información sin depender de chats saturados, **sabremos que esto es cierto cuando** más del 50 % utilice la búsqueda interna para encontrar comunicados anteriores. | Media     |
+| **Creemos que** al restringir la publicación de anuncios únicamente a docentes y coordinadores, **se logrará que** el flujo de información sea confiable y libre de ruido, **sabremos que esto es cierto cuando** no se registren mensajes irrelevantes o duplicados en el sistema. | Media     |
+| **Creemos que** al incluir métricas de visualización y reacciones para docentes, **se logrará que** puedan evaluar el alcance de sus comunicados, **sabremos que esto es cierto cuando** al menos el 60 % revise sus reportes de interacción para ajustar la comunicación. | Baja      |
+| **Creemos que** al ofrecer un diseño accesible y adaptable a diferentes dispositivos, **se logrará que** la mayoría de estudiantes utilice la plataforma sin dificultades técnicas, **sabremos que esto es cierto cuando** los reportes muestren que más del 90 % accede sin incidencias en teléfonos con capacidades diversas. | Baja      |
+| **Creemos que** al permitir anclar anuncios importantes en la parte superior del chat, **se logrará que** los estudiantes identifiquen contenido prioritario sin depender del delegado, **sabremos que esto es cierto cuando** la sección fijada reciba consultas recurrentes durante las semanas de mayor carga académica. | Baja      |
 
 </div>
 
@@ -203,29 +182,31 @@ Estos supuestos guiarán el diseño, minimizarán riesgos y permitirán una vali
 
 ## 1.3. Segmentos objetivo
 
-1. Segmento Objetivo #1: Estudiantes de primero a tercer ciclo
-   1. Aspectos demográficos:
+## 1.3. Segmentos objetivo
+
+1. **Segmento Objetivo #1: Estudiantes de primero a tercer ciclo**
+   1. **Aspectos demográficos:**
       - Sexo: hombres y mujeres en proporciones similares.
       - Edad: entre 17 y 21 años.
-      - Nivel socioeconómico: medio y medio-alto, acorde con la matrícula en la UPC.
-   2. Aspectos geográficos:
+      - Nivel socioeconómico: medio y medio-alto, acorde con la matrícula típica de la UPC.
+   2. **Aspectos geográficos:**
       - Nacionalidad: principalmente peruanos.
       - Zona geográfica: urbana.
-      - Departamento: Lima Metropolitana y alrededores.
-   3. Aspectos psicográficos:
-      - Jóvenes en proceso de transición de la educación escolar a la universitaria, con interés en la tecnología y en la vida universitaria, pero que presentan inseguridad o falta de hábitos de estudio consolidados.
-   4. Aspectos conductuales:
-      - Suelen postergar tareas, participan poco en actividades de comunidad, no revisan con frecuencia el correo institucional, y buscan experiencias dinámicas e interactivas que capten su atención.
-2. Segmento Objetivo #2: Profesores de primero a tercer ciclo
-   1. Aspectos demográficos:
-      - Sexo: hombres.
+      - Departamento: Lima Metropolitana y zonas aledañas.
+   3. **Aspectos psicográficos:**
+      - Jóvenes en etapa de transición escolar-universitaria, con interés inicial en la vida académica y en herramientas digitales que faciliten la organización. Presentan dificultades para estructurar hábitos de estudio y para gestionar anuncios distribuidos en múltiples plataformas. Buscan claridad, orden y simplicidad en los canales de comunicación académica.
+   4. **Aspectos conductuales:**
+      - Revisan con frecuencia aplicaciones de mensajería como WhatsApp o Telegram, pero consultan poco los canales institucionales. Suelen perder información importante entre mensajes personales, postergan tareas por falta de recordatorios claros y presentan baja participación en actividades cuando la comunicación no es centralizada. Valoran interfaces simples, notificaciones directas y funciones rápidas como reacciones o confirmaciones.
+2. **Segmento Objetivo #2: Profesores de primero a tercer ciclo**
+   1. **Aspectos demográficos:**
+      - Sexo: hombres y mujeres, con ligera predominancia masculina en carreras de ingeniería.
       - Edad: entre 28 y 55 años.
       - Nivel socioeconómico: medio y medio-alto.
-   2. Aspectos geográficos:
+   2. **Aspectos geográficos:**
       - Nacionalidad: principalmente peruanos.
       - Zona geográfica: urbana.
       - Departamento: Lima Metropolitana.
-   3. Aspectos psicográficos:
-      - Profesionales con experiencia en docencia universitaria, motivados por mejorar los aprendizajes y la participación de sus alumnos, interesados en herramientas que faciliten la enseñanza y la retroalimentación.
-   4. Aspectos conductuales:
-      - Dedican tiempo extra a preparar clases, buscan recursos que les ayuden a captar la atención de los estudiantes, valoran plataformas que centralicen materiales y reportes, y participan en actividades de acompañamiento académico institucional.
+   3. **Aspectos psicográficos:**
+      - Profesionales con experiencia en docencia universitaria que buscan mejorar la comunicación, la organización del curso y el seguimiento académico. Les interesa contar con herramientas que aseguren que los estudiantes reciban la información correcta, reduzcan confusiones y respondan con mayor rapidez a anuncios o recordatorios.
+   4. **Aspectos conductuales:**
+      - Difunden comunicados por múltiples canales informales debido a la baja adopción del correo institucional. Dedican tiempo adicional a resolver dudas que surgen por desinformación o mensajes no leídos. Valoran plataformas que centralicen anuncios, ofrezcan métricas sobre visualización y reacciones, reduzcan la dependencia del delegado y faciliten una comunicación más clara y ordenada con sus estudiantes.
