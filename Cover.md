@@ -33,7 +33,7 @@
   <p style="margin: 4px 0;"><code>u202319889</code> - Fabrizio Alessandro Contreras Peralta</p>
 
   <!-- Fecha -->
-  <p style="margin-top: 25px;"><em>Octubre 2025</em></p>
+  <p style="margin-top: 25px;"><em>Diciembre 2025</em></p>
 
 </div>
 
