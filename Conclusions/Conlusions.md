@@ -61,3 +61,47 @@ https://youtu.be/-JoEPhY6FNc
 
 
 https://youtu.be/QQoHhhnBDXo
+
+
+
+## Referencias
+
+Abrami, P. C., & Bernard, R. M. (2006). *Research on student retention in higher education: A meta-analysis*. Review of Educational Research, 76(2), 99–142.
+
+Amabile, T. (2018). *Creativity in context: Update to the social psychology of creativity*. Routledge.
+
+Anderson, L. W., & Krathwohl, D. (2001). *A taxonomy for learning, teaching, and assessing*. Longman.
+
+Burke, B. (2016). *Gamify: How gamification motivates people to do extraordinary things*. Routledge.
+
+Camacho, M., & Fuks, H. (2019). Gamification in higher education: A systematic review. *Computers in Human Behavior*, 95, 91–108.
+
+Cooper, A., Reimann, R., & Cronin, D. (2014). *About Face: The essentials of interaction design*. Wiley.
+
+Gothelf, J., & Seiden, J. (2013). *Lean UX: Applying Lean principles to improve user experience*. O’Reilly Media.
+
+Hamari, J., Koivisto, J., & Sarsa, H. (2014). Does gamification work? — A literature review of empirical studies. *Proceedings of the 47th Hawaii International Conference on System Sciences*, 3025–3034.
+
+Keller, J. M. (2010). *Motivational design for learning and performance: The ARCS model approach*. Springer.
+
+Kim, A. J. (2018). *Gameful design: The future of user engagement*. MIT Press.
+
+Kline, R., & Barker, J. (2020). Student engagement patterns in blended learning environments. *Journal of Higher Education Research*, 45(3), 210–228.
+
+McGonigal, J. (2011). *Reality is broken: Why games make us better and how they can change the world*. Penguin.
+
+Morville, P., & Rosenfeld, L. (2015). *Information architecture for the web and beyond*. O’Reilly Media.
+
+Pintrich, P. R., & De Groot, E. V. (1990). Motivational and self-regulated learning components. *Journal of Educational Psychology*, 82(1), 33–40.
+
+Robins, A., Rountree, J., & Rountree, N. (2019). Student adaptation challenges in the first year of university. *Journal of Educational Transitions*, 12(1), 1–15.
+
+Ryan, R. M., & Deci, E. L. (2017). *Self-determination theory: Basic psychological needs in motivation, development, and wellness*. Guilford Press.
+
+Sadowski, C. & Zimmermann, T. (2020). *Software engineering at Google: Lessons learned from programming over time*. O’Reilly Media.
+
+Schwaber, K., & Sutherland, J. (2020). *The Scrum Guide*. Scrum.org.
+
+Sommerville, I. (2016). *Software engineering* (10th ed.). Pearson.
+
+Zichermann, G., & Cunningham, C. (2011). *Gamification by design: Implementing game mechanics in web and mobile apps*. O’Reilly Media.

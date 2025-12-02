@@ -23,7 +23,7 @@
   <hr style="width: 50%; margin: 25px auto; border: 1px solid #999;"/>
 
   <!-- Título del Informe -->
-  <h2 style="margin-bottom: 10px;"><strong>Informe del Trabajo Parcial</strong></h2>
+  <h2 style="margin-bottom: 10px;"><strong>Informe del Trabajo Final</strong></h2>
   <p style="margin: 5px 0;">Startup: <strong>GNACME</strong></p>
   <p style="margin: 5px 0;">Producto: <strong>LevelUp Journey</strong></p>
 
