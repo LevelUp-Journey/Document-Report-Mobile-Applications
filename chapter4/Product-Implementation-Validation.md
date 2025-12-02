@@ -1380,8 +1380,6 @@ Si algo no funciona (por ejemplo, un enlace o formulario), ¿el diseño te ayuda
 **Conclusión del segmento estudiante:**
  El segmento **percibe positivamente** la propuesta de diseño y navegación. Los comentarios apuntan a **refinar detalles de interacción** (estados visuales, retroalimentación ante errores) y **añadir guías contextuales**, manteniendo la estética minimalista que favorece la comprensión y el enfoque del usuario.
 
-------
-
 **Segmento: Profesores**
 
 **Participantes:**
@@ -1408,13 +1406,9 @@ Si algo no funciona (por ejemplo, un enlace o formulario), ¿el diseño te ayuda
 **Conclusión del segmento profesor:**
  El segmento docente percibe el producto como **una herramienta prometedora** de acompañamiento y seguimiento académico. Destacan la necesidad de incorporar **mayor personalización**, **seguimiento del progreso** y **reforzar la comunicación visual y pedagógica** en la interfaz, asegurando coherencia entre el propósito educativo y la experiencia digital.
 
-------
-
 ### **Conclusión general del registro de entrevistas**
 
 Ambos segmentos —estudiantes y docentes— confirman que *LevelUp Journey* cumple con principios esenciales de **claridad, coherencia y accesibilidad**, mostrando una propuesta sólida de interfaz para la etapa de validación. Las mejoras identificadas se concentran en la **retroalimentación visual**, la **personalización del contenido** y la **guía contextual**, reforzando la usabilidad y pertinencia académica del producto.
-
-------
 
 ¿Deseas que te lo prepare también en **versión Word (.docx)** con el formato institucional (encabezados azules, logo de la UPC y márgenes normalizados), o prefieres que te lo deje en **Markdown (.md)** para integrarlo directamente al informe de validación UX?
 
@@ -1428,13 +1422,9 @@ Ambos segmentos —estudiantes y docentes— confirman que *LevelUp Journey* cum
 | ---------------------- | ------------------------------ | ------------------- | -------------- | ---------------------- | -------------------------- |
 | Ingeniería de Software | CC238 – Experiencia de Usuario | [Código de sección] | Todos          | Equipo LevelUp Journey | Leticia Domínguez, Brisaos |
 
-------
-
 **SITE o APP A EVALUAR:**
 
 **LevelUp Journey – Plataforma Web (Versión de validación UX)**
-
-------
 
 **TAREAS A EVALUAR:**
 
@@ -1451,8 +1441,6 @@ No están incluidas en esta versión:
 2. Acceso a funcionalidades de progreso o gamificación.
 3. Integración con otros servicios (por ejemplo, API o notificaciones).
 
-------
-
 **ESCALA DE SEVERIDAD**
 
 | **Nivel** | **Descripción**                                              |
@@ -1461,8 +1449,6 @@ No están incluidas en esta versión:
 | **2**     | Problema menor: ocurre ocasionalmente, prioridad baja.       |
 | **3**     | Problema mayor: frecuente, afecta la experiencia, prioridad alta. |
 | **4**     | Problema muy grave: impide el uso de la herramienta, requiere corrección inmediata. |
-
-------
 
 **TABLA RESUMEN**
 
@@ -1474,8 +1460,6 @@ No están incluidas en esta versión:
 | 4    | Los botones y textos mantienen consistencia, pero algunos podrían mejorar el feedback visual al hacer clic (por ejemplo, hover o estados activos). | 2                       | *Usability: Consistency and standards.*                    |
 | 5    | No existen mensajes de error visibles predefinidos ante fallos de interacción (por ejemplo, si una sección no carga o no funciona). | 3                       | *Usability: Error prevention & feedback.*                  |
 
-------
-
 **DESCRIPCIÓN DE PROBLEMAS**
 
 **PROBLEMA #1: Falta de indicador de ubicación dentro del sitio**
@@ -1485,16 +1469,12 @@ No están incluidas en esta versión:
 - **Problema:** Aunque los usuarios mencionan que el orden general es claro, no hay un breadcrumb o barra activa que señale la sección actual.
 - **Recomendación:** Agregar un indicador visual o subrayado activo en el menú que muestre dónde se encuentra el usuario.
 
-------
-
 **PROBLEMA #2: Lenguaje claro pero poco guiado**
 
 - **Severidad:** 1
 - **Heurística violada:** *Usability – Match between system and real-world language.*
 - **Problema:** Los textos son comprensibles, pero podrían incluir más tono conversacional o mensajes motivadores que refuercen la interacción.
 - **Recomendación:** Aplicar principios de UX Writing (microcopys, tono empático, mensajes de guía contextual).
-
-------
 
 **PROBLEMA #3: Contraste visual en algunos elementos secundarios**
 
@@ -1503,8 +1483,6 @@ No están incluidas en esta versión:
 - **Problema:** Aunque la interfaz es minimalista y atractiva, algunos colores secundarios podrían afectar la legibilidad para usuarios con baja visión.
 - **Recomendación:** Aumentar el contraste (al menos 4.5:1) según las normas WCAG 2.1.
 
-------
-
 **PROBLEMA #4: Falta de feedback visual en botones**
 
 - **Severidad:** 2
@@ -1512,16 +1490,12 @@ No están incluidas en esta versión:
 - **Problema:** Los botones son coherentes, pero no muestran cambios claros al hacer clic o al pasar el cursor.
 - **Recomendación:** Añadir estados de hover, active y disabled que comuniquen interactividad y respuesta del sistema.
 
-------
-
 **PROBLEMA #5: Ausencia de mensajes de error o feedback ante fallas**
 
 - **Severidad:** 3
 - **Heurística violada:** *Usability – Error prevention & feedback.*
 - **Problema:** Los usuarios mencionan que preferirían una “ventanita” o alerta cuando algo no funcione, en lugar de no recibir respuesta.
 - **Recomendación:** Implementar mensajes modales o toasts que informen claramente el estado de error o función no disponible (“Ups, esta función aún no está disponible”).
-
-------
 
 La experiencia de usuario en **LevelUp Journey** resulta **positiva**, mostrando **claridad visual, consistencia estilística y lenguaje accesible**, aunque existen oportunidades de mejora en **feedback interactivo**, **contraste visual** y **comunicación de errores**. La usabilidad general cumple estándares medios-altos según Nielsen, con una severidad promedio **2.0 (problema menor)**.
 
