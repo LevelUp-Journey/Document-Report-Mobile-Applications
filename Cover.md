@@ -28,9 +28,9 @@
   <p style="margin: 5px 0;">Producto: <strong>LevelUp Journey</strong></p>
 
   <!-- Integrantes -->
-  <p style="margin: 4px 0;"><code>u20211b995</code> - Jonatan Ariel Acuña Corahua</p>
-  <p style="margin: 4px 0;"><code>U202319963</code> - Dante Mateo Aleman Romano</p>
-  <p style="margin: 4px 0;"><code>u202319889</code> - Fabrizio Alessandro Contreras Peralta</p>
+  <p style="margin: 4px 0;"><code>u20211b995</code> - Acuña Corahua, Jonatan Ariel</p>
+  <p style="margin: 4px 0;"><code>U202319963</code> - Aleman Romano, Dante Mateo</p>
+  <p style="margin: 4px 0;"><code>u202319889</code> - Contreras Peralta, Fabrizio Alessandro</p>
 
   <!-- Fecha -->
   <p style="margin-top: 25px;"><em>Diciembre 2025</em></p>
